@@ -96,6 +96,7 @@ public class TumblerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (GameNavigation.GameplayInputBlocked) return;
         ApplyDrive();
         HandleSteering();
         UpdateWheels();
@@ -103,8 +104,11 @@ public class TumblerController : MonoBehaviour
         LimitHorizontalSpeed();
     }
 
-    private void Update()
+    private void Update() => RefreshDrivingInput();
+
+    internal void RefreshDrivingInput()
     {
+        if (GameNavigation.GameplayInputBlocked) return;
         float throttleInput = tumblerInput.Gameplay.Throttle.ReadValue<float>();
         float oldPower = currentPower;
         currentPower = throttleInput * (throttleInput > 0 ? forwardPower : reversePower);
@@ -335,7 +339,7 @@ public class TumblerController : MonoBehaviour
     // This function is called by the Unity Event System when the player clicks the Drive Mode button
     public void SwitchDriveMode(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && !GameNavigation.GameplayInputBlocked)
         {
             switch (currentDriveMode)
             {

@@ -218,8 +218,22 @@ public static class NavigationVerify
 
     public static void Build()
     {
-        var target = Environment.GetEnvironmentVariable("TUMBLER_NAVIGATION_BUILD_TARGET") == "Windows"
-            ? BuildTarget.StandaloneWindows64 : BuildTarget.StandaloneLinux64;
+        var requested = Environment.GetEnvironmentVariable("TUMBLER_NAVIGATION_BUILD_TARGET");
+        if (string.IsNullOrEmpty(requested))
+        {
+            // GameCI forwards its platform as a command-line argument, not a host environment variable.
+            var args = Environment.GetCommandLineArgs();
+            var index = Array.IndexOf(args, "-customBuildTarget");
+            requested = index >= 0 && index + 1 < args.Length ? args[index + 1] : "Linux";
+        }
+        BuildTarget target;
+        switch (requested)
+        {
+            case "Windows": case "StandaloneWindows64": target = BuildTarget.StandaloneWindows64; break;
+            case "Linux": case "StandaloneLinux64": target = BuildTarget.StandaloneLinux64; break;
+            default: throw new Exception("Unsupported navigation build target: " + requested);
+        }
+        if (Application.unityVersion != "6000.6.7f1") throw new Exception("Use exact Unity 6000.6.7f1");
         if (!BuildPipeline.IsBuildTargetSupported(BuildTargetGroup.Standalone, target))
             throw new Exception("Install the matching Unity standalone build module: " + target);
         var output = target == BuildTarget.StandaloneWindows64 ? "Builds/NavigationSmoke/Windows/Tumbler Sandbox.exe" : "Builds/NavigationSmoke/Linux/TumblerSandbox.x86_64";
@@ -229,6 +243,19 @@ public static class NavigationVerify
             target = target, options = BuildOptions.Development,
             locationPathName = output
         });
+        Directory.CreateDirectory(Folder);
+        File.WriteAllText(Path.Combine(Folder, "build.json"), JsonUtility.ToJson(new CompilationReport {
+            unity = Application.unityVersion, platform = target.ToString(), output = output,
+            result = result.summary.result.ToString(), errors = result.summary.totalErrors,
+            bytes = result.summary.totalSize.ToString(), playerExecution = "NOT_RUN"
+        }, true));
         EditorApplication.Exit(result.summary.result == BuildResult.Succeeded ? 0 : 1);
+    }
+
+    [Serializable]
+    sealed class CompilationReport
+    {
+        public string unity, platform, output, result, bytes, playerExecution;
+        public uint errors;
     }
 }

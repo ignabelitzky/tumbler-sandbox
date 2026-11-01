@@ -65,6 +65,8 @@ python3 tools/verify-navigation.py --unity /absolute/path/to/Editor/Unity --buil
 
 The helper installs a temporary Editor verifier, exercises actual scenes with virtual keyboard/gamepad input, checks both explicit exits in separate Play Mode sessions, and removes its temporary files afterward. It restores the existing dynamic default font asset and detects unexpected scene writes. The build helper compiles the enabled scenes under ignored `Builds/NavigationSmoke/`. Compilation alone does not validate the executable. Reports live under ignored `TestResults/Navigation/`; retain logs if a check fails. The baseline commit is fixed in the verifier; use a clone containing that commit.
 
+For hosted validation with the free Personal license, configure the three private secrets described in [Unity Personal CI setup](unity-personal-ci.md). The added GitHub Actions workflow runs the static checks, both native verifiers and Windows/Linux development compilation. Its presence is not evidence of a successful run; native results remain pending until activation and the jobs succeed.
+
 ### Required manual/native checks before merge
 
 - Run both the native navigation verifier and an appropriate existing vehicle regression verifier, such as `tools/verify-tumbler-update.py` with the exact Unity executable.

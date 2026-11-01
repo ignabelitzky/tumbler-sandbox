@@ -8,6 +8,12 @@ This repository (`tumbler-sandbox`) is a learning project, not a finished commer
 
 For the complete assembled vehicle in Blender or Autodesk Maya, see the [model export guide](docs/complete-model-export.md). The export includes scene-added equipment and underbody geometry, with packed Blender textures and an embedded-texture FBX.
 
+## For players
+
+Downloadable standalone builds are not published yet. Windows/Linux Player compatibility and system requirements remain unverified; this branch prepares navigation and a Phosphor developer intro, with native Unity checks still pending. See the [navigation guide and validation gate](docs/navigation-and-intro.md). A working Editor project is not a validated executable.
+
+In Sandbox, **Escape / Xbox Start** opens a pause menu with **Resume**, **Main Menu** and **Exit Game**. Only explicit Exit buttons close the application. The input table below lists the remaining driving controls.
+
 ## Features
 
 - Rigidbody and WheelCollider vehicle physics, with wheel mesh updates, speed-dependent steering and downforce.
@@ -23,11 +29,13 @@ For the complete assembled vehicle in Blender or Autodesk Maya, see the [model e
 - Subtle surface-projected tire marks during braking and lateral sliding, with independent wheel contact and gradual fading.
 - Stable, scene-local fixed exposure in Sandbox and consistent Main Menu option colors.
 - Compact bottom-right digital speed, gear/reverse, drivetrain and RPM instruments, with a green-to-red tachometer, boost reserve and light/handbrake/stealth indicators.
-- Main menu and Sandbox scenes, with a Cinemachine camera setup.
+- Phosphor developer intro, Main Menu and Sandbox scenes, with a Cinemachine camera setup and scene-local pause menu (native validation pending).
 - Six signed driving-test zones: progressive jumps, slalom/braking, suspension, surface grip, slopes and a skidpad.
 - Original Tumbler geometry with additive floor relief and service lines, a narrower front subframe that clears steering, textured tires/rims, detailed interior pressure tanks and bronze fuel caps.
 
-## Tech stack
+## For developers
+
+### Tech stack
 
 | Technology | Repository version / use |
 | --- | --- |
@@ -54,7 +62,7 @@ Requirements: Git, Unity Hub, Unity Editor **6000.6.7f1**, an HDRP-capable graph
 2. Install Unity **6000.6.7f1** through Unity Hub. If it is not listed, use Hub's link to the Unity download archive.
 3. In Hub, choose **Add project from disk**, select this repository's root, and open it with that exact Editor version.
 4. Allow Package Manager resolution and the first asset import to finish. The initial download/import includes large binary source assets.
-5. Open `Assets/_Project/Scenes/Main Menu.unity` and press **Play**, then use the menu to load Sandbox. For direct driving, open `Assets/_Project/Scenes/Sandbox.unity` and press **Play**.
+5. Open `Assets/_Project/Scenes/Intro.unity` and press **Play** for the full startup flow, then enter Sandbox from Main Menu. Opening `Assets/_Project/Scenes/Main Menu.unity` or `Assets/_Project/Scenes/Sandbox.unity` directly still works for development.
 6. Use the keyboard immediately, or connect an Xbox controller and use the mapping below. No input-mode selection is required.
 
 Keep `Assets` and its `.meta` files, both package manifests, and `ProjectSettings` together. Avoid opening with a newer Editor unless you intend to perform a separate, reviewed upgrade. A player build has not been validated; see [validation and existing issues](docs/repository-audit.md).
@@ -76,13 +84,13 @@ Bindings come from [TumblerInput.inputactions](Assets/_Project/Input/TumblerInpu
 | Upright recovery, below 1 m/s | Y | F |
 | Cycle AWD → FWD → RWD → AWD | RB | E |
 | Reset position, rotation, velocity and transmission | Left Stick Click | R |
-| Quit / stop Editor Play mode | Start / Menu | Escape |
+| Pause / resume Sandbox | Start / Menu | Escape |
 
 The Xbox triggers remain a signed analog throttle axis, and the stick retains analog steering. Keyboard throttle/steering are digital; opposing keyboard directions cancel. Reverse and brake remain separate controls. You can combine acceleration, steering, boost and handbrake, subject to the existing vehicle behavior. Drivetrain, gearbox, torque, suspension and control bindings are unchanged by the test ground. Only tire stiffness is scaled while each wheel touches a marked test surface, and the original stiffness is restored on exit.
 
 Turbo lasts six seconds from full. Recharge starts 2.5 seconds after use, takes twelve seconds on the ground, and runs 2.5 times faster while no wheel is grounded. After exhausting the reserve, release the boost button before using it again. A fresh boost press exits stealth even when the reserve is empty. Stealth preserves the last light preset, restores it on exit, and ignores light-cycle presses while active. Brakes cool gradually; holding a brake while stationary does not heat the discs.
 
-Both device types remain available together without exclusive control schemes. One scene PlayerInput dispatches recovery, reset, drivetrain and quit events; the vehicle and boost components continue polling their generated input wrappers. Other controllers may use the same Gamepad layout, but no physical compatibility claim is made for them.
+Both device types remain available together without exclusive control schemes. One scene PlayerInput dispatches recovery, reset, drivetrain and pause events; the legacy action is still internally named `QuitGame` to retain its ID and generated wrapper. Vehicle input consumers are blocked while paused. Other controllers may use the same Gamepad layout, but no physical compatibility claim is made for them.
 
 ## Sandbox driving test ground
 
@@ -115,7 +123,7 @@ tumbler-sandbox/
 │   │   ├── Input/                 # Input actions and generated C# wrapper
 │   │   ├── Physics/               # Beveled lower-body collision hull and glide material
 │   │   ├── Rendering/             # Sandbox-only exposure profile
-│   │   ├── Scenes/                # Main Menu and Sandbox
+│   │   ├── Scenes/                # Intro, Main Menu and Sandbox
 │   │   └── Scripts/
 │   │       ├── Environment/      # Surface profiles and wheel-grip adapter
 │   │       ├── Core/             # GameManager
@@ -144,7 +152,9 @@ The root-level terrain asset remains in `Assets`. Retained imported content, bin
 | Component | Responsibility |
 | --- | --- |
 | `TumblerController` | Reads steering/throttle/brake/handbrake, applies wheel torque and downforce, updates wheels, shifts gears, switches drive modes, and exposes speed/gear state. |
-| `GameManager` | Finds the named vehicle and handles reset, low-speed upright recovery and quit callbacks; reset also clears transmission/wheel spin. |
+| `GameManager` | Finds the named vehicle and handles reset, low-speed upright recovery and the pause callback; reset also clears transmission/wheel spin. |
+| `GameNavigation` / `PauseMenuController` | Centralize explicit exit/scene transitions and own a scene-local pause overlay with time/audio/input restoration. |
+| `IntroController` / `RuntimeMenuUI` | Present original Phosphor branding and build the new screen-space uGUI overlays; the existing Main Menu layout is retained. |
 | `Boost` | Manages finite reserve, recharge delay and airborne refill; applies turbo impulses and controls its particles/jet audio. A fresh press exits stealth. |
 | `TumblerSystems` | Cycles the eight headlights and their optics/volumetric haze; snapshots and restores vehicle lights, turbine particles and engine mute state for Bat stealth. |
 | `BrakeDiscThermal` | Uses actual per-wheel brake torque and movement to heat/cool six rotors; keeps calipers aligned with steering and suspension without wheel spin. |
@@ -153,7 +163,7 @@ The root-level terrain asset remains in `Assets`. Retained imported content, bin
 | `TumblerEffects` | Samples each wheel’s contact, speed, braking and lateral slip; emits contact marks and rear tire smoke. |
 | `SurfaceSkidmarks` | Projects a bounded world-space ribbon mesh onto the contacted surface; the HDRP shader softens and fades marks. |
 | `EasySuspension` | Calculates child WheelCollider spring/damper settings and suspension distances, including in Edit mode. The existing filename `EasySuspenssion.cs` is preserved; see the audit for the naming mismatch. |
-| Input System | `TumblerInput.inputactions` supplies bindings; `Input.cs` is the generated `TumblerInput` class. Vehicle/boost poll wrappers, and a single scene PlayerInput dispatches recovery, reset, drivetrain and quit callbacks to their original components. |
+| Input System | `TumblerInput.inputactions` supplies bindings; `Input.cs` is the generated `TumblerInput` class. Vehicle/boost poll wrappers, and a single scene PlayerInput dispatches recovery, reset, drivetrain and pause callbacks. The legacy `QuitGame` action now routes to pause. |
 | `UIController` / `DigitalVehicleHUD` / `VehicleStatusIcon` | Display speed, gear, drivetrain and colored RPM, plus turbo reserve and vector light/handbrake/Bat status icons. |
 | `DrivingSurface` / `WheelSurfaceGrip` | Mark test surfaces and scale each contacting wheel’s stiffness; restore baseline outside them and when disabled. |
 | `MenuController` | Loads a scene by name and handles the menu exit action. Scene names remain unchanged. |
@@ -171,6 +181,8 @@ Unity HDRP capture with a temporary overview camera and fixed preview exposure. 
 ## Current status and validation
 
 The repository implements the sandbox systems described above. It does not claim a complete racing game, a verified release build, or cross-platform controller support. No future roadmap is committed here.
+
+Navigation/intro changes on this branch have passed static preservation/reference checks and C# syntax parsing only. Unity compilation, Play Mode, native visuals and standalone execution are pending. Use `python3 tools/verify-navigation.py` for static checks, then follow the [native verifier, smoke-build commands and merge checklist](docs/navigation-and-intro.md#repeatable-verification). [Unity Personal CI setup](docs/unity-personal-ci.md) explains the private secrets needed for the added validation and Windows/Linux compilation workflow. The request's release phase remains blocked until native validation and integration into `main`; no release tag, packaged executable or release workflow is included here.
 
 The validation reports retain the original branch names and baseline commits as historical records. The equipment/night-systems addition is integrated into `main`; its [guide and manual checklist](docs/tumbler-night-systems.md) describe the changes and test limits.
 
@@ -205,6 +217,7 @@ The existing [GNU GPLv3 license](LICENSE) is retained unchanged. External assets
 - **Ciathyza — Gridbox Prototype Materials:** imported under `Assets/Thirdparty/Ciathyza`; Sandbox materials reference its retained textures. The unreferenced demonstration scene and exclusive demo materials were removed. No separate license text was found in that imported folder.
 - **Unity Technologies — Particle Pack:** imported under `Assets/UnityTechnologies/ParticlePack`; Sandbox references particle materials and textures, which are retained; the unused first-person demo and its legacy postprocessing dependency were removed. Its bundled `Readme.asset` identifies the pack but is not a license grant.
 - **TextMeshPro / Liberation Sans:** bundled TMP resources; Liberation Sans credits Red Hat, Inc. and includes the [SIL Open Font License 1.1](Assets/TextMeshPro/Fonts/LiberationSans%20-%20OFL.txt).
+- **Phosphor / Inter:** developer artwork and original Inter Regular font supplied in Ignacio Belitzky's Essential Kit. The font includes its [SIL Open Font License](Assets/_Project/Art/Branding/Phosphor/Inter-OFL-1.1.txt) and provenance. See [source hashes](docs/navigation/brand-sources.json). Inclusion of the developer mark does not transfer ownership of it.
 - **Unity packages:** retain their respective package license terms.
 - **Other models, audio, images, materials and adapted scripts:** authorship and original license terms are not fully established by repository metadata. Confirm their sources and permissions before redistributing them; see the audit inventory.
 

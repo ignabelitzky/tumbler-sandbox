@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
         if (tumbler == null)
         {
             Debug.LogError("Tumbler not found in the scene. Please assign the Tumbler GameObject in the Inspector.");
+            return;
         }
         carRigidbody = tumbler.GetComponent<Rigidbody>();
         if (carRigidbody == null)
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetCarPosition(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && !GameNavigation.GameplayInputBlocked && carRigidbody != null)
         {
             carRigidbody.linearVelocity = Vector3.zero;
             carRigidbody.angularVelocity = Vector3.zero;
@@ -38,22 +39,20 @@ public class GameManager : MonoBehaviour
 
     public void FlipCar(InputAction.CallbackContext context)
     {
-        if (context.started && carRigidbody.linearVelocity.magnitude < 1f)
+        if (context.started && !GameNavigation.GameplayInputBlocked && carRigidbody != null && carRigidbody.linearVelocity.magnitude < 1f)
         {
             Quaternion uprightRotation = Quaternion.LookRotation(carRigidbody.transform.forward, Vector3.up);
             carRigidbody.MoveRotation(uprightRotation);
         }
     }
 
-    public void QuitGame(InputAction.CallbackContext context)
+    // The legacy Gameplay/QuitGame action keeps its ID and generated wrapper.
+    // Its Escape / Start bindings now toggle pause; only UI Exit buttons quit.
+    public void TogglePause(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-            #else
-                Application.Quit();
-            #endif
+            PauseMenuController.Instance?.TogglePause();
         }
     }
 }

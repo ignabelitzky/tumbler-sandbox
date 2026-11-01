@@ -46,6 +46,7 @@ public sealed class TumblerSystems : MonoBehaviour
     private void OnDestroy() => input?.Dispose();
     private void Update()
     {
+        if (GameNavigation.GameplayInputBlocked) return;
         if (input.Gameplay.ToggleStealth.WasPressedThisFrame()) SetStealth(!IsStealth);
         if (input.Gameplay.CycleLights.WasPressedThisFrame()) CycleLights();
     }

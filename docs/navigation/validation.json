@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "baseline": "32da32f8cecab6ba03755865ae0a5c828a743de8",
+  "preserved_assets": 1257,
+  "unity_compilation": "NOT_RUN",
+  "play_mode": "NOT_RUN",
+  "standalone": "NOT_RUN",
+  "date": "2026-10-31",
+  "csharp_syntax": {
+    "tool": "tree-sitter-c-sharp",
+    "files": 20,
+    "errors": 0,
+    "is_unity_compilation": false
+  },
+  "source_kit_bytes": "PASS: PNG, TTF, OFL and provenance match supplied ZIP",
+  "native_editor_available": false,
+  "physical_controller": "NOT_RUN",
+  "hdrp_visual_qa": "NOT_RUN",
+  "windows_player": "NOT_RUN",
+  "linux_player": "NOT_RUN",
+  "merge": "BLOCKED_PENDING_NATIVE_VALIDATION",
+  "release": "NOT_STARTED_PHASE_1_GATE",
+  "asset_redistribution": "Existing third-party provenance and permissions unresolved; not reassessed as legal clearance."
+}

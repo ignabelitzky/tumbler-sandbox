@@ -1,0 +1,188 @@
+name: Unity validation
+
+on:
+  push:
+    branches: [main, feat/navigation-branded-intro-release]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  # Serialize all runs as well as build targets for the same Personal account.
+  group: unity-personal-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  static:
+    name: Asset and reference checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - run: python3 tools/verify-navigation.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: static-${{ github.sha }}
+          path: TestResults/Navigation/static.json
+          if-no-files-found: error
+
+  activation:
+    name: Unity Personal configuration
+    needs: static
+    # Fork pull requests receive static checks only; never expose Unity credentials to a fork.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check required secret names without displaying their values
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import sys
+          names = ('UNITY_LICENSE', 'UNITY_EMAIL', 'UNITY_PASSWORD')
+          missing = [name for name in names if not os.environ.get(name, '').strip()]
+          if missing:
+              print('::error title=Unity Personal setup required::Missing repository secrets: ' + ', '.join(missing))
+              print('See docs/unity-personal-ci.md. Enter the values privately in repository Settings > Secrets and variables > Actions.')
+              sys.exit(1)
+          print('All three secret names are configured. Unity activation is verified by the native jobs.')
+          PY
+
+  native:
+    name: Unity navigation and vehicle regression
+    needs: activation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install temporary Editor verifiers
+        run: |
+          mkdir -p Assets/_NavigationVerification/Editor Assets/_TumblerUpdateVerification/Editor
+          cp tools/navigation/NavigationVerify.cs Assets/_NavigationVerification/Editor/
+          cp tools/tumbler-update/TumblerUpdateVerify.cs Assets/_TumblerUpdateVerification/Editor/
+      - name: Run real navigation Play Mode sessions
+        uses: game-ci/unity-builder@4423ee75828dff56037d1d1cfdac6b68e3a6ba00 # v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          unityVersion: 6000.6.7f1
+          targetPlatform: StandaloneLinux64
+          buildMethod: NavigationVerify.Run
+          manualExit: true
+          versioning: None
+          allowDirtyBuild: true
+          dockerShmSize: 2g
+      - name: Require completed navigation checks
+        run: |
+          test -s TestResults/Navigation/complete.txt
+          test ! -e TestResults/Navigation/failed.txt
+          grep -q '^PASS ' TestResults/Navigation/checks.txt
+      - name: Run existing vehicle regression in Unity
+        uses: game-ci/unity-builder@4423ee75828dff56037d1d1cfdac6b68e3a6ba00 # v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          unityVersion: 6000.6.7f1
+          targetPlatform: StandaloneLinux64
+          buildMethod: TumblerUpdateVerify.Run
+          manualExit: true
+          versioning: None
+          allowDirtyBuild: true
+          dockerShmSize: 2g
+      - name: Require complete vehicle reports
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          root = Path('TestResults/TumblerUpdate')
+          assert not (root / 'failed.txt').exists(), 'Vehicle regression failed'
+          for name in ('edit.txt', 'play.txt'):
+              lines = (root / name).read_text().splitlines()
+              assert lines and all(line.startswith('PASS ') for line in lines), 'Incomplete vehicle report: ' + name
+          assert (root / 'performance.json').stat().st_size > 0
+          PY
+      - name: Restore dynamic font and check source preservation
+        if: always()
+        run: |
+          git restore -- 'Assets/TextMeshPro/Resources/Fonts & Materials/LiberationSans SDF.asset'
+          git diff --exit-code -- Assets Packages ProjectSettings
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: native-reports-${{ github.sha }}
+          path: TestResults/
+          if-no-files-found: warn
+
+  compile:
+    name: Compile ${{ matrix.platform }} Player
+    needs: native
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      # Avoid simultaneous activations of the same Personal account.
+      max-parallel: 1
+      matrix:
+        include:
+          - platform: StandaloneWindows64
+            output: Builds/NavigationSmoke/Windows/Tumbler Sandbox.exe
+          - platform: StandaloneLinux64
+            output: Builds/NavigationSmoke/Linux/TumblerSandbox.x86_64
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install temporary build verifier
+        run: |
+          mkdir -p Assets/_NavigationVerification/Editor
+          cp tools/navigation/NavigationVerify.cs Assets/_NavigationVerification/Editor/
+      - name: Compile the three enabled scenes
+        uses: game-ci/unity-builder@4423ee75828dff56037d1d1cfdac6b68e3a6ba00 # v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          unityVersion: 6000.6.7f1
+          targetPlatform: ${{ matrix.platform }}
+          buildMethod: NavigationVerify.Build
+          manualExit: true
+          versioning: None
+          allowDirtyBuild: true
+          dockerShmSize: 2g
+      - name: Require a real Player executable and build report
+        env:
+          PLAYER_PATH: ${{ matrix.output }}
+        run: |
+          test -s "$PLAYER_PATH"
+          test -s TestResults/Navigation/build.json
+      - name: Restore dynamic font and check source preservation
+        if: always()
+        run: |
+          git restore -- 'Assets/TextMeshPro/Resources/Fonts & Materials/LiberationSans SDF.asset'
+          git diff --exit-code -- Assets Packages ProjectSettings
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: compilation-${{ matrix.platform }}-${{ github.sha }}
+          path: TestResults/Navigation/
+          if-no-files-found: warn
+      # Only reports are uploaded. Player distribution follows the documented release gate.

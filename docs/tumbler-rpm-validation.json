@@ -1,0 +1,119 @@
+{
+  "date": "2026-11-02",
+  "unity": "6000.6.7f1",
+  "baseline": "8a17385ec963afc02cb7b8bea311ced3fa0b9b98",
+  "reproduction": {
+    "initial_mode": "AWD",
+    "target_mode": "FWD",
+    "initial_speed_kph": 30,
+    "false_redline_seconds": 2.14,
+    "max_rpm_mismatch": 2598.662,
+    "definition": "Grounded indicated RPM > 7100 while road-coupled RPM < 6000.",
+    "regression_on_original": "FAIL: sustained false redline reproduced"
+  },
+  "correction": {
+    "grounded": "Share gearbox road-speed reference with engine display/audio.",
+    "airborne": "Retain driven-wheel RPM and suspend automatic shifting.",
+    "cases": [
+      {
+        "initial_run_kph": 30.0,
+        "mode": "FrontWheelDrive",
+        "samples": 200,
+        "false_redline_seconds": 0.0,
+        "final_gear": 2
+      },
+      {
+        "initial_run_kph": 30.0,
+        "mode": "RearWheelDrive",
+        "samples": 200,
+        "false_redline_seconds": 0.0,
+        "final_gear": 5
+      },
+      {
+        "initial_run_kph": 30.0,
+        "mode": "AllWheelDrive",
+        "samples": 200,
+        "false_redline_seconds": 0.0,
+        "final_gear": 6
+      },
+      {
+        "initial_run_kph": 60.0,
+        "mode": "FrontWheelDrive",
+        "samples": 200,
+        "false_redline_seconds": 0.0,
+        "final_gear": 3
+      },
+      {
+        "initial_run_kph": 60.0,
+        "mode": "RearWheelDrive",
+        "samples": 200,
+        "false_redline_seconds": 0.0,
+        "final_gear": 6
+      },
+      {
+        "initial_run_kph": 60.0,
+        "mode": "AllWheelDrive",
+        "samples": 200,
+        "false_redline_seconds": 0.0,
+        "final_gear": 6
+      },
+      {
+        "initial_run_kph": 100.0,
+        "mode": "FrontWheelDrive",
+        "samples": 200,
+        "false_redline_seconds": 0.0,
+        "final_gear": 5
+      },
+      {
+        "initial_run_kph": 100.0,
+        "mode": "RearWheelDrive",
+        "samples": 200,
+        "false_redline_seconds": 0.0,
+        "final_gear": 6
+      },
+      {
+        "initial_run_kph": 100.0,
+        "mode": "AllWheelDrive",
+        "samples": 200,
+        "false_redline_seconds": 0.0,
+        "final_gear": 7
+      },
+      {
+        "initial_run_kph": 160.0,
+        "mode": "FrontWheelDrive",
+        "samples": 200,
+        "false_redline_seconds": 0.0,
+        "final_gear": 6
+      },
+      {
+        "initial_run_kph": 160.0,
+        "mode": "RearWheelDrive",
+        "samples": 200,
+        "false_redline_seconds": 0.0,
+        "final_gear": 7
+      },
+      {
+        "initial_run_kph": 160.0,
+        "mode": "AllWheelDrive",
+        "samples": 200,
+        "false_redline_seconds": 0.0,
+        "final_gear": 7
+      }
+    ],
+    "matched_before_after_samples": 200,
+    "maximum_physics_difference": {
+      "speed": 0.0,
+      "gear": 0.0,
+      "drivenWheelRpm": 0.0
+    }
+  },
+  "validation": {
+    "editor_compilation": "PASS",
+    "edit_checks": 82,
+    "play_checks": 119,
+    "scope": "Actual Unity scene with scripted physics and selected drive modes; physical input dispatch not simulated.",
+    "subjective_driving_and_audio": "NOT_RUN",
+    "standalone_player": "NOT_RUN"
+  },
+  "preservation": "No serialized scenes, packages, input assets, wheel/suspension/grip parameters, torque delivery, gear ratios, thresholds or cooldown changed."
+}

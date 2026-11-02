@@ -137,6 +137,70 @@ public static class TumblerUpdateVerify
         Check(wheels.All(w=>w.isGrounded) && body.transform.up.y>.98f,mode+": all wheels remain grounded at top speed");
         Check(controller.GetEngineRPM()>=900 && controller.GetEngineRPM()<=7200,mode+": RPM stays within the instrument range");
     }
+    // Controlled physics reproduction of switching driven axles under throttle.
+    // Select the mode and clear old wheel torques exactly as SwitchDriveMode does;
+    // input dispatch is outside this manual Physics.Simulate harness.
+    static void DriveModeTransitions()
+    {
+        var samples = new List<string> { "startKph,mode,time,speed,gear,engineRpm,roadRpm,drivenWheelRpm,grounded" };
+        var summaries = new List<string>();
+        foreach (float switchSpeed in new[] { 30f, 60f, 100f, 160f })
+        {
+            Pose(TumblerController.driveType.AllWheelDrive);
+            int warmup = 0;
+            while (controller.GetSpeed() < switchSpeed && warmup++ < 4000) Step(1400, 0);
+            Check(controller.GetSpeed() >= switchSpeed, "AWD reaches mode-switch test speed " + switchSpeed);
+            foreach (var mode in new[] { TumblerController.driveType.FrontWheelDrive,
+                TumblerController.driveType.RearWheelDrive, TumblerController.driveType.AllWheelDrive })
+            {
+                Set("<currentDriveMode>k__BackingField", mode);
+                Method(typeof(TumblerController), "ResetMotorTorque").Invoke(controller, null);
+                float pegged = 0, maxMismatch = 0, maxSpeed = 0;
+                bool shiftDrops = true;
+                for (int i = 0; i < 200; i++)
+                {
+                    int previousGear = controller.currentGear;
+                    float previousRPM = controller.GetEngineRPM(), previousPitch = running.pitch;
+                    Step(1400, 0);
+                    if (controller.currentGear > previousGear)
+                        shiftDrops &= controller.GetEngineRPM() < previousRPM && running.pitch < previousPitch;
+                    float ratio = ((float[])Get("gearRatios"))[controller.currentGear - 1] * (float)Get("finalDriveRatio");
+                    float roadRPM = Mathf.Abs(Vector3.Dot(body.linearVelocity, body.transform.forward)) * 60 / (2 * Mathf.PI * .66f) * ratio;
+                    float driven = (float)Method(typeof(TumblerController), "GetDrivenWheelRPM").Invoke(controller, null);
+                    bool grounded = controller.IsGrounded();
+                    if (grounded && controller.GetEngineRPM() > 7100 && roadRPM < 6000) pegged += .02f;
+                    if (grounded && (float)Get("shiftTimeRemaining") <= 0)
+                        maxMismatch = Mathf.Max(maxMismatch, controller.GetEngineRPM() - Mathf.Max(900, roadRPM));
+                    maxSpeed = Mathf.Max(maxSpeed, controller.GetSpeed());
+                    samples.Add(switchSpeed + "," + mode + "," + (i * .02f) + "," +
+                        controller.GetSpeed() + "," + controller.currentGear + "," + controller.GetEngineRPM() +
+                        "," + roadRPM + "," + driven + "," + grounded);
+                }
+                summaries.Add(switchSpeed + " " + mode + ": pinned seconds=" + pegged +
+                    ", max RPM mismatch=" + maxMismatch + ", final gear=" + controller.currentGear);
+                File.WriteAllLines(Path.Combine(Folder, "drive-mode-transitions.csv"), samples);
+                File.WriteAllLines(Path.Combine(Folder, "drive-mode-transitions.txt"), summaries);
+                Check(pegged < .5f, "No sustained false redline after drive-mode switch at " + switchSpeed + ": " + mode);
+                Check(maxMismatch < 500, "Grounded RPM tracks shift coupling during mode transition: " + mode);
+                Check(shiftDrops, "Mode-transition upshifts lower both RPM and audio pitch: " + mode);
+                Check(maxSpeed < 261, "Mode-switch acceleration retains speed governor: " + mode);
+            }
+        }
+    }
+
+    static void AirborneRPM()
+    {
+        Pose(TumblerController.driveType.AllWheelDrive);
+        body.position += Vector3.up * 100;
+        Physics.SyncTransforms();
+        foreach (var wheel in wheels) wheel.rotationSpeed = 6000f;
+        for (int i = 0; i < 20; i++) Step(1400, 0);
+        Check(!controller.IsGrounded(), "Airborne RPM fixture has no wheel contacts");
+        Check(controller.currentGear == 1, "Wheel spin in the air does not trigger automatic shifts");
+        Check(controller.GetEngineRPM() > 4000 && controller.GetEngineRPM() <= 7200,
+            "Airborne engine still responds to driven-wheel spin within redline");
+    }
+
     static TurnData Turn(float speed,float allowance)
     {
         Pose(TumblerController.driveType.AllWheelDrive);Set("highSpeedSteeringAllowance",allowance);
@@ -251,7 +315,7 @@ public static class TumblerUpdateVerify
             GameObject.Find("Driving Test Ground").GetComponent<WheelSurfaceGrip>().enabled=false;
             var floor=GameObject.CreatePrimitive(PrimitiveType.Cube);floor.name="Temporary performance floor";floor.transform.position=new Vector3(0,99,0);floor.transform.localScale=new Vector3(30000,2,30000);
             Physics.simulationMode=SimulationMode.Script;
-            Instruments(); Controls();
+            Instruments(); DriveModeTransitions(); AirborneRPM(); Controls();
             foreach(var mode in new[]{TumblerController.driveType.FrontWheelDrive,TumblerController.driveType.RearWheelDrive,TumblerController.driveType.AllWheelDrive})Straight(mode);
             Set("currentBrakeForce",1000f);
             for(int i=0;i<900;i++)Step(0,0);

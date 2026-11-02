@@ -277,14 +277,19 @@ public class TumblerController : MonoBehaviour
         float roadWheelRPM = Mathf.Abs(forwardSpeed) * 60f / (2f * Mathf.PI * ReferenceWheelRadius);
         float ratio = currentPower < 0f ? gearRatios[1] : gearRatios[currentGear - 1];
         float roadRPM = roadWheelRPM * ratio * finalDriveRatio;
-        if (currentPower >= 0f && IsGrounded() && shiftCooldown <= 0f)
+        bool grounded = IsGrounded();
+        if (currentPower >= 0f && grounded && shiftCooldown <= 0f)
         {
             if (forwardSpeed > 1f && roadRPM > upshiftRPM) IncrementGear();
             else if (roadRPM < downshiftRPM && currentGear > 1) DecrementGear();
         }
         ratio = currentPower < 0f ? gearRatios[1] : gearRatios[currentGear - 1];
-        float wheelRPM = GetDrivenWheelRPM();
-        float coupledWheelRPM = shiftTimeRemaining > 0f ? roadWheelRPM : Mathf.Max(roadWheelRPM, wheelRPM);
+        // Grounded instruments/audio use the same road coupling as the shift
+        // thresholds. Driven-wheel spin can jump when torque moves between axles;
+        // feeding it only to the tachometer falsely pins redline before a shift.
+        // Keep wheel-spin revs while airborne, when automatic shifting is paused.
+        float coupledWheelRPM = grounded || shiftTimeRemaining > 0f
+            ? roadWheelRPM : Mathf.Max(roadWheelRPM, GetDrivenWheelRPM());
         float targetRPM = Mathf.Clamp(coupledWheelRPM * ratio * finalDriveRatio, idleRPM, redlineRPM);
         engineRPM = Mathf.Lerp(engineRPM, targetRPM, 1f - Mathf.Exp(-12f * Time.fixedDeltaTime));
         float torque = Mathf.Min(Mathf.Abs(currentPower) * ratio * finalDriveRatio, maxDriveForce * ReferenceWheelRadius);

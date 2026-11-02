@@ -1,0 +1,11 @@
+{
+  "prefab_guid": "0c743fa363611d9c89639996e3545755",
+  "root_id": 3902692309497064139,
+  "terrain_guid": "2a13272972eb702b0a0e1c5bab9c0fd9",
+  "route_samples": 236,
+  "baseline": "39c76a6bed7d7dc0749cfe066727becd7b7aaf6d",
+  "instance_id": "1900000001",
+  "original_terrain_guid": "c506a51442f19464d8c91fd8c8b31888",
+  "terrain_path": "Assets/_Project/Environment/UndergroundFacility/TunnelTerrain.asset",
+  "prefab_path": "Assets/_Project/Environment/UndergroundFacility/UndergroundFacility.prefab"
+}

@@ -10266,7 +10266,7 @@ TerrainCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_TerrainData: {fileID: 15600000, guid: c506a51442f19464d8c91fd8c8b31888, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 2a13272972eb702b0a0e1c5bab9c0fd9, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &560604269
 Terrain:
@@ -10277,7 +10277,7 @@ Terrain:
   m_GameObject: {fileID: 560604267}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: c506a51442f19464d8c91fd8c8b31888, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 2a13272972eb702b0a0e1c5bab9c0fd9, type: 2}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -54389,6 +54389,23 @@ MonoBehaviour:
   volumetricHaze: {fileID: 484807361}
   lowBeamIntensity: 30000
   highBeamIntensity: 90000
+--- !u!1001 &1900000001
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3902692309497064139, guid: 0c743fa363611d9c89639996e3545755, type: 3}
+      propertyPath: m_Name
+      value: Underground Light Lab and Perimeter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0c743fa363611d9c89639996e3545755, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -54409,3 +54426,4 @@ SceneRoots:
   - {fileID: 622218275}
   - {fileID: 819257298}
   - {fileID: 1813036926}
+  - {fileID: 1900000001}

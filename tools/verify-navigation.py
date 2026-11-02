@@ -55,10 +55,19 @@ def static_checks():
 
     before = documents(git('show', BASE + ':' + SCENES + 'Sandbox.unity').decode())
     after = documents((ROOT / SCENES / 'Sandbox.unity').read_text())
-    check(set(after) - set(before) == {'1824967747'}, 'Sandbox adds exactly one pause component')
+    expansion = json.loads((ROOT / 'docs/sandbox-expansion-manifest.json').read_text())
+    check(set(after) - set(before) == {'1824967747', expansion['instance_id']},
+          'Sandbox adds the pause component and one underground/perimeter prefab')
     check(not set(before) - set(after), 'No Sandbox object removed')
-    check(all(before[k] == after[k] for k in before if k not in {'1824967743', '1824967746'}),
-          'Every vehicle, camera, collider, HUD, lighting and environment document preserved')
+    for key in before:
+        if key in {'1824967743', '1824967746'}:
+            continue
+        expected = before[key]
+        if key in {'560604268', '560604269'}:
+            expected = expected.replace(expansion['original_terrain_guid'], expansion['terrain_guid'])
+        if key == '9223372036854775807':
+            expected += "  - {fileID: " + expansion['instance_id'] + "}\n"
+        check(after[key] == expected, 'Preserved Sandbox document with only approved terrain/root addition: ' + key)
     check(after['1824967746'] == before['1824967746'].replace('m_MethodName: QuitGame', 'm_MethodName: TogglePause'),
           'PlayerInput changes only the pause callback; IDs and other callbacks preserved')
     menu_before = git('show', BASE + ':' + SCENES + 'Main Menu.unity').decode()

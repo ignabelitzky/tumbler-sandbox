@@ -1,0 +1,151 @@
+{
+  "date": "2026-11-02",
+  "unity": "6000.6.7f1",
+  "baseline": "39c76a6bed7d7dc0749cfe066727becd7b7aaf6d",
+  "native": {
+    "edit_checks": 361,
+    "play_checks": 571,
+    "physical_traversal": "steps=4767 progress=235/236 constraints=None inertia=(7140.47, 9344.22, 3083.04) position=(242.00, 0.94, -27.94) heading=(0.02, 359.99, 0.00) speed=(0.00, 0.00, 4.98) maxDistanceToRouteSample=11.95838 entered=True exited=True"
+  },
+  "regressions": {
+    "vehicle_edit_checks": 82,
+    "vehicle_play_checks": 119,
+    "navigation_play_checks": 35
+  },
+  "geometry": {
+    "depth_m": 12,
+    "clear_width_m": 14,
+    "center_roof_height_m": 6.5,
+    "curves_degrees": [
+      90,
+      90
+    ],
+    "curve_radius_m": 32,
+    "portals": [
+      [
+        100,
+        0,
+        -40
+      ],
+      [
+        242,
+        0,
+        -40
+      ]
+    ],
+    "platform_edges": [
+      -498,
+      498
+    ]
+  },
+  "camera": {
+    "controls": [
+      "Keyboard C",
+      "Gamepad D-pad Down"
+    ],
+    "default": "Close",
+    "center_radii_m": [
+      5.8,
+      10,
+      16
+    ],
+    "close_center_height_m": 2.2,
+    "override": "Close inside all ramp/tunnel proximity boxes; prior selection restored outside in either direction, on reset, and above-ground exclusion."
+  },
+  "physical_controller": "NOT_RUN",
+  "standalone_player": "NOT_RUN",
+  "subjective_audio": "NOT_RUN",
+  "rendering": {
+    "camera-close": {
+      "width": 1280,
+      "height": 720,
+      "mean_rgb": [
+        166.0841753472222,
+        161.06495768229166,
+        155.71524739583333
+      ],
+      "sha256": "d8fdf2361a9df6e060ad970f8e2202208b373cb49a7079c8557e89698d3f38d5"
+    },
+    "camera-medium": {
+      "width": 1280,
+      "height": 720,
+      "mean_rgb": [
+        141.30416775173612,
+        145.63472764756943,
+        154.8888650173611
+      ],
+      "sha256": "537904c433181795e7e61bba529a8dfeb059df0ce23658a6c67c946c254caca3"
+    },
+    "camera-far": {
+      "width": 1280,
+      "height": 720,
+      "mean_rgb": [
+        142.97981987847223,
+        148.31547417534722,
+        158.82280381944443
+      ],
+      "sha256": "674ab76032527ceac68b17da822d116f05dc1504b9e4699fcc23c395b149d481"
+    },
+    "portal": {
+      "width": 1280,
+      "height": 720,
+      "mean_rgb": [
+        139.82425455729165,
+        147.22417317708334,
+        157.62351671006945
+      ],
+      "sha256": "3b3e8a3741ee8b0f73afd9fd6664f9f3e2696c3e4e9c81f57ad40c5dd5192d46"
+    },
+    "surface-overview": {
+      "width": 1280,
+      "height": 720,
+      "mean_rgb": [
+        193.19954752604167,
+        193.32337782118054,
+        192.26914605034722
+      ],
+      "sha256": "5872bde5625b2604cd5cb436291e7632226b174c3cb5e1c13f5751329d379c32"
+    },
+    "tunnel-lights-off": {
+      "width": 1280,
+      "height": 720,
+      "mean_rgb": [
+        0.3492925347222222,
+        0.23230360243055556,
+        0.12709201388888888
+      ],
+      "sha256": "f63c59338ee16eecf18ab113991988554f3333404712ebab804d1e48f5731219"
+    },
+    "tunnel-low-beams": {
+      "width": 1280,
+      "height": 720,
+      "mean_rgb": [
+        1.0899848090277777,
+        0.8748209635416667,
+        0.5010015190972222
+      ],
+      "sha256": "36524789e6ce748fedbd3dab29aa7573adc99f8a149d73c61fa53798a0952645"
+    },
+    "tunnel-high-beams": {
+      "width": 1280,
+      "height": 720,
+      "mean_rgb": [
+        2.709447699652778,
+        2.340825737847222,
+        1.6027560763888888
+      ],
+      "sha256": "6ded59522d1483a0c9960ffda0e7f2318ff04395ec36f75ec5dd2af47d072d6b"
+    },
+    "tunnel-stealth": {
+      "width": 1280,
+      "height": 720,
+      "mean_rgb": [
+        0.10492730034722222,
+        0.14948350694444446,
+        0.11988606770833334
+      ],
+      "sha256": "242e4be409f6db0fd6d3ac829e29b251ae56a9aa9f95f46c3d4b5c25aa20fcdf"
+    },
+    "brightness_comparison": "PASS: high beams > low beams > stealth from the same Play Mode inspection viewpoint."
+  }
+}

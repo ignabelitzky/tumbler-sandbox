@@ -78,6 +78,7 @@ Bindings come from [TumblerInput.inputactions](Assets/_Project/Input/TumblerInpu
 | Reverse | LT | S or Down Arrow |
 | Boost | A | Left Shift |
 | Cycle lights: off → low → high → off | D-pad Up | L |
+| Cycle camera: close → medium → far | D-pad Down | C |
 | Toggle Bat stealth mode | Right Stick Click | V |
 | Brake | B | Left Ctrl |
 | Handbrake | X | Space |
@@ -106,6 +107,25 @@ Open `Assets/_Project/Scenes/Sandbox.unity`. From the spawn, follow the amber ar
 | 06 — Skidpad | Painted turning circles for steering, drifting and recovery tests |
 
 The three comparison lanes change actual WheelCollider grip. The wet lane is a test profile, without a water simulation. See [test-ground layout, grip settings and validation](docs/driving-test-ground.md) for details.
+
+## Underground light lab, camera distances and containment
+
+From spawn, follow the new amber arrows **right/east**, then turn south to the
+**UNDERGROUND LIGHT LAB** portal near `(100, 0, -40)`. Both portals are on the
+surface; the other is near `(242, 0, -40)`. The continuous road descends 12 m,
+passes through two broad 90° curves and climbs back out. Start slowly (the signs
+recommend 40 km/h). Dim warm fixtures and subdued wall markers leave room to test
+low/high headlights and stealth.
+
+Press **C** or **D-pad Down** to cycle close, medium and far. Close starts by
+default and looks over the roof. Inside the tunnel and approach ramps, close is
+forced; cycling there preserves the selection from before entry. Leaving by
+either portal, reversing back out or resetting outside restores that selection.
+Pause blocks camera cycling. Camera collision protection keeps the view out of
+walls and the roof.
+
+The flat platform now has continuous physical containment along all four edges.
+See the [layout, camera behavior and native validation](docs/sandbox-expansion.md).
 
 ## Tire marks and exposure
 

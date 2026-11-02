@@ -18,3 +18,4 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - run: python3 tools/verify-navigation.py
+      - run: python3 tools/sandbox-expansion/check.py

@@ -182,7 +182,7 @@ Unity HDRP capture with a temporary overview camera and fixed preview exposure. 
 
 The repository implements the sandbox systems described above. It does not claim a complete racing game, a verified release build, or cross-platform controller support. No future roadmap is committed here.
 
-Navigation/intro changes on this branch have passed static preservation/reference checks and C# syntax parsing only. Unity compilation, Play Mode, native visuals and standalone execution are pending. Use `python3 tools/verify-navigation.py` for static checks, then follow the [native verifier, smoke-build commands and merge checklist](docs/navigation-and-intro.md#repeatable-verification). [Unity Personal CI setup](docs/unity-personal-ci.md) explains the private secrets needed for the added validation and Windows/Linux compilation workflow. The request's release phase remains blocked until native validation and integration into `main`; no release tag, packaged executable or release workflow is included here.
+The intro with the original Phosphor logo and pause navigation are maintained together with the vehicle features on `main`. Open `Assets/_Project/Scenes/Intro.unity` to start the full flow: Intro → Main Menu → Sandbox. Escape or Xbox Start/Menu opens pause with Resume, Main Menu and Exit Game. See the [navigation guide and validation instructions](docs/navigation-and-intro.md). GitHub Actions runs static project checks only; release publication and hosted Unity activation are not configured.
 
 The validation reports retain the original branch names and baseline commits as historical records. The equipment/night-systems addition is integrated into `main`; its [guide and manual checklist](docs/tumbler-night-systems.md) describe the changes and test limits.
 

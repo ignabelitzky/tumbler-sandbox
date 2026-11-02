@@ -24,6 +24,7 @@ public static class NavigationVerify
     static readonly Queue<(Func<bool> Ready, Action Run)> Steps = new Queue<(Func<bool>, Action)>();
     static double started;
     static int lastFrame;
+    static InputSettings originalInputSettings, testInputSettings;
     static Keyboard keyboard;
     static Gamepad pad;
     static PauseMenuController pause;
@@ -45,6 +46,22 @@ public static class NavigationVerify
     }
 
     public static void Run()
+    {
+        // Let startup delay calls (including Search index initialization) finish
+        // before attributing Editor logs to the gameplay test session.
+        double requested = EditorApplication.timeSinceStartup;
+        EditorApplication.CallbackFunction beginWhenIdle = null;
+        beginWhenIdle = () =>
+        {
+            if (EditorApplication.isCompiling || EditorApplication.isUpdating ||
+                EditorApplication.timeSinceStartup - requested < 3) return;
+            EditorApplication.update -= beginWhenIdle;
+            Begin();
+        };
+        EditorApplication.update += beginWhenIdle;
+    }
+
+    static void Begin()
     {
         try
         {
@@ -76,7 +93,18 @@ public static class NavigationVerify
             {
                 started = EditorApplication.timeSinceStartup;
                 lastFrame = -1;
+                originalInputSettings = InputSystem.settings;
+                testInputSettings = Object.Instantiate(originalInputSettings);
+                InputSystem.settings = testInputSettings;
+                testInputSettings.editorInputBehaviorInPlayMode = InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
+                testInputSettings.backgroundBehavior = InputSettings.BackgroundBehavior.IgnoreFocus;
+                testInputSettings.updateMode = InputSettings.UpdateMode.ProcessEventsManually;
                 PrepareSteps(SessionState.GetString(Flag, "") == "menu");
+            }
+            else if (state == PlayModeStateChange.ExitingPlayMode)
+            {
+                if (originalInputSettings != null) InputSystem.settings = originalInputSettings;
+                if (testInputSettings != null) Object.DestroyImmediate(testInputSettings);
             }
             else if (state == PlayModeStateChange.EnteredEditMode)
             {
@@ -139,6 +167,7 @@ public static class NavigationVerify
         Step(() => { Pad(Press(GamepadButton.South)); Button("Enter Sandbox").onClick.Invoke(); });
         Wait("Sandbox", () =>
         {
+            Find<PlayerInput>().actions.devices = new InputDevice[] { keyboard, pad };
             pause = Find<PauseMenuController>(); car = Find<TumblerController>(); systems = Find<TumblerSystems>();
             boost = Find<Boost>(); body = car.GetComponent<Rigidbody>();
             Check(pause != null && Object.FindObjectsByType<PauseMenuController>(FindObjectsSortMode.None).Length == 1, "One pause owner");
@@ -177,7 +206,7 @@ public static class NavigationVerify
             Pad(new GamepadState());
         });
         Step(() => Button("Enter Sandbox").onClick.Invoke());
-        Wait("Sandbox", () => { pause = Find<PauseMenuController>(); Check(Object.FindObjectsByType<EventSystem>(FindObjectsSortMode.None).Length == 1, "Re-entry has no duplicate EventSystems"); Keys(Key.Escape); });
+        Wait("Sandbox", () => { Find<PlayerInput>().actions.devices = new InputDevice[] { keyboard, pad }; pause = Find<PauseMenuController>(); Check(Object.FindObjectsByType<EventSystem>(FindObjectsSortMode.None).Length == 1, "Re-entry has no duplicate EventSystems"); Keys(Key.Escape); });
         Step(() => Keys());
         Step(() => { Pad(Press(GamepadButton.South)); Button("Resume").onClick.Invoke(); });
         Step(() => { Check(pause.IsPaused, "Resume Submit held cannot drive vehicle"); Pad(new GamepadState()); });
@@ -193,6 +222,7 @@ public static class NavigationVerify
             if (EditorApplication.timeSinceStartup - started > 180) throw new Exception("Navigation verification timed out");
             if (Time.frameCount == lastFrame || Steps.Count == 0 || !Steps.Peek().Ready()) return;
             lastFrame = Time.frameCount;
+            InputSystem.Update();
             Steps.Dequeue().Run();
         }
         catch (Exception error) { Fail(error); }
@@ -256,6 +286,6 @@ public static class NavigationVerify
     sealed class CompilationReport
     {
         public string unity, platform, output, result, bytes, playerExecution;
-        public uint errors;
+        public int errors;
     }
 }

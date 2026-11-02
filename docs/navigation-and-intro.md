@@ -1,6 +1,6 @@
 # Navigation and Phosphor introduction
 
-Status: implementation prepared on `feat/navigation-branded-intro-release`, awaiting native Unity validation. Do not treat the static checks or the layout reference below as a successful Play Mode test. The feature must pass the checks below before merging; release work has not started.
+Status: intro, pause and existing vehicle features are consolidated on `main`. Release publication is deferred by the maintainer; no release workflow or Unity account secrets are configured. Native validation evidence is described below.
 
 ## Player flow
 
@@ -65,9 +65,9 @@ python3 tools/verify-navigation.py --unity /absolute/path/to/Editor/Unity --buil
 
 The helper installs a temporary Editor verifier, exercises actual scenes with virtual keyboard/gamepad input, checks both explicit exits in separate Play Mode sessions, and removes its temporary files afterward. It restores the existing dynamic default font asset and detects unexpected scene writes. The build helper compiles the enabled scenes under ignored `Builds/NavigationSmoke/`. Compilation alone does not validate the executable. Reports live under ignored `TestResults/Navigation/`; retain logs if a check fails. The baseline commit is fixed in the verifier; use a clone containing that commit.
 
-For hosted validation with the free Personal license, configure the three private secrets described in [Unity Personal CI setup](unity-personal-ci.md). The added GitHub Actions workflow runs the static checks, both native verifiers and Windows/Linux development compilation. Its presence is not evidence of a successful run; native results remain pending until activation and the jobs succeed.
+GitHub Actions runs the static preservation/reference checks without Unity activation. Run native verifiers locally with the activated Editor; see [local Unity validation](unity-personal-ci.md).
 
-### Required manual/native checks before merge
+### Manual/native checks
 
 - Run both the native navigation verifier and an appropriate existing vehicle regression verifier, such as `tools/verify-tumbler-update.py` with the exact Unity executable.
 - In Play Mode, inspect Intro at 16:9, 4:3, ultrawide and portrait sizes; verify original logo colors, margin, font rendering, fades, natural completion and keyboard/mouse/controller skip.
@@ -78,7 +78,7 @@ For hosted validation with the free Personal license, configure the three privat
 - Run a standalone smoke build on an HDRP-capable machine. Inspect shaders, textures, text, sound, driving and the Player log. Do not infer a working Player from successful compilation.
 - Confirm no Console errors, missing scripts, duplicate EventSystems, leftover Sandbox objects, stuck time scale or audio pause. Review the final diff before integrating.
 
-## Current evidence and release gate
+## Current evidence
 
 ### Changed files
 
@@ -93,6 +93,20 @@ For hosted validation with the free Personal license, configure the three privat
 | Verification | `tools/verify-navigation.py`, `tools/navigation/NavigationVerify.cs` (new) |
 | Documentation | `README.md`, this guide, `docs/navigation/brand-sources.json`, `validation.json`, `intro-layout-reference.png` |
 
-See [validation record](navigation/validation.json). Static asset/reference preservation, byte identity against the supplied kit and C# syntax parsing ran in this task. This Linux execution container has no Unity Editor, Unity build modules or native graphical test environment. Unity compilation, Play Mode, native HDRP rendering, physical controller checks and Windows/Linux Player compilation/execution are **not run**. No merge, version tag or Release is authorized by these static results alone under the task's validation gate.
+The [original validation record](navigation/validation.json) is retained as historical
+static evidence. The [consolidation validation](navigation/consolidation-validation.json)
+records the current Unity 6000.6.7f1 compilation and real Play Mode navigation checks.
+The tests validate the exact logo/font references, natural and skipped intro, Controls/Back,
+pause/resume, blocked driving inputs, virtual Xbox UI navigation, return/re-entry and
+both explicit exits. The verifier waits for Editor startup, isolates virtual input from
+window focus, processes events deterministically and restores its temporary input settings.
+The Editor's Search index logged an initialization exception before the gameplay test
+session; gameplay checks begin after startup and still fail on errors during that session.
+Native HDRP visual inspection, physical controller/audio checks and standalone Player
+execution are separate manual checks and are not claimed by these automated results.
 
-Phase 2 remains blocked until phase 1 passes and is integrated into `main`. No release workflow, tag, download link, binary package or checksum of a nonexistent build has been created. The separate existing licensing gap also remains: provenance/redistribution permissions for Gridbox, Particle Pack, models, sounds and other assets are not fully established in the repository. The new Inter font includes its OFL; this does not resolve other assets' permissions. Review original grants before public binary distribution. No legal clearance is claimed.
+Release publication is deferred. The separate existing licensing gap remains:
+provenance/redistribution permissions for Gridbox, Particle Pack, models, sounds
+and other assets are not fully established in the repository. The new Inter font
+includes its OFL; this does not resolve other assets' permissions. Review original
+grants before any future public binary distribution. No legal clearance is claimed.

@@ -26,7 +26,9 @@ public sealed class PauseMenuController : MonoBehaviour
         if (Instance != null && Instance != this) { Destroy(this); return; }
         Instance = this;
         GameNavigation.RestoreSceneState();
-        GameNavigation.WaitingForMenuRelease = ResumeButtonsHeld();
+        // New scene action maps can observe held controls after Awake.
+        // Block the first gameplay frame and release only after an input update.
+        GameNavigation.WaitingForMenuRelease = true;
         BuildMenu();
     }
 

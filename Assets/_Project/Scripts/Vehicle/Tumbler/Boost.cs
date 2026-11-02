@@ -34,6 +34,7 @@ public class Boost : MonoBehaviour
     private void OnDestroy() => tumblerInput?.Dispose();
     private void Update()
     {
+        if (GameNavigation.GameplayInputBlocked) return;
         bool held = tumblerInput.Gameplay.Boost.IsPressed();
         if (tumblerInput.Gameplay.Boost.WasPressedThisFrame() && systems != null && systems.IsStealth) systems.SetStealth(false);
         AdvanceReserve(Time.deltaTime, held, controller != null && !controller.IsGrounded());

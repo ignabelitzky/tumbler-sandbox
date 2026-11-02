@@ -75,6 +75,7 @@ public class EngineAudio : MonoBehaviour
 
     void Update()
     {
+        if (GameNavigation.GameplayInputBlocked) return;
         UpdateEngineSound();
         UpdateTireScreech();
     }

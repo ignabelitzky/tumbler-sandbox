@@ -2,20 +2,12 @@ using UnityEngine;
 
 public class MenuController : MonoBehaviour
 {
-    public void ExitGame()
-    {
-        if (Application.isEditor)
-        {
-            UnityEditor.EditorApplication.isPlaying = false;
-        }
-        else
-        {
-            Application.Quit();
-        }
-    }
+    private void Awake() => GameNavigation.RestoreSceneState();
+
+    public void ExitGame() => GameNavigation.ExitGame();
 
     public void LoadScene(string sceneName)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        GameNavigation.LoadScene(sceneName);
     }
 }

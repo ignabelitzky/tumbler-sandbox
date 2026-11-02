@@ -1,0 +1,19 @@
+{
+  "kit": "IGNACIO_BELITZKY_Phosphor_Essential_Kit_v1.0.zip",
+  "asset_directory": "Assets/_Project/Art/Branding/Phosphor",
+  "source_files": {
+    "phosphor-primary_2048.png": "01_Ready_to_use/phosphor-primary_2048.png",
+    "Inter-Regular.ttf": "02_Vector_and_print/Fonts/Inter-Regular.ttf",
+    "Inter-OFL-1.1.txt": "02_Vector_and_print/Fonts/Inter-OFL-1.1.txt",
+    "PROVENANCE.md": "02_Vector_and_print/Fonts/PROVENANCE.md"
+  },
+  "sha256": {
+    "phosphor-primary_2048.png": "9d97618c2f208cc516b90cd19a1991dac03f0112f5afb34f79933d086cca724a",
+    "Inter-Regular.ttf": "40d692fce188e4471e2b3cba937be967878f631ad3ebbbdcd587687c7ebe0c82",
+    "Inter-OFL-1.1.txt": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+    "PROVENANCE.md": "274ac4df8e30cc72b9a084d28a2db79143bbcc62ac8081f703f6258f66c79072"
+  },
+  "background": "#071C13",
+  "signature_color": "#F5FAF7",
+  "secondary_color": "#A8C0B1"
+}

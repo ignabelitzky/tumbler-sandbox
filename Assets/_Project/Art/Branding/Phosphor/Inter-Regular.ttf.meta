@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d929c8ac219c57c99358d5c67ab4eb64
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  fontSize: 16
+  includeFontData: 1
+  fontNames:
+  - Inter
+  fallbackFontReferences: []
+  fontRenderingMode: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

@@ -16,8 +16,8 @@ for row in rows.split(b"\0"):
     path = name.decode()
     if not path.startswith(("Assets/", "Packages/", "ProjectSettings/")):
         continue
-    if path == "Assets/_Project/Scenes/Sandbox.unity":
-        continue  # verify-navigation.py checks every original scene document and its approved terrain/root delta.
+    if path in {"Assets/_Project/Scenes/Sandbox.unity", "Assets/_Project/Scenes/Main Menu.unity"}:
+        continue  # verify-navigation.py checks scene preservation, including the later controls/fire-light delta.
     data = (ROOT / path).read_bytes()
     sha = hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
     if sha != info.split()[2].decode():

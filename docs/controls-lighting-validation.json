@@ -1,0 +1,292 @@
+{
+  "date": "2026-11-02",
+  "baseline": "403f4ff7684d40bc3c5dc7496575487c156a0591",
+  "unity": "6000.6.7f1",
+  "render_pipeline": "HDRP 17.6.0 / Vulkan",
+  "unity_compilation": "PASS",
+  "native_play_mode": {
+    "controls_and_fire": {
+      "status": "PASS",
+      "assertions": 104,
+      "reports": [
+        {
+          "report": "TestResults/ControlsLighting/checks.txt",
+          "assertions": 104,
+          "sha256": "f2a01584e6f51377959e02e6da9e129ca9875edbd126b4d7ebd3e0200a86e4a4"
+        }
+      ]
+    },
+    "night_systems": {
+      "status": "PASS",
+      "assertions": 171,
+      "reports": [
+        {
+          "report": "TestResults/NightSystems/edit.txt",
+          "assertions": 112,
+          "sha256": "4849a474032842aa8fb27e1de3827e885b86322c4d3dd4395128c318f6c34f15"
+        },
+        {
+          "report": "TestResults/NightSystems/play.txt",
+          "assertions": 59,
+          "sha256": "f8fe1371c4ae79d108fd53b680a194f95bfed8bb84a0d0934631e6903671bc53"
+        }
+      ]
+    },
+    "vehicle": {
+      "status": "PASS",
+      "assertions": 201,
+      "reports": [
+        {
+          "report": "TestResults/TumblerUpdate/edit.txt",
+          "assertions": 82,
+          "sha256": "bb510c1893e5221d288c62ef053d999f4b359be081c5f8787e44a17e03340a19"
+        },
+        {
+          "report": "TestResults/TumblerUpdate/play.txt",
+          "assertions": 119,
+          "sha256": "fea26bea0ba13e342a5827e285d55b57e4435c975815154e9af436820715bdfc"
+        }
+      ]
+    },
+    "intro_and_pause": {
+      "status": "PASS",
+      "assertions": 35,
+      "reports": [
+        {
+          "report": "TestResults/Navigation/checks.txt",
+          "assertions": 35,
+          "sha256": "77c4e1f9e56df9aa246615cdc8c97476cc066077ad3b00fbad131b313f5b2102"
+        }
+      ]
+    }
+  },
+  "total_native_assertions": 511,
+  "new_assertion_details": [
+    "PASS Visible controls match catalog row 0 column 0",
+    "PASS Control label fits its cell 0/0",
+    "PASS Visible controls match catalog row 0 column 1",
+    "PASS Control label fits its cell 0/1",
+    "PASS Visible controls match catalog row 0 column 2",
+    "PASS Control label fits its cell 0/2",
+    "PASS Visible controls match catalog row 1 column 0",
+    "PASS Control label fits its cell 1/0",
+    "PASS Visible controls match catalog row 1 column 1",
+    "PASS Control label fits its cell 1/1",
+    "PASS Visible controls match catalog row 1 column 2",
+    "PASS Control label fits its cell 1/2",
+    "PASS Visible controls match catalog row 2 column 0",
+    "PASS Control label fits its cell 2/0",
+    "PASS Visible controls match catalog row 2 column 1",
+    "PASS Control label fits its cell 2/1",
+    "PASS Visible controls match catalog row 2 column 2",
+    "PASS Control label fits its cell 2/2",
+    "PASS Visible controls match catalog row 3 column 0",
+    "PASS Control label fits its cell 3/0",
+    "PASS Visible controls match catalog row 3 column 1",
+    "PASS Control label fits its cell 3/1",
+    "PASS Visible controls match catalog row 3 column 2",
+    "PASS Control label fits its cell 3/2",
+    "PASS Visible controls match catalog row 4 column 0",
+    "PASS Control label fits its cell 4/0",
+    "PASS Visible controls match catalog row 4 column 1",
+    "PASS Control label fits its cell 4/1",
+    "PASS Visible controls match catalog row 4 column 2",
+    "PASS Control label fits its cell 4/2",
+    "PASS Visible controls match catalog row 5 column 0",
+    "PASS Control label fits its cell 5/0",
+    "PASS Visible controls match catalog row 5 column 1",
+    "PASS Control label fits its cell 5/1",
+    "PASS Visible controls match catalog row 5 column 2",
+    "PASS Control label fits its cell 5/2",
+    "PASS Visible controls match catalog row 6 column 0",
+    "PASS Control label fits its cell 6/0",
+    "PASS Visible controls match catalog row 6 column 1",
+    "PASS Control label fits its cell 6/1",
+    "PASS Visible controls match catalog row 6 column 2",
+    "PASS Control label fits its cell 6/2",
+    "PASS Visible controls match catalog row 7 column 0",
+    "PASS Control label fits its cell 7/0",
+    "PASS Visible controls match catalog row 7 column 1",
+    "PASS Control label fits its cell 7/1",
+    "PASS Visible controls match catalog row 7 column 2",
+    "PASS Control label fits its cell 7/2",
+    "PASS Visible controls match catalog row 8 column 0",
+    "PASS Control label fits its cell 8/0",
+    "PASS Visible controls match catalog row 8 column 1",
+    "PASS Control label fits its cell 8/1",
+    "PASS Visible controls match catalog row 8 column 2",
+    "PASS Control label fits its cell 8/2",
+    "PASS Visible controls match catalog row 9 column 0",
+    "PASS Control label fits its cell 9/0",
+    "PASS Visible controls match catalog row 9 column 1",
+    "PASS Control label fits its cell 9/1",
+    "PASS Visible controls match catalog row 9 column 2",
+    "PASS Control label fits its cell 9/2",
+    "PASS Visible controls match catalog row 10 column 0",
+    "PASS Control label fits its cell 10/0",
+    "PASS Visible controls match catalog row 10 column 1",
+    "PASS Control label fits its cell 10/1",
+    "PASS Visible controls match catalog row 10 column 2",
+    "PASS Control label fits its cell 10/2",
+    "PASS Visible controls match catalog row 11 column 0",
+    "PASS Control label fits its cell 11/0",
+    "PASS Visible controls match catalog row 11 column 1",
+    "PASS Control label fits its cell 11/1",
+    "PASS Visible controls match catalog row 11 column 2",
+    "PASS Control label fits its cell 11/2",
+    "PASS Visible controls match catalog row 12 column 0",
+    "PASS Control label fits its cell 12/0",
+    "PASS Visible controls match catalog row 12 column 1",
+    "PASS Control label fits its cell 12/1",
+    "PASS Visible controls match catalog row 12 column 2",
+    "PASS Control label fits its cell 12/2",
+    "PASS Visible controls match catalog row 13 column 0",
+    "PASS Control label fits its cell 13/0",
+    "PASS Visible controls match catalog row 13 column 1",
+    "PASS Control label fits its cell 13/1",
+    "PASS Visible controls match catalog row 13 column 2",
+    "PASS Control label fits its cell 13/2",
+    "PASS Controls button opens the complete page",
+    "PASS Controls page selects its Back button for gamepad/keyboard",
+    "PASS Escape returns from Controls",
+    "PASS Xbox B returns from Controls",
+    "PASS Camera orbit guide matches actual Cinemachine mouse/right-stick bindings",
+    "PASS Lighting references actual normal/turbo flame emitters, not smoke",
+    "PASS Only two bounded turbine light sources",
+    "PASS Turbine intensity uses explicit lumen units",
+    "PASS Both flames cast real environmental shadows",
+    "PASS Visible idle flame produces a bounded warm glow",
+    "PASS Idle does not create turbo light",
+    "PASS Turbo flame produces a stronger bounded glow",
+    "PASS Turbo illumination reaches farther than idle",
+    "PASS Remaining flame particles keep glow after releasing turbo",
+    "PASS Pause freezes flame lighting without flicker",
+    "PASS Stealth extinguishes both lights even while paused",
+    "PASS Exiting stealth restores lighting when normal flame is visible",
+    "PASS Exiting stealth does not resurrect a stale turbo glow",
+    "PASS No flame particles means no turbine glow",
+    "PASS Disabling lighting clears both sources immediately"
+  ],
+  "ui_layout": {
+    "status": "PASS",
+    "controls": 14,
+    "visible_text_elements": 52,
+    "captures": [
+      "PASS controls-1080 all 52 labels visible and fitting",
+      "PASS controls-720 all 52 labels visible and fitting",
+      "PASS controls-ultrawide all 52 labels visible and fitting",
+      "PASS controls-4by3 all 52 labels visible and fitting"
+    ]
+  },
+  "illumination_comparison": {
+    "idle": {
+      "method": "Same frame, same flames/exposure/camera; only the two turbine point lights disabled in the comparison image.",
+      "mean_absolute_rgb_difference_0_255": [
+        0.140713,
+        0.001597,
+        0.00053
+      ],
+      "pixels_with_any_channel_difference_over_2": 7113
+    },
+    "turbo": {
+      "method": "Same frame, same flames/exposure/camera; only the two turbine point lights disabled in the comparison image.",
+      "mean_absolute_rgb_difference_0_255": [
+        1.059804,
+        0.142863,
+        0.01372
+      ],
+      "pixels_with_any_channel_difference_over_2": 54670
+    }
+  },
+  "scene_delta": {
+    "Assets/_Project/Scenes/Main Menu.unity": {
+      "changed_ids": 70,
+      "added_ids": 81
+    },
+    "Assets/_Project/Scenes/Sandbox.unity": {
+      "changed_ids": 1,
+      "added_ids": 11
+    }
+  },
+  "preservation": {
+    "existing_assets_packages_settings_byte_identical": 1334,
+    "all_other_scene_documents": "byte-identical",
+    "sandbox_existing_vehicle_transform": "only a lighting child reference added",
+    "gameplay_input_drivetrain_boost_sources": "byte-identical"
+  },
+  "images": {
+    "docs/controls-lighting/controls-1080.png": {
+      "sha256": "ca8d6dc8c5d007b7187aa62d1206c2e929c5160677add3fc8b42c5035673036c",
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    "docs/controls-lighting/controls-4by3.png": {
+      "sha256": "80922436208150b77e5d3eadb06c159d45feaf979cff0ea2e79626473b63e4ef",
+      "size": [
+        1280,
+        960
+      ]
+    },
+    "docs/controls-lighting/controls-720.png": {
+      "sha256": "1b041e02dfe7c91d31f9d00ee0a6c1dc311f1a84297812651f1c697a9bec3cb6",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    "docs/controls-lighting/controls-ultrawide.png": {
+      "sha256": "69ac9ef5fd7d40ad474b6c0e5da33ee2891b13cfa7e811537ffb4340fae6902c",
+      "size": [
+        2560,
+        1080
+      ]
+    },
+    "docs/controls-lighting/idle-flame-only.png": {
+      "sha256": "88f027cd056d2c010efea943b9587b39347631067aac9b79820e1cbc56ab5d16",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    "docs/controls-lighting/idle-glow.png": {
+      "sha256": "bb3b8f46346326c23bbebd5212978022d546b75a05389f011c456d1363d295be",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    "docs/controls-lighting/turbine-stealth.png": {
+      "sha256": "24cb9d68884f5feb586b77d227426a0d94608f585fe6b762132e1f38e271464d",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    "docs/controls-lighting/turbo-flame-only.png": {
+      "sha256": "b2dea32a4795e725bdbdb9f69f88a3b97327d6de1acaa83d8475c18fcff1d710",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    "docs/controls-lighting/turbo-glow.png": {
+      "sha256": "69d00c25965812c51cf9a457d82f00873ac78a00a836e5af8e300f2ef47e106d",
+      "size": [
+        1280,
+        720
+      ]
+    }
+  },
+  "editor_diagnostics": [
+    "InputSystem.ApplySettings logs assertions during batch Play Mode transitions. Native completion reports pass; no missing-component repair or scene-reference error was observed in the final runs."
+  ],
+  "not_run": [
+    "Physical Xbox controller acceptance",
+    "Standalone Windows/Linux build or execution",
+    "Performance profiling",
+    "Subjective audio evaluation"
+  ],
+  "release_publication": "Not configured or requested"
+}

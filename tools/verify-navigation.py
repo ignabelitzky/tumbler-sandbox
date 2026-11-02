@@ -56,11 +56,12 @@ def static_checks():
     before = documents(git('show', BASE + ':' + SCENES + 'Sandbox.unity').decode())
     after = documents((ROOT / SCENES / 'Sandbox.unity').read_text())
     expansion = json.loads((ROOT / 'docs/sandbox-expansion-manifest.json').read_text())
-    check(set(after) - set(before) == {'1824967747', expansion['instance_id']},
+    lighting = json.loads((ROOT / 'docs/controls-lighting-manifest.json').read_text())['scenes'][SCENES + 'Sandbox.unity']
+    check(set(after) - set(before) == {'1824967747', expansion['instance_id'], *lighting['added_ids']},
           'Sandbox adds the pause component and one underground/perimeter prefab')
     check(not set(before) - set(after), 'No Sandbox object removed')
     for key in before:
-        if key in {'1824967743', '1824967746'}:
+        if key in {'1824967743', '1824967746', *lighting['changed_ids']}:
             continue
         expected = before[key]
         if key in {'560604268', '560604269'}:
@@ -70,9 +71,8 @@ def static_checks():
         check(after[key] == expected, 'Preserved Sandbox document with only approved terrain/root addition: ' + key)
     check(after['1824967746'] == before['1824967746'].replace('m_MethodName: QuitGame', 'm_MethodName: TogglePause'),
           'PlayerInput changes only the pause callback; IDs and other callbacks preserved')
-    menu_before = git('show', BASE + ':' + SCENES + 'Main Menu.unity').decode()
-    check((ROOT / SCENES / 'Main Menu.unity').read_text() == menu_before.replace('m_text: Quit sandbox', 'm_text: Pause / resume'),
-          'Main Menu layout and Controls/Back callbacks preserved; only obsolete help label changed')
+    subprocess.check_call([sys.executable, str(ROOT / 'tools/controls-lighting/check.py')], cwd=ROOT)
+    check(True, 'Current controls overlay and turbine illumination preserve all other approved game assets and scene objects')
 
     seen = {}
     for file in (ROOT / 'Assets').rglob('*.meta'):

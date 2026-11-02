@@ -1,0 +1,93 @@
+{
+  "rows": [
+    {
+      "action": "Steer",
+      "keyboard": "A / D or Left / Right Arrow",
+      "xbox": "Left Stick",
+      "inputAction": "Steer"
+    },
+    {
+      "action": "Accelerate",
+      "keyboard": "W or Up Arrow",
+      "xbox": "RT",
+      "inputAction": "Throttle"
+    },
+    {
+      "action": "Reverse",
+      "keyboard": "S or Down Arrow",
+      "xbox": "LT",
+      "inputAction": "Throttle"
+    },
+    {
+      "action": "Boost",
+      "keyboard": "Left Shift",
+      "xbox": "A",
+      "inputAction": "Boost"
+    },
+    {
+      "action": "Brake",
+      "keyboard": "Left Ctrl",
+      "xbox": "B",
+      "inputAction": "Brake"
+    },
+    {
+      "action": "Handbrake",
+      "keyboard": "Space",
+      "xbox": "X",
+      "inputAction": "Handbrake"
+    },
+    {
+      "action": "Drive mode: AWD > FWD > RWD",
+      "keyboard": "E",
+      "xbox": "RB",
+      "inputAction": "SwitchDriveMode"
+    },
+    {
+      "action": "Reset vehicle",
+      "keyboard": "R",
+      "xbox": "Left Stick Click",
+      "inputAction": "ResetCar"
+    },
+    {
+      "action": "Upright recovery *",
+      "keyboard": "F",
+      "xbox": "Y",
+      "inputAction": "FlipCar"
+    },
+    {
+      "action": "Lights: off > low > high",
+      "keyboard": "L",
+      "xbox": "D-pad Up",
+      "inputAction": "CycleLights"
+    },
+    {
+      "action": "Bat stealth",
+      "keyboard": "V",
+      "xbox": "Right Stick Click",
+      "inputAction": "ToggleStealth"
+    },
+    {
+      "action": "Camera: close > medium > far",
+      "keyboard": "C",
+      "xbox": "D-pad Down",
+      "inputAction": "CycleCamera"
+    },
+    {
+      "action": "Look around / orbit camera",
+      "keyboard": "Move mouse",
+      "xbox": "Right Stick",
+      "inputAction": "OrbitCamera"
+    },
+    {
+      "action": "Pause / resume",
+      "keyboard": "Escape",
+      "xbox": "Menu / Start",
+      "inputAction": "QuitGame"
+    }
+  ],
+  "notes": [
+    "* Upright recovery: below 1 m/s. Camera stays close in the tunnel; your previous view returns outside.",
+    "MENUS: mouse / arrows + Enter | Xbox stick / D-pad + A | BACK: Esc / B",
+    "INTRO: any key, mouse click or controller button skips. Exit the game using the menu buttons."
+  ]
+}

@@ -10,7 +10,7 @@ For the complete assembled vehicle in Blender or Autodesk Maya, see the [model e
 
 ## For players
 
-Downloadable standalone builds are not published yet. Windows/Linux Player compatibility and system requirements remain unverified; this branch prepares navigation and a Phosphor developer intro, with native Unity checks still pending. See the [navigation guide and validation gate](docs/navigation-and-intro.md). A working Editor project is not a validated executable.
+Downloadable standalone builds are not published yet. Windows/Linux Player compatibility and system requirements remain unverified. The Phosphor developer intro, menus and pause flow pass native Unity Play Mode checks; see the [navigation guide and validation gate](docs/navigation-and-intro.md). A working Editor project is not a validated executable.
 
 In Sandbox, **Escape / Xbox Start** opens a pause menu with **Resume**, **Main Menu** and **Exit Game**. Only explicit Exit buttons close the application. The input table below lists the remaining driving controls.
 
@@ -18,7 +18,7 @@ In Sandbox, **Escape / Xbox Start** opens a pause menu with **Resume**, **Main M
 
 - Rigidbody and WheelCollider vehicle physics, with wheel mesh updates, speed-dependent steering and downforce.
 - Xbox controller and keyboard bindings for every driving action, including WASD and arrow-key driving.
-- Finite boost reserve with forward impulses, particles and jet audio; delayed recharge is faster in the air.
+- Finite boost reserve with forward impulses, particles, jet audio and flame-driven idle/turbo lighting; delayed recharge is faster in the air.
 - Eight textured headlights with off/low/high states and actual HDRP volumetric spot beams.
 - Reversible Bat stealth mode that conceals vehicle lights, turbine particles and brake glow, and mutes engine audio while preserving driving controls.
 - Six ventilated gray brake discs and fixed calipers mounted on the inner wheel faces, with progressive red incandescence based on each wheel's applied brake torque. Service braking heats all six; handbraking heats the rear four.
@@ -29,7 +29,9 @@ In Sandbox, **Escape / Xbox Start** opens a pause menu with **Resume**, **Main M
 - Subtle surface-projected tire marks during braking and lateral sliding, with independent wheel contact and gradual fading.
 - Stable, scene-local fixed exposure in Sandbox and consistent Main Menu option colors.
 - Compact bottom-right digital speed, gear/reverse, drivetrain and RPM instruments, with a green-to-red tachometer, boost reserve and light/handbrake/stealth indicators.
-- Phosphor developer intro, Main Menu and Sandbox scenes, with a Cinemachine camera setup and scene-local pause menu (native validation pending).
+- Phosphor developer intro, Main Menu and Sandbox scenes, with a Cinemachine camera setup and scene-local pause menu.
+- Complete in-game keyboard/mouse and Xbox control guide, including lights, stealth, camera distances/orbit, pause and menu navigation.
+- Three camera distances, a dim underground tunnel with two 90° bends and automatic close-camera restoration, and physical perimeter containment.
 - Six signed driving-test zones: progressive jumps, slalom/braking, suspension, surface grip, slopes and a skidpad.
 - Original Tumbler geometry with additive floor relief and service lines, a narrower front subframe that clears steering, textured tires/rims, detailed interior pressure tanks and bronze fuel caps.
 
@@ -69,23 +71,31 @@ Keep `Assets` and its `.meta` files, both package manifests, and `ProjectSetting
 
 ## Controls — Xbox and keyboard
 
-Bindings come from [TumblerInput.inputactions](Assets/_Project/Input/TumblerInput.inputactions). Xbox uses Unity's `<Gamepad>` layout, including XInput-derived Xbox devices. This avoids limiting the bindings to the Windows-specific XInput family.
+The in-game Controls page and this table share [one control catalog](docs/controls-catalog.json). Gameplay bindings come from [TumblerInput.inputactions](Assets/_Project/Input/TumblerInput.inputactions). Xbox uses Unity's `<Gamepad>` layout, including XInput-derived Xbox devices. This avoids limiting the bindings to the Windows-specific XInput family. Camera cycling is a separate action in SandboxCameraModes; camera orbit uses the existing Cinemachine Look action (mouse movement / right stick). Both leave the generated Gameplay wrapper unchanged.
 
-| Action | Xbox controller | Keyboard |
+| Action | Xbox controller | Keyboard / mouse |
 | --- | --- | --- |
-| Steering | Left Stick, horizontal axis | A / D or Left / Right Arrow |
-| Acceleration | RT | W or Up Arrow |
+| Steer | Left Stick | A / D or Left / Right Arrow |
+| Accelerate | RT | W or Up Arrow |
 | Reverse | LT | S or Down Arrow |
 | Boost | A | Left Shift |
-| Cycle lights: off → low → high → off | D-pad Up | L |
-| Cycle camera: close → medium → far | D-pad Down | C |
-| Toggle Bat stealth mode | Right Stick Click | V |
 | Brake | B | Left Ctrl |
 | Handbrake | X | Space |
-| Upright recovery, below 1 m/s | Y | F |
-| Cycle AWD → FWD → RWD → AWD | RB | E |
-| Reset position, rotation, velocity and transmission | Left Stick Click | R |
-| Pause / resume Sandbox | Start / Menu | Escape |
+| Drive mode: AWD > FWD > RWD | RB | E |
+| Reset vehicle | Left Stick Click | R |
+| Upright recovery * | Y | F |
+| Lights: off > low > high | D-pad Up | L |
+| Bat stealth | Right Stick Click | V |
+| Camera: close > medium > far | D-pad Down | C |
+| Look around / orbit camera | Right Stick | Move mouse |
+| Pause / resume | Menu / Start | Escape |
+
+The Controls page includes all fourteen gameplay rows, menu navigation, intro skip,
+and the tunnel camera rule. Navigate menus with the mouse or arrows + Enter;
+on Xbox use the stick/D-pad and A. Escape or B returns from Controls.
+Any key, mouse click or controller button skips the intro after its short guard.
+Exit the game through the menu buttons. Upright recovery (*) requires speed below
+1 m/s; inside the tunnel the camera stays close and restores the previous view outside.
 
 The Xbox triggers remain a signed analog throttle axis, and the stick retains analog steering. Keyboard throttle/steering are digital; opposing keyboard directions cancel. Reverse and brake remain separate controls. You can combine acceleration, steering, boost and handbrake, subject to the existing vehicle behavior. Drivetrain, gearbox, torque, suspension and control bindings are unchanged by the test ground. Only tire stiffness is scaled while each wheel touches a marked test surface, and the original stiffness is restored on exit.
 
@@ -187,10 +197,22 @@ The root-level terrain asset remains in `Assets`. Retained imported content, bin
 | `UIController` / `DigitalVehicleHUD` / `VehicleStatusIcon` | Display speed, gear, drivetrain and colored RPM, plus turbo reserve and vector light/handbrake/Bat status icons. |
 | `DrivingSurface` / `WheelSurfaceGrip` | Mark test surfaces and scale each contacting wheel’s stiffness; restore baseline outside them and when disabled. |
 | `MenuController` | Loads a scene by name and handles the menu exit action. Scene names remain unchanged. |
+| `ControlsOverlayNavigation` | Fits the complete Controls page to the canvas and handles Escape / Xbox B with focus restoration. |
+| `TurbineFireLighting` | Drives two bounded warm light sources from actual idle/turbo flame particles, respecting pause and stealth. |
 
 Scene objects, Inspector references and Unity events provide the wiring. There is no dependency injection or architectural framework implied. The `Tumbler` object name remains significant to the existing game manager; the digital HUD uses serialized view references.
 
 The Input Actions importer generates `Assets/_Project/Input/Input.cs` using Input System **1.20.1**. The wrapper has been regenerated with the official generator, keeping the original action IDs and meta GUIDs. Edit the `.inputactions` source and regenerate through Unity; do not edit generated C# manually.
+
+## Turbine fire illumination
+
+The normal flame casts a soft warm light behind the nozzle; the turbo flame adds
+a brighter, longer-reaching glow. Both follow actual visible flame particles,
+including the remaining tail after releasing boost. There are only two bounded
+shadow-casting light sources. Stealth extinguishes both, and pause freezes their
+flicker with the particles. This does not change turbo force, reserve, recharge,
+headlights or the flame effects themselves. See [controls and turbine lighting
+validation](docs/controls-lighting.md).
 
 ## Screenshots
 
@@ -216,6 +238,7 @@ The [earlier steering update](docs/steering-and-acceleration.md) records the ini
 
 Validation performed:
 
+- Complete controls and turbine fire: **104 native assertions**, plus **407 vehicle/night-systems/intro/pause regressions**, and HDRP layout checks for all 52 text elements at four resolutions. See [current evidence and repeatable checks](docs/controls-lighting.md) and the [validation record](docs/controls-lighting-validation.json).
 - Native scene-load and physics-contact checks in Unity **6000.6.7f1**: ramp/landing heights, upward contact normals, terrain profiles, all six zones, movable markers and clear spawn/reset positions.
 - Play Mode checks with the actual Tumbler: all six wheels contact each comparison surface, grip multipliers apply and restore on unmarked terrain, disable/reenable restores/reapplies the profile, and the existing handbrake slip adjustment survives the adapter.
 - Ground-contact regression: isolated support under each of the six wheels, rear-only support, all-wheel support, airborne and contact-loss cases. Repeat these with `tools/verify-driving-ground.py`; see [test-ground validation instructions](docs/driving-test-ground.md#validation).

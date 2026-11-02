@@ -1,6 +1,6 @@
 # Navigation and Phosphor introduction
 
-Status: implementation prepared on `feat/navigation-branded-intro-release`, awaiting native Unity validation. Do not treat the static checks or the layout reference below as a successful Play Mode test. The feature must pass the checks below before merging; release work has not started.
+Status: implementation prepared on `feat/navigation-branded-intro-release`, awaiting native Unity validation. Do not treat the static checks or the layout reference below as a successful Play Mode test. The feature must pass the checks below before merging; release tooling is prepared; native validation remains pending.
 
 ## Player flow
 
@@ -65,7 +65,7 @@ python3 tools/verify-navigation.py --unity /absolute/path/to/Editor/Unity --buil
 
 The helper installs a temporary Editor verifier, exercises actual scenes with virtual keyboard/gamepad input, checks both explicit exits in separate Play Mode sessions, and removes its temporary files afterward. It restores the existing dynamic default font asset and detects unexpected scene writes. The build helper compiles the enabled scenes under ignored `Builds/NavigationSmoke/`. Compilation alone does not validate the executable. Reports live under ignored `TestResults/Navigation/`; retain logs if a check fails. The baseline commit is fixed in the verifier; use a clone containing that commit.
 
-For hosted validation with the free Personal license, configure the three private secrets described in [Unity Personal CI setup](unity-personal-ci.md). The added GitHub Actions workflow runs the static checks, both native verifiers and Windows/Linux development compilation. Its presence is not evidence of a successful run; native results remain pending until activation and the jobs succeed.
+GitHub Actions now runs static checks only. Run both native verifiers locally with the activated Editor, then follow [local build and release instructions](local-releases.md). No Unity license file or Unity account credentials are uploaded.
 
 ### Required manual/native checks before merge
 
@@ -95,4 +95,4 @@ For hosted validation with the free Personal license, configure the three privat
 
 See [validation record](navigation/validation.json). Static asset/reference preservation, byte identity against the supplied kit and C# syntax parsing ran in this task. This Linux execution container has no Unity Editor, Unity build modules or native graphical test environment. Unity compilation, Play Mode, native HDRP rendering, physical controller checks and Windows/Linux Player compilation/execution are **not run**. No merge, version tag or Release is authorized by these static results alone under the task's validation gate.
 
-Phase 2 remains blocked until phase 1 passes and is integrated into `main`. No release workflow, tag, download link, binary package or checksum of a nonexistent build has been created. The separate existing licensing gap also remains: provenance/redistribution permissions for Gridbox, Particle Pack, models, sounds and other assets are not fully established in the repository. The new Inter font includes its OFL; this does not resolve other assets' permissions. Review original grants before public binary distribution. No legal clearance is claimed.
+Phase 2 remains blocked until phase 1 passes and is integrated into `main`. The local-build release workflow is prepared, but no release tag, public download, actual Player package or actual build checksum is claimed. The separate existing licensing gap also remains: provenance/redistribution permissions for Gridbox, Particle Pack, models, sounds and other assets are not fully established in the repository. The new Inter font includes its OFL; this does not resolve other assets' permissions. Review original grants before public binary distribution. No legal clearance is claimed.

@@ -54946,6 +54946,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2104271404074946589, guid: 259e53ebca8b2430bb7df8f4a420b92b, type: 3}
+      propertyPath: m_Name
+      value: Impact Physics Test Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 7239519731577973424, guid: 259e53ebca8b2430bb7df8f4a420b92b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -280

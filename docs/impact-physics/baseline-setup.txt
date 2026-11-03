@@ -1,0 +1,7 @@
+COM (0.01, -0.12, -0.22) inertia (7140.47, 9344.22, 3083.04) depen 10 solver 6/1
+FrontRightWheelCollider local (0.94, -0.35, 2.38) r 0.49 sprung 641.6772 k 90000 d 4500 travel 0.2 app 0
+FrontLeftWheelCollider local (-0.96, -0.35, 2.38) r 0.49 sprung 636.6097 k 90000 d 4500 travel 0.2 app 0
+RearRightWheelCollider_Outside local (1.42, -0.03, -2.14) r 0.66 sprung 434.167 k 90000 d 4500 travel 0.5 app 0
+RearRightWheelCollider_Inside local (0.80, -0.03, -2.14) r 0.66 sprung 432.5302 k 90000 d 4500 travel 0.5 app 0
+RearLeftWheelCollider_Outside local (-1.39, -0.03, -2.14) r 0.66 sprung 426.7015 k 90000 d 4500 travel 0.5 app 0
+RearLeftWheelCollider_Inside local (-0.78, -0.03, -2.14) r 0.66 sprung 428.3144 k 90000 d 4500 travel 0.5 app 0

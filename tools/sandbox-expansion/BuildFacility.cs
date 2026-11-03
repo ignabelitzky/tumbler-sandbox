@@ -49,6 +49,7 @@ public static partial class ExpansionAuthoring
             var camera = root.AddComponent<SandboxCameraModes>();
             BuildZones(camera);
             CreateTerrainHoles();
+            BuildPortalAprons();
 
             var prefab = PrefabUtility.SaveAsPrefabAsset(root, PrefabPath);
             AssetDatabase.TryGetGUIDAndLocalFileIdentifier(prefab, out string prefabGuid, out long rootId);
@@ -123,9 +124,9 @@ public static partial class ExpansionAuthoring
         Vector3 forward=Route[Mathf.Min(i+1,Route.Count-1)]-Route[Mathf.Max(i-1,0)];
         return Vector3.Cross(Vector3.up,forward).normalized;
     }
-    static void BuildTunnel()
+    static void BuildTunnel(bool includeFixtures=true)
     {
-        var fixtures=Child("Dim tunnel lighting",root);
+        var fixtures=includeFixtures?Child("Dim tunnel lighting",root):null;
         for(int i=0;i<Route.Count-1;i++)
         {
             Vector3 a=Route[i]+Vector3.up*.04f,b=Route[i+1]+Vector3.up*.04f;
@@ -134,8 +135,8 @@ public static partial class ExpansionAuthoring
             bool covered=a.y < -7.2f && b.y < -7.2f;
             foreach(int sign in new[]{-1,1})
             {
-                float ha=covered?4.2f:Mathf.Max(4.2f,.7f-a.y);
-                float hb=covered?4.2f:Mathf.Max(4.2f,.7f-b.y);
+                float ha=covered?4.2f:.7f-a.y;
+                float hb=covered?4.2f:.7f-b.y;
                 Vector3 aa=a+ra*(7*sign),bb=b+rb*(7*sign);
                 shell.Quad(aa,aa+Vector3.up*ha,bb+Vector3.up*hb,bb,-ra*sign);
                 // Thick retaining walls and caps close off the trench and cast sunlight shadows.
@@ -143,6 +144,11 @@ public static partial class ExpansionAuthoring
                 shell.Quad(aa+Vector3.up*ha,ao+Vector3.up*ha,bo+Vector3.up*hb,bb+Vector3.up*hb,Vector3.up);
                 shell.Quad(ao,bo,bo+Vector3.up*hb,ao+Vector3.up*ha,ra*sign);
             }
+            // Seal the exposed wall ends, including the two surface mouths.
+            if(i==0) WallEnd(a,ra,covered,-Vector3.Cross(ra,Vector3.up));
+            if(i==Route.Count-2) WallEnd(b,rb,covered,Vector3.Cross(rb,Vector3.up));
+            bool previousCovered=i>0 && Route[i-1].y+.04f < -7.2f && a.y < -7.2f;
+            bool nextCovered=i+2<Route.Count && b.y < -7.2f && Route[i+2].y+.04f < -7.2f;
             if(covered)
             {
                 var cross=new[]{new Vector2(-7,4.2f),new Vector2(-6.5f,5.2f),new Vector2(-5.2f,6),new Vector2(0,6.5f),new Vector2(5.2f,6),new Vector2(6.5f,5.2f),new Vector2(7,4.2f)};
@@ -155,7 +161,15 @@ public static partial class ExpansionAuthoring
                     shell.Quad(p,q,r,s,Vector3.down-ra*(cross[k].x*.1f));
                     shell.Quad(p+Vector3.up*.7f,s+Vector3.up*.7f,r+Vector3.up*.7f,q+Vector3.up*.7f,Vector3.up);
                 }
-                if(i%9==0) Fixture(fixtures,(a+b)*.5f,ra,(i/9)%2==0?1:-1);
+                // Join the roof's outer edges to the outer retaining walls.
+                foreach(int side in new[]{-1,1})
+                    shell.Quad(a+ra*(7*side)+Vector3.up*4.9f,
+                        b+rb*(7*side)+Vector3.up*4.9f,
+                        b+rb*(10*side)+Vector3.up*4.2f,
+                        a+ra*(10*side)+Vector3.up*4.2f,Vector3.up);
+                if(!previousCovered) RoofEnd(a,ra,cross,-Vector3.Cross(ra,Vector3.up));
+                if(!nextCovered) RoofEnd(b,rb,cross,Vector3.Cross(rb,Vector3.up));
+                if(includeFixtures && i%9==0) Fixture(fixtures,(a+b)*.5f,ra,(i/9)%2==0?1:-1);
             }
             if(i%3!=2) trims.Quad(a-ra*.07f+Vector3.up*.01f,b-rb*.07f+Vector3.up*.01f,b+rb*.07f+Vector3.up*.01f,a+ra*.07f+Vector3.up*.01f,Vector3.up);
             foreach(int sign in new[]{-1,1})
@@ -168,6 +182,52 @@ public static partial class ExpansionAuthoring
                 }
             }
         }
+    }
+    static void WallEnd(Vector3 p,Vector3 right,bool covered,Vector3 normal)
+    {
+        float height=covered?4.2f:.7f-p.y;
+        foreach(int side in new[]{-1,1})
+        {
+            Vector3 inner=p+right*(7*side),outer=p+right*(10*side);
+            shell.Quad(inner,outer,outer+Vector3.up*height,inner+Vector3.up*height,normal);
+        }
+    }
+    static void RoofEnd(Vector3 p,Vector3 right,Vector2[] cross,Vector3 normal)
+    {
+        // A solid headwall follows the arch, closing the wall-height change and roof thickness.
+        float top=Mathf.Max(7.2f,.7f-p.y);
+        for(int k=0;k<cross.Length-1;k++)
+        {
+            Vector3 a=p+right*cross[k].x+Vector3.up*cross[k].y;
+            Vector3 b=p+right*cross[k+1].x+Vector3.up*cross[k+1].y;
+            shell.Quad(a,b,p+right*cross[k+1].x+Vector3.up*top,
+                p+right*cross[k].x+Vector3.up*top,normal);
+        }
+        foreach(int side in new[]{-1,1})
+        {
+            Vector3 inner=p+right*(7*side),outer=p+right*(10*side);
+            shell.Quad(inner+Vector3.up*4.2f,outer+Vector3.up*4.2f,
+                outer+Vector3.up*top,inner+Vector3.up*top,normal);
+        }
+        // Short cap behind the facade encloses the raised headwall above the roof skin.
+        Vector3 back=p-normal*.7f;
+        shell.Quad(p-right*10+Vector3.up*top,p+right*10+Vector3.up*top,
+            back+right*10+Vector3.up*top,back-right*10+Vector3.up*top,Vector3.up);
+        for(int k=0;k<cross.Length-1;k++)
+            shell.Quad(back+right*cross[k].x+Vector3.up*(cross[k].y+.7f),
+                back+right*cross[k+1].x+Vector3.up*(cross[k+1].y+.7f),
+                back+right*cross[k+1].x+Vector3.up*top,
+                back+right*cross[k].x+Vector3.up*top,-normal);
+        foreach(int side in new[]{-1,1})
+            shell.Quad(back+right*(7*side)+Vector3.up*4.9f,
+                back+right*(10*side)+Vector3.up*4.2f,
+                back+right*(10*side)+Vector3.up*top,
+                back+right*(7*side)+Vector3.up*top,-normal);
+        foreach(int side in new[]{-1,1})
+            shell.Quad(p+right*(10*side)+Vector3.up*4.2f,
+                back+right*(10*side)+Vector3.up*4.2f,
+                back+right*(10*side)+Vector3.up*top,
+                p+right*(10*side)+Vector3.up*top,right*side);
     }
     static void Fixture(GameObject parent,Vector3 p,Vector3 right,int side)
     {
@@ -184,7 +244,15 @@ public static partial class ExpansionAuthoring
     }
     static void MeshObject(string name,MeshBuilder builder,Material material,GameObject parent,bool collider)
     {
-        var mesh=builder.Build(name);AssetDatabase.CreateAsset(mesh,Folder+"/"+name+".asset");
+        var mesh=builder.Build(name);
+        string path=Folder+"/"+name+".asset";
+        var saved=AssetDatabase.LoadAssetAtPath<Mesh>(path);
+        if(saved==null)AssetDatabase.CreateAsset(mesh,path);
+        else
+        {
+            EditorUtility.CopySerialized(mesh,saved);Object.DestroyImmediate(mesh);
+            EditorUtility.SetDirty(saved);mesh=saved;
+        }
         var g=Child(name,parent);g.AddComponent<MeshFilter>().sharedMesh=mesh;
         var r=g.AddComponent<MeshRenderer>();r.sharedMaterial=material;r.shadowCastingMode=ShadowCastingMode.TwoSided;
         if(collider)g.AddComponent<MeshCollider>().sharedMesh=mesh;

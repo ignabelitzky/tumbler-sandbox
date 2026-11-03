@@ -32,6 +32,11 @@ public static class FacilityPreview
                 modes.CycleMode();
             }
             camera.transform.position=new Vector3(100,8,-12);camera.transform.LookAt(new Vector3(100,-6,-95));Capture("portal");
+            camera.transform.position=new Vector3(79,3,-33);camera.transform.LookAt(new Vector3(100,-1,-48));Capture("portal-a-side");
+            camera.transform.position=new Vector3(121,3,-45);camera.transform.LookAt(new Vector3(100,-1,-52));Capture("portal-a-return");
+            camera.transform.position=new Vector3(100,-3,-78);camera.transform.LookAt(new Vector3(100,-5,-99));Capture("portal-a-headwall");
+            camera.transform.position=new Vector3(221,3,-33);camera.transform.LookAt(new Vector3(242,-1,-48));Capture("portal-b-side");
+            camera.transform.position=new Vector3(242,-3,-78);camera.transform.LookAt(new Vector3(242,-5,-99));Capture("portal-b-headwall");
             camera.transform.position=new Vector3(330,160,-330);camera.transform.LookAt(new Vector3(170,-2,-130));Capture("surface-overview");
             modes.SendMessage("OnDisable");
             EditorApplication.Exit(0);

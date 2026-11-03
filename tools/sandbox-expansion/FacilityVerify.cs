@@ -81,6 +81,11 @@ public static class FacilityVerify
     {
         if(SessionState.GetBool(Flag,false) && state==PlayModeStateChange.EnteredPlayMode)frame=0;
     }
+    static void StepCamera(SandboxCameraModes camera,float deltaTime)
+    {
+        typeof(SandboxCameraModes).GetMethod("AdvanceTransition",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic)
+            .Invoke(camera,new object[]{deltaTime});
+    }
     static void Move(Rigidbody body,Vector3 p)
     {
         body.position=p;body.transform.position=p;body.linearVelocity=Vector3.zero;body.angularVelocity=Vector3.zero;
@@ -105,6 +110,7 @@ public static class FacilityVerify
             foreach(var expected in new[]{SandboxCameraModes.ViewMode.Close,SandboxCameraModes.ViewMode.Medium,SandboxCameraModes.ViewMode.Far})
             {
                 Check(camera.SelectedMode==expected && camera.EffectiveMode==expected,"Cycle selects "+expected);
+                StepCamera(camera,2);
                 radii.Add(orbit.Orbits.Center.Radius);
                 camera.CycleMode();
             }
@@ -218,7 +224,7 @@ public static class FacilityVerify
             set("currentPower",1400f*Mathf.Clamp((5-speed)*.45f,0,.75f));
             set("currentBrakeForce",Mathf.Clamp((speed-5)*500,0,800));
             controller.SendMessage("FixedUpdate");Physics.Simulate(.02f);
-            camera.RefreshTunnelState();
+            camera.RefreshTunnelState();StepCamera(camera,.02f);
             if(camera.IsInsideTunnel)
             {
                 entered=true;

@@ -13,6 +13,7 @@ public sealed class TumblerSystems : MonoBehaviour
     [SerializeField] private Behaviour volumetricHaze;
     [SerializeField, Min(0)] private float lowBeamIntensity = 30000f;
     [SerializeField, Min(0)] private float highBeamIntensity = 90000f;
+    private StealthNightVision nightVision;
     private TumblerInput input;
     private EngineAudio engine;
     private Boost boost;
@@ -28,12 +29,15 @@ public sealed class TumblerSystems : MonoBehaviour
         input = new TumblerInput(); engine = GetComponent<EngineAudio>(); boost = GetComponent<Boost>();
         block = new MaterialPropertyBlock(); vehicleLights = GetComponentsInChildren<Light>(true);
         lightStates = new bool[vehicleLights.Length]; particleStates = new bool[turbineParticles.Length];
+        nightVision = GetComponent<StealthNightVision>();
+        if (nightVision == null) nightVision = gameObject.AddComponent<StealthNightVision>();
         RefreshLights();
     }
     private void OnEnable() { input.Enable(); RefreshLights(); }
     private void OnDisable()
     {
         input.Disable();
+        if (nightVision != null) nightVision.SetActive(false);
         if (IsStealth)
         {
             IsStealth = false;
@@ -75,6 +79,7 @@ public sealed class TumblerSystems : MonoBehaviour
             }
         }
         IsStealth = active;
+        if (nightVision != null) nightVision.SetActive(active);
         if (engine != null) engine.SetStealthMuted(active);
         if (!active)
         {

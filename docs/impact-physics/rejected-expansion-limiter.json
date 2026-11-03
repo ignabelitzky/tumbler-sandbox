@@ -1,0 +1,1746 @@
+{
+    "unity": "6000.6.7f1",
+    "conditions": "0.02 s; 3 s settle, 2 s observation after approach reference (up to 10 s timeout); free six-wheel vehicle; coast, no motor/brake/boost/downforce; same poses; peaks cover full observation (later contacts may contribute at high speeds)",
+    "trials": [
+        {
+            "scenario": "vertical-0",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514568328857422,
+            "postKph": 7.437362194061279,
+            "finalKph": 6.834800720214844,
+            "maxVertical": 0.2191084921360016,
+            "maxComY": 0.885596513748169,
+            "comRise": 0.031177818775177002,
+            "maxPitch": 0.77716064453125,
+            "maxRoll": 0.005173689220100641,
+            "maxAngular": 0.1718439906835556,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -434.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -434.9918518066406,
+                "y": 0.9708490967750549,
+                "z": -299.4927062988281
+            }
+        },
+        {
+            "scenario": "bevel-0",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514563083648682,
+            "postKph": 7.384242057800293,
+            "finalKph": 6.5129075050354,
+            "maxVertical": 0.05233973264694214,
+            "maxComY": 0.8769116997718811,
+            "comRise": 0.02249300479888916,
+            "maxPitch": 0.6046142578125,
+            "maxRoll": 0.004397830925881863,
+            "maxAngular": 0.09515099972486496,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449096083641052,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -434.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -434.9919738769531,
+                "y": 0.9707545042037964,
+                "z": -359.6266784667969
+            }
+        },
+        {
+            "scenario": "vertical-0",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.5305118560791,
+            "postKph": 25.451919555664063,
+            "finalKph": 23.294694900512695,
+            "maxVertical": 0.39521485567092896,
+            "maxComY": 0.8948853611946106,
+            "comRise": 0.04046666622161865,
+            "maxPitch": 0.9479067921638489,
+            "maxRoll": 0.014529038220643997,
+            "maxAngular": 0.37462857365608215,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -434.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -434.9905700683594,
+                "y": 0.9715312719345093,
+                "z": -289.77655029296875
+            }
+        },
+        {
+            "scenario": "bevel-0",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.530517578125,
+            "postKph": 25.59560775756836,
+            "finalKph": 23.016138076782227,
+            "maxVertical": 0.11318346858024597,
+            "maxComY": 0.8869524598121643,
+            "comRise": 0.03253376483917236,
+            "maxPitch": 0.7244900465011597,
+            "maxRoll": 0.00998354610055685,
+            "maxAngular": 0.32177162170410156,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449096083641052,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -434.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -434.99066162109375,
+                "y": 0.9717031717300415,
+                "z": -349.8614807128906
+            }
+        },
+        {
+            "scenario": "vertical-0",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.11688232421875,
+            "postKph": 52.58624267578125,
+            "finalKph": 48.312252044677734,
+            "maxVertical": 0.41539204120635986,
+            "maxComY": 0.8815749287605286,
+            "comRise": 0.02715623378753662,
+            "maxPitch": 0.9770398139953613,
+            "maxRoll": 0.0107421875,
+            "maxAngular": 0.33086520433425903,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -434.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -434.9872741699219,
+                "y": 0.9716022610664368,
+                "z": -275.1716613769531
+            }
+        },
+        {
+            "scenario": "bevel-0",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.11688232421875,
+            "postKph": 52.52112579345703,
+            "finalKph": 48.175575256347656,
+            "maxVertical": 0.32219868898391724,
+            "maxComY": 0.8785975575447083,
+            "comRise": 0.02417886257171631,
+            "maxPitch": 0.8190367817878723,
+            "maxRoll": 0.009857177734375,
+            "maxAngular": 0.2963094413280487,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -434.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -434.9871826171875,
+                "y": 0.9716061353683472,
+                "z": -335.2408447265625
+            }
+        },
+        {
+            "scenario": "vertical-0",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.11060333251953,
+            "postKph": 88.7055435180664,
+            "finalKph": 81.48236083984375,
+            "maxVertical": 0.32864558696746826,
+            "maxComY": 0.8720473051071167,
+            "comRise": 0.017628610134124756,
+            "maxPitch": 0.7610177397727966,
+            "maxRoll": 0.008733125403523445,
+            "maxAngular": 0.3501534163951874,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -434.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -434.9778137207031,
+                "y": 0.9716011881828308,
+                "z": -255.65835571289063
+            }
+        },
+        {
+            "scenario": "bevel-0",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.11060333251953,
+            "postKph": 88.65039825439453,
+            "finalKph": 81.39070892333984,
+            "maxVertical": 0.24056728184223175,
+            "maxComY": 0.8701122999191284,
+            "comRise": 0.015693604946136475,
+            "maxPitch": 0.660311758518219,
+            "maxRoll": 0.008400728926062584,
+            "maxAngular": 0.19035421311855316,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449096083641052,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -434.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -434.97772216796875,
+                "y": 0.9716006517410278,
+                "z": -315.7077331542969
+            }
+        },
+        {
+            "scenario": "vertical-1",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514568328857422,
+            "postKph": 7.437362194061279,
+            "finalKph": 6.834870338439941,
+            "maxVertical": 0.43749505281448364,
+            "maxComY": 0.9140287637710571,
+            "comRise": 0.059610068798065186,
+            "maxPitch": 1.540679931640625,
+            "maxRoll": 0.010223388671875,
+            "maxAngular": 0.34353145956993103,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -414.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -414.99163818359375,
+                "y": 0.9708788990974426,
+                "z": -299.49273681640625
+            }
+        },
+        {
+            "scenario": "bevel-1",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514568328857422,
+            "postKph": 7.329066753387451,
+            "finalKph": 6.175909042358398,
+            "maxVertical": 0.0999070331454277,
+            "maxComY": 0.8981273174285889,
+            "comRise": 0.043708622455596924,
+            "maxPitch": 1.24212646484375,
+            "maxRoll": 0.008056640625,
+            "maxAngular": 0.17618364095687866,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -414.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -414.9923095703125,
+                "y": 0.9703670740127563,
+                "z": -359.7658996582031
+            }
+        },
+        {
+            "scenario": "vertical-1",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.5305118560791,
+            "postKph": 25.47429084777832,
+            "finalKph": 23.282238006591797,
+            "maxVertical": 0.8697828650474548,
+            "maxComY": 0.9362135529518127,
+            "comRise": 0.0817948579788208,
+            "maxPitch": 1.8247307538986206,
+            "maxRoll": 0.024835480377078056,
+            "maxAngular": 0.6624059081077576,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -414.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -414.98944091796875,
+                "y": 0.9718793034553528,
+                "z": -289.78094482421875
+            }
+        },
+        {
+            "scenario": "bevel-1",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.530517578125,
+            "postKph": 25.516761779785156,
+            "finalKph": 23.135543823242188,
+            "maxVertical": 0.3074451684951782,
+            "maxComY": 0.9196982979774475,
+            "comRise": 0.06527960300445557,
+            "maxPitch": 1.3438363075256348,
+            "maxRoll": 0.013581470586359501,
+            "maxAngular": 0.19413328170776367,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449096083641052,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -414.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -414.9905700683594,
+                "y": 0.9720633029937744,
+                "z": -349.9631042480469
+            }
+        },
+        {
+            "scenario": "vertical-1",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.116886138916016,
+            "postKph": 52.53471755981445,
+            "finalKph": 48.312313079833984,
+            "maxVertical": 0.5029702186584473,
+            "maxComY": 0.913119912147522,
+            "comRise": 0.05870121717453003,
+            "maxPitch": 2.081352710723877,
+            "maxRoll": 0.047210693359375,
+            "maxAngular": 0.7489614486694336,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449096083641052,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -414.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -414.9831237792969,
+                "y": 0.9716424345970154,
+                "z": -275.17315673828125
+            }
+        },
+        {
+            "scenario": "bevel-1",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.116886138916016,
+            "postKph": 52.39723587036133,
+            "finalKph": 47.977508544921875,
+            "maxVertical": 0.5245257019996643,
+            "maxComY": 0.9111582636833191,
+            "comRise": 0.05673956871032715,
+            "maxPitch": 1.7592759132385254,
+            "maxRoll": 0.038116455078125,
+            "maxAngular": 0.2506486177444458,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449096083641052,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -414.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -414.9850769042969,
+                "y": 0.9716309905052185,
+                "z": -335.341064453125
+            }
+        },
+        {
+            "scenario": "vertical-1",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.11060333251953,
+            "postKph": 88.69187927246094,
+            "finalKph": 81.48257446289063,
+            "maxVertical": 0.5259645581245422,
+            "maxComY": 0.9210284352302551,
+            "comRise": 0.06660974025726318,
+            "maxPitch": 1.9455678462982178,
+            "maxRoll": 0.03216552734375,
+            "maxAngular": 0.8319471478462219,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449096083641052,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -414.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -414.9803466796875,
+                "y": 0.971603274345398,
+                "z": -255.66021728515625
+            }
+        },
+        {
+            "scenario": "bevel-1",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.11060333251953,
+            "postKph": 88.5665054321289,
+            "finalKph": 81.23462677001953,
+            "maxVertical": 0.4801330864429474,
+            "maxComY": 0.9004092216491699,
+            "comRise": 0.04599052667617798,
+            "maxPitch": 1.529510259628296,
+            "maxRoll": 0.032196044921875,
+            "maxAngular": 0.3779282867908478,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -414.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -414.9737548828125,
+                "y": 0.9716014266014099,
+                "z": -315.7921447753906
+            }
+        },
+        {
+            "scenario": "vertical-2",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514563083648682,
+            "postKph": 7.437356948852539,
+            "finalKph": 6.8348708152771,
+            "maxVertical": 0.5990061163902283,
+            "maxComY": 0.9415460824966431,
+            "comRise": 0.08712738752365112,
+            "maxPitch": 2.274444580078125,
+            "maxRoll": 0.0108642578125,
+            "maxAngular": 0.42317909002304077,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449096083641052,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -394.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -394.99114990234375,
+                "y": 0.970917284488678,
+                "z": -299.4924011230469
+            }
+        },
+        {
+            "scenario": "bevel-2",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514568328857422,
+            "postKph": 7.271852016448975,
+            "finalKph": 5.824267387390137,
+            "maxVertical": 0.1499570608139038,
+            "maxComY": 0.9189372062683105,
+            "comRise": 0.0645185112953186,
+            "maxPitch": 1.870880126953125,
+            "maxRoll": 0.01251220703125,
+            "maxAngular": 0.2663325071334839,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -394.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -394.9923095703125,
+                "y": 0.969793975353241,
+                "z": -359.9094543457031
+            }
+        },
+        {
+            "scenario": "vertical-2",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.5305118560791,
+            "postKph": 25.500041961669922,
+            "finalKph": 23.277179718017578,
+            "maxVertical": 1.3758769035339355,
+            "maxComY": 0.9793525338172913,
+            "comRise": 0.12493383884429932,
+            "maxPitch": 2.692410469055176,
+            "maxRoll": 0.03054908476769924,
+            "maxAngular": 1.008912205696106,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -394.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -394.9876708984375,
+                "y": 0.9721632599830627,
+                "z": -289.7774963378906
+            }
+        },
+        {
+            "scenario": "bevel-2",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.5305118560791,
+            "postKph": 25.417407989501953,
+            "finalKph": 22.537981033325195,
+            "maxVertical": 0.5043092370033264,
+            "maxComY": 0.952064037322998,
+            "comRise": 0.0976453423500061,
+            "maxPitch": 2.041412353515625,
+            "maxRoll": 0.021994270384311676,
+            "maxAngular": 0.3124898374080658,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -394.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -394.9903259277344,
+                "y": 0.9718886017799377,
+                "z": -350.0821838378906
+            }
+        },
+        {
+            "scenario": "vertical-2",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.11688232421875,
+            "postKph": 52.51204299926758,
+            "finalKph": 48.312232971191406,
+            "maxVertical": 0.6958685517311096,
+            "maxComY": 0.9449517130851746,
+            "comRise": 0.09053301811218262,
+            "maxPitch": 3.2077293395996094,
+            "maxRoll": 0.064788818359375,
+            "maxAngular": 1.322312355041504,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -394.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -394.9790954589844,
+                "y": 0.9716233015060425,
+                "z": -275.17333984375
+            }
+        },
+        {
+            "scenario": "bevel-2",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.11688232421875,
+            "postKph": 52.27077865600586,
+            "finalKph": 47.77898406982422,
+            "maxVertical": 0.6076035499572754,
+            "maxComY": 0.9368184804916382,
+            "comRise": 0.08239978551864624,
+            "maxPitch": 2.7896931171417236,
+            "maxRoll": 0.062347412109375,
+            "maxAngular": 0.5789034366607666,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -394.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -394.9809265136719,
+                "y": 0.9715959429740906,
+                "z": -335.44427490234375
+            }
+        },
+        {
+            "scenario": "vertical-2",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.11060333251953,
+            "postKph": 88.62747955322266,
+            "finalKph": 81.48318481445313,
+            "maxVertical": 1.1135904788970947,
+            "maxComY": 1.0503567457199097,
+            "comRise": 0.19593805074691772,
+            "maxPitch": 4.820416450500488,
+            "maxRoll": 0.08502197265625,
+            "maxAngular": 1.1513617038726807,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449096083641052,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -394.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -394.97918701171875,
+                "y": 0.9716489315032959,
+                "z": -255.6666259765625
+            }
+        },
+        {
+            "scenario": "bevel-2",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.11060333251953,
+            "postKph": 88.3851547241211,
+            "finalKph": 81.05726623535156,
+            "maxVertical": 0.6304900646209717,
+            "maxComY": 0.9718974828720093,
+            "comRise": 0.11747878789901733,
+            "maxPitch": 2.4453036785125732,
+            "maxRoll": 0.037261962890625,
+            "maxAngular": 0.8692578077316284,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -394.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -394.9759826660156,
+                "y": 0.9716323018074036,
+                "z": -315.8909912109375
+            }
+        },
+        {
+            "scenario": "vertical-3",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514563083648682,
+            "postKph": 7.437356948852539,
+            "finalKph": 6.833590030670166,
+            "maxVertical": 0.6929011940956116,
+            "maxComY": 0.965057373046875,
+            "comRise": 0.11063867807388306,
+            "maxPitch": 2.85870361328125,
+            "maxRoll": 0.0108642578125,
+            "maxAngular": 0.423152357339859,
+            "peakImpulse": 27.5335636138916,
+            "clearance": 0.23449096083641052,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -374.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -374.99102783203125,
+                "y": 0.9709811806678772,
+                "z": -299.4918212890625
+            }
+        },
+        {
+            "scenario": "bevel-3",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514568328857422,
+            "postKph": 7.212630748748779,
+            "finalKph": 5.426126480102539,
+            "maxVertical": 0.18465924263000488,
+            "maxComY": 0.9405101537704468,
+            "comRise": 0.08609145879745483,
+            "maxPitch": 2.52679443359375,
+            "maxRoll": 0.014758378267288208,
+            "maxAngular": 0.3671904504299164,
+            "peakImpulse": 86.7039566040039,
+            "clearance": 0.23449084162712097,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -374.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -374.9924621582031,
+                "y": 0.9689920544624329,
+                "z": -360.0649719238281
+            }
+        },
+        {
+            "scenario": "vertical-3",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.5305118560791,
+            "postKph": 25.519556045532227,
+            "finalKph": 23.59577178955078,
+            "maxVertical": 1.846484661102295,
+            "maxComY": 1.0245733261108398,
+            "comRise": 0.1701546311378479,
+            "maxPitch": 3.602649450302124,
+            "maxRoll": 0.031578000634908676,
+            "maxAngular": 1.3387147188186646,
+            "peakImpulse": 240.4738006591797,
+            "clearance": 0.23449084162712097,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -374.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -374.9876708984375,
+                "y": 0.9721308946609497,
+                "z": -289.7753601074219
+            }
+        },
+        {
+            "scenario": "bevel-3",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.5305118560791,
+            "postKph": 25.31219482421875,
+            "finalKph": 22.562923431396484,
+            "maxVertical": 0.7333728671073914,
+            "maxComY": 0.9905052781105042,
+            "comRise": 0.1360865831375122,
+            "maxPitch": 2.791778564453125,
+            "maxRoll": 0.02789306640625,
+            "maxAngular": 0.4333968758583069,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -374.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -374.9903869628906,
+                "y": 0.9708149433135986,
+                "z": -350.21966552734375
+            }
+        },
+        {
+            "scenario": "vertical-3",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.11688232421875,
+            "postKph": 52.5177001953125,
+            "finalKph": 48.3121452331543,
+            "maxVertical": 0.8402718901634216,
+            "maxComY": 0.9942179918289185,
+            "comRise": 0.1397992968559265,
+            "maxPitch": 4.3120903968811035,
+            "maxRoll": 0.097869873046875,
+            "maxAngular": 1.7486257553100586,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -374.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -374.9739074707031,
+                "y": 0.9714974761009216,
+                "z": -275.1731872558594
+            }
+        },
+        {
+            "scenario": "bevel-3",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.11688232421875,
+            "postKph": 52.136295318603516,
+            "finalKph": 47.57627487182617,
+            "maxVertical": 0.8076124787330627,
+            "maxComY": 0.9779382944107056,
+            "comRise": 0.12351959943771362,
+            "maxPitch": 3.9992477893829346,
+            "maxRoll": 0.0906982421875,
+            "maxAngular": 1.0152857303619385,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -374.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -374.9756164550781,
+                "y": 0.9714394807815552,
+                "z": -335.55230712890625
+            }
+        },
+        {
+            "scenario": "vertical-3",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.11060333251953,
+            "postKph": 88.62296295166016,
+            "finalKph": 81.4837875366211,
+            "maxVertical": 1.5133862495422363,
+            "maxComY": 1.1714577674865723,
+            "comRise": 0.3170390725135803,
+            "maxPitch": 7.267003536224365,
+            "maxRoll": 0.103118896484375,
+            "maxAngular": 1.4661750793457031,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -374.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -374.9789123535156,
+                "y": 0.9714915752410889,
+                "z": -255.670654296875
+            }
+        },
+        {
+            "scenario": "bevel-3",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.11060333251953,
+            "postKph": 88.23432922363281,
+            "finalKph": 80.80033874511719,
+            "maxVertical": 0.9539406299591064,
+            "maxComY": 1.0867058038711548,
+            "comRise": 0.23228710889816284,
+            "maxPitch": 5.915415287017822,
+            "maxRoll": 0.0953369140625,
+            "maxAngular": 1.008281946182251,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -374.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -374.96484375,
+                "y": 0.9716037511825562,
+                "z": -316.0313415527344
+            }
+        },
+        {
+            "scenario": "vertical-4",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514568328857422,
+            "postKph": 7.3217291831970215,
+            "finalKph": 4.690145492553711,
+            "maxVertical": 1.0494365692138672,
+            "maxComY": 1.0340919494628906,
+            "comRise": 0.17967325448989868,
+            "maxPitch": 4.768585205078125,
+            "maxRoll": 0.0155476164072752,
+            "maxAngular": 0.6507731080055237,
+            "peakImpulse": 2394.543212890625,
+            "clearance": 0.23449084162712097,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -354.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -354.990966796875,
+                "y": 1.0333908796310425,
+                "z": -299.95391845703125
+            }
+        },
+        {
+            "scenario": "bevel-4",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514568328857422,
+            "postKph": 7.088368892669678,
+            "finalKph": 3.881244421005249,
+            "maxVertical": 0.17807960510253906,
+            "maxComY": 0.9823822975158691,
+            "comRise": 0.1279636025428772,
+            "maxPitch": 3.811126708984375,
+            "maxRoll": 0.02011495642364025,
+            "maxAngular": 0.4970186948776245,
+            "peakImpulse": 1155.636962890625,
+            "clearance": 0.23449084162712097,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -354.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -354.9927673339844,
+                "y": 1.0116113424301147,
+                "z": -360.45989990234375
+            }
+        },
+        {
+            "scenario": "vertical-4",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.5305118560791,
+            "postKph": 25.141815185546875,
+            "finalKph": 22.258338928222656,
+            "maxVertical": 2.2524166107177734,
+            "maxComY": 1.0992830991744995,
+            "comRise": 0.24486440420150757,
+            "maxPitch": 5.55522346496582,
+            "maxRoll": 0.038360595703125,
+            "maxAngular": 1.9890114068984985,
+            "peakImpulse": 2467.4716796875,
+            "clearance": 0.23449084162712097,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -354.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -354.9872741699219,
+                "y": 0.9721742868423462,
+                "z": -290.2474060058594
+            }
+        },
+        {
+            "scenario": "bevel-4",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.5305118560791,
+            "postKph": 25.1057186126709,
+            "finalKph": 21.169464111328125,
+            "maxVertical": 0.6851291656494141,
+            "maxComY": 1.057748794555664,
+            "comRise": 0.20333009958267212,
+            "maxPitch": 4.42724609375,
+            "maxRoll": 0.02926715463399887,
+            "maxAngular": 0.5886173844337463,
+            "peakImpulse": 4210.46435546875,
+            "clearance": 0.23449084162712097,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -354.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -354.9902038574219,
+                "y": 0.9695386290550232,
+                "z": -350.6586608886719
+            }
+        },
+        {
+            "scenario": "vertical-4",
+            "configuration": "expansion-limited",
+            "outcome": "airborne / elevated",
+            "requestedKph": 60.0,
+            "preKph": 53.11688232421875,
+            "postKph": 51.9111442565918,
+            "finalKph": 47.091243743896484,
+            "maxVertical": 2.9269893169403076,
+            "maxComY": 1.6902868747711182,
+            "comRise": 0.8358681797981262,
+            "maxPitch": 20.778839111328125,
+            "maxRoll": 0.17437744140625,
+            "maxAngular": 2.3115921020507813,
+            "peakImpulse": 3137.8505859375,
+            "clearance": 0.23449084162712097,
+            "minContacts": 0,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -354.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -354.94110107421875,
+                "y": 0.9698339104652405,
+                "z": -275.785400390625
+            }
+        },
+        {
+            "scenario": "bevel-4",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.11688232421875,
+            "postKph": 51.934837341308594,
+            "finalKph": 46.93071365356445,
+            "maxVertical": 1.2065353393554688,
+            "maxComY": 1.159840703010559,
+            "comRise": 0.30542200803756714,
+            "maxPitch": 8.360669136047363,
+            "maxRoll": 0.16845703125,
+            "maxAngular": 1.205257773399353,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 0,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -354.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -354.960693359375,
+                "y": 0.9712433218955994,
+                "z": -335.87451171875
+            }
+        },
+        {
+            "scenario": "vertical-4",
+            "configuration": "expansion-limited",
+            "outcome": "airborne / elevated",
+            "requestedKph": 100.0,
+            "preKph": 90.11060333251953,
+            "postKph": 86.7039794921875,
+            "finalKph": 79.17683410644531,
+            "maxVertical": 5.005388259887695,
+            "maxComY": 2.2143945693969727,
+            "comRise": 1.359975814819336,
+            "maxPitch": 33.6533088684082,
+            "maxRoll": 0.475311279296875,
+            "maxAngular": 1.926427960395813,
+            "peakImpulse": 5545.16162109375,
+            "clearance": 0.23449084162712097,
+            "minContacts": 0,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -354.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -354.7975158691406,
+                "y": 0.960138201713562,
+                "z": -256.9821472167969
+            }
+        },
+        {
+            "scenario": "bevel-4",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.11060333251953,
+            "postKph": 88.00646209716797,
+            "finalKph": 80.22857666015625,
+            "maxVertical": 1.4994447231292725,
+            "maxComY": 1.2998517751693726,
+            "comRise": 0.4454330801963806,
+            "maxPitch": 10.311583518981934,
+            "maxRoll": 0.116729736328125,
+            "maxAngular": 1.4039603471755981,
+            "peakImpulse": 0.0,
+            "clearance": 0.23449084162712097,
+            "minContacts": 0,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -354.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -354.96038818359375,
+                "y": 0.971066415309906,
+                "z": -316.3351135253906
+            }
+        },
+        {
+            "scenario": "vertical-5",
+            "configuration": "expansion-limited",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 7.514568328857422,
+            "postKph": 0.12641070783138275,
+            "finalKph": 0.0,
+            "maxVertical": 0.10252650082111359,
+            "maxComY": 0.8599751591682434,
+            "comRise": 0.005556464195251465,
+            "maxPitch": 0.32722148299217224,
+            "maxRoll": 0.01319919340312481,
+            "maxAngular": 0.16414031386375427,
+            "peakImpulse": 6073.8310546875,
+            "clearance": 0.23449084162712097,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -334.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -334.99267578125,
+                "y": 0.9708744883537292,
+                "z": -303.358154296875
+            }
+        },
+        {
+            "scenario": "bevel-5",
+            "configuration": "expansion-limited",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 7.5145649909973145,
+            "postKph": 6.817972183227539,
+            "finalKph": 0.7751267552375793,
+            "maxVertical": 0.2878316044807434,
+            "maxComY": 1.0634244680404663,
+            "comRise": 0.20900684595108032,
+            "maxPitch": 6.341278076171875,
+            "maxRoll": 0.022069446742534637,
+            "maxAngular": 0.5369876027107239,
+            "peakImpulse": 2307.534423828125,
+            "clearance": 0.23451849818229675,
+            "minContacts": 4,
+            "finalContacts": 4,
+            "initialPosition": {
+                "x": -334.999755859375,
+                "y": 0.9697654843330383,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -334.9924621582031,
+                "y": 1.0986039638519287,
+                "z": -361.2766418457031
+            }
+        },
+        {
+            "scenario": "vertical-5",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.5305118560791,
+            "postKph": 20.783493041992188,
+            "finalKph": 16.901416778564453,
+            "maxVertical": 2.0594215393066406,
+            "maxComY": 1.488390326499939,
+            "comRise": 0.633971631526947,
+            "maxPitch": 13.421432495117188,
+            "maxRoll": 0.123260498046875,
+            "maxAngular": 2.116833209991455,
+            "peakImpulse": 5396.54052734375,
+            "clearance": 0.23449084162712097,
+            "minContacts": 0,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -334.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -334.990234375,
+                "y": 0.9699575304985046,
+                "z": -293.1904296875
+            }
+        },
+        {
+            "scenario": "bevel-5",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.5305118560791,
+            "postKph": 24.55156898498535,
+            "finalKph": 19.789823532104492,
+            "maxVertical": 1.0983108282089233,
+            "maxComY": 1.1797014474868774,
+            "comRise": 0.3252827525138855,
+            "maxPitch": 8.316925048828125,
+            "maxRoll": 0.1881103515625,
+            "maxAngular": 1.0514687299728394,
+            "peakImpulse": 4069.152587890625,
+            "clearance": 0.23449084162712097,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -334.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -334.9778137207031,
+                "y": 0.9685792326927185,
+                "z": -351.41546630859375
+            }
+        },
+        {
+            "scenario": "vertical-5",
+            "configuration": "expansion-limited",
+            "outcome": "large rotation / possible rollover",
+            "requestedKph": 60.0,
+            "preKph": 53.11688232421875,
+            "postKph": 46.13816833496094,
+            "finalKph": 27.670148849487305,
+            "maxVertical": 5.912413597106934,
+            "maxComY": 4.009212493896484,
+            "comRise": 3.1547937393188477,
+            "maxPitch": 89.97203063964844,
+            "maxRoll": 179.9992218017578,
+            "maxAngular": 2.8953497409820557,
+            "peakImpulse": 14890.3779296875,
+            "clearance": 0.23449084162712097,
+            "minContacts": 0,
+            "finalContacts": 0,
+            "initialPosition": {
+                "x": -334.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -334.9701232910156,
+                "y": 2.8294260501861572,
+                "z": -285.4908142089844
+            }
+        },
+        {
+            "scenario": "bevel-5",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.11686706542969,
+            "postKph": 51.65650939941406,
+            "finalKph": 45.347816467285156,
+            "maxVertical": 1.6949187517166138,
+            "maxComY": 1.4505237340927124,
+            "comRise": 0.5950260162353516,
+            "maxPitch": 16.29030418395996,
+            "maxRoll": 0.173736572265625,
+            "maxAngular": 1.430040955543518,
+            "peakImpulse": 1825.8707275390625,
+            "clearance": 0.23604092001914978,
+            "minContacts": 0,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -334.99981689453125,
+                "y": 0.9708796143531799,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -334.9430236816406,
+                "y": 0.9739519953727722,
+                "z": -336.6563415527344
+            }
+        },
+        {
+            "scenario": "vertical-5",
+            "configuration": "expansion-limited",
+            "outcome": "stopped",
+            "requestedKph": 100.0,
+            "preKph": 90.11060333251953,
+            "postKph": 0.0604042187333107,
+            "finalKph": 0.0,
+            "maxVertical": 0.07333626598119736,
+            "maxComY": 0.8563849925994873,
+            "comRise": 0.0019662976264953613,
+            "maxPitch": 0.33178678154945374,
+            "maxRoll": 0.010329103097319603,
+            "maxAngular": 0.05918730050325394,
+            "peakImpulse": 74909.9296875,
+            "clearance": 0.23449084162712097,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -334.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -334.9978942871094,
+                "y": 0.9681622982025146,
+                "z": -303.3537902832031
+            }
+        },
+        {
+            "scenario": "bevel-5",
+            "configuration": "expansion-limited",
+            "outcome": "airborne / elevated",
+            "requestedKph": 100.0,
+            "preKph": 90.11062622070313,
+            "postKph": 86.66999816894531,
+            "finalKph": 77.57144927978516,
+            "maxVertical": 4.0539631843566895,
+            "maxComY": 2.263274908065796,
+            "comRise": 1.4088563919067383,
+            "maxPitch": 39.01546859741211,
+            "maxRoll": 0.45831298828125,
+            "maxAngular": 1.6829626560211182,
+            "peakImpulse": 2584.311767578125,
+            "clearance": 0.23452350497245789,
+            "minContacts": 0,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -334.9991760253906,
+                "y": 0.9697664380073547,
+                "z": -372.99884033203125
+            },
+            "finalPosition": {
+                "x": -335.3963623046875,
+                "y": 0.9788585901260376,
+                "z": -317.82818603515625
+            }
+        },
+        {
+            "scenario": "vertical-6",
+            "configuration": "expansion-limited",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 7.514568328857422,
+            "postKph": 0.11587303876876831,
+            "finalKph": 0.0,
+            "maxVertical": 0.1422407329082489,
+            "maxComY": 0.8613842725753784,
+            "comRise": 0.006965577602386475,
+            "maxPitch": 0.11229731887578964,
+            "maxRoll": 0.01171875,
+            "maxAngular": 0.04633631929755211,
+            "peakImpulse": 6216.40185546875,
+            "clearance": 0.23449084162712097,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -314.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -314.9930114746094,
+                "y": 0.9709278345108032,
+                "z": -303.3540954589844
+            }
+        },
+        {
+            "scenario": "bevel-6",
+            "configuration": "expansion-limited",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 7.5145649909973145,
+            "postKph": 6.522077560424805,
+            "finalKph": 1.8793118000030518,
+            "maxVertical": 0.38764870166778564,
+            "maxComY": 1.0817652940750122,
+            "comRise": 0.22734767198562622,
+            "maxPitch": 6.919097900390625,
+            "maxRoll": 0.01171875,
+            "maxAngular": 0.1846158504486084,
+            "peakImpulse": 0.0,
+            "clearance": 0.23451849818229675,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -314.999755859375,
+                "y": 0.9697654843330383,
+                "z": -372.9988098144531
+            },
+            "finalPosition": {
+                "x": -314.9930725097656,
+                "y": 1.2036502361297607,
+                "z": -362.012939453125
+            }
+        },
+        {
+            "scenario": "vertical-6",
+            "configuration": "expansion-limited",
+            "outcome": "stopped",
+            "requestedKph": 30.0,
+            "preKph": 25.5305118560791,
+            "postKph": 0.7301561236381531,
+            "finalKph": 0.0,
+            "maxVertical": 0.4823954999446869,
+            "maxComY": 0.8825175166130066,
+            "comRise": 0.02809882164001465,
+            "maxPitch": 0.5017337203025818,
+            "maxRoll": 0.023162841796875,
+            "maxAngular": 0.15720251202583313,
+            "peakImpulse": 21490.947265625,
+            "clearance": 0.23449084162712097,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -314.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -314.9953308105469,
+                "y": 0.9704064726829529,
+                "z": -303.3541564941406
+            }
+        },
+        {
+            "scenario": "bevel-6",
+            "configuration": "expansion-limited",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.530513763427734,
+            "postKph": 23.994903564453125,
+            "finalKph": 17.947900772094727,
+            "maxVertical": 1.5685304403305054,
+            "maxComY": 1.441950798034668,
+            "comRise": 0.5875322222709656,
+            "maxPitch": 13.472442626953125,
+            "maxRoll": 0.123748779296875,
+            "maxAngular": 1.340477705001831,
+            "peakImpulse": 6417.1416015625,
+            "clearance": 0.23452362418174744,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -314.9991760253906,
+                "y": 0.9697664380073547,
+                "z": -372.99884033203125
+            },
+            "finalPosition": {
+                "x": -314.98406982421875,
+                "y": 0.9707754254341125,
+                "z": -352.1670837402344
+            }
+        },
+        {
+            "scenario": "vertical-6",
+            "configuration": "expansion-limited",
+            "outcome": "stopped",
+            "requestedKph": 60.0,
+            "preKph": 53.11688232421875,
+            "postKph": 0.8908153772354126,
+            "finalKph": 0.0,
+            "maxVertical": 1.032477855682373,
+            "maxComY": 0.9424691200256348,
+            "comRise": 0.08805042505264282,
+            "maxPitch": 1.3893829584121704,
+            "maxRoll": 0.03973388671875,
+            "maxAngular": 0.3360229432582855,
+            "peakImpulse": 44061.21484375,
+            "clearance": 0.23449084162712097,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -314.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -314.99627685546875,
+                "y": 0.9710796475410461,
+                "z": -303.3599548339844
+            }
+        },
+        {
+            "scenario": "bevel-6",
+            "configuration": "expansion-limited",
+            "outcome": "airborne / elevated",
+            "requestedKph": 60.0,
+            "preKph": 53.11687469482422,
+            "postKph": 50.50634002685547,
+            "finalKph": 42.834293365478516,
+            "maxVertical": 2.9483513832092285,
+            "maxComY": 2.058678388595581,
+            "comRise": 1.2042598724365234,
+            "maxPitch": 30.429975509643555,
+            "maxRoll": 0.427581787109375,
+            "maxAngular": 1.6498240232467651,
+            "peakImpulse": 2147.91845703125,
+            "clearance": 0.23452362418174744,
+            "minContacts": 0,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -314.9991760253906,
+                "y": 0.9697664380073547,
+                "z": -372.99884033203125
+            },
+            "finalPosition": {
+                "x": -314.9324951171875,
+                "y": 0.9649175405502319,
+                "z": -337.98187255859375
+            }
+        },
+        {
+            "scenario": "vertical-6",
+            "configuration": "expansion-limited",
+            "outcome": "stopped",
+            "requestedKph": 100.0,
+            "preKph": 90.11060333251953,
+            "postKph": 1.3309980630874634,
+            "finalKph": 0.0,
+            "maxVertical": 1.7753137350082397,
+            "maxComY": 1.0944983959197998,
+            "comRise": 0.24007970094680786,
+            "maxPitch": 4.5918049812316895,
+            "maxRoll": 0.080291748046875,
+            "maxAngular": 0.5769915580749512,
+            "peakImpulse": 74566.484375,
+            "clearance": 0.23449084162712097,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -314.99981689453125,
+                "y": 0.9697668552398682,
+                "z": -312.9988098144531
+            },
+            "finalPosition": {
+                "x": -314.9954833984375,
+                "y": 0.9712350964546204,
+                "z": -303.36138916015625
+            }
+        },
+        {
+            "scenario": "bevel-6",
+            "configuration": "expansion-limited",
+            "outcome": "large rotation / possible rollover",
+            "requestedKph": 100.0,
+            "preKph": 90.11062622070313,
+            "postKph": 84.83843231201172,
+            "finalKph": 71.47814178466797,
+            "maxVertical": 6.547058582305908,
+            "maxComY": 3.91975998878479,
+            "comRise": 3.0653414726257324,
+            "maxPitch": 89.83448791503906,
+            "maxRoll": 179.99964904785156,
+            "maxAngular": 2.3278350830078125,
+            "peakImpulse": 7131.806640625,
+            "clearance": 0.23452362418174744,
+            "minContacts": 0,
+            "finalContacts": 0,
+            "initialPosition": {
+                "x": -314.9991760253906,
+                "y": 0.9697664380073547,
+                "z": -372.99884033203125
+            },
+            "finalPosition": {
+                "x": -314.8309020996094,
+                "y": 2.8413126468658447,
+                "z": -320.5058288574219
+            }
+        },
+        {
+            "scenario": "wall-frontal",
+            "configuration": "expansion-limited",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 7.5145487785339355,
+            "postKph": 7.437344074249268,
+            "finalKph": 0.0,
+            "maxVertical": 0.009684300981462002,
+            "maxComY": 0.8569304943084717,
+            "comRise": 0.0014328360557556152,
+            "maxPitch": 0.10700210183858871,
+            "maxRoll": 0.006683349609375,
+            "maxAngular": 0.023531092330813408,
+            "peakImpulse": 6020.9462890625,
+            "clearance": 0.23604092001914978,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -244.9998321533203,
+                "y": 0.9708795547485352,
+                "z": -309.9988098144531
+            },
+            "finalPosition": {
+                "x": -244.99502563476563,
+                "y": 0.9708552956581116,
+                "z": -298.8544921875
+            }
+        },
+        {
+            "scenario": "wall-frontal",
+            "configuration": "expansion-limited",
+            "outcome": "stopped",
+            "requestedKph": 30.0,
+            "preKph": 25.5305118560791,
+            "postKph": 25.665515899658203,
+            "finalKph": 0.0,
+            "maxVertical": 0.16860216856002808,
+            "maxComY": 0.8632245659828186,
+            "comRise": 0.008805990219116211,
+            "maxPitch": 0.2500417232513428,
+            "maxRoll": 0.012542724609375,
+            "maxAngular": 0.059560757130384445,
+            "peakImpulse": 21371.15625,
+            "clearance": 0.23452350497245789,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -244.9991455078125,
+                "y": 0.9697664380073547,
+                "z": -309.99884033203125
+            },
+            "finalPosition": {
+                "x": -244.9943389892578,
+                "y": 0.9696826338768005,
+                "z": -298.8544006347656
+            }
+        },
+        {
+            "scenario": "wall-frontal",
+            "configuration": "expansion-limited",
+            "outcome": "stopped",
+            "requestedKph": 60.0,
+            "preKph": 53.116878509521484,
+            "postKph": 0.07745092362165451,
+            "finalKph": 0.0,
+            "maxVertical": 0.3604663908481598,
+            "maxComY": 0.8734560608863831,
+            "comRise": 0.019038498401641846,
+            "maxPitch": 0.2849279046058655,
+            "maxRoll": 0.03447790816426277,
+            "maxAngular": 0.11627501994371414,
+            "peakImpulse": 44022.90625,
+            "clearance": 0.23450741171836853,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -244.99989318847656,
+                "y": 0.9697654843330383,
+                "z": -309.9988098144531
+            },
+            "finalPosition": {
+                "x": -244.9966583251953,
+                "y": 0.9712693691253662,
+                "z": -298.8572692871094
+            }
+        },
+        {
+            "scenario": "jump",
+            "configuration": "expansion-limited",
+            "outcome": "airborne / elevated",
+            "requestedKph": 30.0,
+            "preKph": 24.91736602783203,
+            "postKph": 23.767127990722656,
+            "finalKph": 18.231605529785156,
+            "maxVertical": 0.565177857875824,
+            "maxComY": 1.8775302171707153,
+            "comRise": 1.023112177848816,
+            "maxPitch": 3.951934814453125,
+            "maxRoll": 0.00811767578125,
+            "maxAngular": 0.1618257761001587,
+            "peakImpulse": 0.0,
+            "clearance": 0.23452529311180115,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "initialPosition": {
+                "x": -234.99948120117188,
+                "y": 0.9697659015655518,
+                "z": -129.99874877929688
+            },
+            "finalPosition": {
+                "x": -234.99209594726563,
+                "y": 2.0069594383239746,
+                "z": -108.50083923339844
+            }
+        }
+    ]
+}

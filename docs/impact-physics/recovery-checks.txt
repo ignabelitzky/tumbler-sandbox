@@ -1,0 +1,4 @@
+PASS enabled front face retains 6 cm rail climb: 8.80481
+PASS enabled front face forward ledge escape AllWheelDrive: (0.00, -0.23, 36.01)
+PASS enabled front face forward ledge escape FrontWheelDrive: (0.00, -0.27, 25.80)
+PASS enabled front face forward ledge escape RearWheelDrive: (0.00, -0.18, 17.44)

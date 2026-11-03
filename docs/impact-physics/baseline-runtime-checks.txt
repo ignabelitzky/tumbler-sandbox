@@ -1,0 +1,1 @@
+PASS local reset restores all five fixture poses and velocities, leaves vehicle unchanged

@@ -1,6 +1,6 @@
 {
   "unity": "6000.6.7f1",
-  "burnout_checks": "PASS 26 native burnout checks",
+  "burnout_checks": "PASS 28 native burnout checks",
   "steering_observations": [
     "FrontWheelDrive steer=-1 yaw=-120.2924 deg / 5 s",
     "FrontWheelDrive steer=1 yaw=120.8968 deg / 5 s",
@@ -11,7 +11,8 @@
   ],
   "regression": "verify-tumbler-update.py: 82 edit + 119 runtime PASS",
   "limitations": [
-    "Headless native particle counts checked; visual smoke appearance and physical controller driving require interactive review.",
+    "Native HDRP GPU preview inspected; subjective density and physical controller driving should also be checked interactively.",
     "Steering trial verifies physical rotation over five seconds, not a prescribed circular radius."
-  ]
+  ],
+  "rendering": "PASS native HDRP GPU render, supported shader, no shader errors, six assigned emitters"
 }

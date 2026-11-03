@@ -52,11 +52,45 @@ public class TumblerEffects : MonoBehaviour
         for(int i=0;i<2&&i<wheelSmokes.Length;i++)
             if(tireSmokes.Length>0&&tireSmokes[0]!=null)wheelSmokes[i]=Instantiate(tireSmokes[0],transform);
         smokeRemainders = new float[wheelSmokes.Length];
+        var smokeMaterial = Resources.Load<Material>("TireSmokeHDRP");
         foreach (var smoke in wheelSmokes)
         {
             if (smoke == null) continue;
             var main = smoke.main;
+            smoke.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             main.simulationSpace = ParticleSystemSimulationSpace.World;
+            main.scalingMode = ParticleSystemScalingMode.Shape;
+            main.startLifetime = new ParticleSystem.MinMaxCurve(1.4f, 2.2f);
+            main.startSpeed = new ParticleSystem.MinMaxCurve(.25f, .55f);
+            main.startSize3D = false;
+            main.startSize = new ParticleSystem.MinMaxCurve(.35f, .65f);
+            main.startColor = new Color(.42f, .44f, .46f, .24f);
+            main.maxParticles = 256;
+            var sheet = smoke.textureSheetAnimation; sheet.enabled = false;
+            var bySpeed = smoke.sizeBySpeed; bySpeed.enabled = false;
+            var tintBySpeed = smoke.colorBySpeed; tintBySpeed.enabled = false;
+            var noise = smoke.noise; noise.enabled = false;
+            var force = smoke.forceOverLifetime; force.enabled = false;
+            var trails = smoke.trails; trails.enabled = false;
+            var color = smoke.colorOverLifetime;
+            color.enabled = true;
+            var fade = new Gradient();
+            fade.SetKeys(new[] { new GradientColorKey(Color.white, 0), new GradientColorKey(Color.white, 1) },
+                new[] { new GradientAlphaKey(0, 0), new GradientAlphaKey(1, .12f), new GradientAlphaKey(.5f, .65f), new GradientAlphaKey(0, 1) });
+            color.color = fade;
+            var size = smoke.sizeOverLifetime; size.enabled = true;
+            size.size = new ParticleSystem.MinMaxCurve(1, AnimationCurve.Linear(0, .65f, 1, 3f));
+            var shape = smoke.shape; shape.enabled = true; shape.shapeType = ParticleSystemShapeType.Sphere; shape.radius = .12f;
+            var velocity = smoke.velocityOverLifetime; velocity.enabled = true; velocity.space = ParticleSystemSimulationSpace.World;
+            velocity.x = new ParticleSystem.MinMaxCurve(-.12f, .12f); velocity.y = new ParticleSystem.MinMaxCurve(.25f, .5f); velocity.z = new ParticleSystem.MinMaxCurve(-.12f, .12f);
+            var renderer = smoke.GetComponent<ParticleSystemRenderer>();
+            renderer.SetActiveVertexStreams(new System.Collections.Generic.List<ParticleSystemVertexStream> { ParticleSystemVertexStream.Position, ParticleSystemVertexStream.Color, ParticleSystemVertexStream.UV });
+            renderer.pivot = Vector3.zero;
+            renderer.enabled = true;
+            renderer.renderMode = ParticleSystemRenderMode.Billboard;
+            renderer.minParticleSize = 0; renderer.maxParticleSize = .16f;
+            if (smokeMaterial != null) renderer.sharedMaterial = smokeMaterial;
+            else Debug.LogError("Missing HDRP tire smoke material", this);
             var emission = smoke.emission;
             emission.enabled = false;
             main.playOnAwake = false;

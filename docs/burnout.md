@@ -22,3 +22,13 @@ python3 tools/verify-tumbler-update.py --unity /path/to/Unity
 Native results are recorded alongside this document. The steering check integrates yaw for five seconds in each mode/direction; it verifies physical turning, not a guaranteed circular radius or a completed 360-degree turn. Visual appearance/density and physical Xbox driving should also be checked interactively on the target PC.
 
 Validation in Unity 6000.6.7f1: **26 native burnout checks passed** (including actual smoke emission), plus **82 edit / 119 runtime regression checks**. Final five-second yaw observations are approximately ±121° FWD, ±148° RWD, and ±283° AWD. See [burnout-validation.json](burnout-validation.json).
+
+## HDRP smoke rendering correction
+
+The previously reused `SmokeLight` material points to a legacy built-in particle shader, producing magenta quads under HDRP. Particle-count checks did not detect this render failure. It is replaced on all six tire emitters with `Resources/TireSmokeHDRP.mat`, referencing the project-local `Tumbler/Tire Smoke HDRP` shader. The Resources material reference includes the shader in builds; no manual scene reassignment or runtime Shader.Find fallback is needed.
+
+The shader uses HDRP transforms, transparent alpha blending, vertex color/lifetime alpha and a procedural soft circular cloud edge. It writes no depth. Explicit billboard vertex streams, a zero pivot, 0.35–0.65 m starting size, 1.4–2.2 s lifetime, gradual growth/fade, slow upward drift and a 256-particle per-wheel budget replace inherited legacy settings. Legacy flipbook, size-by-speed, color-by-speed, force, noise and trail modules are disabled to avoid unexpected huge cards or invalid UVs. Screen-size limiting further prevents individual particles from filling the view.
+
+`SmokePreview.Run` creates/validates the material, emits real particle systems and renders Sandbox through HDRP on the GPU. It checks shader support/compilation, nonzero particles, six assigned emitters and absence of bright magenta pixels in the captured frame. Preview fixtures/cameras/exposure are not saved to the scene. Final correction validation: **28 native burnout checks passed**, plus the native HDRP GPU render. The earlier 201 controller/drivetrain regression checks remain unchanged by this rendering-only update.
+
+![Native HDRP smoke preview](burnout-smoke-hdrp.png)

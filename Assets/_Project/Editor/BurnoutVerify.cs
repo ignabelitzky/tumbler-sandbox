@@ -65,6 +65,8 @@ public static class BurnoutVerify
    var effects=car.GetComponent<TumblerEffects>();
    var smokes=(ParticleSystem[])typeof(TumblerEffects).GetField("wheelSmokes",flags).GetValue(effects);
    Check(smokes.Length==6&&smokes.All(v=>v!=null),"Smoke supports all six tires");
+   Check(smokes.All(v=>v.GetComponent<ParticleSystemRenderer>().sharedMaterial.shader.name=="Tumbler/Tire Smoke HDRP"),"All smoke uses dedicated HDRP shader");
+   Check(smokes.All(v=>v.main.maxParticles==256&&!v.main.startSize3D),"Smoke size and particle budgets bounded");
    foreach(var w in all){w.motorTorque=0;w.brakeTorque=0;w.rotationSpeed=0;w.steerAngle=0;}
    body.position=new Vector3(-280,1,-250);body.rotation=Quaternion.identity;body.linearVelocity=Vector3.zero;body.angularVelocity=Vector3.zero;Physics.SyncTransforms();for(int i=0;i<150;i++)Physics.Simulate(.02f);
    controller.enabled=true;InputSystem.QueueStateEvent(pad,new GamepadState());InputSystem.Update();controller.SendMessage("RefreshDrivingInput");controller.SendMessage("FixedUpdate");body.linearVelocity=Vector3.zero;body.angularVelocity=Vector3.zero;

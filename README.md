@@ -271,3 +271,5 @@ This is an unofficial personal project, with no affiliation with or endorsement 
 **Developer: Ignacio Belitzky**
 
 [Portfolio](https://ignaciobelitzky.dev) · [GitHub](https://github.com/ignabelitzky)
+
+The Sandbox also includes a southwest [Impact & Physics Test Ground](docs/impact-physics-test-ground.md) with six isolated test sectors and repeatable native impact measurements. See [vehicle impact calibration](docs/tumbler-impact-physics.md).

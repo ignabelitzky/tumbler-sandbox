@@ -54938,6 +54938,36 @@ MonoBehaviour:
   systems: {fileID: 2040198345356866095}
   idleLumens: 450
   turboLumens: 2400
+--- !u!1001 &875400000000000001
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7239519731577973424, guid: 259e53ebca8b2430bb7df8f4a420b92b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -280
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239519731577973424, guid: 259e53ebca8b2430bb7df8f4a420b92b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239519731577973424, guid: 259e53ebca8b2430bb7df8f4a420b92b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -250
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 259e53ebca8b2430bb7df8f4a420b92b, type: 3}
+--- !u!4 &875400000000000002 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7239519731577973424, guid: 259e53ebca8b2430bb7df8f4a420b92b, type: 3}
+  m_PrefabInstance: {fileID: 875400000000000001}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -54959,3 +54989,4 @@ SceneRoots:
   - {fileID: 819257298}
   - {fileID: 1813036926}
   - {fileID: 1900000001}
+  - {fileID: 875400000000000002}

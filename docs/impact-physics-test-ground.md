@@ -27,7 +27,7 @@ Concrete/steel/road/amber/paint materials are reused from the Sandbox's undergro
 
 Begin at 10 km/h for low impacts and walls; progress to 30/60 km/h when appropriate. 100 km/h trials are severe impacts, not a no-rollover acceptance test. Each low lane has a beveled and a vertical obstacle: for isolation, start **between** them for the vertical obstacle; the automated verifier temporarily disables the other low obstacles, without saving the scene. High-speed runout can exit the platform, so manual high-speed comparisons should stop and reposition after the target event.
 
-The digital HUD remains the speed reference. Lane marks assist approach positioning, not speed measurement. Six-wheel static ride height and actual underbody clearance are recorded by the verifier; the 0.30/0.50/0.70 m lanes bracket chassis contact.
+The digital HUD remains the speed reference. Lane marks assist approach positioning, not speed measurement. Six-wheel static ride height and actual underbody clearance are recorded by the verifier; the 0.30/0.50/0.70 m lanes bracket chassis contact. The selected front face starts 0.10 m above the hull bottom, around 0.34 m above the flat platform.
 
 In Play Mode, select the root's **Impact Ground Reset** component and use its context menu **Restore movable test objects**. This restores only its five cached rigidbodies, clears velocities and sleeps them. There are no new key bindings, polling loops, or automatic reset. The vehicle's own reset and spawn are unchanged.
 
@@ -38,6 +38,8 @@ python3 tools/verify-impact-ground.py
 IMPACT_CONFIG=calibrated /path/to/Unity -batchmode -nographics -projectPath "$PWD" -executeMethod ImpactPhysicsVerify.Run -logFile TestResults/impact.log
 ```
 
-`ImpactPhysicsVerify` is Editor-only; it loads Sandbox, enters Play Mode, disables normal script forces, releases all body constraints and advances native physics at 0.02 s. It records 60 trials on the actual fixture geometries. Reports go to ignored `TestResults/ImpactPhysics/`. It never saves the scene. Restore the dynamic TMP font from Git if the Editor changes its atlas.
+`ImpactPhysicsVerify` is Editor-only; it loads Sandbox, enters Play Mode, disables normal script forces, releases all body constraints and advances native physics at 0.02 s. It records 81 trials on the actual fixture geometries. Reports go to ignored `TestResults/ImpactPhysics/`. It never saves the scene. Restore the dynamic TMP font from Git if the Editor changes its atlas.
 
 For full driving acceptance, repeat acceleration/braking, all drive modes, seven gears, boost, steering, jump/landing, reset, keyboard and Xbox on the user's machine. The coasting impact experiment does not establish those subjective/player-control results.
+
+The selected vehicle calibration passes the 6 cm rail and AWD/FWD/RWD ledge-recovery checks. The complete numeric comparison and known limitations are in [tumbler-impact-physics.md](tumbler-impact-physics.md). For the lateral slopes, approach from the low long edge rather than striking the elevated end face.

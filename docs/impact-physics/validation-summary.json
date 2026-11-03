@@ -1,0 +1,32 @@
+{
+  "baseline": 0,
+  "calibrated": 0,
+  "verify-chassis.py": {
+    "code": 0,
+    "output": "{\n  \"status\": \"PASS\",\n  \"edit_checks\": 39,\n  \"play_checks\": 24,\n  \"reports\": \"/home/ignacio/Documents/Codex/2026-11-03/eje-2/work/tumbler-sandbox/TestResults/Chassis\"\n}\n"
+  },
+  "verify-driving-ground.py": {
+    "code": 0,
+    "output": "{\n  \"status\": \"PASS\",\n  \"edit_checks\": 89,\n  \"play_checks\": 199,\n  \"reports\": \"/home/ignacio/Documents/Codex/2026-11-03/eje-2/work/tumbler-sandbox/TestResults/DrivingGround\"\n}\n"
+  },
+  "verify-tumbler-update.py": {
+    "code": 0,
+    "output": "{\n  \"status\": \"PASS\",\n  \"edit_checks\": 82,\n  \"play_checks\": 119,\n  \"reports\": \"/home/ignacio/Documents/Codex/2026-11-03/eje-2/work/tumbler-sandbox/TestResults/TumblerUpdate\"\n}\n"
+  },
+  "validate-project.py": {
+    "code": 1,
+    "output": "Traceback (most recent call last):\n  File \"/home/ignacio/Documents/Codex/2026-11-03/eje-2/work/tumbler-sandbox/tools/validate-project.py\", line 51, in <module>\n    require(actual == sha, 'Unexpected change to retained project file: ' + path)\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ignacio/Documents/Codex/2026-11-03/eje-2/work/tumbler-sandbox/tools/validate-project.py\", line 26, in require\n    raise AssertionError(message)\nAssertionError: Unexpected change to retained project file: Assets/HDRPDefaultResources/HDRenderPipelineGlobalSettings.asset\n"
+  },
+  "verify-impact-ground.py": {
+    "code": 0,
+    "output": "{\n  \"status\": \"PASS\",\n  \"preserved_original_blocks\": 311,\n  \"added_blocks\": 3,\n  \"unique_asset_guids\": 731,\n  \"movable_fixtures\": 5\n}\n"
+  },
+  "historical_validator_clean_main": {
+    "base": "5713507",
+    "same_failure": "Assets/HDRPDefaultResources/HDRenderPipelineGlobalSettings.asset",
+    "main_and_working_blob": "5363ad69f605e594aa63b85e0dc90b45bf9f9149"
+  },
+  "fixture_checks": 561,
+  "final_paired_trials": 81,
+  "front_face_clearance_above_hull_min_m": 0.1
+}

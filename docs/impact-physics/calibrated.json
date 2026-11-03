@@ -1,0 +1,3084 @@
+{
+    "unity": "6000.6.7f1",
+    "conditions": "0.02 s; 3 s settle, 2 s observation after approach reference (up to 10 s timeout); free six-wheel vehicle; coast, no motor/brake/boost/downforce; same poses; peaks cover full observation; jump windows 5 s at 30 / 3 s at 60; post-settle canonical pose, orientation, zero wheel spin",
+    "trials": [
+        {
+            "scenario": "vertical-0",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514561653137207,
+            "postKph": 7.437349796295166,
+            "finalKph": 6.83477783203125,
+            "maxVertical": 0.2189370095729828,
+            "maxComY": 0.8856160640716553,
+            "comRise": 0.03030639886856079,
+            "maxPitch": 0.780731201171875,
+            "maxRoll": 0.004594783298671246,
+            "maxAngular": 0.17065249383449554,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -435.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -434.99993896484375,
+                "y": 0.9708001613616943,
+                "z": -299.4937438964844
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-0",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514560699462891,
+            "postKph": 7.3842034339904785,
+            "finalKph": 6.512445449829102,
+            "maxVertical": 0.06796770542860031,
+            "maxComY": 0.8768957853317261,
+            "comRise": 0.021586060523986816,
+            "maxPitch": 0.603790283203125,
+            "maxRoll": 0.005032625049352646,
+            "maxAngular": 0.16436481475830078,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -435.0,
+                "y": 0.9708382487297058,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -435.0,
+                "y": 0.9709380865097046,
+                "z": -359.62799072265625
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-0",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564653396606445,
+            "postKph": 25.501014709472656,
+            "finalKph": 23.303401947021484,
+            "maxVertical": 0.39582082629203796,
+            "maxComY": 0.8949082493782043,
+            "comRise": 0.03959852457046509,
+            "maxPitch": 0.9619879722595215,
+            "maxRoll": 0.0138193778693676,
+            "maxAngular": 0.38397136330604553,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -435.0,
+                "y": 0.9708382487297058,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -434.9998779296875,
+                "y": 0.971523642539978,
+                "z": -289.76568603515625
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-0",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564653396606445,
+            "postKph": 25.601154327392578,
+            "finalKph": 23.017114639282227,
+            "maxVertical": 0.11507738381624222,
+            "maxComY": 0.8851736783981323,
+            "comRise": 0.029863953590393066,
+            "maxPitch": 0.6748006343841553,
+            "maxRoll": 0.009221414104104042,
+            "maxAngular": 0.2755877673625946,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -435.0,
+                "y": 0.9708382487297058,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -435.0000915527344,
+                "y": 0.9716328978538513,
+                "z": -349.8457946777344
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-0",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.11578369140625,
+            "postKph": 52.58462142944336,
+            "finalKph": 48.31096267700195,
+            "maxVertical": 0.41493353247642517,
+            "maxComY": 0.8816232681274414,
+            "comRise": 0.026313602924346924,
+            "maxPitch": 0.9758651852607727,
+            "maxRoll": 0.0103759765625,
+            "maxAngular": 0.33096665143966675,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -435.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -435.0002746582031,
+                "y": 0.9716110825538635,
+                "z": -275.1629943847656
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-0",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.11578369140625,
+            "postKph": 52.51913833618164,
+            "finalKph": 48.17410659790039,
+            "maxVertical": 0.3217599093914032,
+            "maxComY": 0.8787537217140198,
+            "comRise": 0.023444056510925293,
+            "maxPitch": 0.827690601348877,
+            "maxRoll": 0.009246826171875,
+            "maxAngular": 0.2979699373245239,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -435.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -435.00006103515625,
+                "y": 0.9716147184371948,
+                "z": -335.2322692871094
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-0",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.30142211914063,
+            "postKph": 88.7130355834961,
+            "finalKph": 81.47870635986328,
+            "maxVertical": 0.33068063855171204,
+            "maxComY": 0.8723589777946472,
+            "comRise": 0.017049312591552734,
+            "maxPitch": 0.7544400691986084,
+            "maxRoll": 0.01153564453125,
+            "maxAngular": 0.35059672594070435,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -435.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -434.99688720703125,
+                "y": 0.9716173410415649,
+                "z": -255.6324462890625
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-0",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.30139923095703,
+            "postKph": 88.65493774414063,
+            "finalKph": 81.38577270507813,
+            "maxVertical": 0.24274781346321106,
+            "maxComY": 0.8707454204559326,
+            "comRise": 0.015435755252838135,
+            "maxPitch": 0.6716057062149048,
+            "maxRoll": 0.01153564453125,
+            "maxAngular": 0.19282160699367523,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -435.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -434.9966125488281,
+                "y": 0.9716171622276306,
+                "z": -315.6824645996094
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-1",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514557361602783,
+            "postKph": 7.437347412109375,
+            "finalKph": 6.834830284118652,
+            "maxVertical": 0.4371660053730011,
+            "maxComY": 0.9155778884887695,
+            "comRise": 0.06026822328567505,
+            "maxPitch": 1.597320556640625,
+            "maxRoll": 0.00909423828125,
+            "maxAngular": 0.3410800099372864,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -415.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -414.9998779296875,
+                "y": 0.9707635045051575,
+                "z": -299.4940185546875
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-1",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514560699462891,
+            "postKph": 7.3287482261657715,
+            "finalKph": 6.174006938934326,
+            "maxVertical": 0.12936709821224213,
+            "maxComY": 0.898089587688446,
+            "comRise": 0.04277986288070679,
+            "maxPitch": 1.24029541015625,
+            "maxRoll": 0.009004231542348862,
+            "maxAngular": 0.30621957778930664,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -415.0,
+                "y": 0.9708382487297058,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -415.00006103515625,
+                "y": 0.9708560109138489,
+                "z": -359.7677917480469
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-1",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564653396606445,
+            "postKph": 25.47679901123047,
+            "finalKph": 23.23737335205078,
+            "maxVertical": 0.8715861439704895,
+            "maxComY": 0.9362930655479431,
+            "comRise": 0.08098334074020386,
+            "maxPitch": 1.8348864316940308,
+            "maxRoll": 0.02467508427798748,
+            "maxAngular": 0.6495004296302795,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -415.0,
+                "y": 0.9708382487297058,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -414.9969787597656,
+                "y": 0.9715402126312256,
+                "z": -289.7713623046875
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-1",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564653396606445,
+            "postKph": 25.522014617919922,
+            "finalKph": 22.845094680786133,
+            "maxVertical": 0.3096323013305664,
+            "maxComY": 0.9189220666885376,
+            "comRise": 0.06361234188079834,
+            "maxPitch": 1.3512934446334839,
+            "maxRoll": 0.012795674614608288,
+            "maxAngular": 0.504292368888855,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -415.0,
+                "y": 0.9708382487297058,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -414.99993896484375,
+                "y": 0.9719012379646301,
+                "z": -349.9576721191406
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-1",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.115787506103516,
+            "postKph": 52.58918762207031,
+            "finalKph": 48.311187744140625,
+            "maxVertical": 0.8200010657310486,
+            "maxComY": 0.9064455032348633,
+            "comRise": 0.05113577842712402,
+            "maxPitch": 1.922282099723816,
+            "maxRoll": 0.02325439453125,
+            "maxAngular": 0.6644207835197449,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -415.0,
+                "y": 0.9708382487297058,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -415.0018005371094,
+                "y": 0.9716303944587708,
+                "z": -275.16497802734375
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-1",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.11578369140625,
+            "postKph": 52.43368911743164,
+            "finalKph": 47.97299575805664,
+            "maxVertical": 0.6348305344581604,
+            "maxComY": 0.9002151489257813,
+            "comRise": 0.04490548372268677,
+            "maxPitch": 1.6131926774978638,
+            "maxRoll": 0.019866943359375,
+            "maxAngular": 0.5049457550048828,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -415.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -415.00018310546875,
+                "y": 0.9716330766677856,
+                "z": -335.3348388671875
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-1",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.3014144897461,
+            "postKph": 88.71481323242188,
+            "finalKph": 81.47889709472656,
+            "maxVertical": 0.6693028807640076,
+            "maxComY": 0.8879231810569763,
+            "comRise": 0.032613515853881836,
+            "maxPitch": 1.472322940826416,
+            "maxRoll": 0.015907030552625656,
+            "maxAngular": 0.6988582611083984,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -415.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -414.9964294433594,
+                "y": 0.9716134071350098,
+                "z": -255.6337432861328
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-1",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.30139923095703,
+            "postKph": 88.5674819946289,
+            "finalKph": 81.2275161743164,
+            "maxVertical": 0.4850269854068756,
+            "maxComY": 0.8843210935592651,
+            "comRise": 0.029011428356170654,
+            "maxPitch": 1.3086875677108765,
+            "maxRoll": 0.016166353598237038,
+            "maxAngular": 0.3828521966934204,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -415.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -414.99420166015625,
+                "y": 0.9716137051582336,
+                "z": -315.7689208984375
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-2",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514561653137207,
+            "postKph": 7.437349796295166,
+            "finalKph": 6.834857940673828,
+            "maxVertical": 0.598432183265686,
+            "maxComY": 0.9424940347671509,
+            "comRise": 0.0871843695640564,
+            "maxPitch": 2.308502197265625,
+            "maxRoll": 0.010284423828125,
+            "maxAngular": 0.4208697974681854,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -395.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -394.9995422363281,
+                "y": 0.970919668674469,
+                "z": -299.4935607910156
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-2",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514560699462891,
+            "postKph": 7.270975589752197,
+            "finalKph": 5.8005475997924805,
+            "maxVertical": 0.15211497247219086,
+            "maxComY": 0.9199258685112,
+            "comRise": 0.0646161437034607,
+            "maxPitch": 1.90020751953125,
+            "maxRoll": 0.011962890625,
+            "maxAngular": 0.27074024081230164,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -395.0,
+                "y": 0.9708382487297058,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -395.0,
+                "y": 0.9695340394973755,
+                "z": -359.9177551269531
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-2",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564647674560547,
+            "postKph": 25.49791145324707,
+            "finalKph": 23.30974578857422,
+            "maxVertical": 1.3775992393493652,
+            "maxComY": 0.9794662594795227,
+            "comRise": 0.12415659427642822,
+            "maxPitch": 2.7011561393737793,
+            "maxRoll": 0.02961055375635624,
+            "maxAngular": 1.0190941095352173,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -395.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -394.99615478515625,
+                "y": 0.9716683626174927,
+                "z": -289.7648620605469
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-2",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564653396606445,
+            "postKph": 25.426076889038086,
+            "finalKph": 22.528106689453125,
+            "maxVertical": 0.5052379965782166,
+            "maxComY": 0.9499477744102478,
+            "comRise": 0.09463804960250854,
+            "maxPitch": 2.03594970703125,
+            "maxRoll": 0.021083813160657883,
+            "maxAngular": 0.7489200830459595,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -395.0,
+                "y": 0.9708382487297058,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -394.99957275390625,
+                "y": 0.9720773100852966,
+                "z": -350.0706787109375
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-2",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.11578369140625,
+            "postKph": 52.511497497558594,
+            "finalKph": 48.311302185058594,
+            "maxVertical": 0.694290280342102,
+            "maxComY": 0.944624662399292,
+            "comRise": 0.08931499719619751,
+            "maxPitch": 3.0427918434143066,
+            "maxRoll": 0.03839111328125,
+            "maxAngular": 1.315427541732788,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -395.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -394.9971008300781,
+                "y": 0.9716182947158813,
+                "z": -275.1669921875
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-2",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.115787506103516,
+            "postKph": 52.26642608642578,
+            "finalKph": 47.777347564697266,
+            "maxVertical": 0.6089832186698914,
+            "maxComY": 0.9369778633117676,
+            "comRise": 0.0816681981086731,
+            "maxPitch": 2.640915632247925,
+            "maxRoll": 0.035614013671875,
+            "maxAngular": 0.6507970690727234,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -395.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -394.9972229003906,
+                "y": 0.9716210961341858,
+                "z": -335.43798828125
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-2",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.30139923095703,
+            "postKph": 88.71630859375,
+            "finalKph": 81.4791030883789,
+            "maxVertical": 1.0165985822677612,
+            "maxComY": 0.9008104801177979,
+            "comRise": 0.04550081491470337,
+            "maxPitch": 2.2175090312957764,
+            "maxRoll": 0.023101806640625,
+            "maxAngular": 1.0303211212158203,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -395.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -394.99481201171875,
+                "y": 0.9716108441352844,
+                "z": -255.6351776123047
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-2",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.3014144897461,
+            "postKph": 88.4443588256836,
+            "finalKph": 81.0069808959961,
+            "maxVertical": 0.7109115719795227,
+            "maxComY": 0.8984416723251343,
+            "comRise": 0.043132007122039795,
+            "maxPitch": 1.9292287826538086,
+            "maxRoll": 0.019457275047898293,
+            "maxAngular": 0.5771552324295044,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -395.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -394.9922180175781,
+                "y": 0.9716107845306396,
+                "z": -315.8889465332031
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-3",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514557361602783,
+            "postKph": 7.437346458435059,
+            "finalKph": 6.8333940505981445,
+            "maxVertical": 0.6925020813941956,
+            "maxComY": 0.9661133885383606,
+            "comRise": 0.11080372333526611,
+            "maxPitch": 2.902435302734375,
+            "maxRoll": 0.010338780470192432,
+            "maxAngular": 0.4207994341850281,
+            "peakImpulse": 31.710132598876953,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -375.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -374.9995422363281,
+                "y": 0.9709843397140503,
+                "z": -299.4931335449219
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-3",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514562606811523,
+            "postKph": 7.210903644561768,
+            "finalKph": 5.418335914611816,
+            "maxVertical": 0.18345661461353302,
+            "maxComY": 0.9403727054595947,
+            "comRise": 0.08506304025650024,
+            "maxPitch": 2.5213623046875,
+            "maxRoll": 0.014323435723781586,
+            "maxAngular": 0.36427041888237,
+            "peakImpulse": 85.30735778808594,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -375.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -374.9999084472656,
+                "y": 0.9689925909042358,
+                "z": -360.0698547363281
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-3",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564653396606445,
+            "postKph": 25.516035079956055,
+            "finalKph": 23.573558807373047,
+            "maxVertical": 1.8461626768112183,
+            "maxComY": 1.0247533321380615,
+            "comRise": 0.16944360733032227,
+            "maxPitch": 3.6124870777130127,
+            "maxRoll": 0.030909353867173195,
+            "maxAngular": 1.3482296466827393,
+            "peakImpulse": 325.104736328125,
+            "clearance": 0.2375926673412323,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -375.0,
+                "y": 0.9708382487297058,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -374.99615478515625,
+                "y": 0.9721544981002808,
+                "z": -289.7689208984375
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-3",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564653396606445,
+            "postKph": 25.320755004882813,
+            "finalKph": 22.539623260498047,
+            "maxVertical": 0.7338371872901917,
+            "maxComY": 0.9872874021530151,
+            "comRise": 0.13197767734527588,
+            "maxPitch": 2.78997802734375,
+            "maxRoll": 0.0269931573420763,
+            "maxAngular": 0.9961920976638794,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -375.0,
+                "y": 0.9708382487297058,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -374.9993591308594,
+                "y": 0.9724688529968262,
+                "z": -350.21075439453125
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-3",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.115787506103516,
+            "postKph": 52.517208099365234,
+            "finalKph": 48.3115234375,
+            "maxVertical": 0.8479057550430298,
+            "maxComY": 0.9670829772949219,
+            "comRise": 0.11177331209182739,
+            "maxPitch": 3.9044525623321533,
+            "maxRoll": 0.041900634765625,
+            "maxAngular": 1.7378867864608765,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -375.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -374.9972839355469,
+                "y": 0.9716341495513916,
+                "z": -275.1681213378906
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-3",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.115787506103516,
+            "postKph": 52.13029479980469,
+            "finalKph": 47.57112503051758,
+            "maxVertical": 0.808687150478363,
+            "maxComY": 0.9782596826553345,
+            "comRise": 0.12295001745223999,
+            "maxPitch": 3.195729970932007,
+            "maxRoll": 0.03798573091626167,
+            "maxAngular": 1.0157550573349,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -375.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -374.99676513671875,
+                "y": 0.9716346263885498,
+                "z": -335.547607421875
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-3",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.30140686035156,
+            "postKph": 88.62974548339844,
+            "finalKph": 81.47925567626953,
+            "maxVertical": 1.4825314283370972,
+            "maxComY": 1.0028053522109985,
+            "comRise": 0.14749562740325928,
+            "maxPitch": 2.4219970703125,
+            "maxRoll": 0.024472007527947426,
+            "maxAngular": 1.4656424522399902,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -375.0,
+                "y": 0.9708382487297058,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -375.00146484375,
+                "y": 0.9715908169746399,
+                "z": -255.63807678222656
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-3",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.30139923095703,
+            "postKph": 88.2320327758789,
+            "finalKph": 80.79232025146484,
+            "maxVertical": 0.9351223707199097,
+            "maxComY": 1.012750267982483,
+            "comRise": 0.15744060277938843,
+            "maxPitch": 2.655426025390625,
+            "maxRoll": 0.026095053181052208,
+            "maxAngular": 1.0284844636917114,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -375.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -374.99346923828125,
+                "y": 0.9715816974639893,
+                "z": -316.0079040527344
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-4",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514557361602783,
+            "postKph": 7.325458526611328,
+            "finalKph": 4.651129245758057,
+            "maxVertical": 1.0483442544937134,
+            "maxComY": 1.02163565158844,
+            "comRise": 0.16632598638534546,
+            "maxPitch": 4.4508056640625,
+            "maxRoll": 0.014746759086847305,
+            "maxAngular": 0.6485958695411682,
+            "peakImpulse": 1872.94384765625,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -355.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -354.9988708496094,
+                "y": 1.033435344696045,
+                "z": -299.9626159667969
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-4",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514554500579834,
+            "postKph": 7.0839338302612305,
+            "finalKph": 3.8261096477508545,
+            "maxVertical": 0.17681683599948883,
+            "maxComY": 0.9820224642753601,
+            "comRise": 0.12671279907226563,
+            "maxPitch": 3.798309326171875,
+            "maxRoll": 0.01951821707189083,
+            "maxAngular": 0.49561807513237,
+            "peakImpulse": 1112.7059326171875,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -355.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -354.9998779296875,
+                "y": 1.011517882347107,
+                "z": -360.4735412597656
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-4",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564655303955078,
+            "postKph": 25.125377655029297,
+            "finalKph": 22.282588958740234,
+            "maxVertical": 2.2527246475219727,
+            "maxComY": 1.0995274782180786,
+            "comRise": 0.24421775341033936,
+            "maxPitch": 5.5471367835998535,
+            "maxRoll": 0.038330078125,
+            "maxAngular": 1.9880120754241943,
+            "peakImpulse": 2075.10205078125,
+            "clearance": 0.2375926673412323,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -355.0,
+                "y": 0.9708382487297058,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -354.99737548828125,
+                "y": 0.9721201658248901,
+                "z": -290.2439880371094
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-4",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564647674560547,
+            "postKph": 25.12236976623535,
+            "finalKph": 21.172956466674805,
+            "maxVertical": 0.683755099773407,
+            "maxComY": 1.0573946237564087,
+            "comRise": 0.2020849585533142,
+            "maxPitch": 4.434234619140625,
+            "maxRoll": 0.02932836301624775,
+            "maxAngular": 0.5837953090667725,
+            "peakImpulse": 4227.1083984375,
+            "clearance": 0.2375926673412323,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -355.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -354.9989013671875,
+                "y": 0.9695744514465332,
+                "z": -350.65386962890625
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-4",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.11578369140625,
+            "postKph": 51.90773010253906,
+            "finalKph": 47.084747314453125,
+            "maxVertical": 2.9316635131835938,
+            "maxComY": 1.353834867477417,
+            "comRise": 0.4985252022743225,
+            "maxPitch": 10.547124862670898,
+            "maxRoll": 0.156097412109375,
+            "maxAngular": 2.242748498916626,
+            "peakImpulse": 3146.4814453125,
+            "clearance": 0.2375926673412323,
+            "minContacts": 0,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -355.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -354.9810791015625,
+                "y": 0.9712209701538086,
+                "z": -275.7955627441406
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-4",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.115787506103516,
+            "postKph": 51.98863220214844,
+            "finalKph": 46.89393997192383,
+            "maxVertical": 1.2065917253494263,
+            "maxComY": 1.1690162420272827,
+            "comRise": 0.31370651721954346,
+            "maxPitch": 8.585131645202637,
+            "maxRoll": 0.162933349609375,
+            "maxAngular": 1.1932318210601807,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 0,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -355.0,
+                "y": 0.9708382487297058,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -354.9727478027344,
+                "y": 0.9712719321250916,
+                "z": -335.879150390625
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-4",
+            "configuration": "calibrated",
+            "outcome": "airborne / elevated",
+            "requestedKph": 100.0,
+            "preKph": 90.30140686035156,
+            "postKph": 86.73228454589844,
+            "finalKph": 79.20791625976563,
+            "maxVertical": 4.908323764801025,
+            "maxComY": 2.181314706802368,
+            "comRise": 1.326004981994629,
+            "maxPitch": 31.956409454345703,
+            "maxRoll": 0.11622854322195053,
+            "maxAngular": 1.858726978302002,
+            "peakImpulse": 5432.19873046875,
+            "clearance": 0.2375926673412323,
+            "minContacts": 0,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -355.0,
+                "y": 0.9708382487297058,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -354.98748779296875,
+                "y": 0.9609687924385071,
+                "z": -256.9346008300781
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-4",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 100.0,
+            "preKph": 90.30140686035156,
+            "postKph": 88.0018539428711,
+            "finalKph": 80.22494506835938,
+            "maxVertical": 1.4569951295852661,
+            "maxComY": 1.0761882066726685,
+            "comRise": 0.2208784818649292,
+            "maxPitch": 3.514801025390625,
+            "maxRoll": 0.02935791015625,
+            "maxAngular": 1.439191460609436,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -355.0,
+                "y": 0.9708382487297058,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -354.9933166503906,
+                "y": 0.9715873003005981,
+                "z": -316.31219482421875
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-5",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 7.514557361602783,
+            "postKph": 0.10297423601150513,
+            "finalKph": 0.0,
+            "maxVertical": 0.10244448482990265,
+            "maxComY": 0.8590590953826904,
+            "comRise": 0.0037494301795959473,
+            "maxPitch": 0.31061065196990967,
+            "maxRoll": 0.002197265625,
+            "maxAngular": 0.18130844831466675,
+            "peakImpulse": 6035.96728515625,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -335.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -334.99993896484375,
+                "y": 0.9702538847923279,
+                "z": -303.3560791015625
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-5",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 7.514543533325195,
+            "postKph": 6.8037004470825195,
+            "finalKph": 0.5074325799942017,
+            "maxVertical": 0.28503069281578064,
+            "maxComY": 1.0635899305343628,
+            "comRise": 0.2082802653312683,
+            "maxPitch": 6.344940185546875,
+            "maxRoll": 0.02117939293384552,
+            "maxAngular": 0.5342462062835693,
+            "peakImpulse": 2174.134765625,
+            "clearance": 0.2375926673412323,
+            "minContacts": 4,
+            "finalContacts": 4,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -335.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -334.9993896484375,
+                "y": 1.0956039428710938,
+                "z": -361.3124694824219
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-5",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 30.0,
+            "preKph": 25.56464385986328,
+            "postKph": 1.106390118598938,
+            "finalKph": 0.0,
+            "maxVertical": 0.826785147190094,
+            "maxComY": 0.8974642753601074,
+            "comRise": 0.042154550552368164,
+            "maxPitch": 0.3837040066719055,
+            "maxRoll": 0.11139041185379028,
+            "maxAngular": 0.2697228491306305,
+            "peakImpulse": 18631.998046875,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -335.0,
+                "y": 0.9708382487297058,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -334.9993591308594,
+                "y": 0.9708534479141235,
+                "z": -303.39959716796875
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-5",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564571380615234,
+            "postKph": 24.484790802001953,
+            "finalKph": 19.12766456604004,
+            "maxVertical": 1.0943903923034668,
+            "maxComY": 1.1758917570114136,
+            "comRise": 0.3205820918083191,
+            "maxPitch": 8.4014892578125,
+            "maxRoll": 0.069488525390625,
+            "maxAngular": 1.0221529006958008,
+            "peakImpulse": 3193.409423828125,
+            "clearance": 0.2375926673412323,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -335.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -334.98797607421875,
+                "y": 0.96841961145401,
+                "z": -351.5135192871094
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-5",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 60.0,
+            "preKph": 53.11578369140625,
+            "postKph": 0.05038737878203392,
+            "finalKph": 0.0,
+            "maxVertical": 0.0331328846514225,
+            "maxComY": 0.857718825340271,
+            "comRise": 0.0024091601371765137,
+            "maxPitch": 0.4617510437965393,
+            "maxRoll": 0.00921630859375,
+            "maxAngular": 0.12421800941228867,
+            "peakImpulse": 44220.2578125,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -335.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -334.99969482421875,
+                "y": 0.9705603718757629,
+                "z": -303.3540954589844
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-5",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 60.0,
+            "preKph": 53.11581802368164,
+            "postKph": 51.64530944824219,
+            "finalKph": 45.33918380737305,
+            "maxVertical": 1.739633321762085,
+            "maxComY": 1.450559139251709,
+            "comRise": 0.5952494740486145,
+            "maxPitch": 16.471895217895508,
+            "maxRoll": 0.15496826171875,
+            "maxAngular": 1.3871369361877441,
+            "peakImpulse": 2244.524169921875,
+            "clearance": 0.2375926673412323,
+            "minContacts": 0,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -335.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -334.9608154296875,
+                "y": 0.9739229083061218,
+                "z": -336.65667724609375
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-5",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 100.0,
+            "preKph": 90.30139923095703,
+            "postKph": 0.0354013592004776,
+            "finalKph": 0.0,
+            "maxVertical": 0.1304326206445694,
+            "maxComY": 0.8587639927864075,
+            "comRise": 0.003454267978668213,
+            "maxPitch": 0.5621111989021301,
+            "maxRoll": 0.0211181640625,
+            "maxAngular": 0.12238341569900513,
+            "peakImpulse": 75028.8515625,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -335.0,
+                "y": 0.9708382487297058,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -334.99847412109375,
+                "y": 0.9736457467079163,
+                "z": -303.3560485839844
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-5",
+            "configuration": "calibrated",
+            "outcome": "airborne / elevated",
+            "requestedKph": 100.0,
+            "preKph": 90.30125427246094,
+            "postKph": 86.5367202758789,
+            "finalKph": 76.98566436767578,
+            "maxVertical": 4.096393585205078,
+            "maxComY": 2.2949626445770264,
+            "comRise": 1.439652919769287,
+            "maxPitch": 37.75873947143555,
+            "maxRoll": 2.2080278396606445,
+            "maxAngular": 1.6643290519714355,
+            "peakImpulse": 3054.262451171875,
+            "clearance": 0.2375926673412323,
+            "minContacts": 0,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -335.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -333.88671875,
+                "y": 0.9806771874427795,
+                "z": -317.9764099121094
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-6",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 7.514559745788574,
+            "postKph": 0.08034829795360565,
+            "finalKph": 0.0,
+            "maxVertical": 0.11179215461015701,
+            "maxComY": 0.8600932359695435,
+            "comRise": 0.004783570766448975,
+            "maxPitch": 0.16514858603477478,
+            "maxRoll": 0.0039995405822992325,
+            "maxAngular": 0.060349490493535995,
+            "peakImpulse": 6219.7958984375,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -315.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -314.9999084472656,
+                "y": 0.9711998701095581,
+                "z": -303.3549499511719
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-6",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514543533325195,
+            "postKph": 6.491460800170898,
+            "finalKph": 2.0353264808654785,
+            "maxVertical": 0.3829861879348755,
+            "maxComY": 1.0761336088180542,
+            "comRise": 0.22082394361495972,
+            "maxPitch": 6.728973388671875,
+            "maxRoll": 0.0098876953125,
+            "maxAngular": 0.18440048396587372,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -315.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -315.0001220703125,
+                "y": 1.19431471824646,
+                "z": -362.06768798828125
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-6",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 30.0,
+            "preKph": 25.564653396606445,
+            "postKph": 0.4235149919986725,
+            "finalKph": 0.0,
+            "maxVertical": 0.35775426030158997,
+            "maxComY": 0.8715406656265259,
+            "comRise": 0.01623094081878662,
+            "maxPitch": 0.3837031424045563,
+            "maxRoll": 0.018934274092316628,
+            "maxAngular": 0.13032571971416473,
+            "peakImpulse": 21457.291015625,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -315.0,
+                "y": 0.9708382487297058,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -314.999755859375,
+                "y": 0.971390426158905,
+                "z": -303.3574523925781
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-6",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564571380615234,
+            "postKph": 24.220767974853516,
+            "finalKph": 17.919954299926758,
+            "maxVertical": 1.5937604904174805,
+            "maxComY": 1.4217031002044678,
+            "comRise": 0.5663934350013733,
+            "maxPitch": 14.007904052734375,
+            "maxRoll": 0.135589599609375,
+            "maxAngular": 1.4221417903900146,
+            "peakImpulse": 4512.04638671875,
+            "clearance": 0.2375926673412323,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -315.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -314.98297119140625,
+                "y": 0.970414936542511,
+                "z": -352.18353271484375
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-6",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 60.0,
+            "preKph": 53.11577606201172,
+            "postKph": 0.8397864103317261,
+            "finalKph": 0.0,
+            "maxVertical": 0.7927025556564331,
+            "maxComY": 0.8893373012542725,
+            "comRise": 0.03402763605117798,
+            "maxPitch": 0.4691038131713867,
+            "maxRoll": 0.029650762677192688,
+            "maxAngular": 0.2581653892993927,
+            "peakImpulse": 44085.75,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -315.0,
+                "y": 0.970838189125061,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -314.9995422363281,
+                "y": 0.9709135293960571,
+                "z": -303.3541259765625
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-6",
+            "configuration": "calibrated",
+            "outcome": "airborne / elevated",
+            "requestedKph": 60.0,
+            "preKph": 53.11581802368164,
+            "postKph": 50.432193756103516,
+            "finalKph": 42.68864822387695,
+            "maxVertical": 3.0126054286956787,
+            "maxComY": 2.1126978397369385,
+            "comRise": 1.2573881149291992,
+            "maxPitch": 29.827556610107422,
+            "maxRoll": 0.07080078125,
+            "maxAngular": 1.6397228240966797,
+            "peakImpulse": 2980.4267578125,
+            "clearance": 0.2375926673412323,
+            "minContacts": 0,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -315.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -314.971435546875,
+                "y": 0.9689153432846069,
+                "z": -338.05023193359375
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "vertical-6",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 100.0,
+            "preKph": 90.30140686035156,
+            "postKph": 0.0735798105597496,
+            "finalKph": 0.0,
+            "maxVertical": 0.023929409682750702,
+            "maxComY": 0.8562774658203125,
+            "comRise": 0.0009677410125732422,
+            "maxPitch": 0.5621124505996704,
+            "maxRoll": 0.02398681640625,
+            "maxAngular": 0.1223829835653305,
+            "peakImpulse": 75087.1640625,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -315.0,
+                "y": 0.9708382487297058,
+                "z": -313.0
+            },
+            "finalPosition": {
+                "x": -314.99853515625,
+                "y": 0.9722186923027039,
+                "z": -303.35528564453125
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "bevel-6",
+            "configuration": "calibrated",
+            "outcome": "airborne / elevated",
+            "requestedKph": 100.0,
+            "preKph": 90.30125427246094,
+            "postKph": 81.2575454711914,
+            "finalKph": 71.7296142578125,
+            "maxVertical": 6.943057537078857,
+            "maxComY": 3.6397247314453125,
+            "comRise": 2.7844150066375732,
+            "maxPitch": 58.926544189453125,
+            "maxRoll": 0.9123139381408691,
+            "maxAngular": 2.143990993499756,
+            "peakImpulse": 20697.267578125,
+            "clearance": 0.2375926673412323,
+            "minContacts": 0,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -315.0,
+                "y": 0.970838189125061,
+                "z": -373.0
+            },
+            "finalPosition": {
+                "x": -315.0103454589844,
+                "y": 0.8760031461715698,
+                "z": -321.73150634765625
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "wall-frontal",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 7.514557361602783,
+            "postKph": 7.437346458435059,
+            "finalKph": 0.0,
+            "maxVertical": 0.01259663701057434,
+            "maxComY": 0.8569891452789307,
+            "comRise": 0.0016794800758361816,
+            "maxPitch": 0.16515669226646423,
+            "maxRoll": 0.001983642578125,
+            "maxAngular": 0.06035368889570236,
+            "peakImpulse": 4168.06298828125,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -245.0,
+                "y": 0.970838189125061,
+                "z": -310.0
+            },
+            "finalPosition": {
+                "x": -245.0,
+                "y": 0.9706917405128479,
+                "z": -298.8547668457031
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "wall-frontal",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 30.0,
+            "preKph": 25.5645694732666,
+            "postKph": 25.681489944458008,
+            "finalKph": 0.0,
+            "maxVertical": 0.15291811525821686,
+            "maxComY": 0.8621542453765869,
+            "comRise": 0.006844580173492432,
+            "maxPitch": 0.38022828102111816,
+            "maxRoll": 0.006652885116636753,
+            "maxAngular": 0.12270890176296234,
+            "peakImpulse": 11647.107421875,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -245.0,
+                "y": 0.970838189125061,
+                "z": -310.0
+            },
+            "finalPosition": {
+                "x": -244.9996795654297,
+                "y": 0.9699620604515076,
+                "z": -298.8543701171875
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "wall-frontal",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 60.0,
+            "preKph": 53.11581802368164,
+            "postKph": 0.13191209733486176,
+            "finalKph": 0.0,
+            "maxVertical": 0.36082416772842407,
+            "maxComY": 0.870916485786438,
+            "comRise": 0.015606820583343506,
+            "maxPitch": 0.45076116919517517,
+            "maxRoll": 0.01280969101935625,
+            "maxAngular": 0.12668125331401825,
+            "peakImpulse": 23592.376953125,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -245.0,
+                "y": 0.970838189125061,
+                "z": -310.0
+            },
+            "finalPosition": {
+                "x": -244.99954223632813,
+                "y": 0.9712750315666199,
+                "z": -298.8550109863281
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "jump",
+            "configuration": "calibrated",
+            "outcome": "airborne / elevated",
+            "requestedKph": 30.0,
+            "preKph": 24.886695861816406,
+            "postKph": 23.814071655273438,
+            "finalKph": 14.885519981384277,
+            "maxVertical": 0.570188045501709,
+            "maxComY": 1.8944988250732422,
+            "comRise": 1.039189100265503,
+            "maxPitch": 14.030890464782715,
+            "maxRoll": 0.093414306640625,
+            "maxAngular": 0.9869533181190491,
+            "peakImpulse": 2663.483642578125,
+            "clearance": 0.2375926673412323,
+            "minContacts": 2,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -235.0,
+                "y": 0.970838189125061,
+                "z": -130.0
+            },
+            "finalPosition": {
+                "x": -234.99468994140625,
+                "y": 1.170896053314209,
+                "z": -94.9774169921875
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "jump",
+            "configuration": "calibrated",
+            "outcome": "airborne / elevated",
+            "requestedKph": 60.0,
+            "preKph": 52.601837158203125,
+            "postKph": 51.57818603515625,
+            "finalKph": 43.24019241333008,
+            "maxVertical": 1.1187163591384888,
+            "maxComY": 1.9559738636016846,
+            "comRise": 1.1006641387939453,
+            "maxPitch": 14.510139465332031,
+            "maxRoll": 0.185699462890625,
+            "maxAngular": 1.5753153562545776,
+            "peakImpulse": 0.0,
+            "clearance": 0.2375926673412323,
+            "minContacts": 0,
+            "finalContacts": 4,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -235.0,
+                "y": 0.9708382487297058,
+                "z": -130.0
+            },
+            "finalPosition": {
+                "x": -234.9755096435547,
+                "y": 1.148974895477295,
+                "z": -81.21731567382813
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "wall-1",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 10.0,
+            "postKph": 0.0,
+            "finalKph": 0.0,
+            "maxVertical": 0.042647529393434525,
+            "maxComY": 0.8571963906288147,
+            "comRise": 0.0018867254257202148,
+            "maxPitch": 0.16514858603477478,
+            "maxRoll": 0.00262451171875,
+            "maxAngular": 0.060349490493535995,
+            "peakImpulse": 3550.462158203125,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -221.0,
+                "y": 0.970838189125061,
+                "z": -308.0
+            },
+            "finalPosition": {
+                "x": -220.9999542236328,
+                "y": 0.9703267812728882,
+                "z": -298.8543395996094
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "wall-1",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 30.0,
+            "preKph": 30.000001907348633,
+            "postKph": 0.0,
+            "finalKph": 0.0,
+            "maxVertical": 0.14172594249248505,
+            "maxComY": 0.8618766069412231,
+            "comRise": 0.006566941738128662,
+            "maxPitch": 0.38022828102111816,
+            "maxRoll": 0.006789815612137318,
+            "maxAngular": 0.12270890176296234,
+            "peakImpulse": 12167.7841796875,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -221.0,
+                "y": 0.970838189125061,
+                "z": -308.0
+            },
+            "finalPosition": {
+                "x": -220.99969482421875,
+                "y": 0.9708310961723328,
+                "z": -298.854248046875
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "wall-2",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 10.0,
+            "postKph": 0.0,
+            "finalKph": 0.0,
+            "maxVertical": 0.024738935753703117,
+            "maxComY": 0.8562455773353577,
+            "comRise": 0.0009359121322631836,
+            "maxPitch": 0.14702165126800537,
+            "maxRoll": 1.3721568584442139,
+            "maxAngular": 0.23942863941192627,
+            "peakImpulse": 5613.572265625,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -197.0,
+                "y": 0.970838189125061,
+                "z": -308.0
+            },
+            "finalPosition": {
+                "x": -197.05770874023438,
+                "y": 0.970927357673645,
+                "z": -300.0074157714844
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "wall-2",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 30.0,
+            "preKph": 30.000001907348633,
+            "postKph": 0.0,
+            "finalKph": 0.0,
+            "maxVertical": 0.07439963519573212,
+            "maxComY": 0.8605377674102783,
+            "comRise": 0.005228102207183838,
+            "maxPitch": 0.38022828102111816,
+            "maxRoll": 2.9009816646575928,
+            "maxAngular": 0.4582678973674774,
+            "peakImpulse": 18929.00390625,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -197.0,
+                "y": 0.970838189125061,
+                "z": -308.0
+            },
+            "finalPosition": {
+                "x": -197.58389282226563,
+                "y": 0.9708473682403564,
+                "z": -299.6780090332031
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "wall-3",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 10.0,
+            "postKph": 0.0,
+            "finalKph": 0.0,
+            "maxVertical": 0.03996332734823227,
+            "maxComY": 0.8573688864707947,
+            "comRise": 0.0020592212677001953,
+            "maxPitch": 0.240921750664711,
+            "maxRoll": 1.4282678365707397,
+            "maxAngular": 0.29111289978027344,
+            "peakImpulse": 2972.7783203125,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -173.0,
+                "y": 0.970838189125061,
+                "z": -308.0
+            },
+            "finalPosition": {
+                "x": -173.1444549560547,
+                "y": 0.9707080125808716,
+                "z": -300.83587646484375
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "wall-3",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 12.147586822509766,
+            "postKph": 10.40524959564209,
+            "finalKph": 5.850462913513184,
+            "maxVertical": 0.10721629112958908,
+            "maxComY": 0.8598605394363403,
+            "comRise": 0.00455087423324585,
+            "maxPitch": 0.38022828102111816,
+            "maxRoll": 0.9950598478317261,
+            "maxAngular": 1.0502294301986694,
+            "peakImpulse": 12289.12890625,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -173.0,
+                "y": 0.970838189125061,
+                "z": -308.0
+            },
+            "finalPosition": {
+                "x": -177.08770751953125,
+                "y": 0.9708266258239746,
+                "z": -295.1279296875
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "wall-4",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 10.0,
+            "postKph": 0.0,
+            "finalKph": 0.0,
+            "maxVertical": 0.04854602739214897,
+            "maxComY": 0.8574246168136597,
+            "comRise": 0.00211489200592041,
+            "maxPitch": 0.16514943540096283,
+            "maxRoll": 0.11630193144083023,
+            "maxAngular": 0.5120890736579895,
+            "peakImpulse": 3162.29736328125,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -146.5,
+                "y": 0.9708382487297058,
+                "z": -308.0
+            },
+            "finalPosition": {
+                "x": -146.4995574951172,
+                "y": 0.9703682661056519,
+                "z": -305.3194885253906
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "wall-4",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 30.0,
+            "preKph": 30.000001907348633,
+            "postKph": 0.0,
+            "finalKph": 0.0,
+            "maxVertical": 0.15283674001693726,
+            "maxComY": 0.8641068339347839,
+            "comRise": 0.008797109127044678,
+            "maxPitch": 0.38022828102111816,
+            "maxRoll": 0.6888709664344788,
+            "maxAngular": 1.5993502140045166,
+            "peakImpulse": 10024.833984375,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -146.5,
+                "y": 0.9708382487297058,
+                "z": -308.0
+            },
+            "finalPosition": {
+                "x": -146.5208282470703,
+                "y": 0.9708622694015503,
+                "z": -305.17529296875
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "wall-5",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 10.0,
+            "postKph": 0.0,
+            "finalKph": 0.0,
+            "maxVertical": 0.05237782001495361,
+            "maxComY": 0.8574258089065552,
+            "comRise": 0.0021161437034606934,
+            "maxPitch": 0.14702165126800537,
+            "maxRoll": 0.134521484375,
+            "maxAngular": 0.3349732756614685,
+            "peakImpulse": 3286.5859375,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -120.30000305175781,
+                "y": 0.970838189125061,
+                "z": -308.0
+            },
+            "finalPosition": {
+                "x": -120.29731750488281,
+                "y": 0.9702937602996826,
+                "z": -298.84429931640625
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "wall-5",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 30.0,
+            "preKph": 30.000001907348633,
+            "postKph": 0.0,
+            "finalKph": 0.0,
+            "maxVertical": 0.18003010749816895,
+            "maxComY": 0.8627771139144897,
+            "comRise": 0.007467389106750488,
+            "maxPitch": 0.38022828102111816,
+            "maxRoll": 0.56842041015625,
+            "maxAngular": 1.1506578922271729,
+            "peakImpulse": 11640.94921875,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 0.0,
+            "movableDisplacement": 0.0,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -120.30000305175781,
+                "y": 0.9708382487297058,
+                "z": -308.0
+            },
+            "finalPosition": {
+                "x": -120.27249908447266,
+                "y": 0.9707192182540894,
+                "z": -298.78118896484375
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "movable-0",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.438996315002441,
+            "postKph": 7.297475337982178,
+            "finalKph": 6.175668716430664,
+            "maxVertical": 0.012891040183603764,
+            "maxComY": 0.8560007810592651,
+            "comRise": 0.0006910562515258789,
+            "maxPitch": 0.14702121913433075,
+            "maxRoll": 0.001953125,
+            "maxAngular": 0.047951556742191315,
+            "peakImpulse": 45.732177734375,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 25.0,
+            "movableDisplacement": 3.9021224975585938,
+            "movableSpeed": 1.7094228267669678,
+            "initialPosition": {
+                "x": -430.0,
+                "y": 0.9708382487297058,
+                "z": -193.0
+            },
+            "finalPosition": {
+                "x": -430.00299072265625,
+                "y": 0.9708039164543152,
+                "z": -179.70484924316406
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "movable-1",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 6.808837890625,
+            "postKph": 6.1194376945495605,
+            "finalKph": 0.1776854246854782,
+            "maxVertical": 0.011289829388260841,
+            "maxComY": 0.8560163378715515,
+            "comRise": 0.0007066726684570313,
+            "maxPitch": 0.16514986753463745,
+            "maxRoll": 0.022186279296875,
+            "maxAngular": 0.06035059317946434,
+            "peakImpulse": 441.11199951171875,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 250.0,
+            "movableDisplacement": 2.059687376022339,
+            "movableSpeed": 0.04768868163228035,
+            "initialPosition": {
+                "x": -402.0,
+                "y": 0.970838189125061,
+                "z": -193.0
+            },
+            "finalPosition": {
+                "x": -402.0041809082031,
+                "y": 0.9702512621879578,
+                "z": -181.54812622070313
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "movable-2",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 10.0,
+            "preKph": 7.514559745788574,
+            "postKph": 7.145486831665039,
+            "finalKph": 6.50571346282959,
+            "maxVertical": 0.008622375316917896,
+            "maxComY": 0.8558419942855835,
+            "comRise": 0.0005323290824890137,
+            "maxPitch": 0.16514986753463745,
+            "maxRoll": 0.001983642578125,
+            "maxAngular": 0.06035059317946434,
+            "peakImpulse": 90.74795532226563,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 80.0,
+            "movableDisplacement": 4.134933948516846,
+            "movableSpeed": 1.4757660627365112,
+            "initialPosition": {
+                "x": -374.0,
+                "y": 0.970838189125061,
+                "z": -193.0
+            },
+            "finalPosition": {
+                "x": -374.0,
+                "y": 0.9708425998687744,
+                "z": -179.67576599121094
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "movable-3",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 5.226507186889648,
+            "postKph": 3.236825704574585,
+            "finalKph": 0.0,
+            "maxVertical": 0.03203227370977402,
+            "maxComY": 0.8570126295089722,
+            "comRise": 0.0017029047012329102,
+            "maxPitch": 0.16514943540096283,
+            "maxRoll": 0.058990478515625,
+            "maxAngular": 0.06035017594695091,
+            "peakImpulse": 1353.3118896484375,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 900.0,
+            "movableDisplacement": 0.49103623628616333,
+            "movableSpeed": 0.0,
+            "initialPosition": {
+                "x": -346.0,
+                "y": 0.9708382487297058,
+                "z": -193.0
+            },
+            "finalPosition": {
+                "x": -345.9996337890625,
+                "y": 0.9711098074913025,
+                "z": -183.1644744873047
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "movable-4",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 10.0,
+            "preKph": 7.514542579650879,
+            "postKph": 5.93228006362915,
+            "finalKph": 0.23510733246803284,
+            "maxVertical": 0.015119132585823536,
+            "maxComY": 0.8562389612197876,
+            "comRise": 0.0009292960166931152,
+            "maxPitch": 0.14702165126800537,
+            "maxRoll": 0.024566650390625,
+            "maxAngular": 0.04795240983366966,
+            "peakImpulse": 577.19140625,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 400.0,
+            "movableDisplacement": 1.2625727653503418,
+            "movableSpeed": 0.00002011247124755755,
+            "initialPosition": {
+                "x": -318.0,
+                "y": 0.970838189125061,
+                "z": -193.0
+            },
+            "finalPosition": {
+                "x": -317.9976806640625,
+                "y": 0.9708081483840942,
+                "z": -182.1172637939453
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "movable-0",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564653396606445,
+            "postKph": 25.413818359375,
+            "finalKph": 22.795448303222656,
+            "maxVertical": 0.027905723080039024,
+            "maxComY": 0.8573853373527527,
+            "comRise": 0.0020756125450134277,
+            "maxPitch": 0.3837031424045563,
+            "maxRoll": 0.00653076171875,
+            "maxAngular": 0.13032571971416473,
+            "peakImpulse": 110.33247375488281,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 25.0,
+            "movableDisplacement": 13.58997917175293,
+            "movableSpeed": 6.382408618927002,
+            "initialPosition": {
+                "x": -430.0,
+                "y": 0.9708382487297058,
+                "z": -193.0
+            },
+            "finalPosition": {
+                "x": -429.9967956542969,
+                "y": 0.9716364741325378,
+                "z": -170.03598022460938
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "movable-1",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564647674560547,
+            "postKph": 23.190277099609375,
+            "finalKph": 15.832080841064453,
+            "maxVertical": 0.02790679596364498,
+            "maxComY": 0.8573854565620422,
+            "comRise": 0.002075791358947754,
+            "maxPitch": 0.3837048411369324,
+            "maxRoll": 0.01373291015625,
+            "maxAngular": 0.1303260177373886,
+            "peakImpulse": 1053.945068359375,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 250.0,
+            "movableDisplacement": 11.209118843078613,
+            "movableSpeed": 4.500720977783203,
+            "initialPosition": {
+                "x": -402.0,
+                "y": 0.970838189125061,
+                "z": -193.0
+            },
+            "finalPosition": {
+                "x": -401.97125244140625,
+                "y": 0.97104412317276,
+                "z": -172.4282684326172
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "movable-2",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564653396606445,
+            "postKph": 24.931087493896484,
+            "finalKph": 22.120447158813477,
+            "maxVertical": 0.027905723080039024,
+            "maxComY": 0.8573853373527527,
+            "comRise": 0.0020756125450134277,
+            "maxPitch": 0.3837031424045563,
+            "maxRoll": 0.00653076171875,
+            "maxAngular": 0.13032571971416473,
+            "peakImpulse": 290.1042175292969,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 80.0,
+            "movableDisplacement": 13.197948455810547,
+            "movableSpeed": 5.517366409301758,
+            "initialPosition": {
+                "x": -374.0,
+                "y": 0.9708382487297058,
+                "z": -193.0
+            },
+            "finalPosition": {
+                "x": -374.00048828125,
+                "y": 0.9716249704360962,
+                "z": -170.36329650878906
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "movable-3",
+            "configuration": "calibrated",
+            "outcome": "stopped",
+            "requestedKph": 30.0,
+            "preKph": 25.564653396606445,
+            "postKph": 18.13807487487793,
+            "finalKph": 0.03075154311954975,
+            "maxVertical": 0.04819793999195099,
+            "maxComY": 0.858572244644165,
+            "comRise": 0.0032625198364257813,
+            "maxPitch": 0.3837031424045563,
+            "maxRoll": 0.0645751953125,
+            "maxAngular": 0.13032571971416473,
+            "peakImpulse": 3144.740478515625,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 900.0,
+            "movableDisplacement": 5.681092739105225,
+            "movableSpeed": 0.005972050130367279,
+            "initialPosition": {
+                "x": -346.0,
+                "y": 0.9708382487297058,
+                "z": -193.0
+            },
+            "finalPosition": {
+                "x": -345.96734619140625,
+                "y": 0.97013258934021,
+                "z": -177.95091247558594
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        },
+        {
+            "scenario": "movable-4",
+            "configuration": "calibrated",
+            "outcome": "continued",
+            "requestedKph": 30.0,
+            "preKph": 25.564653396606445,
+            "postKph": 21.944580078125,
+            "finalKph": 12.268369674682617,
+            "maxVertical": 0.04463757202029228,
+            "maxComY": 0.858630359172821,
+            "comRise": 0.003320634365081787,
+            "maxPitch": 0.3837031424045563,
+            "maxRoll": 0.01983642578125,
+            "maxAngular": 0.13032571971416473,
+            "peakImpulse": 1518.595458984375,
+            "clearance": 0.2375926673412323,
+            "minContacts": 6,
+            "finalContacts": 6,
+            "movableMass": 400.0,
+            "movableDisplacement": 9.6509428024292,
+            "movableSpeed": 3.3968775272369385,
+            "initialPosition": {
+                "x": -318.0,
+                "y": 0.9708382487297058,
+                "z": -193.0
+            },
+            "finalPosition": {
+                "x": -317.9938049316406,
+                "y": 0.9705289006233215,
+                "z": -173.7048797607422
+            },
+            "initialRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9999999403953552
+            }
+        }
+    ]
+}

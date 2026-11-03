@@ -30,12 +30,6 @@ public static class ImpactGroundBuilder
   string path="Assets/_Project/Physics/Impact_"+n+".asset";AssetDatabase.CreateAsset(m,path);
   var g=new GameObject(n,typeof(MeshFilter),typeof(MeshRenderer),typeof(MeshCollider));g.transform.SetParent(p,false);g.transform.localPosition=new Vector3(x,0,z);g.GetComponent<MeshFilter>().sharedMesh=m;g.GetComponent<MeshRenderer>().sharedMaterial=Mat("Concrete");g.GetComponent<MeshCollider>().sharedMesh=m;
  }
- public static void RepairWinding()
- {
-  foreach(var path in AssetDatabase.FindAssets("Impact_ t:Mesh",new[]{"Assets/_Project/Physics"}).Select(AssetDatabase.GUIDToAssetPath))
-  {var mesh=AssetDatabase.LoadAssetAtPath<Mesh>(path);var ts=mesh.triangles;Array.Reverse(ts);mesh.triangles=ts;mesh.RecalculateNormals();EditorUtility.SetDirty(mesh);}
-  AssetDatabase.SaveAssets();EditorApplication.Exit(0);
- }
  public static void Build()
  {
   EditorSceneManager.OpenScene("Assets/_Project/Scenes/Sandbox.unity");

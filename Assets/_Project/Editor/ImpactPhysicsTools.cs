@@ -9,6 +9,7 @@ public static class ImpactPhysicsTools
 {
  public static void Inspect()
  {
+  Directory.CreateDirectory("TestResults");
   EditorSceneManager.OpenScene("Assets/_Project/Scenes/Sandbox.unity"); Physics.SyncTransforms();
   using(var f=new StreamWriter("TestResults/impact-inventory.txt"))
   {

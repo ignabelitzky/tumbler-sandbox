@@ -1,0 +1,1 @@
+PASS 561 native asset, height, isolation and access checks

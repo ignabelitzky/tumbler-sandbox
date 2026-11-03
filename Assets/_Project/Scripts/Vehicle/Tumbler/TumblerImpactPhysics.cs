@@ -37,7 +37,7 @@ public sealed class TumblerImpactPhysics : MonoBehaviour
             frontFace.transform.SetParent(hull.transform, false);
             var face = frontFace.AddComponent<BoxCollider>();
             face.size = new Vector3(2.8f, .20f, .20f);
-            face.center = new Vector3(bounds.center.x, bounds.min.y + .10f, bounds.max.z - .10f);
+            face.center = new Vector3(bounds.center.x, bounds.min.y + .20f, bounds.max.z - .10f);
             face.sharedMaterial = hull.sharedMaterial;
         }
         frontFace.SetActive(true);

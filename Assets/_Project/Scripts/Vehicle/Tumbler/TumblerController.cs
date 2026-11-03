@@ -64,6 +64,10 @@ public class TumblerController : MonoBehaviour
     public driveType currentDriveMode { get; private set; } = driveType.AllWheelDrive;
     public bool IsReversing => currentPower < -0.01f || Vector3.Dot(carRigidbody.linearVelocity, transform.forward) < -0.5f;
 
+    private TumblerBurnout burnout;
+    public bool IsBurnoutActive => burnout != null && burnout.Active;
+    public bool IsWheelBurning(WheelCollider wheel) => burnout != null && burnout.IsBurning(wheel, currentDriveMode);
+
     private float currentPower = 0f;
     private float currentBrakeForce = 0f;
     private float currentTurnAngle = 0f;
@@ -77,6 +81,7 @@ public class TumblerController : MonoBehaviour
             Debug.LogError("Rigidbody component not found on " + gameObject.name);
         }
         CacheWheelbase();
+        burnout = new TumblerBurnout(frontWheelsColliders, rearWheelsColliders);
     }
 
     private void OnEnable()
@@ -87,6 +92,8 @@ public class TumblerController : MonoBehaviour
     private void OnDisable()
     {
         tumblerInput.Disable();
+        burnout?.Cancel();
+        burnout?.Apply(currentDriveMode, 0);
     }
     
     private void Start()
@@ -96,8 +103,11 @@ public class TumblerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (GameNavigation.GameplayInputBlocked) return;
+        if (GameNavigation.GameplayInputBlocked) { burnout.Cancel(); burnout.Apply(currentDriveMode, 0); return; }
+        burnout.UpdateState(TumblerBurnout.BothDirectionsHeld(), carRigidbody, IsGrounded());
+        if (burnout.Active) currentPower = forwardPower;
         ApplyDrive();
+        burnout.Apply(currentDriveMode, steerInput);
         HandleSteering();
         UpdateWheels();
         AddDownForce();
@@ -288,11 +298,13 @@ public class TumblerController : MonoBehaviour
         // thresholds. Driven-wheel spin can jump when torque moves between axles;
         // feeding it only to the tachometer falsely pins redline before a shift.
         // Keep wheel-spin revs while airborne, when automatic shifting is paused.
-        float coupledWheelRPM = grounded || shiftTimeRemaining > 0f
+        float coupledWheelRPM = (grounded && !IsBurnoutActive) || shiftTimeRemaining > 0f
             ? roadWheelRPM : Mathf.Max(roadWheelRPM, GetDrivenWheelRPM());
         float targetRPM = Mathf.Clamp(coupledWheelRPM * ratio * finalDriveRatio, idleRPM, redlineRPM);
         engineRPM = Mathf.Lerp(engineRPM, targetRPM, 1f - Mathf.Exp(-12f * Time.fixedDeltaTime));
         float torque = Mathf.Min(Mathf.Abs(currentPower) * ratio * finalDriveRatio, maxDriveForce * ReferenceWheelRadius);
+        if (IsBurnoutActive)
+            torque *= Mathf.Clamp01((redlineRPM * 1.05f - GetDrivenWheelRPM() * ratio * finalDriveRatio) / (redlineRPM * .15f));
         float shiftDelivery = Mathf.Lerp(1f, 0.35f, Mathf.Clamp01(shiftTimeRemaining / 0.18f));
         motorTorque = Mathf.Sign(currentPower) * torque * shiftDelivery;
     }
@@ -378,6 +390,8 @@ public class TumblerController : MonoBehaviour
 
     public void ResetTransmission()
     {
+        burnout?.Cancel();
+        burnout?.Apply(currentDriveMode, 0);
         currentGear = 1;
         engineRPM = idleRPM;
         shiftCooldown = 0f;

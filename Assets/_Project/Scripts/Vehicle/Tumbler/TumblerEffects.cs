@@ -24,8 +24,11 @@ public class TumblerEffects : MonoBehaviour
     [SerializeField, Range(0.1f, 0.5f)] private float sampleSpacing = 0.2f;
     [SerializeField, Range(0.003f, 0.03f)] private float surfaceOffset = 0.008f;
 
+    [SerializeField, Min(1f)] private float burnoutSmokeRate = 60f;
+
     private SurfaceSkidmarks marks;
     private float[] widths, smokeRemainders;
+    private ParticleSystem[] wheelSmokes;
     private Vector3 previousVehiclePosition;
 
     private void Awake()
@@ -43,14 +46,23 @@ public class TumblerEffects : MonoBehaviour
             widths[i] = tireMarkWidths != null && i < tireMarkWidths.Length
                 ? Mathf.Clamp(tireMarkWidths[i], 0.12f, 0.7f) : 0.35f;
         }
-        smokeRemainders = new float[tireSmokes.Length];
-        foreach (var smoke in tireSmokes)
+        wheelSmokes = new ParticleSystem[tireColliders.Length];
+        for (int i=2;i<wheelSmokes.Length;i++) if(i-2<tireSmokes.Length) wheelSmokes[i]=tireSmokes[i-2];
+        // Reuse the established smoke material/settings for the previously unsupported front axle.
+        for(int i=0;i<2&&i<wheelSmokes.Length;i++)
+            if(tireSmokes.Length>0&&tireSmokes[0]!=null)wheelSmokes[i]=Instantiate(tireSmokes[0],transform);
+        smokeRemainders = new float[wheelSmokes.Length];
+        foreach (var smoke in wheelSmokes)
         {
             if (smoke == null) continue;
             var main = smoke.main;
             main.simulationSpace = ParticleSystemSimulationSpace.World;
             var emission = smoke.emission;
             emission.enabled = false;
+            main.playOnAwake = false;
+            main.loop = true;
+            smoke.gameObject.SetActive(true);
+            smoke.Play();
         }
         if (skidmarkMaterial != null)
         {
@@ -82,7 +94,7 @@ public class TumblerEffects : MonoBehaviour
             }
             // Tire effects follow that wheel, even when the other axle is airborne.
             float speed = Vector3.ProjectOnPlane(vehicleBody.GetPointVelocity(hit.point), hit.normal).magnitude;
-            float intensity = ContactIntensity(hit.sidewaysSlip, hit.forwardSlip, wheel.brakeTorque, speed);
+            float intensity = tumblerController.IsBurnoutActive ? (tumblerController.IsWheelBurning(wheel) ? 1f : 0f) : ContactIntensity(hit.sidewaysSlip, hit.forwardSlip, wheel.brakeTorque, speed);
             if (intensity <= 0f || (hit.collider.attachedRigidbody != null && !hit.collider.attachedRigidbody.isKinematic))
             {
                 StopWheel(i);
@@ -104,11 +116,12 @@ public class TumblerEffects : MonoBehaviour
 
     private void EmitSmoke(int wheel, WheelHit hit, float intensity)
     {
-        int i = wheel - 2; // Existing smoke references cover the four rear tires.
-        if (i < 0 || i >= tireSmokes.Length || tireSmokes[i] == null) return;
-        var smoke = tireSmokes[i];
+        int i = wheel;
+        if (i < 0 || i >= wheelSmokes.Length || wheelSmokes[i] == null) return;
+        var smoke = wheelSmokes[i];
         smoke.transform.position = hit.point + hit.normal * 0.04f;
-        smokeRemainders[i] += Mathf.Max(0f, intensity - 0.35f) * 18f * Time.deltaTime;
+        float rate = tumblerController.IsBurnoutActive ? burnoutSmokeRate : 18f;
+        smokeRemainders[i] += Mathf.Max(0f, intensity - 0.35f) * rate * Time.fixedDeltaTime;
         int count = Mathf.FloorToInt(smokeRemainders[i]);
         if (count == 0) return;
         smokeRemainders[i] -= count;
@@ -118,7 +131,7 @@ public class TumblerEffects : MonoBehaviour
     private void StopWheel(int wheel)
     {
         if (marks != null) marks.BreakTrail(wheel);
-        int smoke = wheel - 2;
+        int smoke = wheel;
         if (smoke >= 0 && smoke < smokeRemainders.Length) smokeRemainders[smoke] = 0f;
     }
 

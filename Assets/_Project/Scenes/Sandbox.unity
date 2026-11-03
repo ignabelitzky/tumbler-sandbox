@@ -37405,6 +37405,7 @@ GameObject:
   - component: {fileID: 2040198345356866093}
   - component: {fileID: 2040198345356866095}
   - component: {fileID: 2040198345356866094}
+  - component: {fileID: 875400000000000004}
   m_Layer: 0
   m_Name: Tumbler
   m_TagString: Player
@@ -54972,6 +54973,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7239519731577973424, guid: 259e53ebca8b2430bb7df8f4a420b92b, type: 3}
   m_PrefabInstance: {fileID: 875400000000000001}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &875400000000000004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040198345356866087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba18ce9564f7231bc8d02c6750d1ab40, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  positionIterations: 12
+  velocityIterations: 4
+  depenetrationLimit: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

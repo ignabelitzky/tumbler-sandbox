@@ -11,6 +11,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
@@ -157,14 +158,57 @@ public static class NavigationVerify
         });
         if (menuExitRun)
         {
-            Step(() => Button("Controls").onClick.Invoke());
-            Step(() => Check(Button("Back to menu").gameObject.activeInHierarchy, "Existing Controls panel opens"));
-            Step(() => Button("Back to menu").onClick.Invoke());
-            Step(() => Check(Button("Enter Sandbox").gameObject.activeInHierarchy, "Existing Back to menu restores panel"));
-            Step(() => { SessionState.SetBool(Flag + "ExitExpected", true); Button("Exit").onClick.Invoke(); });
+            Step(() =>
+            {
+                var module = EventSystem.current.GetComponent<InputSystemUIInputModule>();
+                Check(module.actionsAsset.name.StartsWith("MenuInput") && module.actionsAsset.devices == null &&
+                    module.actionsAsset.bindingMask == null, "Dedicated UI actions are not restricted to a paired device");
+                Check(!module.deselectOnBackgroundClick, "Background click cannot deselect menu navigation");
+                Check(EventSystem.current.currentSelectedGameObject == Button("Enter Sandbox").gameObject, "Controller-only initial selection");
+                var label = Object.FindObjectsByType<TextMeshProUGUI>(FindObjectsSortMode.None).Single(t => t.name == "Developer Credit");
+                Check(label.text == "Develop by Ignacio Belitzky" && !label.raycastTarget, "Exact non-interactive developer credit");
+                var icon = Object.FindObjectsByType<RawImage>(FindObjectsSortMode.None).Single(i => i.name == "Phosphor Icon");
+                Check(AssetDatabase.GetAssetPath(icon.texture).EndsWith("Phosphor/phosphor-primary_2048.png") &&
+                    icon.rectTransform.sizeDelta.x == icon.rectTransform.sizeDelta.y && !icon.raycastTarget, "Original square Phosphor icon");
+                var credit = (RectTransform)label.transform.parent;
+                Check(credit.anchorMin == new Vector2(1, 0) && credit.anchorMax == credit.anchorMin &&
+                    credit.anchoredPosition.x < 0 && credit.anchoredPosition.y > 0, "Credit anchored inside bottom-right corner");
+                Pad(Press(GamepadButton.DpadDown));
+            });
+            Step(() => { Check(EventSystem.current.currentSelectedGameObject == Button("Controls").gameObject, "D-pad selects Controls"); Pad(new GamepadState()); });
+            Step(() => Pad(Press(GamepadButton.South)));
+            Step(() => { Check(Button("Back to menu").gameObject.activeInHierarchy && EventSystem.current.currentSelectedGameObject == Button("Back to menu").gameObject, "A opens Controls and selects Back"); Pad(new GamepadState()); });
+            Step(() => Pad(Press(GamepadButton.East)));
+            Step(() => { Check(Button("Enter Sandbox").gameObject.activeInHierarchy && EventSystem.current.currentSelectedGameObject == Button("Controls").gameObject, "B closes Controls and restores selection"); Pad(new GamepadState()); });
+            Step(() => EventSystem.current.SetSelectedGameObject(null));
+            Step(() => Check(EventSystem.current.currentSelectedGameObject == Button("Controls").gameObject, "Lost selection recovers without mouse or keyboard input"));
+            Mouse mouse = null;
+            Step(() =>
+            {
+                mouse = InputSystem.AddDevice<Mouse>();
+                InputSystem.QueueStateEvent(mouse, new MouseState { position = new Vector2(Screen.width / 2f, 4) }.WithButton(MouseButton.Left));
+                InputSystem.Update();
+            });
+            Step(() => { Check(EventSystem.current.currentSelectedGameObject == Button("Controls").gameObject, "Mouse background click preserves controller selection"); InputSystem.RemoveDevice(mouse); });
+            Step(() => Keys(Key.DownArrow));
+            Step(() => { Check(EventSystem.current.currentSelectedGameObject == Button("Exit").gameObject, "Keyboard arrows navigate after controller and mouse"); Keys(); });
+            Step(() => Keys(Key.UpArrow));
+            Step(() => { Check(EventSystem.current.currentSelectedGameObject == Button("Controls").gameObject, "Keyboard can restore Controls selection"); Keys(); });
+            Step(() => { InputSystem.RemoveDevice(pad); pad = InputSystem.AddDevice<Gamepad>(); Pad(new GamepadState()); });
+            Step(() => Pad(new GamepadState { leftStick = Vector2.up }));
+            Step(() => { Check(EventSystem.current.currentSelectedGameObject == Button("Enter Sandbox").gameObject, "Reconnected gamepad navigates immediately with stick"); Pad(new GamepadState()); });
+            Step(() => Pad(Press(GamepadButton.DpadDown)));
+            Step(() => Pad(new GamepadState()));
+            Step(() => Pad(Press(GamepadButton.South)));
+            Step(() => { Check(Button("Back to menu").gameObject.activeInHierarchy, "Reconnected controller submits Controls"); Pad(new GamepadState()); });
+            Step(() => Pad(Press(GamepadButton.South)));
+            Step(() => { Check(Button("Enter Sandbox").gameObject.activeInHierarchy, "A activates Back without immediately reopening Controls"); Pad(new GamepadState()); });
+            Step(() => Pad(Press(GamepadButton.DpadDown)));
+            Step(() => { Check(EventSystem.current.currentSelectedGameObject == Button("Exit").gameObject, "Controller selects explicit Exit"); Pad(new GamepadState()); });
+            Step(() => { SessionState.SetBool(Flag + "ExitExpected", true); Pad(Press(GamepadButton.South)); });
             return;
         }
-        Step(() => { Pad(Press(GamepadButton.South)); Button("Enter Sandbox").onClick.Invoke(); });
+        Step(() => Pad(Press(GamepadButton.South)));
         Wait("Sandbox", () =>
         {
             Find<PlayerInput>().actions.devices = new InputDevice[] { keyboard, pad };
@@ -194,6 +238,11 @@ public static class NavigationVerify
         Step(() => { Check(pause.IsPaused, "Resume waits for Start release"); Pad(new GamepadState()); });
         Step(() => Check(!pause.IsPaused && Time.timeScale == 1 && !AudioListener.pause, "Start resumes and restores state"));
         Step(() => Pad(Press(GamepadButton.Start)));
+        Step(() => Pad(new GamepadState()));
+        Step(() => Pad(Press(GamepadButton.East)));
+        Step(() => { Check(pause.IsPaused, "B resume waits for Cancel release"); Pad(new GamepadState()); });
+        Step(() => Check(!pause.IsPaused, "B returns from pause without leaking held input"));
+        Step(() => Pad(Press(GamepadButton.Start)));
         Step(() => { Check(pause.IsPaused, "Start opens pause"); Pad(new GamepadState()); });
         Step(() => Pad(new GamepadState { leftStick = Vector2.down }));
         Step(() => { Check(EventSystem.current.currentSelectedGameObject == Button("Main Menu").gameObject, "Stick navigates to Main Menu"); Pad(new GamepadState()); });
@@ -205,13 +254,15 @@ public static class NavigationVerify
             Check(Time.timeScale == 1 && !AudioListener.pause && Cursor.visible && Cursor.lockState == CursorLockMode.None, "Menu restores time/audio/cursor");
             Pad(new GamepadState());
         });
-        Step(() => Button("Enter Sandbox").onClick.Invoke());
+        Step(() => Pad(Press(GamepadButton.South)));
         Wait("Sandbox", () => { Find<PlayerInput>().actions.devices = new InputDevice[] { keyboard, pad }; pause = Find<PauseMenuController>(); Check(Object.FindObjectsByType<EventSystem>(FindObjectsSortMode.None).Length == 1, "Re-entry has no duplicate EventSystems"); Keys(Key.Escape); });
-        Step(() => Keys());
-        Step(() => { Pad(Press(GamepadButton.South)); Button("Resume").onClick.Invoke(); });
+        Step(() => { Keys(); Pad(new GamepadState()); });
+        Step(() => Pad(Press(GamepadButton.South)));
         Step(() => { Check(pause.IsPaused, "Resume Submit held cannot drive vehicle"); Pad(new GamepadState()); });
         Step(() => { Check(!pause.IsPaused, "Resume button restores driving"); Keys(Key.Escape); });
-        Step(() => { SessionState.SetBool(Flag + "ExitExpected", true); Button("Exit Game").onClick.Invoke(); });
+        Step(() => { Keys(); Pad(Press(GamepadButton.DpadUp)); });
+        Step(() => { Check(EventSystem.current.currentSelectedGameObject == Button("Exit Game").gameObject, "Pause D-pad selects Exit Game"); Pad(new GamepadState()); });
+        Step(() => { SessionState.SetBool(Flag + "ExitExpected", true); Pad(Press(GamepadButton.South)); });
     }
 
     static void Tick()

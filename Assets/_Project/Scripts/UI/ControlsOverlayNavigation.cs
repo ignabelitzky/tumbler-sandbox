@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 /// <summary>Make the controls page's Back hint work with keyboard and gamepad.</summary>
@@ -8,14 +8,27 @@ public sealed class ControlsOverlayNavigation : MonoBehaviour
     [SerializeField] private Button backButton;
     [SerializeField] private Button controlsButton;
     [SerializeField] private RectTransform layout;
+    private MenuInputNavigation navigation;
     private void OnEnable()
     {
         if (layout == null) layout = transform.Find("Controls layout") as RectTransform;
         Canvas.willRenderCanvases += Fit;
         Fit();
-        if (backButton != null) backButton.Select();
+        var events = FindFirstObjectByType<EventSystem>();
+        navigation = events != null ? events.GetComponent<MenuInputNavigation>() : null;
+        if (navigation != null)
+        {
+            navigation.SetDefaultSelection(backButton);
+            navigation.CancelRequested += Back;
+        }
     }
-    private void OnDisable() => Canvas.willRenderCanvases -= Fit;
+    private void OnDisable()
+    {
+        Canvas.willRenderCanvases -= Fit;
+        if (navigation == null) return;
+        navigation.CancelRequested -= Back;
+        navigation.SetDefaultSelection(controlsButton);
+    }
     private void OnRectTransformDimensionsChange() { if (isActiveAndEnabled) Fit(); }
     private void Fit()
     {
@@ -28,11 +41,9 @@ public sealed class ControlsOverlayNavigation : MonoBehaviour
         float scale = Mathf.Min(1, available.x / size.x, available.y / size.y);
         if (Mathf.Abs(layout.localScale.x - scale) > .0001f) layout.localScale = Vector3.one * scale;
     }
-    private void Update()
+    private void Back()
     {
-        bool back = Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame;
-        foreach (var pad in Gamepad.all) back |= pad.buttonEast.wasPressedThisFrame;
-        if (!back || backButton == null) return;
+        if (backButton == null) return;
         backButton.onClick.Invoke();
         if (controlsButton != null && controlsButton.gameObject.activeInHierarchy) controlsButton.Select();
     }

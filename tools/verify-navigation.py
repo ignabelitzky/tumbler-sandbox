@@ -75,6 +75,7 @@ def static_checks():
           'PlayerInput changes only the pause callback; IDs and other callbacks preserved')
     subprocess.check_call([sys.executable, str(ROOT / 'tools/controls-lighting/check.py')], cwd=ROOT)
     subprocess.check_call([sys.executable, str(ROOT / 'tools/verify-impact-ground.py')], cwd=ROOT)
+    subprocess.check_call([sys.executable, str(ROOT / 'tools/check-menu-input.py')], cwd=ROOT)
     check(True, 'Current controls overlay and turbine illumination preserve all other approved game assets and scene objects')
 
     seen = {}

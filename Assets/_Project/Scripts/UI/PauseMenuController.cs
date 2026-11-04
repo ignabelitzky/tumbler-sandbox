@@ -15,9 +15,10 @@ public sealed class PauseMenuController : MonoBehaviour
     private Canvas canvas;
     private EventSystem events;
     private InputSystemUIInputModule uiModule;
+    private MenuInputNavigation uiNavigation;
     private Button resumeButton;
     private bool resumePending, previousCursorVisible, previousAudioPause, previousModuleEnabled;
-    private bool ownsEventSystem, addedModule;
+    private bool ownsEventSystem, addedModule, addedNavigation;
     private float previousTimeScale;
     private CursorLockMode previousCursorLock;
 
@@ -68,6 +69,11 @@ public sealed class PauseMenuController : MonoBehaviour
         }
         uiModule = events.GetComponent<InputSystemUIInputModule>();
         if (uiModule == null) { uiModule = events.gameObject.AddComponent<InputSystemUIInputModule>(); addedModule = true; }
+        uiNavigation = events.GetComponent<MenuInputNavigation>();
+        if (uiNavigation == null) { uiNavigation = events.gameObject.AddComponent<MenuInputNavigation>(); addedNavigation = true; }
+        uiNavigation.SetDefaultSelection(resumeButton);
+        uiNavigation.CancelRequested += Resume;
+        uiNavigation.enabled = false;
         previousModuleEnabled = uiModule.enabled;
         if (ownsEventSystem || addedModule) uiModule.enabled = false;
     }
@@ -94,8 +100,8 @@ public sealed class PauseMenuController : MonoBehaviour
         canvas.gameObject.SetActive(true);
         previousModuleEnabled = uiModule.enabled;
         uiModule.enabled = true;
-        events.SetSelectedGameObject(null);
-        events.SetSelectedGameObject(resumeButton.gameObject);
+        uiNavigation.enabled = true;
+        uiNavigation.SetDefaultSelection(resumeButton);
     }
 
     public void Resume()
@@ -135,7 +141,7 @@ public sealed class PauseMenuController : MonoBehaviour
             keyboard.spaceKey.isPressed || keyboard.escapeKey.isPressed)) return true;
         if (Mouse.current != null && Mouse.current.leftButton.isPressed) return true;
         foreach (var pad in Gamepad.all)
-            if (pad.buttonSouth.isPressed || pad.startButton.isPressed) return true;
+            if (pad.buttonSouth.isPressed || pad.buttonEast.isPressed || pad.startButton.isPressed) return true;
         return false;
     }
 
@@ -150,6 +156,7 @@ public sealed class PauseMenuController : MonoBehaviour
         Cursor.visible = previousCursorVisible;
         if (canvas != null) canvas.gameObject.SetActive(false);
         if (events != null) events.SetSelectedGameObject(null);
+        if (uiNavigation != null) uiNavigation.enabled = false;
         if (uiModule != null) uiModule.enabled = previousModuleEnabled;
     }
 
@@ -161,6 +168,8 @@ public sealed class PauseMenuController : MonoBehaviour
     {
         if (Instance != this) return;
         RestorePauseState();
+        if (uiNavigation != null) uiNavigation.CancelRequested -= Resume;
+        if (!ownsEventSystem && addedNavigation && uiNavigation != null) Destroy(uiNavigation);
         if (!ownsEventSystem && addedModule && uiModule != null) Destroy(uiModule);
         if (canvas != null) Destroy(canvas.gameObject);
         Instance = null;

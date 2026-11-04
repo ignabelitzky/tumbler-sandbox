@@ -10,7 +10,7 @@ For the complete assembled vehicle in Blender or Autodesk Maya, see the [model e
 
 ## For players
 
-Downloadable standalone builds are not published yet. Windows/Linux Player compatibility and system requirements remain unverified. The Phosphor developer intro, menus and pause flow pass native Unity Play Mode checks; see the [navigation guide and validation gate](docs/navigation-and-intro.md). A working Editor project is not a validated executable.
+Downloadable standalone builds are not published yet. Windows/Linux Player compatibility and system requirements remain unverified. See the [navigation guide](docs/navigation-and-intro.md) and [current menu-input validation status](docs/menu-input.md). A working Editor project is not a validated executable.
 
 In Sandbox, **Escape / Xbox Start** opens a pause menu with **Resume**, **Main Menu** and **Exit Game**. Only explicit Exit buttons close the application. The input table below lists the remaining driving controls.
 
@@ -43,7 +43,7 @@ In Sandbox, **Escape / Xbox Start** opens a pause menu with **Resume**, **Main M
 | --- | --- |
 | Unity 6 | **6000.6.7f1**, revision `b22767f04f04` |
 | C# | MonoBehaviour components and Unity events |
-| Input System | **1.20.1**, `Gameplay` action map and generated `TumblerInput` wrapper |
+| Input System | **1.20.1**, package-only backend, `Gameplay` wrapper and separate `UI` actions |
 | HDRP | **17.6.0**, active render pipeline |
 | Cinemachine | **6.6.0**, camera components serialized in Sandbox |
 | Unity UI / TextMeshPro | uGUI **2.6.0**, menu and driving HUD |
@@ -96,6 +96,13 @@ on Xbox use the stick/D-pad and A. Escape or B returns from Controls.
 Any key, mouse click or controller button skips the intro after its short guard.
 Exit the game through the menu buttons. Upright recovery (*) requires speed below
 1 m/s; inside the tunnel the camera stays close and restores the previous view outside.
+
+Main Menu and pause share [MenuInput.inputactions](Assets/_Project/Resources/MenuInput.inputactions).
+UI actions accept all connected gamepads independently of vehicle device pairing.
+Background clicks preserve selection, and missing/inactive selection is recovered
+for the current page. Keyboard arrows/WASD, Enter/Space, mouse, stick/D-pad and A
+remain available together; Escape/B closes Controls or resumes from pause.
+See [menu input and the Phosphor credit](docs/menu-input.md) for validation details.
 
 The Xbox triggers remain a signed analog throttle axis, and the stick retains analog steering. Keyboard throttle/steering are digital; opposing keyboard directions cancel. Reverse and brake remain separate controls. You can combine acceleration, steering, boost and handbrake, subject to the existing vehicle behavior. Drivetrain, gearbox, torque, suspension and control bindings are unchanged by the test ground. Only tire stiffness is scaled while each wheel touches a marked test surface, and the original stiffness is restored on exit.
 

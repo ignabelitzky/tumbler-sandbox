@@ -5,6 +5,11 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 APPROVED_BLOBS = {
+    # Input System menu selection recovery and package-only backend.
+    'Assets/_Project/Scripts/UI/MenuController.cs': '812e886c29ad48e9f4b0e38e87e051ec88bafd86',
+    'Assets/_Project/Scripts/UI/PauseMenuController.cs': 'da81e982081df1c6f56eb54f37c81d2e19e33381',
+    'Assets/_Project/Scripts/UI/ControlsOverlayNavigation.cs': 'e2824cd0ed306f3f0878b56d19dfed30d228b3f9',
+    'ProjectSettings/ProjectSettings.asset': '67efc1eb23bedbf6091cba9378ae2cc581502aef',
     # Portal repair / camera transitions (5713507).
     'Assets/_Project/Environment/UndergroundFacility/Tunnel walls and closed roof.asset': '9ed0cc9da00dfca9a69d486c629a5b46ceba8f36',
     'Assets/_Project/Environment/UndergroundFacility/UndergroundFacility.prefab': '21b83f2c6d1370513a3d4601a557e8a3d0875385',
@@ -27,6 +32,27 @@ def expected_blob(path, original):
     return APPROVED_BLOBS.get(path, original)
 
 
+def menu_before_input_update(text):
+    """Remove only the approved serialized menu wiring for the older scene checks."""
+    blocks = {m[1]: m[0] for m in re.finditer(
+        r'^--- !u!\d+ &(-?\d+)[^\n]*\n.*?(?=^--- !u!|\Z)', text, re.M | re.S)}
+    original = block = blocks['1376158916']
+    for line in (
+        '  enterSandboxButton: {fileID: 1355747818}\n',
+        '  developerLogo: {fileID: 2800000, guid: 043299bf153b5bdd8b48b56988c3077e, type: 3}\n',
+        '  creditFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}\n',
+    ):
+        if block.count(line) != 1:
+            raise AssertionError('Unexpected developer credit/menu reference: ' + line.strip())
+        block = block.replace(line, '', 1)
+    text = text.replace(original, block, 1)
+    block = blocks['1017201477']
+    if block.count('  m_DeselectOnBackgroundClick: 0\n') != 1:
+        raise AssertionError('Menu must preserve controller selection on background clicks')
+    return text.replace(block, block.replace('  m_DeselectOnBackgroundClick: 0\n',
+                                           '  m_DeselectOnBackgroundClick: 1\n', 1), 1)
+
+
 def scene_before_impact_ground(path):
     """Validate/remove only the approved impact delta from today's scene in memory.
 
@@ -35,6 +61,8 @@ def scene_before_impact_ground(path):
     scene also goes through verify-impact-ground.py without normalization.
     """
     text = (ROOT / path).read_text(encoding='utf-8')
+    if path == 'Assets/_Project/Scenes/Main Menu.unity':
+        return menu_before_input_update(text)
     if path != 'Assets/_Project/Scenes/Sandbox.unity':
         return text
     blocks = {m[1]: m[0] for m in re.finditer(

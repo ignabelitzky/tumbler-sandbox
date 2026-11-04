@@ -5628,7 +5628,7 @@ MonoBehaviour:
   m_ScrollWheelAction: {fileID: 1307677855}
   m_TrackedDevicePositionAction: {fileID: 1012746104}
   m_TrackedDeviceOrientationAction: {fileID: 1209127110}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
@@ -6888,6 +6888,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9120d425822884c9992e1c90796cbf, type: 3}
   m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::MenuController
+  enterSandboxButton: {fileID: 1355747818}
+  developerLogo: {fileID: 2800000, guid: 043299bf153b5bdd8b48b56988c3077e, type: 3}
+  creditFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
 --- !u!224 &1376158917
 RectTransform:
   m_ObjectHideFlags: 0

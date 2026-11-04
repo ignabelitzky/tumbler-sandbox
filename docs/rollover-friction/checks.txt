@@ -1,0 +1,92 @@
+PASS Existing impact calibration creates chassis friction at runtime
+PASS Upright belly retains its exact glide material
+PASS Upper body uses native scrape material
+PASS Sideways lower hull gains scrape grip
+PASS Inverted lower hull retains scrape grip
+PASS Returning upright restores belly glide
+PASS Disable restores original shared materials immediately
+PASS Mass, COM and inertia remain unchanged
+PASS roof settled forward 10: matched initial positions
+PASS roof settled forward 10: matched initial orientations
+PASS roof settled forward 10: finite bounded native response
+PASS roof settled forward 10: roof scrape reduces five-second sliding distance by at least 15%
+PASS roof settled forward 10: roof scrape stops or lowers residual speed
+PASS roof settled lateral 10: matched initial positions
+PASS roof settled lateral 10: matched initial orientations
+PASS roof settled lateral 10: finite bounded native response
+PASS roof settled lateral 10: roof scrape reduces five-second sliding distance by at least 15%
+PASS roof settled lateral 10: roof scrape stops or lowers residual speed
+PASS drop forward 60 10: matched initial positions
+PASS drop forward 60 10: matched initial orientations
+PASS drop forward 60 10: finite bounded native response
+PASS drop lateral 60 10: matched initial positions
+PASS drop lateral 60 10: matched initial orientations
+PASS drop lateral 60 10: finite bounded native response
+PASS drop forward 90 10: matched initial positions
+PASS drop forward 90 10: matched initial orientations
+PASS drop forward 90 10: finite bounded native response
+PASS drop lateral 90 10: matched initial positions
+PASS drop lateral 90 10: matched initial orientations
+PASS drop lateral 90 10: finite bounded native response
+PASS drop forward 120 10: matched initial positions
+PASS drop forward 120 10: matched initial orientations
+PASS drop forward 120 10: finite bounded native response
+PASS drop lateral 120 10: matched initial positions
+PASS drop lateral 120 10: matched initial orientations
+PASS drop lateral 120 10: finite bounded native response
+PASS drop forward 180 10: matched initial positions
+PASS drop forward 180 10: matched initial orientations
+PASS drop forward 180 10: finite bounded native response
+PASS drop lateral 180 10: matched initial positions
+PASS drop lateral 180 10: matched initial orientations
+PASS drop lateral 180 10: finite bounded native response
+PASS roof settled forward 20: matched initial positions
+PASS roof settled forward 20: matched initial orientations
+PASS roof settled forward 20: finite bounded native response
+PASS roof settled forward 20: roof scrape reduces five-second sliding distance by at least 15%
+PASS roof settled forward 20: roof scrape stops or lowers residual speed
+PASS roof settled lateral 20: matched initial positions
+PASS roof settled lateral 20: matched initial orientations
+PASS roof settled lateral 20: finite bounded native response
+PASS roof settled lateral 20: roof scrape reduces five-second sliding distance by at least 15%
+PASS roof settled lateral 20: roof scrape stops or lowers residual speed
+PASS drop forward 60 20: matched initial positions
+PASS drop forward 60 20: matched initial orientations
+PASS drop forward 60 20: finite bounded native response
+PASS drop lateral 60 20: matched initial positions
+PASS drop lateral 60 20: matched initial orientations
+PASS drop lateral 60 20: finite bounded native response
+PASS drop forward 90 20: matched initial positions
+PASS drop forward 90 20: matched initial orientations
+PASS drop forward 90 20: finite bounded native response
+PASS drop lateral 90 20: matched initial positions
+PASS drop lateral 90 20: matched initial orientations
+PASS drop lateral 90 20: finite bounded native response
+PASS drop forward 120 20: matched initial positions
+PASS drop forward 120 20: matched initial orientations
+PASS drop forward 120 20: finite bounded native response
+PASS drop lateral 120 20: matched initial positions
+PASS drop lateral 120 20: matched initial orientations
+PASS drop lateral 120 20: finite bounded native response
+PASS drop forward 180 20: matched initial positions
+PASS drop forward 180 20: matched initial orientations
+PASS drop forward 180 20: finite bounded native response
+PASS drop lateral 180 20: matched initial positions
+PASS drop lateral 180 20: matched initial orientations
+PASS drop lateral 180 20: finite bounded native response
+PASS upright landing control: matched initial positions
+PASS upright landing control: matched initial orientations
+PASS upright landing control: finite bounded native response
+PASS upright landing control: wheels-down coast unchanged
+PASS drop forward 90 10: side landing no longer glides for most of the observation window
+PASS drop lateral 90 10: side landing no longer glides for most of the observation window
+PASS drop forward 90 20: side landing no longer glides for most of the observation window
+PASS drop lateral 90 20: side landing no longer glides for most of the observation window
+PASS Fast lateral side landing produces additional native roll travel
+PASS drop forward 180 10: roof-first landing reduces sliding distance
+PASS drop lateral 180 10: roof-first landing reduces sliding distance
+PASS drop forward 180 20: roof-first landing reduces sliding distance
+PASS drop lateral 180 20: roof-first landing reduces sliding distance
+PASS Scrape grip does not brake the car while airborne
+PASS Scrape grip leaves gravity free to act
+PASS All body axes remain free during landing trials

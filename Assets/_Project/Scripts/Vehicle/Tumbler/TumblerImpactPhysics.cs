@@ -9,6 +9,7 @@ public sealed class TumblerImpactPhysics : MonoBehaviour
     [SerializeField, Min(.1f)] private float depenetrationLimit = 5f;
     private Rigidbody body;
     private GameObject frontFace;
+    private TumblerChassisFriction chassisFriction;
     private int oldIterations, oldVelocityIterations;
     private float oldDepenetration;
     private bool captured;
@@ -41,6 +42,9 @@ public sealed class TumblerImpactPhysics : MonoBehaviour
             face.sharedMaterial = hull.sharedMaterial;
         }
         frontFace.SetActive(true);
+        chassisFriction = GetComponent<TumblerChassisFriction>();
+        if (chassisFriction == null) chassisFriction = gameObject.AddComponent<TumblerChassisFriction>();
+        chassisFriction.enabled = true;
     }
     private void OnDisable()
     {
@@ -49,6 +53,7 @@ public sealed class TumblerImpactPhysics : MonoBehaviour
         body.solverVelocityIterations = oldVelocityIterations;
         body.maxDepenetrationVelocity = oldDepenetration;
         if (frontFace != null) frontFace.SetActive(false);
+        if (chassisFriction != null) chassisFriction.enabled = false;
         captured = false;
     }
 }

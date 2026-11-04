@@ -1,5 +1,7 @@
 # Tumbler impact physics
 
+Current extension: [side/roof scrape grip](rollover-friction.md) adds runtime friction selection for overturned landings. The measurements below describe the earlier contact-face calibration.
+
 Inspected main: `5713507`, Unity **6000.6.7f1**. Work is isolated on `fix/tumbler-impact-physics`.
 
 ## Diagnosis from the actual scene

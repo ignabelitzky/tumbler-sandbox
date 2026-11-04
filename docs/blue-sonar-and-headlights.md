@@ -5,7 +5,7 @@ Stealth (V / right-stick click) now enables a blue sonar inspired by the visual 
 ## Sensor
 
 - Dark navy background, blue surface relief and brighter cyan silhouettes and corners.
-- Perspective-correct surface points anchored to the world, with horizontal contours on walls. Pixel-footprint filtering fades undersampled points/contours to reduce distant shimmer.
+- Perspective-correct surface points anchored to the world, with horizontal contours on walls. A depth-tested mask of the actual Tumbler renderers excludes the entire visible vehicle, including the wheels, from these synthetic dots and height contours. Blue relief, real mesh edges and acoustic pulses remain on the vehicle; the environment stays patterned through gaps between parts. Pixel-footprint filtering fades undersampled points/contours to reduce distant shimmer.
 - Acoustic fronts expand from the vehicle at 60 scene units/second, repeating every three seconds, with a short echo decay. A continuous base response keeps obstacles readable between fronts.
 - Range falloff preserves depth. Tangent-plane discontinuities distinguish silhouettes from a flat road receding into the distance; raw depth slope would incorrectly brighten the horizon.
 - A small compressed contribution from the original image preserves material markings without allowing daylight or bright lamps to dominate the sensor.
@@ -43,3 +43,5 @@ python tools/sandbox-expansion/check.py
 ```
 
 The exact allowed asset hashes are updated for the three changed runtime files; unrelated assets and serialized scene objects remain protected by the existing checks. Physical controller testing, subjective driving evaluation, GPU profiling and a standalone executable remain manual checks.
+
+The vehicle-mask extension is validated by rendering with surface patterns enabled/disabled and comparing the visible vehicle interior in rear, front and side views. A separate R8 render target draws only the vehicle meshes against scene depth; it does not change GameObject layers or erase a bounding volume around the car. Resources release alongside the existing source buffer. Pixel checks show no patterned interior pixels in the tested views while environment patterns remain visible. See `docs/sonar-vehicle-mask-validation.json`.

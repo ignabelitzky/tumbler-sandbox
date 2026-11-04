@@ -111,6 +111,7 @@ public static class StealthCameraVerify
             if(stage==2)
             {
                 Check(vision.Weight==1,"Night vision fades in to full intensity");
+                CheckVehiclePatternMask("rear");
                 Capture("night-vision-tunnel");
                 Capture("night-vision-tunnel-1080",1920,1080);
                 Capture("night-vision-tunnel-ultrawide",2560,1080);
@@ -131,6 +132,9 @@ public static class StealthCameraVerify
             }
             if(stage==4)
             {
+                CheckVehiclePatternMask("front");
+                camera.transform.position=body.position+new Vector3(7,2.2f,0);camera.transform.LookAt(body.position);
+                CheckVehiclePatternMask("side");
                 Capture("night-vision-daylight");systems.enabled=false;
                 Check(!vision.IsActive&&vision.Weight==0,"Disabling vehicle systems clears night vision immediately");
                 systems.enabled=true;systems.SetStealth(true);systems.SetStealth(false);
@@ -146,6 +150,41 @@ public static class StealthCameraVerify
             File.WriteAllText(Folder+"/stealth-camera-failed.txt",e.ToString());
             SessionState.SetBool(Flag,false);Debug.LogException(e);EditorApplication.Exit(1);
         }
+    }
+    static void CheckVehiclePatternMask(string view)
+    {
+        const int w=1280,h=720;
+        var mat=(Material)typeof(StealthNightVision).GetField("material",BindingFlags.NonPublic|BindingFlags.Instance).GetValue(vision);
+        mat.SetFloat("_SonarTime",1.5f);
+        mat.SetFloat("_SurfacePatternStrength",1);
+        var patterned=Capture("masked-pattern-"+view);
+        var volume=body.transform.Find("Stealth night vision").GetComponent<CustomPassVolume>();
+        var pass=volume.customPasses[0];
+        var handle=(RTHandle)pass.GetType().GetField("vehicleMask",BindingFlags.NonPublic|BindingFlags.Instance).GetValue(pass);
+        var old=RenderTexture.active;RenderTexture.active=handle.rt;
+        var maskTexture=new Texture2D(w,h,TextureFormat.RGB24,false,true);
+        maskTexture.ReadPixels(new Rect(0,0,w,h),0,0);maskTexture.Apply();
+        var mask=maskTexture.GetPixels32();
+        File.WriteAllBytes(Folder+"/Previews/vehicle-mask-"+view+".png",maskTexture.EncodeToPNG());
+        RenderTexture.active=old;Object.DestroyImmediate(maskTexture);
+        mat.SetFloat("_SurfacePatternStrength",0);
+        var unpatterned=Capture("no-pattern-"+view);
+        mat.SetFloat("_SurfacePatternStrength",1);
+        int interior=0,changedVehicle=0,changedEnvironment=0;
+        for(int y=2;y<h-2;y++)for(int x=2;x<w-2;x++)
+        {
+            int i=y*w+x;
+            int delta=Mathf.Abs(patterned[i].b-unpatterned[i].b);
+            // Ignore the two-pixel silhouette/TAA border; the visible mesh interior
+            // must match a rendering with all synthetic surface patterns disabled.
+            if(mask[i].r>250 && mask[i-2].r>250 && mask[i+2].r>250 && mask[i-2*w].r>250 && mask[i+2*w].r>250)
+            {interior++;if(delta>3)changedVehicle++;}
+            if(mask[i].r==0 && delta>3)changedEnvironment++;
+        }
+        Check(interior>w*h*.015f,"Visible vehicle mask covers geometry including wheel surfaces: "+view);
+        Check(changedVehicle<interior*.01f,"Vehicle interior has no synthetic dots or height contours: "+view+" changed="+changedVehicle+" / "+interior);
+        Check(changedEnvironment>w*h*.03f,"Environment retains surface patterns around vehicle: "+view);
+        Check(!ShaderUtil.GetShaderMessages(Resources.Load<Shader>("StealthVehicleMask")).Any(m=>m.severity.ToString()=="Error"),"Vehicle mask shader compiles: "+view);
     }
     static Color32[] Capture(string name,int w=1280,int h=720)
     {

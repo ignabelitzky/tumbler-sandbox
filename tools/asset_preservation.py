@@ -5,9 +5,11 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 APPROVED_BLOBS = {
+    # Runtime side/roof grip; serialized physics configuration is preserved.
+    'Assets/_Project/Scripts/Vehicle/Tumbler/TumblerImpactPhysics.cs': 'aa7cccca28c4f7f46feba51434115ebcd942e624',
     # Blue geometry sonar and clear, wider headlights.
-    'Assets/_Project/Resources/StealthNightVision.shader': 'dd65fbbe626adac2c309e7906ef92031e90a3880',
-    'Assets/_Project/Scripts/Camera/StealthNightVision.cs': '1b1c166f3dba1b42ab2089f847d5bb10bf59984d',
+    'Assets/_Project/Resources/StealthNightVision.shader': '8b747b572620ae0cb9d6decb92aaa7798ad827a9',
+    'Assets/_Project/Scripts/Camera/StealthNightVision.cs': '53c504672949edee0d9e1b9d9f65cc6a555a66da',
     'Assets/_Project/Scripts/Vehicle/Tumbler/TumblerSystems.cs': '6ee0292c71cdcd75b80baec5d657d402065ebc0c',
     # Input System menu selection recovery and package-only backend.
     'Assets/_Project/Scripts/UI/MenuController.cs': '76d158ac1c46ec3ee772b36433ef2f1dcb2ddbc4',

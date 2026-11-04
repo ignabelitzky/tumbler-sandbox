@@ -1,6 +1,10 @@
 Shader "Hidden/Tumbler/StealthNightVision"
 {
-    Properties { _Strength("Strength", Range(0,1)) = 1 }
+    Properties
+    {
+        _Strength("Strength", Range(0,1)) = 1
+        _SurfacePatternStrength("Surface pattern strength", Range(0,1)) = 1
+    }
     HLSLINCLUDE
     #pragma vertex Vert
     #pragma target 4.5
@@ -8,7 +12,8 @@ Shader "Hidden/Tumbler/StealthNightVision"
     #include "Packages/com.unity.render-pipelines.high-definition/Runtime/RenderPipeline/RenderPass/CustomPass/CustomPassCommon.hlsl"
     #include "Packages/com.unity.render-pipelines.high-definition/Runtime/Material/NormalBuffer.hlsl"
     TEXTURE2D_X(_SensorSource);
-    float _Strength, _SonarTime;
+    TEXTURE2D_X(_VehicleMask);
+    float _Strength, _SonarTime, _SurfacePatternStrength;
     float3 _SonarOrigin;
 
     float SurfaceDots(float2 plane)
@@ -65,11 +70,15 @@ Shader "Hidden/Tumbler/StealthNightVision"
             float3 dominant = abs(normal);
             float2 plane = dominant.y >= max(dominant.x, dominant.z) ? world.xz :
                 (dominant.x > dominant.z ? world.zy : world.xy);
-            float dots = SurfaceDots(plane);
+            float vehicle = LOAD_TEXTURE2D_X(_VehicleMask, pixel).r;
+            // Retain the vehicle's blue relief and real edges, but keep the synthetic
+            // sample grid and height contours on the environment, including between wheels.
+            float environment = (1 - vehicle) * _SurfacePatternStrength;
+            float dots = SurfaceDots(plane) * environment;
             float contourCoord = world.y * 2.0;
             float contourWidth = max(fwidth(contourCoord), .001);
             float contour = (1-smoothstep(.025, .025+contourWidth, abs(frac(contourCoord+.5)-.5))) *
-                (1-smoothstep(.2,.6,contourWidth)) * (1-abs(normal.y));
+                (1-smoothstep(.2,.6,contourWidth)) * (1-abs(normal.y)) * environment;
             float detail = dot(max(source,0), float3(.2126,.7152,.0722));
             detail = detail / (.3 + detail);
             float fill = (.035 + .065*relief + .035*facing + .035*detail) * range;

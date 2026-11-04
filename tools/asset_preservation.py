@@ -6,7 +6,7 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 APPROVED_BLOBS = {
     # Input System menu selection recovery and package-only backend.
-    'Assets/_Project/Scripts/UI/MenuController.cs': 'db86877b0104a6bc3ab82ec8bf1802c0b3f360ed',
+    'Assets/_Project/Scripts/UI/MenuController.cs': '76d158ac1c46ec3ee772b36433ef2f1dcb2ddbc4',
     'Assets/_Project/Scripts/UI/PauseMenuController.cs': 'da81e982081df1c6f56eb54f37c81d2e19e33381',
     'Assets/_Project/Scripts/UI/ControlsOverlayNavigation.cs': 'e2824cd0ed306f3f0878b56d19dfed30d228b3f9',
     'ProjectSettings/ProjectSettings.asset': '67efc1eb23bedbf6091cba9378ae2cc581502aef',
@@ -46,6 +46,15 @@ def menu_before_input_update(text):
             raise AssertionError('Unexpected developer credit/menu reference: ' + line.strip())
         block = block.replace(line, '', 1)
     text = text.replace(original, block, 1)
+    # The runtime Phosphor credit now replaces the old standalone footer author.
+    for key, current, previous in (
+        ('194054416', '  m_IsActive: 0\n', '  m_IsActive: 1\n'),
+        ('194054418', "  m_text: ''\n", '  m_text: IGNACIO BELITZKY\n'),
+    ):
+        block = blocks[key]
+        if block.count(current) != 1:
+            raise AssertionError('Standalone author footer must remain removed: ' + key)
+        text = text.replace(block, block.replace(current, previous, 1), 1)
     block = blocks['1017201477']
     if block.count('  m_DeselectOnBackgroundClick: 0\n') != 1:
         raise AssertionError('Menu must preserve controller selection on background clicks')

@@ -28,9 +28,9 @@ public class MenuController : MonoBehaviour
         var canvas = GetComponentInParent<Canvas>();
         if (canvas == null || developerLogo == null || creditFont == null) return;
         credit = RuntimeMenuUI.Rect("Phosphor Developer Credit", canvas.transform,
-            new Vector2(248, 56), new Vector2(-32, 24));
-        credit.anchorMin = credit.anchorMax = new Vector2(1, 0);
-        credit.pivot = new Vector2(1, 0);
+            new Vector2(248, 56), new Vector2(0, 24));
+        credit.anchorMin = credit.anchorMax = new Vector2(.067f, 0);
+        credit.pivot = Vector2.zero;
         var icon = RuntimeMenuUI.Rect("Phosphor Icon", credit, new Vector2(56, 56),
             new Vector2(-96, 0)).gameObject.AddComponent<RawImage>();
         icon.texture = developerLogo;

@@ -171,8 +171,10 @@ public static class NavigationVerify
                 Check(AssetDatabase.GetAssetPath(icon.texture).EndsWith("Phosphor/phosphor-primary_2048.png") &&
                     icon.rectTransform.sizeDelta.x == icon.rectTransform.sizeDelta.y && !icon.raycastTarget, "Original square Phosphor icon");
                 var credit = (RectTransform)label.transform.parent;
-                Check(credit.anchorMin == new Vector2(1, 0) && credit.anchorMax == credit.anchorMin &&
-                    credit.anchoredPosition.x < 0 && credit.anchoredPosition.y > 0, "Credit anchored inside bottom-right corner");
+                Check(credit.anchorMin == new Vector2(.067f, 0) && credit.anchorMax == credit.anchorMin &&
+                    credit.pivot == Vector2.zero && credit.anchoredPosition.x == 0 && credit.anchoredPosition.y > 0, "Credit replaces the bottom-left author label");
+                var oldAuthor = Object.FindObjectsByType<TextMeshProUGUI>(FindObjectsInactive.Include, FindObjectsSortMode.None).Single(t => t.name == "Footer / Author");
+                Check(!oldAuthor.gameObject.activeInHierarchy && string.IsNullOrEmpty(oldAuthor.text), "Old standalone author label removed");
                 Pad(Press(GamepadButton.DpadDown));
             });
             Step(() => { Check(EventSystem.current.currentSelectedGameObject == Button("Controls").gameObject, "D-pad selects Controls"); Pad(new GamepadState()); });

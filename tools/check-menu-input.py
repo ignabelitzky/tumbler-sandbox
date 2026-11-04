@@ -72,6 +72,8 @@ def main():
     check('  m_FirstSelected: {fileID: 1355747817}' in scene['1017201478'], 'Menu starts on Enter Sandbox')
     controller = scene['1376158916']
     check('  enterSandboxButton: {fileID: 1355747818}' in controller, 'Recovery button reference')
+    check('  m_IsActive: 0\n' in scene['194054416'], 'Standalone author label is disabled')
+    check("  m_text: ''\n" in scene['194054418'], 'Standalone author text is removed')
     for field, file in {
         'developerLogo': 'Assets/_Project/Art/Branding/Phosphor/phosphor-primary_2048.png',
         'creditFont': 'Assets/TextMeshPro/Resources/Fonts & Materials/LiberationSans SDF.asset',

@@ -30,18 +30,20 @@ deferred until after EventSystem processing to avoid a page transition processin
 the same UI event twice. Valid mouse-selected buttons are left selected.
 
 The main menu uses the original transparent Phosphor PNG and the existing menu
-font for a non-interactive bottom-right credit: **Developed by** on the first
+font for a non-interactive bottom-left credit: **Developed by** on the first
 line and **Ignacio Belitzky** on the second. The smaller first line and bold name
 are left-aligned next to the icon, separated by 12 canvas units. The compact
 group is 248 × 56 canvas units and the icon remains square. The group uses the
-existing canvas scaler, a bottom-right anchor and a 32/24-unit inset, and does not
+existing canvas scaler, the original author's 6.7%-from-left alignment and a
+24-unit bottom inset. The old standalone author text is cleared and its object
+disabled; the right-hand footer remains unobstructed. The credit does not
 intercept pointer clicks or become a navigation target.
 
 ## Validation
 
 | Check | Result in this change |
 | --- | --- |
-| UI bindings, action types, scene references, live input dependency graph | PASS, 56 static checks |
+| UI bindings, action types, scene references, live input dependency graph | PASS, 58 static checks |
 | Navigation / lighting / tunnel / impact preservation, metadata and GUIDs | PASS |
 | C# syntax | PASS, 30 files: project scripts and the navigation verifier |
 | Unity Editor startup | PASS; official Unity 6000.6.7f1 downloaded, extracted and executed |

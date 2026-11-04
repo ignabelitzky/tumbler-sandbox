@@ -4,6 +4,10 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from asset_preservation import expected_blob
 
 ROOT = Path(__file__).resolve().parents[2]
 manifest = json.loads((ROOT / "docs/sandbox-expansion-manifest.json").read_text())
@@ -20,7 +24,7 @@ for row in rows.split(b"\0"):
         continue  # verify-navigation.py checks scene preservation, including the later controls/fire-light delta.
     data = (ROOT / path).read_bytes()
     sha = hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
-    if sha != info.split()[2].decode():
+    if sha != expected_blob(path, info.split()[2].decode()):
         raise SystemExit("Unexpected change to existing game asset/configuration: " + path)
     preserved += 1
 for key in ("terrain_path", "prefab_path"):

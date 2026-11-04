@@ -5,6 +5,10 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from asset_preservation import expected_blob, scene_before_impact_ground
 
 ROOT=Path(__file__).resolve().parents[2]
 manifest=json.loads((ROOT/"docs/controls-lighting-manifest.json").read_text())
@@ -14,7 +18,7 @@ def docs(text):
     return {m[1]:m[0] for m in re.finditer(r"^--- !u!\d+ &(-?\d+)[^\n]*\n.*?(?=^--- !u!|\Z)",text,re.M|re.S)}
 for path,delta in manifest["scenes"].items():
     old=docs(git("show",manifest["baseline"]+":"+path).decode())
-    new=docs((ROOT/path).read_text())
+    new=docs(scene_before_impact_ground(path))
     assert set(old)<=set(new),"Original scene object removed: "+path
     assert set(new)-set(old)==set(delta["added_ids"]),"Unexpected scene object addition: "+path
     changed={k for k in old if old[k]!=new[k]}
@@ -35,7 +39,7 @@ for row in git("ls-tree","-r","-z",manifest["baseline"]).split(b"\0"):
     if not path.startswith(("Assets/","Packages/","ProjectSettings/")) or path in manifest["scenes"]:continue
     data=(ROOT/path).read_bytes()
     digest=hashlib.sha1(b"blob "+str(len(data)).encode()+b"\0"+data).hexdigest()
-    assert digest==info.split()[2].decode(),"Unexpected existing asset/settings change: "+path
+    assert digest==expected_blob(path,info.split()[2].decode()),"Unexpected existing asset/settings change: "+path
     count+=1
 catalog=json.loads((ROOT/"docs/controls-catalog.json").read_text())
 expected="| Action | Xbox controller | Keyboard / mouse |\n| --- | --- | --- |\n"+"\n".join("| "+r["action"]+" | "+r["xbox"]+" | "+r["keyboard"]+" |" for r in catalog["rows"])

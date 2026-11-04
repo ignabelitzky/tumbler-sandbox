@@ -10,6 +10,8 @@ import shutil
 import subprocess
 import sys
 
+from asset_preservation import expected_blob, scene_before_impact_ground
+
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '32da32f8cecab6ba03755865ae0a5c828a743de8'
 SCENES = 'Assets/_Project/Scenes/'
@@ -39,7 +41,7 @@ def static_checks():
         'ProjectSettings/EditorBuildSettings.asset', 'ProjectSettings/ProjectSettings.asset',
     }
     preserved = 0
-    # Compare Git object hashes, not timestamps; every original meta, package and physics/art source stays exact.
+    # Exact original blobs or pinned later revisions; metadata/packages remain unchanged.
     for row in git('ls-tree', '-r', '-z', BASE).split(b'\0'):
         if not row:
             continue
@@ -48,13 +50,13 @@ def static_checks():
         if name.startswith(('Assets/', 'Packages/', 'ProjectSettings/')) and name not in mutable:
             data = (ROOT / name).read_bytes()
             digest = hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest()
-            if digest != info.split()[2].decode():
+            if digest != expected_blob(name, info.split()[2].decode()):
                 raise AssertionError('Unexpected asset change: ' + name)
             preserved += 1
-    check(True, f'{preserved} existing assets/settings preserved byte-for-byte, including every original meta and both input sources')
+    check(True, f'{preserved} assets/settings match original or approved blobs; original metadata and both input sources preserved')
 
     before = documents(git('show', BASE + ':' + SCENES + 'Sandbox.unity').decode())
-    after = documents((ROOT / SCENES / 'Sandbox.unity').read_text())
+    after = documents(scene_before_impact_ground(SCENES + 'Sandbox.unity'))
     expansion = json.loads((ROOT / 'docs/sandbox-expansion-manifest.json').read_text())
     lighting = json.loads((ROOT / 'docs/controls-lighting-manifest.json').read_text())['scenes'][SCENES + 'Sandbox.unity']
     check(set(after) - set(before) == {'1824967747', expansion['instance_id'], *lighting['added_ids']},
@@ -72,6 +74,7 @@ def static_checks():
     check(after['1824967746'] == before['1824967746'].replace('m_MethodName: QuitGame', 'm_MethodName: TogglePause'),
           'PlayerInput changes only the pause callback; IDs and other callbacks preserved')
     subprocess.check_call([sys.executable, str(ROOT / 'tools/controls-lighting/check.py')], cwd=ROOT)
+    subprocess.check_call([sys.executable, str(ROOT / 'tools/verify-impact-ground.py')], cwd=ROOT)
     check(True, 'Current controls overlay and turbine illumination preserve all other approved game assets and scene objects')
 
     seen = {}

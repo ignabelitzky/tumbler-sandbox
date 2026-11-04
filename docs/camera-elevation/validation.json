@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "unity": "6000.6.7f1",
+  "graphics_backend": "Vulkan / HDRP",
+  "native_checks": {
+    "camera": 38,
+    "facility_edit": 361,
+    "facility_play": 571
+  },
+  "notes": [
+    "Inspection captures use an unsaved motion-blur override",
+    "No gameplay scene/lens/physics assets edited",
+    "No new standalone build"
+  ]
+}

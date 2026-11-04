@@ -1,0 +1,38 @@
+PASS Expected preset selected: Close
+PASS Neutral camera is elevated above vehicle pivot: Close
+PASS Neutral view points naturally down toward vehicle: Close pitch=26.56508
+PASS Gameplay aim keeps vehicle centered: Close
+PASS Manual horizontal orbit retains elevated view: Close yaw=-90
+PASS Manual horizontal orbit retains elevated view: Close yaw=90
+PASS Manual horizontal orbit retains elevated view: Close yaw=180
+PASS Manual low/high orbit remains above floor: Close axis=-10
+PASS Manual low/high orbit remains above floor: Close axis=45
+PASS Preset change starts at current elevation without a cut: Close
+PASS Paused transition preserves elevation: Close
+PASS Expected preset selected: Medium
+PASS Neutral camera is elevated above vehicle pivot: Medium
+PASS Neutral view points naturally down toward vehicle: Medium pitch=26.56505
+PASS Gameplay aim keeps vehicle centered: Medium
+PASS Manual horizontal orbit retains elevated view: Medium yaw=-90
+PASS Manual horizontal orbit retains elevated view: Medium yaw=90
+PASS Manual horizontal orbit retains elevated view: Medium yaw=180
+PASS Manual low/high orbit remains above floor: Medium axis=-10
+PASS Manual low/high orbit remains above floor: Medium axis=45
+PASS Preset change starts at current elevation without a cut: Medium
+PASS Paused transition preserves elevation: Medium
+PASS Expected preset selected: Far
+PASS Neutral camera is elevated above vehicle pivot: Far
+PASS Neutral view points naturally down toward vehicle: Far pitch=26.56505
+PASS Gameplay aim keeps vehicle centered: Far
+PASS Manual horizontal orbit retains elevated view: Far yaw=-90
+PASS Manual horizontal orbit retains elevated view: Far yaw=90
+PASS Manual horizontal orbit retains elevated view: Far yaw=180
+PASS Manual low/high orbit remains above floor: Far axis=-10
+PASS Manual low/high orbit remains above floor: Far axis=45
+PASS Preset change starts at current elevation without a cut: Far
+PASS Paused transition preserves elevation: Far
+PASS Tunnel still selects close preset: (100.00, 0.00, -40.00)
+PASS Elevated camera remains outside tunnel concrete: (100.00, 0.00, -40.00)
+PASS Tunnel still selects close preset: (100.00, -11.00, -166.00)
+PASS Elevated camera remains outside tunnel concrete: (100.00, -11.00, -166.00)
+PASS Disabling restores all authored orbit heights

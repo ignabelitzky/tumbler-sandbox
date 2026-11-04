@@ -19,7 +19,7 @@ APPROVED_BLOBS = {
     # Portal repair / camera transitions (5713507).
     'Assets/_Project/Environment/UndergroundFacility/Tunnel walls and closed roof.asset': '9ed0cc9da00dfca9a69d486c629a5b46ceba8f36',
     'Assets/_Project/Environment/UndergroundFacility/UndergroundFacility.prefab': '21b83f2c6d1370513a3d4601a557e8a3d0875385',
-    'Assets/_Project/Scripts/Camera/SandboxCameraModes.cs': '9d28ed56f3d4bdeb321721ad48ae33fd64afe70e',
+    'Assets/_Project/Scripts/Camera/SandboxCameraModes.cs': 'ba04c8b0907a45750da7ba21af8e4e34ec92d4ed',
     # Grounded burnout / HDRP smoke (ed15404, 3b5828a).
     'Assets/_Project/Scripts/Vehicle/Tumbler/TumblerController.cs': '5764521bd7d49f496dd23e408cd0ae33dfe75a95',
     'Assets/_Project/Scripts/Vehicle/Tumbler/TumblerEffects.cs': 'd9b3098271147216829d01c8d871f8061691155e',

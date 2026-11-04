@@ -110,14 +110,15 @@ public sealed class SandboxCameraModes : MonoBehaviour
         // alone does not change orbit size. Preserve its aim, input axes and damping.
         float scale = EffectiveMode == ViewMode.Close ? .58f : EffectiveMode == ViewMode.Medium ? 1f : 1.6f;
         var rings = originalOrbits;
-        rings.Top.Radius *= scale; rings.Top.Height *= scale;
-        rings.Center.Radius *= scale; rings.Center.Height *= scale;
-        rings.Bottom.Radius *= scale; rings.Bottom.Height *= scale;
-        if (EffectiveMode == ViewMode.Close)
-        {
-            // A close camera must look over the roof, not into the rear bodywork.
-            rings.Top.Height = 3.7f; rings.Center.Height = 2.2f; rings.Bottom.Height = 1.1f;
-        }
+        rings.Top.Radius *= scale;
+        rings.Center.Radius *= scale;
+        rings.Bottom.Radius *= scale;
+        // ThreeRing uses the ring heights, not VerticalAxis's degree-like labels.
+        // Keep the neutral chase view ~27 degrees above the target at every distance,
+        // with elevated low/high orbits for natural player-controlled rotation.
+        rings.Top.Height = 8f * scale;
+        rings.Center.Height = 5f * scale;
+        rings.Bottom.Height = 2.8f * scale;
         fromOrbits = orbit.Orbits; fromRadius = orbit.Radius;
         targetOrbits = rings; targetRadius = originalRadius * scale;
         blendElapsed = 0;

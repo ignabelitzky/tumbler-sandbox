@@ -13,7 +13,7 @@ cyan contours and expanding acoustic pulses create the sensor appearance. Activa
 fades in over 0.18 seconds. The shader is in Resources for player-build inclusion.
 The effect and its temporary render target/material are released on scene unload.
 
-C / D-pad Down keeps cycling Close / Medium / Far on the existing ThreeRing rig.
+C / D-pad Down keeps cycling Close / Medium / Far on the existing ThreeRing rig. All three presets now use an elevated neutral chase angle of approximately 26.6°; see [camera heights and verification](elevated-camera-presets.md).
 `SandboxCameraModes` uses CinemachineBlendDefinition's EaseInOut curve to blend
 all ring radii/heights and Radius over 0.9 seconds. Because these are presets of
 one virtual camera, changing the Brain's camera-switch blend alone would not

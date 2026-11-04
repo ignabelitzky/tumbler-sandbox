@@ -105,7 +105,7 @@ public static class FacilityVerify
             Vector3 originalInertia=body.inertiaTensor;
             Quaternion originalInertiaRotation=body.inertiaTensorRotation;
             Check(camera.SelectedMode==SandboxCameraModes.ViewMode.Close,"First preset is close");
-            Check(Mathf.Abs(orbit.Orbits.Center.Height-2.2f)<.001f,"Close camera looks over the vehicle roof");
+            Check(orbit.Orbits.Center.Height / orbit.Orbits.Center.Radius > .4f,"Close camera has an elevated chase angle over the roof");
             var radii=new List<float>();
             foreach(var expected in new[]{SandboxCameraModes.ViewMode.Close,SandboxCameraModes.ViewMode.Medium,SandboxCameraModes.ViewMode.Far})
             {

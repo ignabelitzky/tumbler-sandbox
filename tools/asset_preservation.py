@@ -6,7 +6,7 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 APPROVED_BLOBS = {
     # Input System menu selection recovery and package-only backend.
-    'Assets/_Project/Scripts/UI/MenuController.cs': '812e886c29ad48e9f4b0e38e87e051ec88bafd86',
+    'Assets/_Project/Scripts/UI/MenuController.cs': 'db86877b0104a6bc3ab82ec8bf1802c0b3f360ed',
     'Assets/_Project/Scripts/UI/PauseMenuController.cs': 'da81e982081df1c6f56eb54f37c81d2e19e33381',
     'Assets/_Project/Scripts/UI/ControlsOverlayNavigation.cs': 'e2824cd0ed306f3f0878b56d19dfed30d228b3f9',
     'ProjectSettings/ProjectSettings.asset': '67efc1eb23bedbf6091cba9378ae2cc581502aef',

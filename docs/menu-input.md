@@ -30,8 +30,10 @@ deferred until after EventSystem processing to avoid a page transition processin
 the same UI event twice. Valid mouse-selected buttons are left selected.
 
 The main menu uses the original transparent Phosphor PNG and the existing menu
-font for a non-interactive bottom-right credit: **Develop by Ignacio Belitzky**,
-exactly as requested. The icon keeps a square aspect ratio. The group uses the
+font for a non-interactive bottom-right credit: **Developed by** on the first
+line and **Ignacio Belitzky** on the second. The smaller first line and bold name
+are left-aligned next to the icon, separated by 12 canvas units. The compact
+group is 248 × 56 canvas units and the icon remains square. The group uses the
 existing canvas scaler, a bottom-right anchor and a 32/24-unit inset, and does not
 intercept pointer clicks or become a navigation target.
 

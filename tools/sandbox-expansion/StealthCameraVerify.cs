@@ -27,6 +27,7 @@ public static class StealthCameraVerify
     static StealthCameraVerify(){EditorApplication.update+=Tick;}
     public static void Run()
     {
+        Directory.CreateDirectory(Folder+"/Previews");
         File.Delete(Folder+"/stealth-camera-failed.txt");
         EditorSceneManager.OpenScene("Assets/_Project/Scenes/Sandbox.unity");
         SessionState.SetBool(Flag,true);EditorApplication.EnterPlaymode();
@@ -88,7 +89,21 @@ public static class StealthCameraVerify
             if(EditorApplication.timeSinceStartup<next)return;
             if(stage==1)
             {
-                Capture("normal-tunnel");systems.SetStealth(true);
+                Capture("normal-tunnel");
+                foreach(var mode in new[]{TumblerSystems.LightMode.Low,TumblerSystems.LightMode.High})
+                {
+                    systems.SetLightMode(mode);
+                    var lamps=(Light[])typeof(TumblerSystems).GetField("headlights",BindingFlags.NonPublic|BindingFlags.Instance).GetValue(systems);
+                    Check(lamps.Count(l=>l.enabled)==(mode==TumblerSystems.LightMode.Low?4:8),"Correct lamp count for "+mode);
+                    Check(lamps.All(l=>l.intensity==(mode==TumblerSystems.LightMode.Low?180000:540000)),"Surface illumination calibrated for fixed exposure: "+mode);
+                    Check(lamps.All(l=>l.range==(mode==TumblerSystems.LightMode.Low?85:180)),"Expanded throw for "+mode);
+                    Check(lamps.All(l=>l.spotAngle>=62 && l.innerSpotAngle>=36),"Wide soft beam for "+mode);
+                    Check(lamps.All(l=>!l.GetComponent<HDAdditionalLightData>().affectsVolumetric),"No luminous fog from "+mode);
+                    var haze=(Behaviour)typeof(TumblerSystems).GetField("volumetricHaze",BindingFlags.NonPublic|BindingFlags.Instance).GetValue(systems);
+                    Check(!haze.enabled,"No artificial local haze for "+mode);
+                    Capture("headlights-"+mode.ToString().ToLowerInvariant());
+                }
+                systems.SetStealth(true);
                 Check(vision.IsActive,"Entering stealth automatically enables night vision");
                 Check(body.GetComponentsInChildren<Light>(true).All(l=>!l.enabled),"Night vision emits no vehicle light in stealth");
                 next=EditorApplication.timeSinceStartup+2;stage=2;return;
@@ -96,7 +111,15 @@ public static class StealthCameraVerify
             if(stage==2)
             {
                 Check(vision.Weight==1,"Night vision fades in to full intensity");
-                Capture("night-vision-tunnel");systems.SetStealth(false);
+                Capture("night-vision-tunnel");
+                Capture("night-vision-tunnel-1080",1920,1080);
+                Capture("night-vision-tunnel-ultrawide",2560,1080);
+                var mat=(Material)typeof(StealthNightVision).GetField("material",BindingFlags.NonPublic|BindingFlags.Instance).GetValue(vision);
+                mat.SetFloat("_SonarTime", .5f);var first=Capture("night-vision-pulse-a");
+                mat.SetFloat("_SonarTime", 1.5f);var second=Capture("night-vision-pulse-b");
+                Check(first.Zip(second,(a,b)=>Mathf.Abs(a.b-b.b)).Count(d=>d>3)>first.Length*.05f,"Acoustic pulse changes visible surfaces over time");
+                systems.SetStealth(false);
+                Check(systems.EffectiveLights==TumblerSystems.LightMode.High,"Stealth exit restores high beam selection");
                 Check(!vision.IsActive&&vision.Weight==0,"Normal mode immediately removes every night-vision override");
                 next=EditorApplication.timeSinceStartup+1;stage=3;return;
             }
@@ -124,9 +147,8 @@ public static class StealthCameraVerify
             SessionState.SetBool(Flag,false);Debug.LogException(e);EditorApplication.Exit(1);
         }
     }
-    static void Capture(string name)
+    static Color32[] Capture(string name,int w=1280,int h=720)
     {
-        const int w=1280,h=720;
         var rt=new RenderTexture(w,h,24,RenderTextureFormat.ARGB32);rt.Create();camera.targetTexture=rt;
         for(int i=0;i<16;i++)RenderPipeline.SubmitRenderRequest(camera,new RenderPipeline.StandardRequest{destination=rt});
         var previous=RenderTexture.active;RenderTexture.active=rt;
@@ -135,12 +157,13 @@ public static class StealthCameraVerify
         if(name.StartsWith("night-vision"))
         {
             var pixels=tex.GetPixels32();
-            int visible=pixels.Count(p=>p.g>30);
-            int invalid=pixels.Count(p=>p.g>30 && (p.r>p.g*.8f || p.b>p.g*.8f));
+            int visible=pixels.Count(p=>p.b>30);
+            int invalid=pixels.Count(p=>p.b>30 && (p.r>p.b*.8f || p.g>p.b*.95f));
             Check(visible>pixels.Length*.25f,"Night sensor reveals surfaces across the image: "+name);
-            Check(invalid<pixels.Length*.01f,"Night image has consistent phosphor colour without buffer artifacts: "+name);
+            Check(invalid<pixels.Length*.01f,"Night image has consistent blue sonar colour without buffer artifacts: "+name);
             Check(!ShaderUtil.GetShaderMessages(Resources.Load<Shader>("StealthNightVision")).Any(m=>m.severity.ToString()=="Error"),"Night shader compiles without errors");
         }
-        RenderTexture.active=previous;camera.targetTexture=null;Object.DestroyImmediate(tex);rt.Release();Object.DestroyImmediate(rt);
+        var result=tex.GetPixels32();
+        RenderTexture.active=previous;camera.targetTexture=null;Object.DestroyImmediate(tex);rt.Release();Object.DestroyImmediate(rt);return result;
     }
 }

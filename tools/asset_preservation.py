@@ -5,6 +5,10 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 APPROVED_BLOBS = {
+    # Blue geometry sonar and clear, wider headlights.
+    'Assets/_Project/Resources/StealthNightVision.shader': 'dd65fbbe626adac2c309e7906ef92031e90a3880',
+    'Assets/_Project/Scripts/Camera/StealthNightVision.cs': '1b1c166f3dba1b42ab2089f847d5bb10bf59984d',
+    'Assets/_Project/Scripts/Vehicle/Tumbler/TumblerSystems.cs': '6ee0292c71cdcd75b80baec5d657d402065ebc0c',
     # Input System menu selection recovery and package-only backend.
     'Assets/_Project/Scripts/UI/MenuController.cs': '76d158ac1c46ec3ee772b36433ef2f1dcb2ddbc4',
     'Assets/_Project/Scripts/UI/PauseMenuController.cs': 'da81e982081df1c6f56eb54f37c81d2e19e33381',
@@ -17,7 +21,6 @@ APPROVED_BLOBS = {
     # Grounded burnout / HDRP smoke (ed15404, 3b5828a).
     'Assets/_Project/Scripts/Vehicle/Tumbler/TumblerController.cs': '5764521bd7d49f496dd23e408cd0ae33dfe75a95',
     'Assets/_Project/Scripts/Vehicle/Tumbler/TumblerEffects.cs': 'd9b3098271147216829d01c8d871f8061691155e',
-    'Assets/_Project/Scripts/Vehicle/Tumbler/TumblerSystems.cs': '316fd9190777ce22202e9efc7d59ffdc155f7978',
 }
 # Exact serialized additions from the impact-ground/calibration change (0a70a26).
 IMPACT_DOCUMENTS = {

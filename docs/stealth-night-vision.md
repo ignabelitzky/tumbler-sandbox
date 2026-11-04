@@ -1,6 +1,6 @@
 # Stealth night vision and camera transitions
 
-The existing V / gamepad R3 stealth action now enables a green HDRP night sensor.
+The existing V / gamepad R3 stealth action now enables a blue HDRP surface sonar. See [the current sonar and headlight guide](blue-sonar-and-headlights.md) for the updated rendering and beam settings.
 Returning to normal, including a boost-triggered stealth exit, disables the sensor
 immediately. Vehicle lights, turbine effects and engine muting keep their existing
 stealth behavior. No extra lamp is created and saved exposure profiles are untouched.
@@ -8,8 +8,8 @@ stealth behavior. No extra lamp is created and saved exposure profiles are untou
 The runtime-only custom pass targets the gameplay camera after post-processing.
 It combines visible luminance with depth and surface normals so completely unlit
 walls and the roadway remain readable. A separate HDR source buffer avoids reading
-and writing the same render target. Highlight compression, range attenuation,
-subtle noise, scanlines and a vignette create the sensor appearance. Activation
+and writing the same render target. Highlight compression, range attenuation, world-anchored surface samples,
+cyan contours and expanding acoustic pulses create the sensor appearance. Activation
 fades in over 0.18 seconds. The shader is in Resources for player-build inclusion.
 The effect and its temporary render target/material are released on scene unload.
 
@@ -40,6 +40,6 @@ Normal, night, restored-normal and daylight captures are produced in
 TestResults/SandboxExpansion/Previews. Existing night-system regression tests also
 cover keyboard/gamepad stealth, turbo exit, lights, audio, particles and brake heat.
 
-Verification ran in a separate project copy while the original editor was open.
+The original feature was verified in a separate project copy while the editor was open; the current blue-sonar revision is also verified with native HDRP renders.
 No scene/prefab or exposure profile needs to be reauthored: the vehicle systems
 create the night sensor at runtime.

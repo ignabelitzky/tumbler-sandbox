@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
 
 /// <summary>Headlights and reversible visual/audio stealth; driving remains available.</summary>
 [DefaultExecutionOrder(-50)]
@@ -13,6 +14,8 @@ public sealed class TumblerSystems : MonoBehaviour
     [SerializeField] private Behaviour volumetricHaze;
     [SerializeField, Min(0)] private float lowBeamIntensity = 30000f;
     [SerializeField, Min(0)] private float highBeamIntensity = 90000f;
+    // Surface illumination calibrated for the Sandbox's fixed daylight exposure.
+    [SerializeField, Min(0)] private float headlightOutputMultiplier = 6f;
     private StealthNightVision nightVision;
     private TumblerInput input;
     private EngineAudio engine;
@@ -102,11 +105,16 @@ public sealed class TumblerSystems : MonoBehaviour
             bool on = mode == LightMode.High || (mode == LightMode.Low && System.Array.IndexOf(lowBeamLamps, light) >= 0);
             if (light != null)
             {
-                light.enabled = on; light.intensity = mode == LightMode.High ? highBeamIntensity : lowBeamIntensity;
-                light.range = mode == LightMode.High ? 85f : 38f;
-                light.spotAngle = mode == LightMode.High ? 34f : 56f;
-                light.innerSpotAngle = mode == LightMode.High ? 22f : 38f;
-                light.transform.localRotation = Quaternion.Euler(mode == LightMode.High ? 1.8f : 7f, 0, 0);
+                light.enabled = on; light.intensity = (mode == LightMode.High ? highBeamIntensity : lowBeamIntensity) * headlightOutputMultiplier;
+                light.range = mode == LightMode.High ? 180f : 85f;
+                // Upper lamps retain a broad foreground wash in high mode; lower lamps add throw.
+                bool foreground = System.Array.IndexOf(lowBeamLamps, light) >= 0;
+                light.spotAngle = mode == LightMode.High && !foreground ? 62f : 88f;
+                light.innerSpotAngle = mode == LightMode.High && !foreground ? 36f : 58f;
+                light.transform.localRotation = Quaternion.Euler(mode == LightMode.High && !foreground ? 1.2f : 4f, 0, 0);
+                // Illuminate surfaces without manufacturing a luminous fog cone.
+                var hd = light.GetComponent<HDAdditionalLightData>();
+                if (hd != null) { hd.affectsVolumetric = false; hd.volumetricDimmer = 0; }
             }
             if (i < headlampLenses.Length && headlampLenses[i] != null)
             {
@@ -115,6 +123,6 @@ public sealed class TumblerSystems : MonoBehaviour
                 headlampLenses[i].SetPropertyBlock(block);
             }
         }
-        if (volumetricHaze != null) volumetricHaze.enabled = mode != LightMode.Off;
+        if (volumetricHaze != null) volumetricHaze.enabled = false;
     }
 }

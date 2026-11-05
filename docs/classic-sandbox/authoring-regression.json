@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "actual_unity_authored_snapshots": true,
+  "preserved_non_owned_documents": 305,
+  "preserved_classic_instance": true,
+  "preserved_scene_roots": true,
+  "preserved_impact_calibration": true,
+  "preserved_historical_manifest": true
+}

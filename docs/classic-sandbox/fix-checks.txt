@@ -1,0 +1,15 @@
+PASS LT at 216 km/h does not instantly cut forward velocity
+PASS Opposing motor torque remains available above reverse speed limit
+PASS Reverse governor follows actual backward travel
+PASS Y removes both pitch and roll from a tilted recovery
+PASS Vertical-heading recovery uses a stable horizontal fallback
+PASS Drive outputs active before shutdown test
+PASS Disabling controller clears motor, brakes and steering
+PASS Idle turbine particles active before stealth test
+PASS Component disable/enable restores captured turbine particles
+PASS Whole-vehicle reactivation restores deferred turbine particles
+PASS Restoring stealth cannot ignite turbo
+PASS Grounded tire sources start while handbraking
+PASS Audio fixture changes support between axles
+PASS Each tire source follows its current contact, including new contacts
+PASS Handbrake release stops all tire sources

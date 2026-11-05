@@ -1,16 +1,22 @@
 {
   "baseline": "f0541ec87ed7db5c56bd089d9073f9e0d31c22de",
   "approved_blobs": {
-    "Assets/_Project/Scripts/Vehicle/Tumbler/TumblerController.cs": "027236a645d8359104eacb915a08a3167c87b83c",
+    "Assets/_Project/Scripts/Vehicle/Tumbler/TumblerController.cs": "bd8e6fdae8af75f5e73c5cd04c4ecc0c50ffc0ab",
     "Assets/_Project/Scripts/Camera/SandboxCameraModes.cs": "b66cfe4214550c3fd8034f144197b6ba22c2a353",
-    "Assets/_Project/Scripts/Camera/VehicleCameraCollision.cs": "7c42c5edc324c3000ac07b20a53eb65d4e922e9e"
+    "Assets/_Project/Scripts/Camera/VehicleCameraCollision.cs": "7c42c5edc324c3000ac07b20a53eb65d4e922e9e",
+    "Assets/_Project/Scripts/Core/GameManager.cs": "305bfe8626246f83869279a51c21fb0125c9b132",
+    "Assets/_Project/Scripts/Vehicle/Tumbler/EngineAudio.cs": "cb0f87936270910eebc720073b4e70462f898177",
+    "Assets/_Project/Scripts/Vehicle/Tumbler/TumblerSystems.cs": "58998bc0608a3727607a5d339a5fa3ca2d63f220"
   },
   "asset_sha256": {
-    "Assets/_Project/Scripts/Vehicle/Tumbler/TumblerController.cs": "8d889815388adb095de313c2f57bf58e7e6bfda7e1832ba78f3b4d033ea0a8fa",
+    "Assets/_Project/Scripts/Vehicle/Tumbler/TumblerController.cs": "08d27ca2f753019a8b060311d9ba84e9859fbba77c62e0fa659f169d854d3ea7",
     "Assets/_Project/Scripts/Camera/SandboxCameraModes.cs": "2bca1064daa9d99a92660fef64c230e5455ef6b11f5cb210030eb51d6341fffe",
     "Assets/_Project/Scripts/Camera/VehicleCameraCollision.cs": "d6168c5b51d0f0d9cbd2d551114187e5e297f8bfb215460c71a773f6b49376ec",
     "Assets/_Project/Scripts/Vehicle/Tumbler/TumblerFlightDynamics.cs": "16cb026b529789332226930cceefb7d0e6f6c969ccbd69ad829d400b079a9729",
-    "Assets/_Project/Scripts/Vehicle/Tumbler/TumblerFlightDynamics.cs.meta": "9eedd81d4b9cf7c9cb4d2016c18c79a31c51d741bcd5401efc9e43f946e2a6dc"
+    "Assets/_Project/Scripts/Vehicle/Tumbler/TumblerFlightDynamics.cs.meta": "9eedd81d4b9cf7c9cb4d2016c18c79a31c51d741bcd5401efc9e43f946e2a6dc",
+    "Assets/_Project/Scripts/Core/GameManager.cs": "da2ba3ee1666ab16b0bb3dd93d8204823835a0f97614c8db11ffc95f2e871477",
+    "Assets/_Project/Scripts/Vehicle/Tumbler/EngineAudio.cs": "5461432b7dd10ca87dd95e72e91830820619bfbab17a3ac67f59b681e66a84b8",
+    "Assets/_Project/Scripts/Vehicle/Tumbler/TumblerSystems.cs": "dbc8685a5007e5a8f8181750d8e511853e8acc13128c2ee9efd32a8b7b86b7d7"
   },
   "menu_documents": {
     "18714113": "8fb0b77dadd2502d300e5a5b80de7ce82fc199a00d27de7cb4a6de9c50f066ad",

@@ -42,7 +42,7 @@ public static class ControlsLightingAuthoring
     }
     [Serializable] public class Row { public string action,keyboard,xbox,inputAction; }
     [Serializable] public class Catalog { public Row[] rows;public string[] notes; }
-    [Serializable] public class Preservation { public string[] menuAllowedIds; public string vehicleTransformId; }
+    [Serializable] public class Preservation { public string[] menuAllowedIds, sandboxAllowedIds; public string vehicleTransformId; }
     static T Find<T>(string name) where T:Component
     {
         return Resources.FindObjectsOfTypeAll<T>().Single(c=>c.name==name && c.gameObject.scene.IsValid() && !EditorUtility.IsPersistent(c));
@@ -56,6 +56,7 @@ public static class ControlsLightingAuthoring
             Directory.CreateDirectory("TestResults/ControlsLighting");
             var catalog=JsonUtility.FromJson<Catalog>(File.ReadAllText("docs/controls-catalog.json"));
             var scene=EditorSceneManager.OpenScene("Assets/_Project/Scenes/Main Menu.unity");
+            File.Copy("Assets/_Project/Scenes/Main Menu.unity", "TestResults/ControlsLighting/OriginalMenu.unity", true);
             var overlay=Find<RectTransform>("Controls overlay");
             var allowed=overlay.GetComponentsInChildren<Component>(true)
                 .Select(c=>GlobalObjectId.GetGlobalObjectIdSlow(c).targetObjectId.ToString())
@@ -93,8 +94,10 @@ public static class ControlsLightingAuthoring
             Set(navigation,"layout",layout);Set(navigation,"backButton",back);Set(navigation,"controlsButton",Find<Button>("Controls"));
             EditorSceneManager.SaveScene(scene,"Assets/_ControlsLightingWork/ExpandedMenu.unity");
             File.Copy("Assets/_ControlsLightingWork/ExpandedMenu.unity","TestResults/ControlsLighting/ExpandedMenu.unity",true);
+            allowed=allowed.Concat(OwnedIds(overlay.gameObject)).Distinct().ToArray();
 
             scene=EditorSceneManager.OpenScene("Assets/_Project/Scenes/Sandbox.unity");
+            File.Copy("Assets/_Project/Scenes/Sandbox.unity", "TestResults/ControlsLighting/OriginalSandbox.unity", true);
             var car=GameObject.Find("Tumbler");var transformId=GlobalObjectId.GetGlobalObjectIdSlow(car.transform).targetObjectId.ToString();
             if(car.transform.Find("Turbine fire illumination")==null)
             {
@@ -109,11 +112,14 @@ public static class ControlsLightingAuthoring
             }
             EditorSceneManager.SaveScene(scene,"Assets/_ControlsLightingWork/ExpandedSandbox.unity");
             File.Copy("Assets/_ControlsLightingWork/ExpandedSandbox.unity","TestResults/ControlsLighting/ExpandedSandbox.unity",true);
-            File.WriteAllText("TestResults/ControlsLighting/allowed.json",JsonUtility.ToJson(new Preservation{menuAllowedIds=allowed,vehicleTransformId=transformId},true));
+            File.WriteAllText("TestResults/ControlsLighting/allowed.json",JsonUtility.ToJson(new Preservation{menuAllowedIds=allowed,vehicleTransformId=transformId,sandboxAllowedIds=OwnedIds(car.transform.Find("Turbine fire illumination").gameObject).Concat(new[]{transformId}).ToArray()},true));
             EditorApplication.Exit(0);
         }
         catch(Exception e){Debug.LogException(e);EditorApplication.Exit(1);}
     }
+    static string[] OwnedIds(GameObject root) => root.GetComponentsInChildren<Component>(true)
+        .Select(c=>GlobalObjectId.GetGlobalObjectIdSlow(c).targetObjectId.ToString())
+        .Concat(root.GetComponentsInChildren<Transform>(true).Select(t=>GlobalObjectId.GetGlobalObjectIdSlow(t.gameObject).targetObjectId.ToString())).Distinct().ToArray();
     static Light FireLight(string name,Transform parent,Vector3 local,Color color)
     {
         var g=new GameObject(name);g.transform.SetParent(parent,false);g.transform.localPosition=local;

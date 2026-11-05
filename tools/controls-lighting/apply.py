@@ -1,43 +1,73 @@
 #!/usr/bin/env python3
-"""Copy only the authored controls subtree and new fire-light objects into original scenes."""
+"""Apply only owned controls/fire edits; preflight both current scenes before writing."""
+import argparse
+import difflib
+import hashlib
 import json
 from pathlib import Path
-import re
-import subprocess
+import os
+import sys
+import tempfile
 
-ROOT=Path(__file__).resolve().parents[2]
-allowed=json.loads((ROOT/"TestResults/ControlsLighting/allowed.json").read_text())
-def docs(text):
-    return {m[1]:m[0] for m in re.finditer(r"^--- !u!\d+ &(-?\d+)[^\n]*\n.*?(?=^--- !u!|\Z)",text,re.M|re.S)}
-manifest=dict(baseline="403f4ff7684d40bc3c5dc7496575487c156a0591",scenes={})
-for scene,temp,permitted in [
-    ("Main Menu","ExpandedMenu",set(allowed["menuAllowedIds"])),
-    ("Sandbox","ExpandedSandbox",{allowed["vehicleTransformId"]})
-]:
-    path=ROOT/("Assets/_Project/Scenes/"+scene+".unity")
-    original=subprocess.check_output(["git","show",manifest["baseline"]+":"+str(path.relative_to(ROOT))],cwd=ROOT,text=True)
-    authored=(ROOT/("TestResults/ControlsLighting/"+temp+".unity")).read_text()
-    before,after=docs(original),docs(authored)
-    missing=set(before)-set(after)
-    assert not missing,(scene,"missing original object IDs",missing)
-    added=set(after)-set(before)
-    assert 0<len(added)<100,(scene,"unexpected new scene objects",len(added))
-    clean=lambda block:"\n".join(line.rstrip() for line in block.splitlines())+"\n"
-    changed={k for k in before if k in permitted and before[k]!=clean(after[k])}
-    assert changed,(scene,"no intended edits found")
-    if scene=="Sandbox":
-        parent=allowed["vehicleTransformId"]
-        def without_children(block):
-            return re.sub(r"  m_Children:\n(?:  - .*\n)*","",block)
-        assert without_children(before[parent])==without_children(after[parent]),"Vehicle transform changed beyond its child list"
-    output=original
-    # Normalize only approved edits; untouched serialized objects stay byte-identical.
-    for key in changed:output=output.replace(before[key],clean(after[key]))
-    insert="".join(clean(after[key]) for key in after if key in added)
-    marker="--- !u!1660057539 &9223372036854775807"
-    assert marker in output
-    output=output.replace(marker,insert+marker)
-    path.write_text(output)
-    manifest["scenes"][str(path.relative_to(ROOT))]=dict(changed_ids=sorted(changed),added_ids=sorted(added))
-(ROOT/"docs/controls-lighting-manifest.json").write_text(json.dumps(manifest,indent=2)+"\n")
-print({name:{kind:len(ids) for kind,ids in data.items()} for name,data in manifest["scenes"].items()})
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / 'tools'))
+from scene_documents import SceneConflict,merge_owned
+
+
+def atomic_write(path, text):
+    descriptor, name = tempfile.mkstemp(prefix='.scene-', suffix='.tmp', dir=path.parent)
+    try:
+        with os.fdopen(descriptor, 'w') as stream:
+            stream.write(text)
+        os.chmod(name, path.stat().st_mode)
+        os.replace(name, path)
+    finally:
+        Path(name).unlink(missing_ok=True)
+
+
+def apply(root, dry_run=False):
+    folder = root / 'TestResults/ControlsLighting'
+    allowed = json.loads((folder / 'allowed.json').read_text())
+    plans = {}
+    for scene, label, ownership in [('Main Menu', 'Menu', 'menuAllowedIds'),
+                                     ('Sandbox', 'Sandbox', 'sandboxAllowedIds')]:
+        path = root / ('Assets/_Project/Scenes/' + scene + '.unity')
+        # Missing snapshots fail instead of falling back to a historical revision.
+        current = path.read_text()
+        baseline = (folder / ('Original' + label + '.unity')).read_text()
+        authored = (folder / ('Expanded' + label + '.unity')).read_text()
+        output = merge_owned(current, baseline, authored, allowed[ownership])
+        plans[path] = (current, output)
+
+    patch = ''.join(''.join(difflib.unified_diff(before.splitlines(True), after.splitlines(True),
+                    fromfile=str(path.relative_to(root)), tofile=str(path.relative_to(root))))
+                    for path, (before, after) in plans.items())
+    (folder / 'proposed.patch').write_text(patch)
+    if dry_run:
+        return plans
+    if any(path.read_text()!=before for path,(before,after) in plans.items()):
+        raise SceneConflict("A scene changed after preflight; no files were written")
+    written = []
+    try:
+        for path, (before, after) in plans.items():
+            if before != after:
+                atomic_write(path, after)
+                written.append(path)
+    except Exception:
+        for path in written:
+            atomic_write(path, plans[path][0])
+        raise
+    report = {str(path.relative_to(root)): {
+        'before_sha256': hashlib.sha256(before.encode()).hexdigest(),
+        'after_sha256': hashlib.sha256(after.encode()).hexdigest()
+    } for path, (before, after) in plans.items()}
+    (folder / 'applied.json').write_text(json.dumps(report, indent=2) + '\n')
+    return plans
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--dry-run', action='store_true')
+    args = parser.parse_args()
+    apply(ROOT, args.dry_run)
+    print(('Prepared' if args.dry_run else 'Applied') + ' owned edits; historical preservation manifests retained.')

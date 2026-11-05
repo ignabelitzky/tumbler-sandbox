@@ -22,6 +22,7 @@ public sealed class TumblerSystems : MonoBehaviour
     private Boost boost;
     private Light[] vehicleLights;
     private bool[] lightStates, particleStates;
+    private bool restoreParticlesPending;
     private MaterialPropertyBlock block;
     private static readonly int Emissive = Shader.PropertyToID("_EmissiveColor");
     public bool IsStealth { get; private set; }
@@ -36,17 +37,17 @@ public sealed class TumblerSystems : MonoBehaviour
         if (nightVision == null) nightVision = gameObject.AddComponent<StealthNightVision>();
         RefreshLights();
     }
-    private void OnEnable() { input.Enable(); RefreshLights(); }
+    private void OnEnable()
+    {
+        input.Enable();
+        RestoreParticles();
+        RefreshLights();
+    }
     private void OnDisable()
     {
         input.Disable();
         if (nightVision != null) nightVision.SetActive(false);
-        if (IsStealth)
-        {
-            IsStealth = false;
-            if (engine != null) engine.SetStealthMuted(false);
-            for (int i = 0; i < vehicleLights.Length; i++) if (vehicleLights[i] != null) vehicleLights[i].enabled = lightStates[i];
-        }
+        SetStealth(false);
         foreach (var light in headlights) if (light != null) light.enabled = false;
         if (volumetricHaze != null) volumetricHaze.enabled = false;
     }
@@ -71,31 +72,56 @@ public sealed class TumblerSystems : MonoBehaviour
     public void SetStealth(bool active)
     {
         if (IsStealth == active) return;
-        if (active)
-        {
-            for (int i = 0; i < vehicleLights.Length; i++)
-            { lightStates[i] = vehicleLights[i] != null && vehicleLights[i].enabled; if (vehicleLights[i] != null) vehicleLights[i].enabled = false; }
-            for (int i = 0; i < turbineParticles.Length; i++)
-            {
-                var p = turbineParticles[i]; if (p == null) continue;
-                particleStates[i] = p.isPlaying; p.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
-            }
-        }
+        if (active) CaptureStealthState();
         IsStealth = active;
         if (nightVision != null) nightVision.SetActive(active);
         if (engine != null) engine.SetStealthMuted(active);
         if (!active)
         {
-            for (int i = 0; i < vehicleLights.Length; i++) if (vehicleLights[i] != null) vehicleLights[i].enabled = lightStates[i];
-            for (int i = 0; i < turbineParticles.Length; i++)
-            {
-                var p = turbineParticles[i]; if (p == null || !particleStates[i] || !p.gameObject.activeInHierarchy) continue;
-                if (boost != null && boost.Particles != null && p.transform.IsChildOf(boost.Particles.transform)) continue;
-                if (!p.isPlaying) p.Play(false);
-            }
+            for (int i = 0; i < vehicleLights.Length; i++)
+                if (vehicleLights[i] != null) vehicleLights[i].enabled = lightStates[i];
+            restoreParticlesPending = true;
+            RestoreParticles();
         }
         RefreshLights();
     }
+
+    private void CaptureStealthState()
+    {
+        for (int i = 0; i < vehicleLights.Length; i++)
+        {
+            lightStates[i] = vehicleLights[i] != null && vehicleLights[i].enabled;
+            if (vehicleLights[i] != null) vehicleLights[i].enabled = false;
+        }
+        for (int i = 0; i < turbineParticles.Length; i++)
+        {
+            var particle = turbineParticles[i];
+            if (particle == null) continue;
+            particleStates[i] = particle.isPlaying;
+            particle.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
+        }
+    }
+
+    private void RestoreParticles()
+    {
+        if (!restoreParticlesPending) return;
+        restoreParticlesPending = false;
+        for (int i = 0; i < turbineParticles.Length; i++)
+        {
+            var particle = turbineParticles[i];
+            if (particle == null || !particleStates[i]) continue;
+            // Boost owns its emitter; exiting stealth cannot ignite turbo by itself.
+            if (boost != null && boost.Particles != null && particle.transform.IsChildOf(boost.Particles.transform))
+            {
+                particleStates[i] = false;
+                continue;
+            }
+            if (!particle.gameObject.activeInHierarchy) { restoreParticlesPending = true; continue; }
+            if (!particle.isPlaying) particle.Play(false);
+            particleStates[i] = false;
+        }
+    }
+
     private void RefreshLights()
     {
         var mode = EffectiveLights;

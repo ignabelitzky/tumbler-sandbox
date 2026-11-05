@@ -1,0 +1,15 @@
+PASS Six original wheels
+PASS Original tunnel selects close camera
+PASS Former second tunnel is now open terrain
+PASS Surface grip bound to real vehicle
+PASS Terrain grip matches painted layers
+PASS Terrain grip matches painted layers
+PASS Terrain grip matches painted layers
+PASS Real six-wheel traversal: Open handling circuit
+PASS Real six-wheel traversal: Progressive speed bumps
+PASS Real six-wheel traversal: Alternating wheel articulation
+PASS Real six-wheel traversal: Rolling gravel and shallow hollows
+PASS Real six-wheel traversal: Low rolling tabletop
+PASS Real six-wheel traversal: Medium rolling tabletop
+PASS Real six-wheel traversal: Original tunnel
+PASS Original tunnel traversal clears the complete exit portal

@@ -97,12 +97,26 @@ public class TumblerController : MonoBehaviour
 
     private void OnDisable()
     {
-        tumblerInput.Disable();
+        tumblerInput?.Disable();
         flight?.Disable();
         burnout?.Cancel();
         burnout?.Apply(currentDriveMode, 0);
+        ClearDriveOutputs();
     }
     
+    private void ClearDriveOutputs()
+    {
+        currentPower = currentBrakeForce = currentTurnAngle = steerInput = 0f;
+        isHandbrakeActive = shouldResetMotorTorque = false;
+        ResetMotorTorque();
+        foreach (var wheel in frontWheelsColliders)
+        {
+            wheel.brakeTorque = 0f;
+            wheel.steerAngle = 0f;
+        }
+        foreach (var wheel in rearWheelsColliders) wheel.brakeTorque = 0f;
+    }
+
     private void OnDestroy()
     {
         tumblerInput?.Dispose();
@@ -210,9 +224,16 @@ public class TumblerController : MonoBehaviour
         }
     }
 
+    private float GetTorqueModifier(float speed, float requestedSpeedLimit)
+    {
+        // Opposing torque must remain available while decelerating into a direction change.
+        float forwardSpeed = Vector3.Dot(carRigidbody.linearVelocity, transform.forward);
+        return currentPower * forwardSpeed < 0f || speed < requestedSpeedLimit ? 1f : 0f;
+    }
+
     private void ApplyFrontWheelDrive(float currentSpeed, float maxSpeedInMetersPerSecond)
     {
-        float torqueModifier = (currentSpeed < maxSpeedInMetersPerSecond) ? 1f : 0f;
+        float torqueModifier = GetTorqueModifier(currentSpeed, maxSpeedInMetersPerSecond);
         foreach(WheelCollider wheel in frontWheelsColliders)
         {
             wheel.motorTorque = motorTorque * torqueModifier * wheel.radius / ReferenceWheelRadius / frontWheelsColliders.Length;
@@ -221,7 +242,7 @@ public class TumblerController : MonoBehaviour
 
     private void ApplyRearWheelDrive(float currentSpeed, float maxSpeedInMetersPerSecond)
     {
-        float torqueModifier = (currentSpeed < maxSpeedInMetersPerSecond) ? 1f : 0f;
+        float torqueModifier = GetTorqueModifier(currentSpeed, maxSpeedInMetersPerSecond);
         foreach(WheelCollider wheel in rearWheelsColliders)
         {
             wheel.motorTorque = motorTorque * torqueModifier * wheel.radius / ReferenceWheelRadius / rearWheelsColliders.Length;
@@ -230,7 +251,7 @@ public class TumblerController : MonoBehaviour
 
     private void ApplyAllWheelDrive(float currentSpeed, float maxSpeedInMetersPerSecond)
     {
-        float torqueModifier = (currentSpeed < maxSpeedInMetersPerSecond) ? 1f : 0f;
+        float torqueModifier = GetTorqueModifier(currentSpeed, maxSpeedInMetersPerSecond);
         foreach(WheelCollider wheel in frontWheelsColliders)
         {
             wheel.motorTorque = motorTorque * torqueModifier * wheel.radius / ReferenceWheelRadius / (frontWheelsColliders.Length + rearWheelsColliders.Length);
@@ -339,7 +360,8 @@ public class TumblerController : MonoBehaviour
     {
         Vector3 velocity = carRigidbody.linearVelocity;
         Vector3 horizontal = Vector3.ProjectOnPlane(velocity, Vector3.up);
-        float limit = (currentPower < 0f ? reverseMaxSpeedKPH : maxSpeedKPH) / SpeedToKPH;
+        float forwardSpeed = Vector3.Dot(velocity, transform.forward);
+        float limit = (forwardSpeed < -.5f ? reverseMaxSpeedKPH : maxSpeedKPH) / SpeedToKPH;
         if (horizontal.sqrMagnitude > limit * limit)
             carRigidbody.linearVelocity = horizontal.normalized * limit + Vector3.up * velocity.y;
     }

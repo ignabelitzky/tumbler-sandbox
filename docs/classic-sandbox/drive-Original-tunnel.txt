@@ -1,0 +1,1 @@
+passed=True progress=252/260 requested_kph=16.2 max_distance=1.14 min_grounded_wheels=6 end=(242.00, 0.98, -23.41)

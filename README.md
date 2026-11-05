@@ -284,11 +284,13 @@ This is an unofficial personal project, with no affiliation with or endorsement 
 
 [Portfolio](https://ignaciobelitzky.dev) · [GitHub](https://github.com/ignabelitzky)
 
-The Sandbox also includes a southwest [Impact & Physics Test Ground](docs/impact-physics-test-ground.md) with six isolated test sectors and repeatable native impact measurements. See [vehicle impact calibration](docs/tumbler-impact-physics.md).
+The earlier [Impact & Physics Test Ground](docs/impact-physics-test-ground.md) and its source fixtures remain available for isolated verification. The active map focuses on the classic ramps, suspension trials and original tunnel. See [vehicle impact calibration](docs/tumbler-impact-physics.md).
 
-## Organic proving grounds
+## Classic flowing proving grounds
 
-Sandbox now uses a sculpted desert with flowing roads, separate tire surfaces, suspension terrain, tabletops, two deathloops and a caged banked oval. The original underground light lab remains, alongside a longer four-bend tunnel. See the [layout, controls and validation guide](docs/organic-sandbox/README.md).
+Sandbox keeps the supplied Sky12 skybox and the original underground tunnel. The original ramps and rounded/triangular obstacles return among flowing access roads, progressive speed bumps, alternating wheel articulation, rolling gravel, dirt and sand. Two broad tabletop ramps have continuous approaches and landings. The additional tunnel, deathloops and caged oval are retired from the active scene. See the [layout and validation guide](docs/classic-sandbox/README.md).
+
+The [project review fixes](docs/classic-sandbox/review-fixes.md) correct reverse-speed braking, upright recovery, drive-output cleanup, tire audio and reversible stealth, and make controls authoring preserve the current scene.
 
 ## Rear view and landing
 

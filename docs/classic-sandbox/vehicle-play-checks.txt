@@ -1,0 +1,119 @@
+PASS FrontWheelDrive: speed and seventh gear displayed
+PASS FrontWheelDrive: current drivetrain displayed
+PASS RearWheelDrive: speed and seventh gear displayed
+PASS RearWheelDrive: current drivetrain displayed
+PASS AllWheelDrive: speed and seventh gear displayed
+PASS AllWheelDrive: current drivetrain displayed
+PASS Reverse displayed independently from the forward gear
+PASS Engine sound uses the same normalized RPM as the HUD
+PASS AWD reaches mode-switch test speed 30
+PASS No sustained false redline after drive-mode switch at 30: FrontWheelDrive
+PASS Grounded RPM tracks shift coupling during mode transition: FrontWheelDrive
+PASS Mode-transition upshifts lower both RPM and audio pitch: FrontWheelDrive
+PASS Mode-switch acceleration retains speed governor: FrontWheelDrive
+PASS No sustained false redline after drive-mode switch at 30: RearWheelDrive
+PASS Grounded RPM tracks shift coupling during mode transition: RearWheelDrive
+PASS Mode-transition upshifts lower both RPM and audio pitch: RearWheelDrive
+PASS Mode-switch acceleration retains speed governor: RearWheelDrive
+PASS No sustained false redline after drive-mode switch at 30: AllWheelDrive
+PASS Grounded RPM tracks shift coupling during mode transition: AllWheelDrive
+PASS Mode-transition upshifts lower both RPM and audio pitch: AllWheelDrive
+PASS Mode-switch acceleration retains speed governor: AllWheelDrive
+PASS AWD reaches mode-switch test speed 60
+PASS No sustained false redline after drive-mode switch at 60: FrontWheelDrive
+PASS Grounded RPM tracks shift coupling during mode transition: FrontWheelDrive
+PASS Mode-transition upshifts lower both RPM and audio pitch: FrontWheelDrive
+PASS Mode-switch acceleration retains speed governor: FrontWheelDrive
+PASS No sustained false redline after drive-mode switch at 60: RearWheelDrive
+PASS Grounded RPM tracks shift coupling during mode transition: RearWheelDrive
+PASS Mode-transition upshifts lower both RPM and audio pitch: RearWheelDrive
+PASS Mode-switch acceleration retains speed governor: RearWheelDrive
+PASS No sustained false redline after drive-mode switch at 60: AllWheelDrive
+PASS Grounded RPM tracks shift coupling during mode transition: AllWheelDrive
+PASS Mode-transition upshifts lower both RPM and audio pitch: AllWheelDrive
+PASS Mode-switch acceleration retains speed governor: AllWheelDrive
+PASS AWD reaches mode-switch test speed 100
+PASS No sustained false redline after drive-mode switch at 100: FrontWheelDrive
+PASS Grounded RPM tracks shift coupling during mode transition: FrontWheelDrive
+PASS Mode-transition upshifts lower both RPM and audio pitch: FrontWheelDrive
+PASS Mode-switch acceleration retains speed governor: FrontWheelDrive
+PASS No sustained false redline after drive-mode switch at 100: RearWheelDrive
+PASS Grounded RPM tracks shift coupling during mode transition: RearWheelDrive
+PASS Mode-transition upshifts lower both RPM and audio pitch: RearWheelDrive
+PASS Mode-switch acceleration retains speed governor: RearWheelDrive
+PASS No sustained false redline after drive-mode switch at 100: AllWheelDrive
+PASS Grounded RPM tracks shift coupling during mode transition: AllWheelDrive
+PASS Mode-transition upshifts lower both RPM and audio pitch: AllWheelDrive
+PASS Mode-switch acceleration retains speed governor: AllWheelDrive
+PASS AWD reaches mode-switch test speed 160
+PASS No sustained false redline after drive-mode switch at 160: FrontWheelDrive
+PASS Grounded RPM tracks shift coupling during mode transition: FrontWheelDrive
+PASS Mode-transition upshifts lower both RPM and audio pitch: FrontWheelDrive
+PASS Mode-switch acceleration retains speed governor: FrontWheelDrive
+PASS No sustained false redline after drive-mode switch at 160: RearWheelDrive
+PASS Grounded RPM tracks shift coupling during mode transition: RearWheelDrive
+PASS Mode-transition upshifts lower both RPM and audio pitch: RearWheelDrive
+PASS Mode-switch acceleration retains speed governor: RearWheelDrive
+PASS No sustained false redline after drive-mode switch at 160: AllWheelDrive
+PASS Grounded RPM tracks shift coupling during mode transition: AllWheelDrive
+PASS Mode-transition upshifts lower both RPM and audio pitch: AllWheelDrive
+PASS Mode-switch acceleration retains speed governor: AllWheelDrive
+PASS Airborne RPM fixture has no wheel contacts
+PASS Wheel spin in the air does not trigger automatic shifts
+PASS Airborne engine still responds to driven-wheel spin within redline
+PASS Keyboard throttle and full steering remain independent: A (power=1400, steer=-1, key=True)
+PASS Keyboard throttle and full steering remain independent: D (power=1400, steer=1, key=True)
+PASS Keyboard throttle and full steering remain independent: LeftArrow (power=1400, steer=-1, key=True)
+PASS Keyboard throttle and full steering remain independent: RightArrow (power=1400, steer=1, key=True)
+PASS Xbox throttle and stick remain analog while used together
+PASS Xbox full trigger and full left stick remain independent
+PASS Original 40 degree parking lock retained
+PASS Partial steering input retains proportional response at speed
+PASS Reverse retains the same steering range at equal speed
+PASS Vertical velocity does not restrict steering
+PASS Released steering recenters
+PASS Service brake still acts on all six wheels
+PASS Handbrake retains rear brake torque and drift slip settings
+PASS Handbrake release restores the original curves
+PASS FrontWheelDrive: reaches the 260 km/h governor without boost
+PASS FrontWheelDrive: all seven gears reached sequentially
+PASS FrontWheelDrive: upshifts lower both RPM and engine pitch
+PASS FrontWheelDrive: shift cooldown prevents gear hunting
+PASS FrontWheelDrive: all wheels remain grounded at top speed
+PASS FrontWheelDrive: RPM stays within the instrument range
+PASS RearWheelDrive: reaches the 260 km/h governor without boost
+PASS RearWheelDrive: all seven gears reached sequentially
+PASS RearWheelDrive: upshifts lower both RPM and engine pitch
+PASS RearWheelDrive: shift cooldown prevents gear hunting
+PASS RearWheelDrive: all wheels remain grounded at top speed
+PASS RearWheelDrive: RPM stays within the instrument range
+PASS AllWheelDrive: reaches the 260 km/h governor without boost
+PASS AllWheelDrive: all seven gears reached sequentially
+PASS AllWheelDrive: upshifts lower both RPM and engine pitch
+PASS AllWheelDrive: shift cooldown prevents gear hunting
+PASS AllWheelDrive: all wheels remain grounded at top speed
+PASS AllWheelDrive: RPM stays within the instrument range
+PASS Automatic gearbox returns to first and idle after braking to a stop
+PASS 60 km/h: full steering produces a stronger directional response
+PASS 60 km/h: vehicle remains upright during the steering check
+PASS 120 km/h: full steering produces a stronger directional response
+PASS 120 km/h: vehicle remains upright during the steering check
+PASS 180 km/h: full steering produces a stronger directional response
+PASS 180 km/h: vehicle remains upright during the steering check
+PASS 240 km/h: full steering produces a stronger directional response
+PASS 240 km/h: vehicle remains upright during the steering check
+PASS FrontWheelDrive input=-1: sustained full steering avoids the former low-speed plateau
+PASS FrontWheelDrive input=-1: sustained full steering remains upright
+PASS FrontWheelDrive input=1: sustained full steering avoids the former low-speed plateau
+PASS FrontWheelDrive input=1: sustained full steering remains upright
+PASS RearWheelDrive input=-1: sustained full steering avoids the former low-speed plateau
+PASS RearWheelDrive input=-1: sustained full steering remains upright
+PASS RearWheelDrive input=1: sustained full steering avoids the former low-speed plateau
+PASS RearWheelDrive input=1: sustained full steering remains upright
+PASS AllWheelDrive input=-1: sustained full steering avoids the former low-speed plateau
+PASS AllWheelDrive input=-1: sustained full steering remains upright
+PASS AllWheelDrive input=1: sustained full steering avoids the former low-speed plateau
+PASS AllWheelDrive input=1: sustained full steering remains upright
+PASS Boost respects the forward speed governor
+PASS Speed governor and speedometer exclude falling/jumping velocity without cancelling vertical motion
+PASS Vehicle reset returns the gearbox, RPM and wheel spin to their initial state

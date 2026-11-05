@@ -77,7 +77,11 @@ evidence. The tests use virtual Xbox/keyboard input in real Play Mode. Physical
 controller acceptance, standalone Windows/Linux execution and performance
 profiling remain manual checks. No release, tag or build publication is added.
 
-For intentional UI authoring, `ControlsLightingAuthoring.Build` generates expanded
-scene copies under TestResults. `tools/controls-lighting/apply.py` applies only
-approved controls objects and lighting additions to the original scene baseline;
-it is an authoring utility, not required to play or validate the project.
+For intentional UI authoring, `ControlsLightingAuthoring.Build` captures the original
+scene files and explicitly owned object IDs alongside its expanded scene copies
+under TestResults. `python3 tools/controls-lighting/apply.py --dry-run` produces a
+reviewable patch. Applying without that flag merges only owned documents into the
+current scenes, preflights both scenes for conflicts, and retains later map changes
+and the historical preservation manifest. Missing snapshots or conflicting edits
+fail before scene files are written. This utility is not required to play or validate
+the project; use a disposable checkout for authoring.

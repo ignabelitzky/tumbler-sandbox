@@ -1,0 +1,188 @@
+{
+  "status": "PASS",
+  "unity": "6000.6.7f1",
+  "baseline_commit": "9010321e6224542a865463adb3676faefa38085b",
+  "checks": {
+    "geometry": 952,
+    "layout_play": 15,
+    "review_fixes": 15,
+    "vehicle_edit": 82,
+    "vehicle_play": 119,
+    "navigation": 54,
+    "camera_input_ui": 579,
+    "scene_merge_tests": 7
+  },
+  "active_layout": {
+    "original_tunnels": 1,
+    "extra_tunnels": 0,
+    "deathloops": 0,
+    "caged_ovals": 0,
+    "original_ramp_models": 3,
+    "progressive_speed_bumps": 4
+  },
+  "drive_trials": {
+    "Open-handling-circuit": "passed=True progress=1593/1601 requested_kph=32.4 max_distance=0.91 min_grounded_wheels=6 end=(0.88, 1.06, 47.64)",
+    "Progressive-speed-bumps": "passed=True progress=393/401 requested_kph=19.8 max_distance=0.41 min_grounded_wheels=2 end=(-133.43, 1.04, 54.64)",
+    "Alternating-wheel-articulation": "passed=True progress=353/361 requested_kph=16.2 max_distance=0.45 min_grounded_wheels=2 end=(-162.09, 1.05, -84.85)",
+    "Rolling-gravel-and-shallow-hollows": "passed=True progress=413/421 requested_kph=21.6 max_distance=0.38 min_grounded_wheels=2 end=(-226.35, 1.06, 128.61)",
+    "Low-rolling-tabletop": "passed=True progress=473/481 requested_kph=36.0 max_distance=0.37 min_grounded_wheels=4 end=(-110.00, 1.07, 348.41)",
+    "Medium-rolling-tabletop": "passed=True progress=473/481 requested_kph=32.4 max_distance=0.33 min_grounded_wheels=4 end=(-365.37, 1.06, -4.11)",
+    "Original-tunnel": "passed=True progress=252/260 requested_kph=16.2 max_distance=1.14 min_grounded_wheels=6 end=(242.00, 0.98, -23.41)"
+  },
+  "rear_camera": {
+    "unity": "6000.6.7f1",
+    "mode": "after",
+    "samples": [
+      {
+        "fps": 30,
+        "frames": 91,
+        "initialKph": 0.0,
+        "maxKph": 89.88269805908203,
+        "maxFollowError": 2.3283064365386963e-10,
+        "maxAimErrorDegrees": 0.01978234015405178,
+        "minFrontDistance": 5.79998779296875,
+        "maxViewportOffset": 9.918212890625e-05,
+        "maxPhysicsRenderSeparation": 0.43267902731895447
+      },
+      {
+        "fps": 60,
+        "frames": 181,
+        "initialKph": 198.0,
+        "maxKph": 214.95770263671875,
+        "maxFollowError": 0.0,
+        "maxAimErrorDegrees": 0.01978234015405178,
+        "minFrontDistance": 5.799984455108643,
+        "maxViewportOffset": 9.434850653633475e-05,
+        "maxPhysicsRenderSeparation": 1.034806251525879
+      },
+      {
+        "fps": 120,
+        "frames": 361,
+        "initialKph": 259.91998291015625,
+        "maxKph": 249.92884826660156,
+        "maxFollowError": 0.0,
+        "maxAimErrorDegrees": 0.01978234015405178,
+        "minFrontDistance": 5.799984455108643,
+        "maxViewportOffset": 3.122158523183316e-05,
+        "maxPhysicsRenderSeparation": 1.3182300329208374
+      }
+    ]
+  },
+  "landing_comparison": {
+    "timestep": 0.019999999552965164,
+    "before": [
+      {
+        "height": 5.0,
+        "horizontalSpeed": 0.0,
+        "peakReboundSpeed": 1.3730164766311646,
+        "reboundHeight": 0.21518707275390625,
+        "settleTime": 0.9799992442131042,
+        "impactSpeed": 9.594928741455078,
+        "finalSpeed": 4.075091965205502e-06,
+        "finalUp": 0.9999997615814209,
+        "name": "5m-0kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      },
+      {
+        "height": 5.0,
+        "horizontalSpeed": 20.0,
+        "peakReboundSpeed": 1.6929965019226074,
+        "reboundHeight": 0.2642364501953125,
+        "settleTime": 0.9199993014335632,
+        "impactSpeed": 9.695784568786621,
+        "finalSpeed": 9.364479064941406,
+        "finalUp": 0.9999997615814209,
+        "name": "5m-72kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      },
+      {
+        "height": 10.0,
+        "horizontalSpeed": 0.0,
+        "peakReboundSpeed": 1.413658618927002,
+        "reboundHeight": 0.28139495849609375,
+        "settleTime": 0.9799992442131042,
+        "impactSpeed": 13.502388000488281,
+        "finalSpeed": 4.877084847976221e-06,
+        "finalUp": 0.9999997615814209,
+        "name": "10m-0kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      },
+      {
+        "height": 10.0,
+        "horizontalSpeed": 20.0,
+        "peakReboundSpeed": 1.6119029521942139,
+        "reboundHeight": 0.34343719482421875,
+        "settleTime": 0.9199993014335632,
+        "impactSpeed": 13.630684852600098,
+        "finalSpeed": 9.33685302734375,
+        "finalUp": 0.9999997615814209,
+        "name": "10m-72kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      }
+    ],
+    "after": [
+      {
+        "height": 5.0,
+        "horizontalSpeed": 0.0,
+        "peakReboundSpeed": 0.45132893323898315,
+        "reboundHeight": 0.10015869140625,
+        "settleTime": 0.7799994349479675,
+        "impactSpeed": 9.594928741455078,
+        "finalSpeed": 0.3565830588340759,
+        "finalUp": 0.9999998211860657,
+        "name": "5m-0kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      },
+      {
+        "height": 5.0,
+        "horizontalSpeed": 20.0,
+        "peakReboundSpeed": 0.6513535380363464,
+        "reboundHeight": 0.11888885498046875,
+        "settleTime": 0.6999995112419128,
+        "impactSpeed": 9.695784568786621,
+        "finalSpeed": 9.429092407226562,
+        "finalUp": 0.9999997615814209,
+        "name": "5m-72kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      },
+      {
+        "height": 10.0,
+        "horizontalSpeed": 0.0,
+        "peakReboundSpeed": 0.6613119840621948,
+        "reboundHeight": 0.14240264892578125,
+        "settleTime": 0.8399993777275085,
+        "impactSpeed": 13.502388000488281,
+        "finalSpeed": 2.3711212634225376e-05,
+        "finalUp": 0.9999998211860657,
+        "name": "10m-0kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      },
+      {
+        "height": 10.0,
+        "horizontalSpeed": 20.0,
+        "peakReboundSpeed": 0.8094025254249573,
+        "reboundHeight": 0.21215057373046875,
+        "settleTime": 0.7999994158744812,
+        "impactSpeed": 13.630684852600098,
+        "finalSpeed": 9.407025337219238,
+        "finalUp": 0.9999997615814209,
+        "name": "10m-72kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      }
+    ]
+  },
+  "authoring_regression": {
+    "status": "PASS",
+    "actual_unity_authored_snapshots": true,
+    "preserved_non_owned_documents": 305,
+    "preserved_classic_instance": true,
+    "preserved_scene_roots": true,
+    "preserved_impact_calibration": true,
+    "preserved_historical_manifest": true
+  },
+  "limits": [
+    "Unity Editor and virtual Xbox/keyboard input; no standalone Player build, physical-controller acceptance or performance profile.",
+    "Temporary driving inputs follow route samples through actual wheel/body physics. Only initial poses/speeds are seeded.",
+    "Low/medium tabletops, speed bumps, articulation, gravel and original tunnel are automated physical traversal cases. The restored legacy ramps retain their original meshes and solid colliders as free-form vehicle trials."
+  ]
+}

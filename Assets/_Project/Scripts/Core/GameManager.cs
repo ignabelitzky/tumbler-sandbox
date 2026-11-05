@@ -11,13 +11,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        tumbler = GameObject.Find("Tumbler");
+        if (tumbler == null) tumbler = GameObject.Find("Tumbler");
         if (tumbler == null)
         {
             Debug.LogError("Tumbler not found in the scene. Please assign the Tumbler GameObject in the Inspector.");
             return;
         }
-        carRigidbody = tumbler.GetComponent<Rigidbody>();
+        if (carRigidbody == null) carRigidbody = tumbler.GetComponent<Rigidbody>();
         if (carRigidbody == null)
         {
             Debug.LogError("Rigidbody component not found on the Tumbler GameObject. Please add a Rigidbody component to the Tumbler GameObject.");
@@ -41,8 +41,12 @@ public class GameManager : MonoBehaviour
     {
         if (context.started && !GameNavigation.GameplayInputBlocked && carRigidbody != null && carRigidbody.linearVelocity.magnitude < 1f)
         {
-            Quaternion uprightRotation = Quaternion.LookRotation(carRigidbody.transform.forward, Vector3.up);
-            carRigidbody.MoveRotation(uprightRotation);
+            Vector3 heading = Vector3.ProjectOnPlane(carRigidbody.transform.forward, Vector3.up);
+            if (heading.sqrMagnitude < .001f)
+                heading = Vector3.Cross(carRigidbody.transform.right, Vector3.up);
+            if (heading.sqrMagnitude < .001f) heading = Vector3.forward;
+            carRigidbody.angularVelocity = Vector3.zero;
+            carRigidbody.MoveRotation(Quaternion.LookRotation(heading.normalized, Vector3.up));
         }
     }
 

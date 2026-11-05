@@ -69,7 +69,7 @@ public class EngineAudio : MonoBehaviour
         StartCoroutine(PlayEngineStartSequence());
         foreach(AudioSource tireScreechSound in tireScreechSounds)
         {
-            tireScreechSound.volume = 0.3f;
+            if (tireScreechSound != null) tireScreechSound.volume = 0.3f;
         }
     }
 
@@ -110,29 +110,23 @@ public class EngineAudio : MonoBehaviour
 
     private void UpdateTireScreech()
     {
-        if (!tireScreechSoundIsPlaying && tumblerController.IsGrounded() && tumblerController.IsHandbraking() && currentSpeed > minBrakeSpeed)
+        bool handbraking = tumblerController != null && tumblerController.IsHandbraking() && currentSpeed > minBrakeSpeed;
+        tireScreechSoundIsPlaying = false;
+        for (int i = 0; i < tireScreechSounds.Length; i++)
         {
-            for (int i = 0; i < tireColliders.Length; i++)
-            {
-                if (tireColliders[i].isGrounded && !tireScreechSounds[i].isPlaying)
-                {
-                    tireScreechSounds[i].Play();
-                }
-                else
-                {
-                    tireScreechSounds[i].Stop();
-                }
-                tireScreechSoundIsPlaying = true;
-            }
+            var sound = tireScreechSounds[i];
+            if (sound == null) continue;
+            bool shouldPlay = handbraking && i < tireColliders.Length && tireColliders[i] != null && tireColliders[i].isGrounded;
+            if (shouldPlay && !sound.isPlaying) sound.Play();
+            else if (!shouldPlay && sound.isPlaying) sound.Stop();
+            tireScreechSoundIsPlaying |= shouldPlay;
         }
-        else if (((!tumblerController.IsHandbraking() || currentSpeed < minBrakeSpeed) && tireScreechSoundIsPlaying) || !tumblerController.IsGrounded())
-        {
-            foreach (AudioSource tireScreechSound in tireScreechSounds)
-            {
-                tireScreechSound.Stop();
-            }
-            tireScreechSoundIsPlaying = false;
-        }
+    }
+
+    private void OnDisable()
+    {
+        foreach (var sound in tireScreechSounds) if (sound != null) sound.Stop();
+        tireScreechSoundIsPlaying = false;
     }
 
     private void CheckAudioSource(AudioSource source, string name)

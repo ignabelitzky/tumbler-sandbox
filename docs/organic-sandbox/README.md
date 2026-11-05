@@ -1,4 +1,6 @@
-# Organic proving grounds
+# Organic proving grounds — historical layout
+
+This two-tunnel stunt layout is retired from the active scene. The current [classic flowing proving grounds](../classic-sandbox/README.md) keeps the original tunnel, restores the earlier ramps and adds progressive speed bumps and suspension trials. These source assets and measurements remain available for history and comparison.
 
 Sandbox is a sculpted desert proving ground under the supplied Sky12 sunset. A flowing asphalt circuit links the central spawn to limestone, ochre dirt, soft sand, rolling suspension trials, two smooth tabletops and a shallow handling bowl. Low sandstone formations and distant ridges replace the flat checkerboard presentation. Guidance is painted on the road; the old freestanding boards and isolated obstacle displays are disabled.
 
@@ -60,7 +62,7 @@ Both loops completed the required trial from an initial 198 km/h, with all six w
 | 198 km/h | Completed inversion and run-out goal | Completed inversion and run-out goal |
 | 234 km/h | Completed inversion, automated driver left the narrow run-out | Completed inversion and run-out goal |
 
-These are repeatable controller-driven trials, not a guarantee for every steering input or approach. The existing world-down aerodynamic force is preserved. Current air control and landing damping are described in the [flight and landing guide](../flight-camera-landing/README.md).
+These are repeatable controller-driven trials, not a guarantee for every steering input or approach. The existing world-down aerodynamic force is preserved. Current camera and landing damping are described in the [camera and landing guide](../flight-camera-landing/README.md).
 
 ![Overview](overview.png)
 

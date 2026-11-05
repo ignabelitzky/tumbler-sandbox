@@ -17,6 +17,8 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
+      - run: python3 -m unittest discover -s tools/tests -v
+      - run: python3 tools/classic-sandbox/check.py
       - run: python3 tools/flight-controls/check.py
       - run: python3 tools/organic-sandbox/check.py
       - run: python3 tools/verify-navigation.py

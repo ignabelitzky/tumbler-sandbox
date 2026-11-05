@@ -1,0 +1,82 @@
+PASS Legacy analog gauge and needle removed
+PASS One digital HUD instance
+PASS Compact 300 x 240 HUD anchored bottom-right, including auxiliary systems
+PASS HUD scales with screen resolution
+PASS HUD does not consume pointer input
+PASS 260 km/h configuration and seven valid gear ratios
+PASS Consistent 900–7200 engine RPM range
+PASS HUD text fits at 900 RPM: Identity
+PASS HUD text fits at 900 RPM: DriveModeText
+PASS HUD text fits at 900 RPM: SpeedValue
+PASS HUD text fits at 900 RPM: Speed Units
+PASS HUD text fits at 900 RPM: Gear Label
+PASS HUD text fits at 900 RPM: GearNumText
+PASS HUD text fits at 900 RPM: Engine Label
+PASS HUD text fits at 900 RPM: RPMValue
+PASS HUD text fits at 900 RPM: RPM Units
+PASS HUD text fits at 900 RPM: Boost State
+PASS HUD text fits at 900 RPM: Boost Percent
+PASS HUD text fits at 900 RPM: Light State
+PASS HUD text fits at 900 RPM: Lights Caption
+PASS HUD text fits at 900 RPM: Handbrake State
+PASS HUD text fits at 900 RPM: Brake Caption
+PASS HUD text fits at 900 RPM: Stealth State
+PASS HUD text fits at 900 RPM: Stealth Caption
+PASS HUD text fits at 3600 RPM: Identity
+PASS HUD text fits at 3600 RPM: DriveModeText
+PASS HUD text fits at 3600 RPM: SpeedValue
+PASS HUD text fits at 3600 RPM: Speed Units
+PASS HUD text fits at 3600 RPM: Gear Label
+PASS HUD text fits at 3600 RPM: GearNumText
+PASS HUD text fits at 3600 RPM: Engine Label
+PASS HUD text fits at 3600 RPM: RPMValue
+PASS HUD text fits at 3600 RPM: RPM Units
+PASS HUD text fits at 3600 RPM: Boost State
+PASS HUD text fits at 3600 RPM: Boost Percent
+PASS HUD text fits at 3600 RPM: Light State
+PASS HUD text fits at 3600 RPM: Lights Caption
+PASS HUD text fits at 3600 RPM: Handbrake State
+PASS HUD text fits at 3600 RPM: Brake Caption
+PASS HUD text fits at 3600 RPM: Stealth State
+PASS HUD text fits at 3600 RPM: Stealth Caption
+PASS HUD text fits at 5600 RPM: Identity
+PASS HUD text fits at 5600 RPM: DriveModeText
+PASS HUD text fits at 5600 RPM: SpeedValue
+PASS HUD text fits at 5600 RPM: Speed Units
+PASS HUD text fits at 5600 RPM: Gear Label
+PASS HUD text fits at 5600 RPM: GearNumText
+PASS HUD text fits at 5600 RPM: Engine Label
+PASS HUD text fits at 5600 RPM: RPMValue
+PASS HUD text fits at 5600 RPM: RPM Units
+PASS HUD text fits at 5600 RPM: Boost State
+PASS HUD text fits at 5600 RPM: Boost Percent
+PASS HUD text fits at 5600 RPM: Light State
+PASS HUD text fits at 5600 RPM: Lights Caption
+PASS HUD text fits at 5600 RPM: Handbrake State
+PASS HUD text fits at 5600 RPM: Brake Caption
+PASS HUD text fits at 5600 RPM: Stealth State
+PASS HUD text fits at 5600 RPM: Stealth Caption
+PASS HUD text fits at 7200 RPM: Identity
+PASS HUD text fits at 7200 RPM: DriveModeText
+PASS HUD text fits at 7200 RPM: SpeedValue
+PASS HUD text fits at 7200 RPM: Speed Units
+PASS HUD text fits at 7200 RPM: Gear Label
+PASS HUD text fits at 7200 RPM: GearNumText
+PASS HUD text fits at 7200 RPM: Engine Label
+PASS HUD text fits at 7200 RPM: RPMValue
+PASS HUD text fits at 7200 RPM: RPM Units
+PASS HUD text fits at 7200 RPM: Boost State
+PASS HUD text fits at 7200 RPM: Boost Percent
+PASS HUD text fits at 7200 RPM: Light State
+PASS HUD text fits at 7200 RPM: Lights Caption
+PASS HUD text fits at 7200 RPM: Handbrake State
+PASS HUD text fits at 7200 RPM: Brake Caption
+PASS HUD text fits at 7200 RPM: Stealth State
+PASS HUD text fits at 7200 RPM: Stealth Caption
+PASS RPM colors progress from green at idle to red at the limit
+PASS Three new underbody systems groups
+PASS Underbody expansion is visual only
+PASS Six original wheels and the body with only the old tank shells removed retained
+PASS New detail remains in original render envelope: 06_Outer_Stampings_And_Sill_Rails
+PASS New detail remains in original render envelope: 07_Front_Subframe_Rack_And_Sump
+PASS New detail remains in original render envelope: 08_Brake_Lines_Clips_And_Body_Mounts

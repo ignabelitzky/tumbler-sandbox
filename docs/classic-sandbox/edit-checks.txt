@@ -1,0 +1,952 @@
+PASS Classic ground attached
+PASS Previous stunt-map instance replaced
+PASS Exactly one active terrain
+PASS Original tunnel retained
+PASS No second tunnel zone group
+PASS No active deathloops, caged oval or new winding tunnel
+PASS No missing scripts in the map
+PASS Every solid map mesh has collision data
+PASS Original obstacle available: ramp_45
+PASS Original obstacle available: curved_ramp
+PASS Original obstacle available: square_ramp
+PASS Original obstacle available: circular_bump
+PASS Original obstacle available: triangular_bump
+PASS Solid road Open handling circuit #5
+PASS No terrain intrusion or unexpected crossing Open handling circuit #5 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #5
+PASS Solid road Open handling circuit #24
+PASS No terrain intrusion or unexpected crossing Open handling circuit #24 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #24
+PASS Solid road Open handling circuit #43
+PASS No terrain intrusion or unexpected crossing Open handling circuit #43 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #43
+PASS Solid road Open handling circuit #62
+PASS No terrain intrusion or unexpected crossing Open handling circuit #62 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #62
+PASS Solid road Open handling circuit #81
+PASS No terrain intrusion or unexpected crossing Open handling circuit #81 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #81
+PASS Solid road Open handling circuit #100
+PASS No terrain intrusion or unexpected crossing Open handling circuit #100 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #100
+PASS Solid road Open handling circuit #119
+PASS No terrain intrusion or unexpected crossing Open handling circuit #119 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #119
+PASS Solid road Open handling circuit #138
+PASS No terrain intrusion or unexpected crossing Open handling circuit #138 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #138
+PASS Solid road Open handling circuit #157
+PASS No terrain intrusion or unexpected crossing Open handling circuit #157 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #157
+PASS Solid road Open handling circuit #176
+PASS No terrain intrusion or unexpected crossing Open handling circuit #176 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #176
+PASS Solid road Open handling circuit #195
+PASS No terrain intrusion or unexpected crossing Open handling circuit #195 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #195
+PASS Solid road Open handling circuit #214
+PASS No terrain intrusion or unexpected crossing Open handling circuit #214 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #214
+PASS Solid road Open handling circuit #233
+PASS No terrain intrusion or unexpected crossing Open handling circuit #233 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #233
+PASS Solid road Open handling circuit #252
+PASS No terrain intrusion or unexpected crossing Open handling circuit #252 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #252
+PASS Solid road Open handling circuit #271
+PASS No terrain intrusion or unexpected crossing Open handling circuit #271 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #271
+PASS Solid road Open handling circuit #290
+PASS No terrain intrusion or unexpected crossing Open handling circuit #290 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #290
+PASS Solid road Open handling circuit #309
+PASS No terrain intrusion or unexpected crossing Open handling circuit #309 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #309
+PASS Solid road Open handling circuit #328
+PASS No terrain intrusion or unexpected crossing Open handling circuit #328 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #328
+PASS Solid road Open handling circuit #347
+PASS No terrain intrusion or unexpected crossing Open handling circuit #347 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #347
+PASS Solid road Open handling circuit #366
+PASS No terrain intrusion or unexpected crossing Open handling circuit #366 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #366
+PASS Solid road Open handling circuit #385
+PASS No terrain intrusion or unexpected crossing Open handling circuit #385 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #385
+PASS Solid road Open handling circuit #404
+PASS No terrain intrusion or unexpected crossing Open handling circuit #404 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #404
+PASS Solid road Open handling circuit #423
+PASS No terrain intrusion or unexpected crossing Open handling circuit #423 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #423
+PASS Solid road Open handling circuit #442
+PASS No terrain intrusion or unexpected crossing Open handling circuit #442 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #442
+PASS Solid road Open handling circuit #461
+PASS No terrain intrusion or unexpected crossing Open handling circuit #461 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #461
+PASS Solid road Open handling circuit #480
+PASS No terrain intrusion or unexpected crossing Open handling circuit #480 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #480
+PASS Solid road Open handling circuit #499
+PASS No terrain intrusion or unexpected crossing Open handling circuit #499 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #499
+PASS Solid road Open handling circuit #518
+PASS No terrain intrusion or unexpected crossing Open handling circuit #518 hit=Dirt meander delta=0.07558274
+PASS Driveable normal Open handling circuit #518
+PASS Solid road Open handling circuit #537
+PASS No terrain intrusion or unexpected crossing Open handling circuit #537 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #537
+PASS Solid road Open handling circuit #556
+PASS No terrain intrusion or unexpected crossing Open handling circuit #556 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #556
+PASS Solid road Open handling circuit #575
+PASS No terrain intrusion or unexpected crossing Open handling circuit #575 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #575
+PASS Solid road Open handling circuit #594
+PASS No terrain intrusion or unexpected crossing Open handling circuit #594 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #594
+PASS Solid road Open handling circuit #613
+PASS No terrain intrusion or unexpected crossing Open handling circuit #613 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #613
+PASS Solid road Open handling circuit #632
+PASS No terrain intrusion or unexpected crossing Open handling circuit #632 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #632
+PASS Solid road Open handling circuit #651
+PASS No terrain intrusion or unexpected crossing Open handling circuit #651 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #651
+PASS Solid road Open handling circuit #670
+PASS No terrain intrusion or unexpected crossing Open handling circuit #670 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #670
+PASS Solid road Open handling circuit #689
+PASS No terrain intrusion or unexpected crossing Open handling circuit #689 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #689
+PASS Solid road Open handling circuit #708
+PASS No terrain intrusion or unexpected crossing Open handling circuit #708 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #708
+PASS Solid road Open handling circuit #727
+PASS No terrain intrusion or unexpected crossing Open handling circuit #727 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #727
+PASS Solid road Open handling circuit #746
+PASS No terrain intrusion or unexpected crossing Open handling circuit #746 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #746
+PASS Solid road Open handling circuit #765
+PASS No terrain intrusion or unexpected crossing Open handling circuit #765 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #765
+PASS Solid road Open handling circuit #784
+PASS No terrain intrusion or unexpected crossing Open handling circuit #784 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #784
+PASS Solid road Open handling circuit #803
+PASS No terrain intrusion or unexpected crossing Open handling circuit #803 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #803
+PASS Solid road Open handling circuit #822
+PASS No terrain intrusion or unexpected crossing Open handling circuit #822 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #822
+PASS Solid road Open handling circuit #841
+PASS No terrain intrusion or unexpected crossing Open handling circuit #841 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #841
+PASS Solid road Open handling circuit #860
+PASS No terrain intrusion or unexpected crossing Open handling circuit #860 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #860
+PASS Solid road Open handling circuit #879
+PASS No terrain intrusion or unexpected crossing Open handling circuit #879 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #879
+PASS Solid road Open handling circuit #898
+PASS No terrain intrusion or unexpected crossing Open handling circuit #898 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #898
+PASS Solid road Open handling circuit #917
+PASS No terrain intrusion or unexpected crossing Open handling circuit #917 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #917
+PASS Solid road Open handling circuit #936
+PASS No terrain intrusion or unexpected crossing Open handling circuit #936 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #936
+PASS Solid road Open handling circuit #955
+PASS No terrain intrusion or unexpected crossing Open handling circuit #955 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #955
+PASS Solid road Open handling circuit #974
+PASS No terrain intrusion or unexpected crossing Open handling circuit #974 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #974
+PASS Solid road Open handling circuit #993
+PASS No terrain intrusion or unexpected crossing Open handling circuit #993 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #993
+PASS Solid road Open handling circuit #1012
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1012 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1012
+PASS Solid road Open handling circuit #1031
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1031 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1031
+PASS Solid road Open handling circuit #1050
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1050 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1050
+PASS Solid road Open handling circuit #1069
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1069 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1069
+PASS Solid road Open handling circuit #1088
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1088 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1088
+PASS Solid road Open handling circuit #1107
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1107 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1107
+PASS Solid road Open handling circuit #1126
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1126 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1126
+PASS Solid road Open handling circuit #1145
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1145 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1145
+PASS Solid road Open handling circuit #1164
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1164 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1164
+PASS Solid road Open handling circuit #1183
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1183 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1183
+PASS Solid road Open handling circuit #1202
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1202 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1202
+PASS Solid road Open handling circuit #1221
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1221 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1221
+PASS Solid road Open handling circuit #1240
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1240 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1240
+PASS Solid road Open handling circuit #1259
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1259 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1259
+PASS Solid road Open handling circuit #1278
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1278 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1278
+PASS Solid road Open handling circuit #1297
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1297 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1297
+PASS Solid road Open handling circuit #1316
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1316 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1316
+PASS Solid road Open handling circuit #1335
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1335 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1335
+PASS Solid road Open handling circuit #1354
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1354 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1354
+PASS Solid road Open handling circuit #1373
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1373 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1373
+PASS Solid road Open handling circuit #1392
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1392 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1392
+PASS Solid road Open handling circuit #1411
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1411 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1411
+PASS Solid road Open handling circuit #1430
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1430 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1430
+PASS Solid road Open handling circuit #1449
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1449 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1449
+PASS Solid road Open handling circuit #1468
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1468 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1468
+PASS Solid road Open handling circuit #1487
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1487 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1487
+PASS Solid road Open handling circuit #1506
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1506 hit=Open handling circuit delta=0
+PASS Driveable normal Open handling circuit #1506
+PASS Solid road Open handling circuit #1525
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1525 hit=Tunnel west approach delta=0.00916516
+PASS Driveable normal Open handling circuit #1525
+PASS Solid road Open handling circuit #1544
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1544 hit=Tunnel east return delta=0.009607382
+PASS Driveable normal Open handling circuit #1544
+PASS Solid road Open handling circuit #1563
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1563 hit=Tunnel east return delta=0.008483037
+PASS Driveable normal Open handling circuit #1563
+PASS Solid road Open handling circuit #1582
+PASS No terrain intrusion or unexpected crossing Open handling circuit #1582 hit=Tunnel west approach delta=0.005316019
+PASS Driveable normal Open handling circuit #1582
+PASS Solid road Tunnel west approach #5
+PASS No terrain intrusion or unexpected crossing Tunnel west approach #5 hit=Tunnel east return delta=2.235174E-08
+PASS Driveable normal Tunnel west approach #5
+PASS Solid road Tunnel west approach #24
+PASS No terrain intrusion or unexpected crossing Tunnel west approach #24 hit=Tunnel west approach delta=0
+PASS Driveable normal Tunnel west approach #24
+PASS Solid road Tunnel west approach #43
+PASS No terrain intrusion or unexpected crossing Tunnel west approach #43 hit=Tunnel west approach delta=0
+PASS Driveable normal Tunnel west approach #43
+PASS Solid road Tunnel west approach #62
+PASS No terrain intrusion or unexpected crossing Tunnel west approach #62 hit=Tunnel west approach delta=0
+PASS Driveable normal Tunnel west approach #62
+PASS Solid road Tunnel west approach #81
+PASS No terrain intrusion or unexpected crossing Tunnel west approach #81 hit=Tunnel west approach delta=0
+PASS Driveable normal Tunnel west approach #81
+PASS Solid road Tunnel west approach #100
+PASS No terrain intrusion or unexpected crossing Tunnel west approach #100 hit=Tunnel west approach delta=0
+PASS Driveable normal Tunnel west approach #100
+PASS Solid road Tunnel west approach #119
+PASS No terrain intrusion or unexpected crossing Tunnel west approach #119 hit=Tunnel west approach delta=0
+PASS Driveable normal Tunnel west approach #119
+PASS Solid road Tunnel west approach #138
+PASS No terrain intrusion or unexpected crossing Tunnel west approach #138 hit=Tunnel west approach delta=0
+PASS Driveable normal Tunnel west approach #138
+PASS Solid road Tunnel west approach #157
+PASS No terrain intrusion or unexpected crossing Tunnel west approach #157 hit=Tunnel west approach delta=0
+PASS Driveable normal Tunnel west approach #157
+PASS Solid road Tunnel west approach #176
+PASS No terrain intrusion or unexpected crossing Tunnel west approach #176 hit=Tunnel west approach delta=0
+PASS Driveable normal Tunnel west approach #176
+PASS Solid road Tunnel west approach #195
+PASS No terrain intrusion or unexpected crossing Tunnel west approach #195 hit=Tunnel west approach delta=0
+PASS Driveable normal Tunnel west approach #195
+PASS Solid road Tunnel west approach #214
+PASS No terrain intrusion or unexpected crossing Tunnel west approach #214 hit=Tunnel west approach delta=0
+PASS Driveable normal Tunnel west approach #214
+PASS Solid road Tunnel west approach #233
+PASS No terrain intrusion or unexpected crossing Tunnel west approach #233 hit=Tunnel west approach delta=0
+PASS Driveable normal Tunnel west approach #233
+PASS Solid road Tunnel east return #5
+PASS No terrain intrusion or unexpected crossing Tunnel east return #5 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #5
+PASS Solid road Tunnel east return #24
+PASS No terrain intrusion or unexpected crossing Tunnel east return #24 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #24
+PASS Solid road Tunnel east return #43
+PASS No terrain intrusion or unexpected crossing Tunnel east return #43 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #43
+PASS Solid road Tunnel east return #62
+PASS No terrain intrusion or unexpected crossing Tunnel east return #62 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #62
+PASS Solid road Tunnel east return #81
+PASS No terrain intrusion or unexpected crossing Tunnel east return #81 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #81
+PASS Solid road Tunnel east return #100
+PASS No terrain intrusion or unexpected crossing Tunnel east return #100 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #100
+PASS Solid road Tunnel east return #119
+PASS No terrain intrusion or unexpected crossing Tunnel east return #119 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #119
+PASS Solid road Tunnel east return #138
+PASS No terrain intrusion or unexpected crossing Tunnel east return #138 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #138
+PASS Solid road Tunnel east return #157
+PASS No terrain intrusion or unexpected crossing Tunnel east return #157 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #157
+PASS Solid road Tunnel east return #176
+PASS No terrain intrusion or unexpected crossing Tunnel east return #176 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #176
+PASS Solid road Tunnel east return #195
+PASS No terrain intrusion or unexpected crossing Tunnel east return #195 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #195
+PASS Solid road Tunnel east return #214
+PASS No terrain intrusion or unexpected crossing Tunnel east return #214 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #214
+PASS Solid road Tunnel east return #233
+PASS No terrain intrusion or unexpected crossing Tunnel east return #233 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #233
+PASS Solid road Tunnel east return #252
+PASS No terrain intrusion or unexpected crossing Tunnel east return #252 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #252
+PASS Solid road Tunnel east return #271
+PASS No terrain intrusion or unexpected crossing Tunnel east return #271 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #271
+PASS Solid road Tunnel east return #290
+PASS No terrain intrusion or unexpected crossing Tunnel east return #290 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #290
+PASS Solid road Tunnel east return #309
+PASS No terrain intrusion or unexpected crossing Tunnel east return #309 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #309
+PASS Solid road Tunnel east return #328
+PASS No terrain intrusion or unexpected crossing Tunnel east return #328 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #328
+PASS Solid road Tunnel east return #347
+PASS No terrain intrusion or unexpected crossing Tunnel east return #347 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #347
+PASS Solid road Tunnel east return #366
+PASS No terrain intrusion or unexpected crossing Tunnel east return #366 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #366
+PASS Solid road Tunnel east return #385
+PASS No terrain intrusion or unexpected crossing Tunnel east return #385 hit=Tunnel east return delta=0
+PASS Driveable normal Tunnel east return #385
+PASS Solid road North ramp access #5
+PASS No terrain intrusion or unexpected crossing North ramp access #5 hit=Open handling circuit delta=0.004024118
+PASS Driveable normal North ramp access #5
+PASS Solid road North ramp access #24
+PASS No terrain intrusion or unexpected crossing North ramp access #24 hit=North ramp access delta=0
+PASS Driveable normal North ramp access #24
+PASS Solid road North ramp access #43
+PASS No terrain intrusion or unexpected crossing North ramp access #43 hit=North ramp access delta=0
+PASS Driveable normal North ramp access #43
+PASS Solid road North ramp access #62
+PASS No terrain intrusion or unexpected crossing North ramp access #62 hit=North ramp access delta=0
+PASS Driveable normal North ramp access #62
+PASS Solid road North ramp access #81
+PASS No terrain intrusion or unexpected crossing North ramp access #81 hit=North ramp access delta=0
+PASS Driveable normal North ramp access #81
+PASS Solid road North ramp access #100
+PASS No terrain intrusion or unexpected crossing North ramp access #100 hit=North ramp access delta=0
+PASS Driveable normal North ramp access #100
+PASS Solid road North ramp access #119
+PASS No terrain intrusion or unexpected crossing North ramp access #119 hit=North ramp access delta=0
+PASS Driveable normal North ramp access #119
+PASS Solid road North ramp access #138
+PASS No terrain intrusion or unexpected crossing North ramp access #138 hit=North ramp access delta=0
+PASS Driveable normal North ramp access #138
+PASS Solid road North ramp access #157
+PASS No terrain intrusion or unexpected crossing North ramp access #157 hit=North ramp access delta=0
+PASS Driveable normal North ramp access #157
+PASS Solid road North ramp access #176
+PASS No terrain intrusion or unexpected crossing North ramp access #176 hit=North ramp access delta=0
+PASS Driveable normal North ramp access #176
+PASS Solid road North ramp access #195
+PASS No terrain intrusion or unexpected crossing North ramp access #195 hit=Dirt meander delta=0.245074
+PASS Driveable normal North ramp access #195
+PASS Solid road North ramp access #214
+PASS No terrain intrusion or unexpected crossing North ramp access #214 hit=North ramp access delta=0
+PASS Driveable normal North ramp access #214
+PASS Solid road North ramp access #233
+PASS No terrain intrusion or unexpected crossing North ramp access #233 hit=North ramp access delta=0
+PASS Driveable normal North ramp access #233
+PASS Solid road North ramp access #252
+PASS No terrain intrusion or unexpected crossing North ramp access #252 hit=North ramp access delta=0
+PASS Driveable normal North ramp access #252
+PASS Solid road North ramp access #271
+PASS No terrain intrusion or unexpected crossing North ramp access #271 hit=North ramp access delta=0
+PASS Driveable normal North ramp access #271
+PASS Solid road North ramp access #290
+PASS No terrain intrusion or unexpected crossing North ramp access #290 hit=Dirt meander delta=0.1733818
+PASS Driveable normal North ramp access #290
+PASS Solid road West ramp approach #5
+PASS No terrain intrusion or unexpected crossing West ramp approach #5 hit=Open handling circuit delta=0.01531875
+PASS Driveable normal West ramp approach #5
+PASS Solid road West ramp approach #24
+PASS No terrain intrusion or unexpected crossing West ramp approach #24 hit=Open handling circuit delta=0.09456486
+PASS Driveable normal West ramp approach #24
+PASS Solid road West ramp approach #43
+PASS No terrain intrusion or unexpected crossing West ramp approach #43 hit=West ramp approach delta=0
+PASS Driveable normal West ramp approach #43
+PASS Solid road West ramp approach #62
+PASS No terrain intrusion or unexpected crossing West ramp approach #62 hit=West ramp approach delta=0
+PASS Driveable normal West ramp approach #62
+PASS Solid road West ramp approach #81
+PASS No terrain intrusion or unexpected crossing West ramp approach #81 hit=West ramp approach delta=0
+PASS Driveable normal West ramp approach #81
+PASS Solid road West ramp approach #100
+PASS No terrain intrusion or unexpected crossing West ramp approach #100 hit=West ramp approach delta=0
+PASS Driveable normal West ramp approach #100
+PASS Solid road West ramp approach #119
+PASS No terrain intrusion or unexpected crossing West ramp approach #119 hit=West ramp approach delta=0
+PASS Driveable normal West ramp approach #119
+PASS Solid road West ramp approach #138
+PASS No terrain intrusion or unexpected crossing West ramp approach #138 hit=West ramp approach delta=0
+PASS Driveable normal West ramp approach #138
+PASS Solid road West ramp approach #157
+PASS No terrain intrusion or unexpected crossing West ramp approach #157 hit=West ramp approach delta=0
+PASS Driveable normal West ramp approach #157
+PASS Solid road West ramp approach #176
+PASS No terrain intrusion or unexpected crossing West ramp approach #176 hit=West ramp approach delta=0
+PASS Driveable normal West ramp approach #176
+PASS Solid road West ramp approach #195
+PASS No terrain intrusion or unexpected crossing West ramp approach #195 hit=West ramp approach delta=0
+PASS Driveable normal West ramp approach #195
+PASS Solid road West ramp approach #214
+PASS No terrain intrusion or unexpected crossing West ramp approach #214 hit=West ramp approach delta=0
+PASS Driveable normal West ramp approach #214
+PASS Solid road West ramp approach #233
+PASS No terrain intrusion or unexpected crossing West ramp approach #233 hit=West ramp approach delta=0
+PASS Driveable normal West ramp approach #233
+PASS Solid road West ramp approach #252
+PASS No terrain intrusion or unexpected crossing West ramp approach #252 hit=West ramp approach delta=0
+PASS Driveable normal West ramp approach #252
+PASS Solid road Progressive speed bumps #5
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #5 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #5
+PASS Solid road Progressive speed bumps #24
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #24 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #24
+PASS Solid road Progressive speed bumps #43
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #43 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #43
+PASS Solid road Progressive speed bumps #62
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #62 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #62
+PASS Solid road Progressive speed bumps #81
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #81 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #81
+PASS Solid road Progressive speed bumps #100
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #100 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #100
+PASS Solid road Progressive speed bumps #119
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #119 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #119
+PASS Solid road Progressive speed bumps #138
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #138 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #138
+PASS Solid road Progressive speed bumps #157
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #157 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #157
+PASS Solid road Progressive speed bumps #176
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #176 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #176
+PASS Solid road Progressive speed bumps #195
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #195 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #195
+PASS Solid road Progressive speed bumps #214
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #214 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #214
+PASS Solid road Progressive speed bumps #233
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #233 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #233
+PASS Solid road Progressive speed bumps #252
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #252 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #252
+PASS Solid road Progressive speed bumps #271
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #271 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #271
+PASS Solid road Progressive speed bumps #290
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #290 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #290
+PASS Solid road Progressive speed bumps #309
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #309 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #309
+PASS Solid road Progressive speed bumps #328
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #328 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #328
+PASS Solid road Progressive speed bumps #347
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #347 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #347
+PASS Solid road Progressive speed bumps #366
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #366 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #366
+PASS Solid road Progressive speed bumps #385
+PASS No terrain intrusion or unexpected crossing Progressive speed bumps #385 hit=Progressive speed bumps delta=0
+PASS Driveable normal Progressive speed bumps #385
+PASS Solid road Alternating wheel articulation #5
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #5 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #5
+PASS Solid road Alternating wheel articulation #24
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #24 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #24
+PASS Solid road Alternating wheel articulation #43
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #43 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #43
+PASS Solid road Alternating wheel articulation #62
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #62 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #62
+PASS Solid road Alternating wheel articulation #81
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #81 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #81
+PASS Solid road Alternating wheel articulation #100
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #100 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #100
+PASS Solid road Alternating wheel articulation #119
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #119 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #119
+PASS Solid road Alternating wheel articulation #138
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #138 hit=Alternating wheel articulation delta=-1.490116E-08
+PASS Driveable normal Alternating wheel articulation #138
+PASS Solid road Alternating wheel articulation #157
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #157 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #157
+PASS Solid road Alternating wheel articulation #176
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #176 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #176
+PASS Solid road Alternating wheel articulation #195
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #195 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #195
+PASS Solid road Alternating wheel articulation #214
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #214 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #214
+PASS Solid road Alternating wheel articulation #233
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #233 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #233
+PASS Solid road Alternating wheel articulation #252
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #252 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #252
+PASS Solid road Alternating wheel articulation #271
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #271 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #271
+PASS Solid road Alternating wheel articulation #290
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #290 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #290
+PASS Solid road Alternating wheel articulation #309
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #309 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #309
+PASS Solid road Alternating wheel articulation #328
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #328 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #328
+PASS Solid road Alternating wheel articulation #347
+PASS No terrain intrusion or unexpected crossing Alternating wheel articulation #347 hit=Alternating wheel articulation delta=0
+PASS Driveable normal Alternating wheel articulation #347
+PASS Solid road Rolling gravel and shallow hollows #5
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #5 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #5
+PASS Solid road Rolling gravel and shallow hollows #24
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #24 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #24
+PASS Solid road Rolling gravel and shallow hollows #43
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #43 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #43
+PASS Solid road Rolling gravel and shallow hollows #62
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #62 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #62
+PASS Solid road Rolling gravel and shallow hollows #81
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #81 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #81
+PASS Solid road Rolling gravel and shallow hollows #100
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #100 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #100
+PASS Solid road Rolling gravel and shallow hollows #119
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #119 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #119
+PASS Solid road Rolling gravel and shallow hollows #138
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #138 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #138
+PASS Solid road Rolling gravel and shallow hollows #157
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #157 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #157
+PASS Solid road Rolling gravel and shallow hollows #176
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #176 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #176
+PASS Solid road Rolling gravel and shallow hollows #195
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #195 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #195
+PASS Solid road Rolling gravel and shallow hollows #214
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #214 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #214
+PASS Solid road Rolling gravel and shallow hollows #233
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #233 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #233
+PASS Solid road Rolling gravel and shallow hollows #252
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #252 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #252
+PASS Solid road Rolling gravel and shallow hollows #271
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #271 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #271
+PASS Solid road Rolling gravel and shallow hollows #290
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #290 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #290
+PASS Solid road Rolling gravel and shallow hollows #309
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #309 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #309
+PASS Solid road Rolling gravel and shallow hollows #328
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #328 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #328
+PASS Solid road Rolling gravel and shallow hollows #347
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #347 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #347
+PASS Solid road Rolling gravel and shallow hollows #366
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #366 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #366
+PASS Solid road Rolling gravel and shallow hollows #385
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #385 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #385
+PASS Solid road Rolling gravel and shallow hollows #404
+PASS No terrain intrusion or unexpected crossing Rolling gravel and shallow hollows #404 hit=Rolling gravel and shallow hollows delta=0
+PASS Driveable normal Rolling gravel and shallow hollows #404
+PASS Solid road Dirt meander #5
+PASS No terrain intrusion or unexpected crossing Dirt meander #5 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #5
+PASS Solid road Dirt meander #24
+PASS No terrain intrusion or unexpected crossing Dirt meander #24 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #24
+PASS Solid road Dirt meander #43
+PASS No terrain intrusion or unexpected crossing Dirt meander #43 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #43
+PASS Solid road Dirt meander #62
+PASS No terrain intrusion or unexpected crossing Dirt meander #62 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #62
+PASS Solid road Dirt meander #81
+PASS No terrain intrusion or unexpected crossing Dirt meander #81 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #81
+PASS Solid road Dirt meander #100
+PASS No terrain intrusion or unexpected crossing Dirt meander #100 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #100
+PASS Solid road Dirt meander #119
+PASS No terrain intrusion or unexpected crossing Dirt meander #119 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #119
+PASS Solid road Dirt meander #138
+PASS No terrain intrusion or unexpected crossing Dirt meander #138 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #138
+PASS Solid road Dirt meander #157
+PASS No terrain intrusion or unexpected crossing Dirt meander #157 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #157
+PASS Solid road Dirt meander #176
+PASS No terrain intrusion or unexpected crossing Dirt meander #176 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #176
+PASS Solid road Dirt meander #195
+PASS No terrain intrusion or unexpected crossing Dirt meander #195 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #195
+PASS Solid road Dirt meander #214
+PASS No terrain intrusion or unexpected crossing Dirt meander #214 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #214
+PASS Solid road Dirt meander #233
+PASS No terrain intrusion or unexpected crossing Dirt meander #233 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #233
+PASS Solid road Dirt meander #252
+PASS No terrain intrusion or unexpected crossing Dirt meander #252 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #252
+PASS Solid road Dirt meander #271
+PASS No terrain intrusion or unexpected crossing Dirt meander #271 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #271
+PASS Solid road Dirt meander #290
+PASS No terrain intrusion or unexpected crossing Dirt meander #290 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #290
+PASS Solid road Dirt meander #309
+PASS No terrain intrusion or unexpected crossing Dirt meander #309 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #309
+PASS Solid road Dirt meander #328
+PASS No terrain intrusion or unexpected crossing Dirt meander #328 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #328
+PASS Solid road Dirt meander #347
+PASS No terrain intrusion or unexpected crossing Dirt meander #347 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #347
+PASS Solid road Dirt meander #366
+PASS No terrain intrusion or unexpected crossing Dirt meander #366 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #366
+PASS Solid road Dirt meander #385
+PASS No terrain intrusion or unexpected crossing Dirt meander #385 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #385
+PASS Solid road Dirt meander #404
+PASS No terrain intrusion or unexpected crossing Dirt meander #404 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #404
+PASS Solid road Dirt meander #423
+PASS No terrain intrusion or unexpected crossing Dirt meander #423 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #423
+PASS Solid road Dirt meander #442
+PASS No terrain intrusion or unexpected crossing Dirt meander #442 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #442
+PASS Solid road Dirt meander #461
+PASS No terrain intrusion or unexpected crossing Dirt meander #461 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #461
+PASS Solid road Dirt meander #480
+PASS No terrain intrusion or unexpected crossing Dirt meander #480 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #480
+PASS Solid road Dirt meander #499
+PASS No terrain intrusion or unexpected crossing Dirt meander #499 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #499
+PASS Solid road Dirt meander #518
+PASS No terrain intrusion or unexpected crossing Dirt meander #518 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #518
+PASS Solid road Dirt meander #537
+PASS No terrain intrusion or unexpected crossing Dirt meander #537 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #537
+PASS Solid road Dirt meander #556
+PASS No terrain intrusion or unexpected crossing Dirt meander #556 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #556
+PASS Solid road Dirt meander #575
+PASS No terrain intrusion or unexpected crossing Dirt meander #575 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #575
+PASS Solid road Dirt meander #594
+PASS No terrain intrusion or unexpected crossing Dirt meander #594 hit=Dirt meander delta=0
+PASS Driveable normal Dirt meander #594
+PASS Solid road Sand handling curve #5
+PASS No terrain intrusion or unexpected crossing Sand handling curve #5 hit=Open handling circuit delta=0.3118317
+PASS Driveable normal Sand handling curve #5
+PASS Solid road Sand handling curve #24
+PASS No terrain intrusion or unexpected crossing Sand handling curve #24 hit=West ramp approach delta=0.1339771
+PASS Driveable normal Sand handling curve #24
+PASS Solid road Sand handling curve #43
+PASS No terrain intrusion or unexpected crossing Sand handling curve #43 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #43
+PASS Solid road Sand handling curve #62
+PASS No terrain intrusion or unexpected crossing Sand handling curve #62 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #62
+PASS Solid road Sand handling curve #81
+PASS No terrain intrusion or unexpected crossing Sand handling curve #81 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #81
+PASS Solid road Sand handling curve #100
+PASS No terrain intrusion or unexpected crossing Sand handling curve #100 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #100
+PASS Solid road Sand handling curve #119
+PASS No terrain intrusion or unexpected crossing Sand handling curve #119 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #119
+PASS Solid road Sand handling curve #138
+PASS No terrain intrusion or unexpected crossing Sand handling curve #138 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #138
+PASS Solid road Sand handling curve #157
+PASS No terrain intrusion or unexpected crossing Sand handling curve #157 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #157
+PASS Solid road Sand handling curve #176
+PASS No terrain intrusion or unexpected crossing Sand handling curve #176 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #176
+PASS Solid road Sand handling curve #195
+PASS No terrain intrusion or unexpected crossing Sand handling curve #195 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #195
+PASS Solid road Sand handling curve #214
+PASS No terrain intrusion or unexpected crossing Sand handling curve #214 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #214
+PASS Solid road Sand handling curve #233
+PASS No terrain intrusion or unexpected crossing Sand handling curve #233 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #233
+PASS Solid road Sand handling curve #252
+PASS No terrain intrusion or unexpected crossing Sand handling curve #252 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #252
+PASS Solid road Sand handling curve #271
+PASS No terrain intrusion or unexpected crossing Sand handling curve #271 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #271
+PASS Solid road Sand handling curve #290
+PASS No terrain intrusion or unexpected crossing Sand handling curve #290 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #290
+PASS Solid road Sand handling curve #309
+PASS No terrain intrusion or unexpected crossing Sand handling curve #309 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #309
+PASS Solid road Sand handling curve #328
+PASS No terrain intrusion or unexpected crossing Sand handling curve #328 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #328
+PASS Solid road Sand handling curve #347
+PASS No terrain intrusion or unexpected crossing Sand handling curve #347 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #347
+PASS Solid road Sand handling curve #366
+PASS No terrain intrusion or unexpected crossing Sand handling curve #366 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #366
+PASS Solid road Sand handling curve #385
+PASS No terrain intrusion or unexpected crossing Sand handling curve #385 hit=Sand handling curve delta=0
+PASS Driveable normal Sand handling curve #385
+PASS Solid road Low rolling tabletop #5
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #5 hit=North ramp access delta=0.11
+PASS Driveable normal Low rolling tabletop #5
+PASS Solid road Low rolling tabletop #24
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #24 hit=North ramp access delta=0.11
+PASS Driveable normal Low rolling tabletop #24
+PASS Solid road Low rolling tabletop #43
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #43 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #43
+PASS Solid road Low rolling tabletop #62
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #62 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #62
+PASS Solid road Low rolling tabletop #81
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #81 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #81
+PASS Solid road Low rolling tabletop #100
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #100 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #100
+PASS Solid road Low rolling tabletop #119
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #119 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #119
+PASS Solid road Low rolling tabletop #138
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #138 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #138
+PASS Solid road Low rolling tabletop #157
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #157 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #157
+PASS Solid road Low rolling tabletop #176
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #176 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #176
+PASS Solid road Low rolling tabletop #195
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #195 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #195
+PASS Solid road Low rolling tabletop #214
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #214 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #214
+PASS Solid road Low rolling tabletop #233
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #233 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #233
+PASS Solid road Low rolling tabletop #252
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #252 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #252
+PASS Solid road Low rolling tabletop #271
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #271 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #271
+PASS Solid road Low rolling tabletop #290
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #290 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #290
+PASS Solid road Low rolling tabletop #309
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #309 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #309
+PASS Solid road Low rolling tabletop #328
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #328 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #328
+PASS Solid road Low rolling tabletop #347
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #347 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #347
+PASS Solid road Low rolling tabletop #366
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #366 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #366
+PASS Solid road Low rolling tabletop #385
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #385 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #385
+PASS Solid road Low rolling tabletop #404
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #404 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #404
+PASS Solid road Low rolling tabletop #423
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #423 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #423
+PASS Solid road Low rolling tabletop #442
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #442 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #442
+PASS Solid road Low rolling tabletop #461
+PASS No terrain intrusion or unexpected crossing Low rolling tabletop #461 hit=Low rolling tabletop delta=0
+PASS Driveable normal Low rolling tabletop #461
+PASS Solid road Medium rolling tabletop #5
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #5 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #5
+PASS Solid road Medium rolling tabletop #24
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #24 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #24
+PASS Solid road Medium rolling tabletop #43
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #43 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #43
+PASS Solid road Medium rolling tabletop #62
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #62 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #62
+PASS Solid road Medium rolling tabletop #81
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #81 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #81
+PASS Solid road Medium rolling tabletop #100
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #100 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #100
+PASS Solid road Medium rolling tabletop #119
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #119 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #119
+PASS Solid road Medium rolling tabletop #138
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #138 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #138
+PASS Solid road Medium rolling tabletop #157
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #157 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #157
+PASS Solid road Medium rolling tabletop #176
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #176 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #176
+PASS Solid road Medium rolling tabletop #195
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #195 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #195
+PASS Solid road Medium rolling tabletop #214
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #214 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #214
+PASS Solid road Medium rolling tabletop #233
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #233 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #233
+PASS Solid road Medium rolling tabletop #252
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #252 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #252
+PASS Solid road Medium rolling tabletop #271
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #271 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #271
+PASS Solid road Medium rolling tabletop #290
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #290 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #290
+PASS Solid road Medium rolling tabletop #309
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #309 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #309
+PASS Solid road Medium rolling tabletop #328
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #328 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #328
+PASS Solid road Medium rolling tabletop #347
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #347 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #347
+PASS Solid road Medium rolling tabletop #366
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #366 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #366
+PASS Solid road Medium rolling tabletop #385
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #385 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #385
+PASS Solid road Medium rolling tabletop #404
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #404 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #404
+PASS Solid road Medium rolling tabletop #423
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #423 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #423
+PASS Solid road Medium rolling tabletop #442
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #442 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #442
+PASS Solid road Medium rolling tabletop #461
+PASS No terrain intrusion or unexpected crossing Medium rolling tabletop #461 hit=Medium rolling tabletop delta=0
+PASS Driveable normal Medium rolling tabletop #461

@@ -4,6 +4,7 @@ import hashlib,json,subprocess,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'tools'))
 from flight_preservation import MANIFEST,before_flight_menu
+from classic_layout_preservation import before_classic
 base=MANIFEST['baseline']
 scene='Assets/_Project/Scenes/Main Menu.unity'
 assert before_flight_menu((ROOT/scene).read_text())==subprocess.check_output(['git','show',base+':'+scene],cwd=ROOT,text=True)
@@ -14,7 +15,9 @@ for row in subprocess.check_output(['git','ls-tree','-r','-z',base,'--','Assets'
  if not row:continue
  info,raw=row.split(b'\t',1);name=raw.decode()
  if name in changed:continue
- data=(ROOT/name).read_bytes();assert hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()==info.split()[2].decode(),'Unrelated game source/settings changed: '+name
+ data=(ROOT/name).read_bytes()
+ if name=='Assets/_Project/Scenes/Sandbox.unity':data=before_classic(data.decode()).encode()
+ assert hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()==info.split()[2].decode(),'Unrelated game source/settings changed: '+name
  preserved+=1
 source=(ROOT/'Assets/_Project/Scripts/Camera/SandboxCameraModes.cs').read_text();assert '<Gamepad>/leftShoulder' in source and '<Keyboard>/b' in source
 source=(ROOT/'Assets/_Project/Scripts/Vehicle/Tumbler/TumblerController.cs').read_text();assert 'airAttitude' not in source and 'flight?.Step(Time.fixedDeltaTime)' in source

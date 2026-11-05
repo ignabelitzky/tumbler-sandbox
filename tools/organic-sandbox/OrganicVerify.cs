@@ -95,6 +95,7 @@ public static class OrganicVerify
             {Vector2 g=terrainSurface.GripAt(p);Check(g.x>=.5f&&g.x<=1&&g.y>=.4f&&g.y<=1,"Blended terrain grip bounded at "+p);}
             foreach(var s in body.GetComponentsInChildren<MonoBehaviour>())s.enabled=false;
             foreach(var canvas in Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None))canvas.gameObject.SetActive(false);
+            controller.SendMessage("OnEnable"); // Include the current runtime suspension and flight service.
             Physics.simulationMode=SimulationMode.Script;body.interpolation=RigidbodyInterpolation.None;
             Vector3 gravity=Physics.gravity;float dt=Time.fixedDeltaTime;Time.fixedDeltaTime=.01f;
             try

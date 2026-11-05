@@ -83,10 +83,23 @@
       "keyboard": "Escape",
       "xbox": "Menu / Start",
       "inputAction": "QuitGame"
+    },
+    {
+      "action": "Air attitude: pitch / roll",
+      "keyboard": "W / S / A / D or Arrow Keys",
+      "xbox": "Left Stick",
+      "inputAction": "AirAttitude"
+    },
+    {
+      "action": "Look behind (hold)",
+      "keyboard": "Hold B",
+      "xbox": "Hold LB",
+      "inputAction": "LookBehind"
     }
   ],
   "notes": [
     "* Upright recovery: below 1 m/s. Camera stays close in the tunnel; your previous view returns outside.",
+    "FLIGHT: hold X / Space + horizontal stick / keys to yaw. Release the stick to stop rotation.",
     "MENUS: mouse / arrows + Enter | Xbox stick / D-pad + A | BACK: Esc / B",
     "INTRO: any key, mouse click or controller button skips. Exit the game using the menu buttons."
   ]

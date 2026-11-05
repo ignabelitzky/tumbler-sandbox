@@ -1,0 +1,103 @@
+{
+    "timestep": 0.019999999552965164,
+    "before": [
+        {
+            "height": 5.0,
+            "horizontalSpeed": 0.0,
+            "peakReboundSpeed": 1.3730162382125854,
+            "reboundHeight": 0.21518707275390625,
+            "settleTime": 0.9799992442131042,
+            "impactSpeed": 9.594928741455078,
+            "finalSpeed": 0.000004381281087262323,
+            "finalUp": 0.9999997615814209,
+            "name": "5m-0kph-p0-r0",
+            "airborneFramesAfterContact": 0
+        },
+        {
+            "height": 5.0,
+            "horizontalSpeed": 20.0,
+            "peakReboundSpeed": 1.6929965019226074,
+            "reboundHeight": 0.2642364501953125,
+            "settleTime": 0.9199993014335632,
+            "impactSpeed": 9.695784568786621,
+            "finalSpeed": 9.364474296569824,
+            "finalUp": 0.9999997615814209,
+            "name": "5m-72kph-p0-r0",
+            "airborneFramesAfterContact": 0
+        },
+        {
+            "height": 10.0,
+            "horizontalSpeed": 0.0,
+            "peakReboundSpeed": 1.4136619567871094,
+            "reboundHeight": 0.281402587890625,
+            "settleTime": 0.9799992442131042,
+            "impactSpeed": 13.502388000488281,
+            "finalSpeed": 0.000006476015641965205,
+            "finalUp": 0.9999997615814209,
+            "name": "10m-0kph-p0-r0",
+            "airborneFramesAfterContact": 0
+        },
+        {
+            "height": 10.0,
+            "horizontalSpeed": 20.0,
+            "peakReboundSpeed": 1.6119029521942139,
+            "reboundHeight": 0.34343719482421875,
+            "settleTime": 0.9199993014335632,
+            "impactSpeed": 13.630684852600098,
+            "finalSpeed": 9.33684253692627,
+            "finalUp": 0.9999997615814209,
+            "name": "10m-72kph-p0-r0",
+            "airborneFramesAfterContact": 0
+        }
+    ],
+    "after": [
+        {
+            "height": 5.0,
+            "horizontalSpeed": 0.0,
+            "peakReboundSpeed": 0.45132821798324585,
+            "reboundHeight": 0.10015869140625,
+            "settleTime": 0.7799994349479675,
+            "impactSpeed": 9.594928741455078,
+            "finalSpeed": 0.35658302903175354,
+            "finalUp": 0.9999998211860657,
+            "name": "5m-0kph-p0-r0",
+            "airborneFramesAfterContact": 0
+        },
+        {
+            "height": 5.0,
+            "horizontalSpeed": 20.0,
+            "peakReboundSpeed": 0.651353657245636,
+            "reboundHeight": 0.11888885498046875,
+            "settleTime": 0.6999995112419128,
+            "impactSpeed": 9.695784568786621,
+            "finalSpeed": 9.429101943969727,
+            "finalUp": 0.9999997615814209,
+            "name": "5m-72kph-p0-r0",
+            "airborneFramesAfterContact": 0
+        },
+        {
+            "height": 10.0,
+            "horizontalSpeed": 0.0,
+            "peakReboundSpeed": 0.6613118648529053,
+            "reboundHeight": 0.1424102783203125,
+            "settleTime": 0.8399993777275085,
+            "impactSpeed": 13.502388000488281,
+            "finalSpeed": 0.00003887677303282544,
+            "finalUp": 0.9999998211860657,
+            "name": "10m-0kph-p0-r0",
+            "airborneFramesAfterContact": 0
+        },
+        {
+            "height": 10.0,
+            "horizontalSpeed": 20.0,
+            "peakReboundSpeed": 0.8094025254249573,
+            "reboundHeight": 0.212158203125,
+            "settleTime": 0.7999994158744812,
+            "impactSpeed": 13.630684852600098,
+            "finalSpeed": 9.407055854797363,
+            "finalUp": 0.9999997615814209,
+            "name": "10m-72kph-p0-r0",
+            "airborneFramesAfterContact": 0
+        }
+    ]
+}

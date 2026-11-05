@@ -1,0 +1,73 @@
+{
+    "unity": "6000.6.7f1",
+    "drops": [
+        {
+            "height": 5.0,
+            "horizontalSpeed": 0.0,
+            "peakReboundSpeed": 0.4345669448375702,
+            "reboundHeight": 0.090484619140625,
+            "settleTime": 0.7699993252754211,
+            "impactSpeed": 9.597676277160645,
+            "finalSpeed": 0.000007499010735045886,
+            "finalUp": 0.9999997615814209,
+            "name": "5m-0kph-p0-r0",
+            "airborneFramesAfterContact": 0
+        },
+        {
+            "height": 5.0,
+            "horizontalSpeed": 20.0,
+            "peakReboundSpeed": 0.43872973322868347,
+            "reboundHeight": 0.0870819091796875,
+            "settleTime": 0.7299993634223938,
+            "impactSpeed": 9.698285102844238,
+            "finalSpeed": 13.132609367370605,
+            "finalUp": 0.9999997615814209,
+            "name": "5m-72kph-p0-r0",
+            "airborneFramesAfterContact": 0
+        },
+        {
+            "height": 10.0,
+            "horizontalSpeed": 0.0,
+            "peakReboundSpeed": 0.663305401802063,
+            "reboundHeight": 0.14661407470703125,
+            "settleTime": 0.8199992775917053,
+            "impactSpeed": 13.598469734191895,
+            "finalSpeed": 0.5698405504226685,
+            "finalUp": 0.9999997615814209,
+            "name": "10m-0kph-p0-r0",
+            "airborneFramesAfterContact": 0
+        },
+        {
+            "height": 10.0,
+            "horizontalSpeed": 20.0,
+            "peakReboundSpeed": 0.6762682795524597,
+            "reboundHeight": 0.145599365234375,
+            "settleTime": 0.779999315738678,
+            "impactSpeed": 13.727030754089355,
+            "finalSpeed": 13.124067306518555,
+            "finalUp": 0.9999997615814209,
+            "name": "10m-72kph-p0-r0",
+            "airborneFramesAfterContact": 0
+        },
+        {
+            "height": 7.5,
+            "horizontalSpeed": 15.0,
+            "peakReboundSpeed": 0.6101465821266174,
+            "reboundHeight": 0.1158905029296875,
+            "settleTime": 0.7599993348121643,
+            "impactSpeed": 11.05628776550293,
+            "finalSpeed": 9.928116798400879,
+            "finalUp": 0.9999997615814209,
+            "name": "7.5m-54kph-p8-r6",
+            "airborneFramesAfterContact": 0
+        }
+    ],
+    "suspension": [
+        "FrontRightWheelCollider: sprungMass=641.6772 spring=90000 damper=14438.87 travel=0.2 target=0.5 radius=0.49",
+        "FrontLeftWheelCollider: sprungMass=636.6097 spring=90000 damper=14381.74 travel=0.2 target=0.5 radius=0.49",
+        "RearRightWheelCollider_Outside: sprungMass=434.167 spring=90000 damper=11876.9 travel=0.5 target=0.5 radius=0.66",
+        "RearRightWheelCollider_Inside: sprungMass=432.5302 spring=90000 damper=11854.5 travel=0.5 target=0.5 radius=0.66",
+        "RearLeftWheelCollider_Outside: sprungMass=426.7015 spring=90000 damper=11774.35 travel=0.5 target=0.5 radius=0.66",
+        "RearLeftWheelCollider_Inside: sprungMass=428.3144 spring=90000 damper=11796.58 travel=0.5 target=0.5 radius=0.66"
+    ]
+}

@@ -65,6 +65,9 @@ public class TumblerController : MonoBehaviour
     public bool IsReversing => currentPower < -0.01f || Vector3.Dot(carRigidbody.linearVelocity, transform.forward) < -0.5f;
 
     private TumblerBurnout burnout;
+    private TumblerFlightDynamics flight;
+    private InputAction airAttitude;
+    public bool IsAirborne => flight != null && flight.IsAirborne;
     public bool IsBurnoutActive => burnout != null && burnout.Active;
     public bool IsWheelBurning(WheelCollider wheel) => burnout != null && burnout.IsBurning(wheel, currentDriveMode);
 
@@ -82,20 +85,39 @@ public class TumblerController : MonoBehaviour
         }
         CacheWheelbase();
         burnout = new TumblerBurnout(frontWheelsColliders, rearWheelsColliders);
+        var wheels = new WheelCollider[frontWheelsColliders.Length + rearWheelsColliders.Length];
+        frontWheelsColliders.CopyTo(wheels, 0); rearWheelsColliders.CopyTo(wheels, frontWheelsColliders.Length);
+        flight = new TumblerFlightDynamics(carRigidbody, wheels);
+        airAttitude = new InputAction("Air attitude", InputActionType.Value);
+        airAttitude.AddBinding("<Gamepad>/leftStick");
+        airAttitude.AddCompositeBinding("2DVector").With("Up", "<Keyboard>/w").With("Down", "<Keyboard>/s").With("Left", "<Keyboard>/a").With("Right", "<Keyboard>/d");
+        airAttitude.AddCompositeBinding("2DVector").With("Up", "<Keyboard>/upArrow").With("Down", "<Keyboard>/downArrow").With("Left", "<Keyboard>/leftArrow").With("Right", "<Keyboard>/rightArrow");
     }
 
     private void OnEnable()
     {
         tumblerInput.Enable();
+        airAttitude?.Enable();
+        flight?.Enable();
     }
 
     private void OnDisable()
     {
         tumblerInput.Disable();
+        airAttitude?.Disable();
+        flight?.Disable();
         burnout?.Cancel();
         burnout?.Apply(currentDriveMode, 0);
     }
     
+    private void OnDestroy()
+    {
+        airAttitude?.Dispose();
+        tumblerInput?.Dispose();
+    }
+    private void OnCollisionEnter(Collision collision) => flight?.ReportBodyContact();
+    private void OnCollisionStay(Collision collision) => flight?.ReportBodyContact();
+
     private void Start()
     {
         onGearChange.Invoke();
@@ -103,12 +125,13 @@ public class TumblerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (GameNavigation.GameplayInputBlocked) { burnout.Cancel(); burnout.Apply(currentDriveMode, 0); return; }
+        if (GameNavigation.GameplayInputBlocked) { burnout.Cancel(); burnout.Apply(currentDriveMode, 0); flight?.Reset(); return; }
         burnout.UpdateState(TumblerBurnout.BothDirectionsHeld(), carRigidbody, IsGrounded());
         if (burnout.Active) currentPower = forwardPower;
         ApplyDrive();
         burnout.Apply(currentDriveMode, steerInput);
         HandleSteering();
+        flight?.Step(airAttitude != null && airAttitude.enabled ? airAttitude.ReadValue<Vector2>() : Vector2.zero, isHandbrakeActive, Time.fixedDeltaTime);
         UpdateWheels();
         AddDownForce();
         LimitHorizontalSpeed();
@@ -390,6 +413,7 @@ public class TumblerController : MonoBehaviour
 
     public void ResetTransmission()
     {
+        flight?.Reset();
         burnout?.Cancel();
         burnout?.Apply(currentDriveMode, 0);
         currentGear = 1;

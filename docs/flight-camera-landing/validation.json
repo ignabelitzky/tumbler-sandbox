@@ -1,0 +1,175 @@
+{
+  "status": "PASS",
+  "unity": "6000.6.7f1",
+  "baseline_commit": "f0541ec87ed7db5c56bd089d9073f9e0d31c22de",
+  "isolated_checkout": true,
+  "checks": {
+    "flight_camera_and_ui": 614,
+    "drop_cases": 5,
+    "vehicle_edit": 82,
+    "vehicle_play": 119,
+    "navigation": 54,
+    "default_step_drop_pairs": 4
+  },
+  "drops": [
+    {
+      "case": "5m-0kph-p0-r0",
+      "before_rebound_speed": 1.4735080003738403,
+      "after_rebound_speed": 0.4345669448375702,
+      "rebound_speed_reduction_percent": 70.50800235035595,
+      "before_rebound_excursion": 0.2271999999999963,
+      "after_rebound_excursion": 0.090484619140625,
+      "settling_seconds": 0.7699993252754211
+    },
+    {
+      "case": "5m-72kph-p0-r0",
+      "before_rebound_speed": 1.5694323778152466,
+      "after_rebound_speed": 0.43872973322868347,
+      "rebound_speed_reduction_percent": 72.04532419297834,
+      "before_rebound_excursion": 0.22350000000000136,
+      "after_rebound_excursion": 0.0870819091796875,
+      "settling_seconds": 0.7299993634223938
+    },
+    {
+      "case": "10m-0kph-p0-r0",
+      "before_rebound_speed": 1.499748945236206,
+      "after_rebound_speed": 0.663305401802063,
+      "rebound_speed_reduction_percent": 55.77223748621512,
+      "before_rebound_excursion": 0.23060000000000969,
+      "after_rebound_excursion": 0.14661407470703125,
+      "settling_seconds": 0.8199992775917053
+    },
+    {
+      "case": "10m-72kph-p0-r0",
+      "before_rebound_speed": 1.5766927003860474,
+      "after_rebound_speed": 0.6762682795524597,
+      "rebound_speed_reduction_percent": 57.10842833312554,
+      "before_rebound_excursion": 0.2237999999999971,
+      "after_rebound_excursion": 0.145599365234375,
+      "settling_seconds": 0.779999315738678
+    },
+    {
+      "case": "7.5m-54kph-p8-r6",
+      "before_rebound_speed": 1.5720561742782593,
+      "after_rebound_speed": 0.6101465821266174,
+      "rebound_speed_reduction_percent": 61.18799110936736,
+      "before_rebound_excursion": 0.23000000000000398,
+      "after_rebound_excursion": 0.1158905029296875,
+      "settling_seconds": 0.7599993348121643
+    }
+  ],
+  "course": {
+    "Loop-18m": "passed=True entry_kph=198 progress=543/551 simulated_seconds=4.82 max_distance=6.28 min_grounded_wheels=6 inverted=True peak_height=35.28 end=(-33.04, 1.09, -257.03)",
+    "Loop-26m": "passed=True entry_kph=198 progress=543/551 simulated_seconds=5.53 max_distance=3.02 min_grounded_wheels=6 inverted=True peak_height=51.25 end=(42.90, 1.08, -256.83)",
+    "new-tunnel": "passed=True entry_kph=16 progress=793/801 simulated_seconds=132.98 max_distance=0.87 min_grounded_wheels=2 inverted=False peak_height=1.05 end=(-209.99, 0.59, -402.56)",
+    "banked-oval": "passed=True entry_kph=72 progress=813/821 simulated_seconds=36.11 max_distance=1.42 min_grounded_wheels=5 inverted=False peak_height=5.50 end=(336.84, 5.05, 187.85)"
+  },
+  "limits": [
+    "Editor/PhysX tests and virtual Input System devices; no standalone Player build or physical controller acceptance pass.",
+    "The heavy-landing rebound clamp acts only on upright supported wheel contact; free flight, mass, inertia, gravity and tangential momentum are retained."
+  ],
+  "default_step_seconds": 0.019999999552965164,
+  "default_step_drop_comparison": {
+    "timestep": 0.019999999552965164,
+    "before": [
+      {
+        "height": 5.0,
+        "horizontalSpeed": 0.0,
+        "peakReboundSpeed": 1.3730162382125854,
+        "reboundHeight": 0.21518707275390625,
+        "settleTime": 0.9799992442131042,
+        "impactSpeed": 9.594928741455078,
+        "finalSpeed": 4.381281087262323e-06,
+        "finalUp": 0.9999997615814209,
+        "name": "5m-0kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      },
+      {
+        "height": 5.0,
+        "horizontalSpeed": 20.0,
+        "peakReboundSpeed": 1.6929965019226074,
+        "reboundHeight": 0.2642364501953125,
+        "settleTime": 0.9199993014335632,
+        "impactSpeed": 9.695784568786621,
+        "finalSpeed": 9.364474296569824,
+        "finalUp": 0.9999997615814209,
+        "name": "5m-72kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      },
+      {
+        "height": 10.0,
+        "horizontalSpeed": 0.0,
+        "peakReboundSpeed": 1.4136619567871094,
+        "reboundHeight": 0.281402587890625,
+        "settleTime": 0.9799992442131042,
+        "impactSpeed": 13.502388000488281,
+        "finalSpeed": 6.476015641965205e-06,
+        "finalUp": 0.9999997615814209,
+        "name": "10m-0kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      },
+      {
+        "height": 10.0,
+        "horizontalSpeed": 20.0,
+        "peakReboundSpeed": 1.6119029521942139,
+        "reboundHeight": 0.34343719482421875,
+        "settleTime": 0.9199993014335632,
+        "impactSpeed": 13.630684852600098,
+        "finalSpeed": 9.33684253692627,
+        "finalUp": 0.9999997615814209,
+        "name": "10m-72kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      }
+    ],
+    "after": [
+      {
+        "height": 5.0,
+        "horizontalSpeed": 0.0,
+        "peakReboundSpeed": 0.45132821798324585,
+        "reboundHeight": 0.10015869140625,
+        "settleTime": 0.7799994349479675,
+        "impactSpeed": 9.594928741455078,
+        "finalSpeed": 0.35658302903175354,
+        "finalUp": 0.9999998211860657,
+        "name": "5m-0kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      },
+      {
+        "height": 5.0,
+        "horizontalSpeed": 20.0,
+        "peakReboundSpeed": 0.651353657245636,
+        "reboundHeight": 0.11888885498046875,
+        "settleTime": 0.6999995112419128,
+        "impactSpeed": 9.695784568786621,
+        "finalSpeed": 9.429101943969727,
+        "finalUp": 0.9999997615814209,
+        "name": "5m-72kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      },
+      {
+        "height": 10.0,
+        "horizontalSpeed": 0.0,
+        "peakReboundSpeed": 0.6613118648529053,
+        "reboundHeight": 0.1424102783203125,
+        "settleTime": 0.8399993777275085,
+        "impactSpeed": 13.502388000488281,
+        "finalSpeed": 3.887677303282544e-05,
+        "finalUp": 0.9999998211860657,
+        "name": "10m-0kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      },
+      {
+        "height": 10.0,
+        "horizontalSpeed": 20.0,
+        "peakReboundSpeed": 0.8094025254249573,
+        "reboundHeight": 0.212158203125,
+        "settleTime": 0.7999994158744812,
+        "impactSpeed": 13.630684852600098,
+        "finalSpeed": 9.407055854797363,
+        "finalUp": 0.9999997615814209,
+        "name": "10m-72kph-p0-r0",
+        "airborneFramesAfterContact": 0
+      }
+    ]
+  }
+}

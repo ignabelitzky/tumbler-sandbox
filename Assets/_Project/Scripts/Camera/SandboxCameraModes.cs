@@ -19,14 +19,16 @@ public sealed class SandboxCameraModes : MonoBehaviour
     private ViewMode targetMode;
     private bool hasTarget;
     public bool IsTransitioning => hasTarget && blendElapsed < blendDuration;
-    private InputAction cycle;
+    private InputAction cycle, lookBack;
+    private float savedHorizontal, savedVertical;
+    public bool IsLookingBack { get; private set; }
     private Cinemachine3OrbitRig.Settings originalOrbits;
     private float originalRadius;
     private VehicleCameraCollision collision;
     private bool ownsCollision, initialized;
     private Vector3 lastVehiclePosition;
     public ViewMode SelectedMode => selectedMode;
-    public ViewMode EffectiveMode => IsInsideTunnel ? ViewMode.Close : selectedMode;
+    public ViewMode EffectiveMode => IsInsideTunnel || IsLookingBack ? ViewMode.Close : selectedMode;
     public bool IsInsideTunnel { get; private set; }
     public BoxCollider[] TunnelZones => tunnelZones;
 
@@ -50,13 +52,17 @@ public sealed class SandboxCameraModes : MonoBehaviour
         cycle = new InputAction("Cycle camera", InputActionType.Button, "<Keyboard>/c");
         cycle.AddBinding("<Gamepad>/dpad/down");
         cycle.performed += OnCycle;
+        lookBack = new InputAction("Look behind", InputActionType.Button, "<Gamepad>/leftShoulder");
+        lookBack.AddBinding("<Keyboard>/b");
         RefreshTunnelState();
     }
 
-    private void OnEnable() { cycle?.Enable(); if (initialized) RefreshTunnelState(); }
+    private void OnEnable() { cycle?.Enable(); lookBack?.Enable(); if (initialized) RefreshTunnelState(); }
     private void OnDisable()
     {
         cycle?.Disable();
+        lookBack?.Disable();
+        SetLookBack(false);
         IsInsideTunnel = false;
         hasTarget = false;
         if (initialized && orbit != null) { orbit.Orbits = originalOrbits; orbit.Radius = originalRadius; }
@@ -65,20 +71,45 @@ public sealed class SandboxCameraModes : MonoBehaviour
     private void OnDestroy()
     {
         cycle?.Dispose();
+        lookBack?.Dispose();
         if (ownsCollision && collision != null) Destroy(collision);
     }
     private void OnCycle(InputAction.CallbackContext context) => CycleMode();
     public void CycleMode()
     {
         RefreshTunnelState();
-        if (GameNavigation.GameplayInputBlocked || IsInsideTunnel) return;
+        if (GameNavigation.GameplayInputBlocked || IsInsideTunnel || IsLookingBack) return;
         selectedMode = (ViewMode)(((int)selectedMode + 1) % 3);
         ApplyMode();
     }
     private void Update()
     {
+        SetLookBack(!GameNavigation.GameplayInputBlocked && lookBack != null && lookBack.IsPressed());
         RefreshTunnelState();
         AdvanceTransition(Time.deltaTime);
+    }
+
+    private void SetLookBack(bool value)
+    {
+        if (IsLookingBack == value) return;
+        if (value)
+        {
+            savedHorizontal = orbit.HorizontalAxis.Value;
+            savedVertical = orbit.VerticalAxis.Value;
+        }
+        else if (orbit != null)
+        {
+            orbit.HorizontalAxis.Value = savedHorizontal;
+            orbit.VerticalAxis.Value = savedVertical;
+            orbit.HorizontalAxis.CancelRecentering();
+            orbit.VerticalAxis.CancelRecentering();
+        }
+        IsLookingBack = value;
+        if (collision != null) collision.LookBack = value;
+        if (initialized && orbit != null)
+        {
+            ApplyMode(true);
+        }
     }
 
     public void RefreshTunnelState()

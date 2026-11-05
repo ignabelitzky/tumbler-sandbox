@@ -5,11 +5,13 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'tools'))
 from organic_layout_preservation import MANIFEST,before_organic
+from flight_preservation import MANIFEST as FLIGHT_MANIFEST
+from asset_preservation import expected_blob
 scene=(ROOT/'Assets/_Project/Scenes/Sandbox.unity').read_text()
 baseline=subprocess.check_output(['git','show',MANIFEST['baseline']+':Assets/_Project/Scenes/Sandbox.unity'],cwd=ROOT,text=True)
 assert before_organic(scene)==baseline,'Change outside approved organic scene delta'
 for path,digest in MANIFEST['asset_sha256'].items():
- assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==digest,'Authored asset changed: '+path
+ assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==FLIGHT_MANIFEST['asset_sha256'].get(path,digest),'Authored asset changed: '+path
 seen={}
 for meta in (ROOT/'Assets').rglob('*.meta'):
  match=re.search(r'^guid: (\w+)',meta.read_text(),re.M)
@@ -22,5 +24,5 @@ for protected in ('Assets/_Project/Input','Assets/_Project/Scripts/Vehicle','Ass
  for row in subprocess.check_output(['git','ls-tree','-r','-z',MANIFEST['baseline'],'--',protected],cwd=ROOT).split(b'\0'):
   if not row:continue
   info,path=row.split(b'\t',1);name=path.decode();data=(ROOT/name).read_bytes()
-  assert hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()==info.split()[2].decode(),'Protected source changed: '+name
+  assert hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()==expected_blob(name,info.split()[2].decode()),'Protected source changed: '+name
 print(json.dumps(dict(status='PASS',authored_assets=len(MANIFEST['asset_sha256']),scene_documents=len(MANIFEST['scene_documents']),unique_guids=len(seen))))

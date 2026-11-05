@@ -1,0 +1,614 @@
+PASS Original six wheel colliders retained
+PASS Near-critical damping uses actual sprung mass: FrontRightWheelCollider
+PASS Near-critical damping uses actual sprung mass: FrontLeftWheelCollider
+PASS Near-critical damping uses actual sprung mass: RearRightWheelCollider_Outside
+PASS Near-critical damping uses actual sprung mass: RearRightWheelCollider_Inside
+PASS Near-critical damping uses actual sprung mass: RearLeftWheelCollider_Outside
+PASS Near-critical damping uses actual sprung mass: RearLeftWheelCollider_Inside
+PASS Stick forward pitches nose down while airborne
+PASS Stick back pitches nose up while airborne
+PASS Stick right rolls right in flight
+PASS Left roll follows the rotated vehicle's local axes
+PASS Releasing the stick stops rotation without forcing world upright
+PASS Neutral input preserves the chosen tilted attitude
+PASS X plus horizontal left stick controls yaw
+PASS Keyboard S provides pitch-up control in air
+PASS Vehicle settles on its actual wheels
+PASS Grounded car does not receive aerial pitch torque
+PASS Paused gameplay blocks aerial torque
+PASS Sustained diagonal input has bounded angular speed
+PASS Roof contact is not mistaken for free flight
+PASS Sleeping chassis contact cannot enable aerial control
+PASS LB temporarily selects close rear view and retains far preset
+PASS Rear camera is in front at the close-camera distance and height: (0.00, 2.90, 5.80)
+PASS Rear camera looks from the front towards the back
+PASS Camera cycling while holding LB cannot overwrite saved preset
+PASS Releasing LB restores the selected camera preset
+PASS Saved camera orbit axes survive rear-view release
+PASS Keyboard B supplies the same held rear view
+PASS Rear view retains the existing camera collision protection
+PASS Pause clears the rear-view override
+PASS Disabling camera service clears held rear view
+PASS LB works with the original tunnel close-camera override
+PASS Releasing LB inside a tunnel keeps its close-camera override
+PASS Surface exit restores the pre-LB preset
+PASS Control text fits (1920, 1080) Controls / Eyebrow
+PASS Control text fits (1920, 1080) Controls / Eyebrow
+PASS Control text fits (1920, 1080) Controls / Eyebrow
+PASS Control text fits (1920, 1080) Controls / Eyebrow
+PASS No control label overflow (1920, 1080) Controls / Eyebrow
+PASS Control text fits (1920, 1080) Controls / Title
+PASS Control text fits (1920, 1080) Controls / Title
+PASS Control text fits (1920, 1080) Controls / Title
+PASS Control text fits (1920, 1080) Controls / Title
+PASS No control label overflow (1920, 1080) Controls / Title
+PASS Control text fits (1920, 1080) Controls / Intro
+PASS Control text fits (1920, 1080) Controls / Intro
+PASS Control text fits (1920, 1080) Controls / Intro
+PASS Control text fits (1920, 1080) Controls / Intro
+PASS No control label overflow (1920, 1080) Controls / Intro
+PASS Control text fits (1920, 1080) Column / ACTION
+PASS Control text fits (1920, 1080) Column / ACTION
+PASS Control text fits (1920, 1080) Column / ACTION
+PASS Control text fits (1920, 1080) Column / ACTION
+PASS No control label overflow (1920, 1080) Column / ACTION
+PASS Control text fits (1920, 1080) Column / KEYBOARD
+PASS Control text fits (1920, 1080) Column / KEYBOARD
+PASS Control text fits (1920, 1080) Column / KEYBOARD
+PASS Control text fits (1920, 1080) Column / KEYBOARD
+PASS No control label overflow (1920, 1080) Column / KEYBOARD
+PASS Control text fits (1920, 1080) Column / XBOX
+PASS Control text fits (1920, 1080) Column / XBOX
+PASS Control text fits (1920, 1080) Column / XBOX
+PASS Control text fits (1920, 1080) Column / XBOX
+PASS No control label overflow (1920, 1080) Column / XBOX
+PASS Control text fits (1920, 1080) Control / 0 / 0
+PASS Control text fits (1920, 1080) Control / 0 / 0
+PASS Control text fits (1920, 1080) Control / 0 / 0
+PASS Control text fits (1920, 1080) Control / 0 / 0
+PASS No control label overflow (1920, 1080) Control / 0 / 0
+PASS Control text fits (1920, 1080) Control / 0 / 1
+PASS Control text fits (1920, 1080) Control / 0 / 1
+PASS Control text fits (1920, 1080) Control / 0 / 1
+PASS Control text fits (1920, 1080) Control / 0 / 1
+PASS No control label overflow (1920, 1080) Control / 0 / 1
+PASS Control text fits (1920, 1080) Control / 0 / 2
+PASS Control text fits (1920, 1080) Control / 0 / 2
+PASS Control text fits (1920, 1080) Control / 0 / 2
+PASS Control text fits (1920, 1080) Control / 0 / 2
+PASS No control label overflow (1920, 1080) Control / 0 / 2
+PASS Control text fits (1920, 1080) Control / 1 / 0
+PASS Control text fits (1920, 1080) Control / 1 / 0
+PASS Control text fits (1920, 1080) Control / 1 / 0
+PASS Control text fits (1920, 1080) Control / 1 / 0
+PASS No control label overflow (1920, 1080) Control / 1 / 0
+PASS Control text fits (1920, 1080) Control / 1 / 1
+PASS Control text fits (1920, 1080) Control / 1 / 1
+PASS Control text fits (1920, 1080) Control / 1 / 1
+PASS Control text fits (1920, 1080) Control / 1 / 1
+PASS No control label overflow (1920, 1080) Control / 1 / 1
+PASS Control text fits (1920, 1080) Control / 1 / 2
+PASS Control text fits (1920, 1080) Control / 1 / 2
+PASS Control text fits (1920, 1080) Control / 1 / 2
+PASS Control text fits (1920, 1080) Control / 1 / 2
+PASS No control label overflow (1920, 1080) Control / 1 / 2
+PASS Control text fits (1920, 1080) Control / 2 / 0
+PASS Control text fits (1920, 1080) Control / 2 / 0
+PASS Control text fits (1920, 1080) Control / 2 / 0
+PASS Control text fits (1920, 1080) Control / 2 / 0
+PASS No control label overflow (1920, 1080) Control / 2 / 0
+PASS Control text fits (1920, 1080) Control / 2 / 1
+PASS Control text fits (1920, 1080) Control / 2 / 1
+PASS Control text fits (1920, 1080) Control / 2 / 1
+PASS Control text fits (1920, 1080) Control / 2 / 1
+PASS No control label overflow (1920, 1080) Control / 2 / 1
+PASS Control text fits (1920, 1080) Control / 2 / 2
+PASS Control text fits (1920, 1080) Control / 2 / 2
+PASS Control text fits (1920, 1080) Control / 2 / 2
+PASS Control text fits (1920, 1080) Control / 2 / 2
+PASS No control label overflow (1920, 1080) Control / 2 / 2
+PASS Control text fits (1920, 1080) Control / 3 / 0
+PASS Control text fits (1920, 1080) Control / 3 / 0
+PASS Control text fits (1920, 1080) Control / 3 / 0
+PASS Control text fits (1920, 1080) Control / 3 / 0
+PASS No control label overflow (1920, 1080) Control / 3 / 0
+PASS Control text fits (1920, 1080) Control / 3 / 1
+PASS Control text fits (1920, 1080) Control / 3 / 1
+PASS Control text fits (1920, 1080) Control / 3 / 1
+PASS Control text fits (1920, 1080) Control / 3 / 1
+PASS No control label overflow (1920, 1080) Control / 3 / 1
+PASS Control text fits (1920, 1080) Control / 3 / 2
+PASS Control text fits (1920, 1080) Control / 3 / 2
+PASS Control text fits (1920, 1080) Control / 3 / 2
+PASS Control text fits (1920, 1080) Control / 3 / 2
+PASS No control label overflow (1920, 1080) Control / 3 / 2
+PASS Control text fits (1920, 1080) Control / 4 / 0
+PASS Control text fits (1920, 1080) Control / 4 / 0
+PASS Control text fits (1920, 1080) Control / 4 / 0
+PASS Control text fits (1920, 1080) Control / 4 / 0
+PASS No control label overflow (1920, 1080) Control / 4 / 0
+PASS Control text fits (1920, 1080) Control / 4 / 1
+PASS Control text fits (1920, 1080) Control / 4 / 1
+PASS Control text fits (1920, 1080) Control / 4 / 1
+PASS Control text fits (1920, 1080) Control / 4 / 1
+PASS No control label overflow (1920, 1080) Control / 4 / 1
+PASS Control text fits (1920, 1080) Control / 4 / 2
+PASS Control text fits (1920, 1080) Control / 4 / 2
+PASS Control text fits (1920, 1080) Control / 4 / 2
+PASS Control text fits (1920, 1080) Control / 4 / 2
+PASS No control label overflow (1920, 1080) Control / 4 / 2
+PASS Control text fits (1920, 1080) Control / 5 / 0
+PASS Control text fits (1920, 1080) Control / 5 / 0
+PASS Control text fits (1920, 1080) Control / 5 / 0
+PASS Control text fits (1920, 1080) Control / 5 / 0
+PASS No control label overflow (1920, 1080) Control / 5 / 0
+PASS Control text fits (1920, 1080) Control / 5 / 1
+PASS Control text fits (1920, 1080) Control / 5 / 1
+PASS Control text fits (1920, 1080) Control / 5 / 1
+PASS Control text fits (1920, 1080) Control / 5 / 1
+PASS No control label overflow (1920, 1080) Control / 5 / 1
+PASS Control text fits (1920, 1080) Control / 5 / 2
+PASS Control text fits (1920, 1080) Control / 5 / 2
+PASS Control text fits (1920, 1080) Control / 5 / 2
+PASS Control text fits (1920, 1080) Control / 5 / 2
+PASS No control label overflow (1920, 1080) Control / 5 / 2
+PASS Control text fits (1920, 1080) Control / 6 / 0
+PASS Control text fits (1920, 1080) Control / 6 / 0
+PASS Control text fits (1920, 1080) Control / 6 / 0
+PASS Control text fits (1920, 1080) Control / 6 / 0
+PASS No control label overflow (1920, 1080) Control / 6 / 0
+PASS Control text fits (1920, 1080) Control / 6 / 1
+PASS Control text fits (1920, 1080) Control / 6 / 1
+PASS Control text fits (1920, 1080) Control / 6 / 1
+PASS Control text fits (1920, 1080) Control / 6 / 1
+PASS No control label overflow (1920, 1080) Control / 6 / 1
+PASS Control text fits (1920, 1080) Control / 6 / 2
+PASS Control text fits (1920, 1080) Control / 6 / 2
+PASS Control text fits (1920, 1080) Control / 6 / 2
+PASS Control text fits (1920, 1080) Control / 6 / 2
+PASS No control label overflow (1920, 1080) Control / 6 / 2
+PASS Control text fits (1920, 1080) Control / 7 / 0
+PASS Control text fits (1920, 1080) Control / 7 / 0
+PASS Control text fits (1920, 1080) Control / 7 / 0
+PASS Control text fits (1920, 1080) Control / 7 / 0
+PASS No control label overflow (1920, 1080) Control / 7 / 0
+PASS Control text fits (1920, 1080) Control / 7 / 1
+PASS Control text fits (1920, 1080) Control / 7 / 1
+PASS Control text fits (1920, 1080) Control / 7 / 1
+PASS Control text fits (1920, 1080) Control / 7 / 1
+PASS No control label overflow (1920, 1080) Control / 7 / 1
+PASS Control text fits (1920, 1080) Control / 7 / 2
+PASS Control text fits (1920, 1080) Control / 7 / 2
+PASS Control text fits (1920, 1080) Control / 7 / 2
+PASS Control text fits (1920, 1080) Control / 7 / 2
+PASS No control label overflow (1920, 1080) Control / 7 / 2
+PASS Control text fits (1920, 1080) Control / 8 / 0
+PASS Control text fits (1920, 1080) Control / 8 / 0
+PASS Control text fits (1920, 1080) Control / 8 / 0
+PASS Control text fits (1920, 1080) Control / 8 / 0
+PASS No control label overflow (1920, 1080) Control / 8 / 0
+PASS Control text fits (1920, 1080) Control / 8 / 1
+PASS Control text fits (1920, 1080) Control / 8 / 1
+PASS Control text fits (1920, 1080) Control / 8 / 1
+PASS Control text fits (1920, 1080) Control / 8 / 1
+PASS No control label overflow (1920, 1080) Control / 8 / 1
+PASS Control text fits (1920, 1080) Control / 8 / 2
+PASS Control text fits (1920, 1080) Control / 8 / 2
+PASS Control text fits (1920, 1080) Control / 8 / 2
+PASS Control text fits (1920, 1080) Control / 8 / 2
+PASS No control label overflow (1920, 1080) Control / 8 / 2
+PASS Control text fits (1920, 1080) Recovery note
+PASS Control text fits (1920, 1080) Recovery note
+PASS Control text fits (1920, 1080) Recovery note
+PASS Control text fits (1920, 1080) Recovery note
+PASS No control label overflow (1920, 1080) Recovery note
+PASS Control text fits (1920, 1080) Back to menu / Index
+PASS Control text fits (1920, 1080) Back to menu / Index
+PASS Control text fits (1920, 1080) Back to menu / Index
+PASS Control text fits (1920, 1080) Back to menu / Index
+PASS No control label overflow (1920, 1080) Back to menu / Index
+PASS Control text fits (1920, 1080) Back to menu / Label
+PASS Control text fits (1920, 1080) Back to menu / Label
+PASS Control text fits (1920, 1080) Back to menu / Label
+PASS Control text fits (1920, 1080) Back to menu / Label
+PASS No control label overflow (1920, 1080) Back to menu / Label
+PASS Control text fits (1920, 1080) Back to menu / Arrow
+PASS Control text fits (1920, 1080) Back to menu / Arrow
+PASS Control text fits (1920, 1080) Back to menu / Arrow
+PASS Control text fits (1920, 1080) Back to menu / Arrow
+PASS No control label overflow (1920, 1080) Back to menu / Arrow
+PASS Control text fits (1920, 1080) Control / 9 / 0
+PASS Control text fits (1920, 1080) Control / 9 / 0
+PASS Control text fits (1920, 1080) Control / 9 / 0
+PASS Control text fits (1920, 1080) Control / 9 / 0
+PASS No control label overflow (1920, 1080) Control / 9 / 0
+PASS Control text fits (1920, 1080) Control / 9 / 1
+PASS Control text fits (1920, 1080) Control / 9 / 1
+PASS Control text fits (1920, 1080) Control / 9 / 1
+PASS Control text fits (1920, 1080) Control / 9 / 1
+PASS No control label overflow (1920, 1080) Control / 9 / 1
+PASS Control text fits (1920, 1080) Control / 9 / 2
+PASS Control text fits (1920, 1080) Control / 9 / 2
+PASS Control text fits (1920, 1080) Control / 9 / 2
+PASS Control text fits (1920, 1080) Control / 9 / 2
+PASS No control label overflow (1920, 1080) Control / 9 / 2
+PASS Control text fits (1920, 1080) Control / 10 / 0
+PASS Control text fits (1920, 1080) Control / 10 / 0
+PASS Control text fits (1920, 1080) Control / 10 / 0
+PASS Control text fits (1920, 1080) Control / 10 / 0
+PASS No control label overflow (1920, 1080) Control / 10 / 0
+PASS Control text fits (1920, 1080) Control / 10 / 1
+PASS Control text fits (1920, 1080) Control / 10 / 1
+PASS Control text fits (1920, 1080) Control / 10 / 1
+PASS Control text fits (1920, 1080) Control / 10 / 1
+PASS No control label overflow (1920, 1080) Control / 10 / 1
+PASS Control text fits (1920, 1080) Control / 10 / 2
+PASS Control text fits (1920, 1080) Control / 10 / 2
+PASS Control text fits (1920, 1080) Control / 10 / 2
+PASS Control text fits (1920, 1080) Control / 10 / 2
+PASS No control label overflow (1920, 1080) Control / 10 / 2
+PASS Control text fits (1920, 1080) Control / 11 / 0
+PASS Control text fits (1920, 1080) Control / 11 / 0
+PASS Control text fits (1920, 1080) Control / 11 / 0
+PASS Control text fits (1920, 1080) Control / 11 / 0
+PASS No control label overflow (1920, 1080) Control / 11 / 0
+PASS Control text fits (1920, 1080) Control / 11 / 1
+PASS Control text fits (1920, 1080) Control / 11 / 1
+PASS Control text fits (1920, 1080) Control / 11 / 1
+PASS Control text fits (1920, 1080) Control / 11 / 1
+PASS No control label overflow (1920, 1080) Control / 11 / 1
+PASS Control text fits (1920, 1080) Control / 11 / 2
+PASS Control text fits (1920, 1080) Control / 11 / 2
+PASS Control text fits (1920, 1080) Control / 11 / 2
+PASS Control text fits (1920, 1080) Control / 11 / 2
+PASS No control label overflow (1920, 1080) Control / 11 / 2
+PASS Control text fits (1920, 1080) Control / 12 / 0
+PASS Control text fits (1920, 1080) Control / 12 / 0
+PASS Control text fits (1920, 1080) Control / 12 / 0
+PASS Control text fits (1920, 1080) Control / 12 / 0
+PASS No control label overflow (1920, 1080) Control / 12 / 0
+PASS Control text fits (1920, 1080) Control / 12 / 1
+PASS Control text fits (1920, 1080) Control / 12 / 1
+PASS Control text fits (1920, 1080) Control / 12 / 1
+PASS Control text fits (1920, 1080) Control / 12 / 1
+PASS No control label overflow (1920, 1080) Control / 12 / 1
+PASS Control text fits (1920, 1080) Control / 12 / 2
+PASS Control text fits (1920, 1080) Control / 12 / 2
+PASS Control text fits (1920, 1080) Control / 12 / 2
+PASS Control text fits (1920, 1080) Control / 12 / 2
+PASS No control label overflow (1920, 1080) Control / 12 / 2
+PASS Control text fits (1920, 1080) Control / 13 / 0
+PASS Control text fits (1920, 1080) Control / 13 / 0
+PASS Control text fits (1920, 1080) Control / 13 / 0
+PASS Control text fits (1920, 1080) Control / 13 / 0
+PASS No control label overflow (1920, 1080) Control / 13 / 0
+PASS Control text fits (1920, 1080) Control / 13 / 1
+PASS Control text fits (1920, 1080) Control / 13 / 1
+PASS Control text fits (1920, 1080) Control / 13 / 1
+PASS Control text fits (1920, 1080) Control / 13 / 1
+PASS No control label overflow (1920, 1080) Control / 13 / 1
+PASS Control text fits (1920, 1080) Control / 13 / 2
+PASS Control text fits (1920, 1080) Control / 13 / 2
+PASS Control text fits (1920, 1080) Control / 13 / 2
+PASS Control text fits (1920, 1080) Control / 13 / 2
+PASS No control label overflow (1920, 1080) Control / 13 / 2
+PASS Control text fits (1920, 1080) Control / 14 / 0
+PASS Control text fits (1920, 1080) Control / 14 / 0
+PASS Control text fits (1920, 1080) Control / 14 / 0
+PASS Control text fits (1920, 1080) Control / 14 / 0
+PASS No control label overflow (1920, 1080) Control / 14 / 0
+PASS Control text fits (1920, 1080) Control / 14 / 1
+PASS Control text fits (1920, 1080) Control / 14 / 1
+PASS Control text fits (1920, 1080) Control / 14 / 1
+PASS Control text fits (1920, 1080) Control / 14 / 1
+PASS No control label overflow (1920, 1080) Control / 14 / 1
+PASS Control text fits (1920, 1080) Control / 14 / 2
+PASS Control text fits (1920, 1080) Control / 14 / 2
+PASS Control text fits (1920, 1080) Control / 14 / 2
+PASS Control text fits (1920, 1080) Control / 14 / 2
+PASS No control label overflow (1920, 1080) Control / 14 / 2
+PASS Control text fits (1920, 1080) Control / 15 / 0
+PASS Control text fits (1920, 1080) Control / 15 / 0
+PASS Control text fits (1920, 1080) Control / 15 / 0
+PASS Control text fits (1920, 1080) Control / 15 / 0
+PASS No control label overflow (1920, 1080) Control / 15 / 0
+PASS Control text fits (1920, 1080) Control / 15 / 1
+PASS Control text fits (1920, 1080) Control / 15 / 1
+PASS Control text fits (1920, 1080) Control / 15 / 1
+PASS Control text fits (1920, 1080) Control / 15 / 1
+PASS No control label overflow (1920, 1080) Control / 15 / 1
+PASS Control text fits (1920, 1080) Control / 15 / 2
+PASS Control text fits (1920, 1080) Control / 15 / 2
+PASS Control text fits (1920, 1080) Control / 15 / 2
+PASS Control text fits (1920, 1080) Control / 15 / 2
+PASS No control label overflow (1920, 1080) Control / 15 / 2
+PASS Control text fits (1280, 720) Controls / Eyebrow
+PASS Control text fits (1280, 720) Controls / Eyebrow
+PASS Control text fits (1280, 720) Controls / Eyebrow
+PASS Control text fits (1280, 720) Controls / Eyebrow
+PASS No control label overflow (1280, 720) Controls / Eyebrow
+PASS Control text fits (1280, 720) Controls / Title
+PASS Control text fits (1280, 720) Controls / Title
+PASS Control text fits (1280, 720) Controls / Title
+PASS Control text fits (1280, 720) Controls / Title
+PASS No control label overflow (1280, 720) Controls / Title
+PASS Control text fits (1280, 720) Controls / Intro
+PASS Control text fits (1280, 720) Controls / Intro
+PASS Control text fits (1280, 720) Controls / Intro
+PASS Control text fits (1280, 720) Controls / Intro
+PASS No control label overflow (1280, 720) Controls / Intro
+PASS Control text fits (1280, 720) Column / ACTION
+PASS Control text fits (1280, 720) Column / ACTION
+PASS Control text fits (1280, 720) Column / ACTION
+PASS Control text fits (1280, 720) Column / ACTION
+PASS No control label overflow (1280, 720) Column / ACTION
+PASS Control text fits (1280, 720) Column / KEYBOARD
+PASS Control text fits (1280, 720) Column / KEYBOARD
+PASS Control text fits (1280, 720) Column / KEYBOARD
+PASS Control text fits (1280, 720) Column / KEYBOARD
+PASS No control label overflow (1280, 720) Column / KEYBOARD
+PASS Control text fits (1280, 720) Column / XBOX
+PASS Control text fits (1280, 720) Column / XBOX
+PASS Control text fits (1280, 720) Column / XBOX
+PASS Control text fits (1280, 720) Column / XBOX
+PASS No control label overflow (1280, 720) Column / XBOX
+PASS Control text fits (1280, 720) Control / 0 / 0
+PASS Control text fits (1280, 720) Control / 0 / 0
+PASS Control text fits (1280, 720) Control / 0 / 0
+PASS Control text fits (1280, 720) Control / 0 / 0
+PASS No control label overflow (1280, 720) Control / 0 / 0
+PASS Control text fits (1280, 720) Control / 0 / 1
+PASS Control text fits (1280, 720) Control / 0 / 1
+PASS Control text fits (1280, 720) Control / 0 / 1
+PASS Control text fits (1280, 720) Control / 0 / 1
+PASS No control label overflow (1280, 720) Control / 0 / 1
+PASS Control text fits (1280, 720) Control / 0 / 2
+PASS Control text fits (1280, 720) Control / 0 / 2
+PASS Control text fits (1280, 720) Control / 0 / 2
+PASS Control text fits (1280, 720) Control / 0 / 2
+PASS No control label overflow (1280, 720) Control / 0 / 2
+PASS Control text fits (1280, 720) Control / 1 / 0
+PASS Control text fits (1280, 720) Control / 1 / 0
+PASS Control text fits (1280, 720) Control / 1 / 0
+PASS Control text fits (1280, 720) Control / 1 / 0
+PASS No control label overflow (1280, 720) Control / 1 / 0
+PASS Control text fits (1280, 720) Control / 1 / 1
+PASS Control text fits (1280, 720) Control / 1 / 1
+PASS Control text fits (1280, 720) Control / 1 / 1
+PASS Control text fits (1280, 720) Control / 1 / 1
+PASS No control label overflow (1280, 720) Control / 1 / 1
+PASS Control text fits (1280, 720) Control / 1 / 2
+PASS Control text fits (1280, 720) Control / 1 / 2
+PASS Control text fits (1280, 720) Control / 1 / 2
+PASS Control text fits (1280, 720) Control / 1 / 2
+PASS No control label overflow (1280, 720) Control / 1 / 2
+PASS Control text fits (1280, 720) Control / 2 / 0
+PASS Control text fits (1280, 720) Control / 2 / 0
+PASS Control text fits (1280, 720) Control / 2 / 0
+PASS Control text fits (1280, 720) Control / 2 / 0
+PASS No control label overflow (1280, 720) Control / 2 / 0
+PASS Control text fits (1280, 720) Control / 2 / 1
+PASS Control text fits (1280, 720) Control / 2 / 1
+PASS Control text fits (1280, 720) Control / 2 / 1
+PASS Control text fits (1280, 720) Control / 2 / 1
+PASS No control label overflow (1280, 720) Control / 2 / 1
+PASS Control text fits (1280, 720) Control / 2 / 2
+PASS Control text fits (1280, 720) Control / 2 / 2
+PASS Control text fits (1280, 720) Control / 2 / 2
+PASS Control text fits (1280, 720) Control / 2 / 2
+PASS No control label overflow (1280, 720) Control / 2 / 2
+PASS Control text fits (1280, 720) Control / 3 / 0
+PASS Control text fits (1280, 720) Control / 3 / 0
+PASS Control text fits (1280, 720) Control / 3 / 0
+PASS Control text fits (1280, 720) Control / 3 / 0
+PASS No control label overflow (1280, 720) Control / 3 / 0
+PASS Control text fits (1280, 720) Control / 3 / 1
+PASS Control text fits (1280, 720) Control / 3 / 1
+PASS Control text fits (1280, 720) Control / 3 / 1
+PASS Control text fits (1280, 720) Control / 3 / 1
+PASS No control label overflow (1280, 720) Control / 3 / 1
+PASS Control text fits (1280, 720) Control / 3 / 2
+PASS Control text fits (1280, 720) Control / 3 / 2
+PASS Control text fits (1280, 720) Control / 3 / 2
+PASS Control text fits (1280, 720) Control / 3 / 2
+PASS No control label overflow (1280, 720) Control / 3 / 2
+PASS Control text fits (1280, 720) Control / 4 / 0
+PASS Control text fits (1280, 720) Control / 4 / 0
+PASS Control text fits (1280, 720) Control / 4 / 0
+PASS Control text fits (1280, 720) Control / 4 / 0
+PASS No control label overflow (1280, 720) Control / 4 / 0
+PASS Control text fits (1280, 720) Control / 4 / 1
+PASS Control text fits (1280, 720) Control / 4 / 1
+PASS Control text fits (1280, 720) Control / 4 / 1
+PASS Control text fits (1280, 720) Control / 4 / 1
+PASS No control label overflow (1280, 720) Control / 4 / 1
+PASS Control text fits (1280, 720) Control / 4 / 2
+PASS Control text fits (1280, 720) Control / 4 / 2
+PASS Control text fits (1280, 720) Control / 4 / 2
+PASS Control text fits (1280, 720) Control / 4 / 2
+PASS No control label overflow (1280, 720) Control / 4 / 2
+PASS Control text fits (1280, 720) Control / 5 / 0
+PASS Control text fits (1280, 720) Control / 5 / 0
+PASS Control text fits (1280, 720) Control / 5 / 0
+PASS Control text fits (1280, 720) Control / 5 / 0
+PASS No control label overflow (1280, 720) Control / 5 / 0
+PASS Control text fits (1280, 720) Control / 5 / 1
+PASS Control text fits (1280, 720) Control / 5 / 1
+PASS Control text fits (1280, 720) Control / 5 / 1
+PASS Control text fits (1280, 720) Control / 5 / 1
+PASS No control label overflow (1280, 720) Control / 5 / 1
+PASS Control text fits (1280, 720) Control / 5 / 2
+PASS Control text fits (1280, 720) Control / 5 / 2
+PASS Control text fits (1280, 720) Control / 5 / 2
+PASS Control text fits (1280, 720) Control / 5 / 2
+PASS No control label overflow (1280, 720) Control / 5 / 2
+PASS Control text fits (1280, 720) Control / 6 / 0
+PASS Control text fits (1280, 720) Control / 6 / 0
+PASS Control text fits (1280, 720) Control / 6 / 0
+PASS Control text fits (1280, 720) Control / 6 / 0
+PASS No control label overflow (1280, 720) Control / 6 / 0
+PASS Control text fits (1280, 720) Control / 6 / 1
+PASS Control text fits (1280, 720) Control / 6 / 1
+PASS Control text fits (1280, 720) Control / 6 / 1
+PASS Control text fits (1280, 720) Control / 6 / 1
+PASS No control label overflow (1280, 720) Control / 6 / 1
+PASS Control text fits (1280, 720) Control / 6 / 2
+PASS Control text fits (1280, 720) Control / 6 / 2
+PASS Control text fits (1280, 720) Control / 6 / 2
+PASS Control text fits (1280, 720) Control / 6 / 2
+PASS No control label overflow (1280, 720) Control / 6 / 2
+PASS Control text fits (1280, 720) Control / 7 / 0
+PASS Control text fits (1280, 720) Control / 7 / 0
+PASS Control text fits (1280, 720) Control / 7 / 0
+PASS Control text fits (1280, 720) Control / 7 / 0
+PASS No control label overflow (1280, 720) Control / 7 / 0
+PASS Control text fits (1280, 720) Control / 7 / 1
+PASS Control text fits (1280, 720) Control / 7 / 1
+PASS Control text fits (1280, 720) Control / 7 / 1
+PASS Control text fits (1280, 720) Control / 7 / 1
+PASS No control label overflow (1280, 720) Control / 7 / 1
+PASS Control text fits (1280, 720) Control / 7 / 2
+PASS Control text fits (1280, 720) Control / 7 / 2
+PASS Control text fits (1280, 720) Control / 7 / 2
+PASS Control text fits (1280, 720) Control / 7 / 2
+PASS No control label overflow (1280, 720) Control / 7 / 2
+PASS Control text fits (1280, 720) Control / 8 / 0
+PASS Control text fits (1280, 720) Control / 8 / 0
+PASS Control text fits (1280, 720) Control / 8 / 0
+PASS Control text fits (1280, 720) Control / 8 / 0
+PASS No control label overflow (1280, 720) Control / 8 / 0
+PASS Control text fits (1280, 720) Control / 8 / 1
+PASS Control text fits (1280, 720) Control / 8 / 1
+PASS Control text fits (1280, 720) Control / 8 / 1
+PASS Control text fits (1280, 720) Control / 8 / 1
+PASS No control label overflow (1280, 720) Control / 8 / 1
+PASS Control text fits (1280, 720) Control / 8 / 2
+PASS Control text fits (1280, 720) Control / 8 / 2
+PASS Control text fits (1280, 720) Control / 8 / 2
+PASS Control text fits (1280, 720) Control / 8 / 2
+PASS No control label overflow (1280, 720) Control / 8 / 2
+PASS Control text fits (1280, 720) Recovery note
+PASS Control text fits (1280, 720) Recovery note
+PASS Control text fits (1280, 720) Recovery note
+PASS Control text fits (1280, 720) Recovery note
+PASS No control label overflow (1280, 720) Recovery note
+PASS Control text fits (1280, 720) Back to menu / Index
+PASS Control text fits (1280, 720) Back to menu / Index
+PASS Control text fits (1280, 720) Back to menu / Index
+PASS Control text fits (1280, 720) Back to menu / Index
+PASS No control label overflow (1280, 720) Back to menu / Index
+PASS Control text fits (1280, 720) Back to menu / Label
+PASS Control text fits (1280, 720) Back to menu / Label
+PASS Control text fits (1280, 720) Back to menu / Label
+PASS Control text fits (1280, 720) Back to menu / Label
+PASS No control label overflow (1280, 720) Back to menu / Label
+PASS Control text fits (1280, 720) Back to menu / Arrow
+PASS Control text fits (1280, 720) Back to menu / Arrow
+PASS Control text fits (1280, 720) Back to menu / Arrow
+PASS Control text fits (1280, 720) Back to menu / Arrow
+PASS No control label overflow (1280, 720) Back to menu / Arrow
+PASS Control text fits (1280, 720) Control / 9 / 0
+PASS Control text fits (1280, 720) Control / 9 / 0
+PASS Control text fits (1280, 720) Control / 9 / 0
+PASS Control text fits (1280, 720) Control / 9 / 0
+PASS No control label overflow (1280, 720) Control / 9 / 0
+PASS Control text fits (1280, 720) Control / 9 / 1
+PASS Control text fits (1280, 720) Control / 9 / 1
+PASS Control text fits (1280, 720) Control / 9 / 1
+PASS Control text fits (1280, 720) Control / 9 / 1
+PASS No control label overflow (1280, 720) Control / 9 / 1
+PASS Control text fits (1280, 720) Control / 9 / 2
+PASS Control text fits (1280, 720) Control / 9 / 2
+PASS Control text fits (1280, 720) Control / 9 / 2
+PASS Control text fits (1280, 720) Control / 9 / 2
+PASS No control label overflow (1280, 720) Control / 9 / 2
+PASS Control text fits (1280, 720) Control / 10 / 0
+PASS Control text fits (1280, 720) Control / 10 / 0
+PASS Control text fits (1280, 720) Control / 10 / 0
+PASS Control text fits (1280, 720) Control / 10 / 0
+PASS No control label overflow (1280, 720) Control / 10 / 0
+PASS Control text fits (1280, 720) Control / 10 / 1
+PASS Control text fits (1280, 720) Control / 10 / 1
+PASS Control text fits (1280, 720) Control / 10 / 1
+PASS Control text fits (1280, 720) Control / 10 / 1
+PASS No control label overflow (1280, 720) Control / 10 / 1
+PASS Control text fits (1280, 720) Control / 10 / 2
+PASS Control text fits (1280, 720) Control / 10 / 2
+PASS Control text fits (1280, 720) Control / 10 / 2
+PASS Control text fits (1280, 720) Control / 10 / 2
+PASS No control label overflow (1280, 720) Control / 10 / 2
+PASS Control text fits (1280, 720) Control / 11 / 0
+PASS Control text fits (1280, 720) Control / 11 / 0
+PASS Control text fits (1280, 720) Control / 11 / 0
+PASS Control text fits (1280, 720) Control / 11 / 0
+PASS No control label overflow (1280, 720) Control / 11 / 0
+PASS Control text fits (1280, 720) Control / 11 / 1
+PASS Control text fits (1280, 720) Control / 11 / 1
+PASS Control text fits (1280, 720) Control / 11 / 1
+PASS Control text fits (1280, 720) Control / 11 / 1
+PASS No control label overflow (1280, 720) Control / 11 / 1
+PASS Control text fits (1280, 720) Control / 11 / 2
+PASS Control text fits (1280, 720) Control / 11 / 2
+PASS Control text fits (1280, 720) Control / 11 / 2
+PASS Control text fits (1280, 720) Control / 11 / 2
+PASS No control label overflow (1280, 720) Control / 11 / 2
+PASS Control text fits (1280, 720) Control / 12 / 0
+PASS Control text fits (1280, 720) Control / 12 / 0
+PASS Control text fits (1280, 720) Control / 12 / 0
+PASS Control text fits (1280, 720) Control / 12 / 0
+PASS No control label overflow (1280, 720) Control / 12 / 0
+PASS Control text fits (1280, 720) Control / 12 / 1
+PASS Control text fits (1280, 720) Control / 12 / 1
+PASS Control text fits (1280, 720) Control / 12 / 1
+PASS Control text fits (1280, 720) Control / 12 / 1
+PASS No control label overflow (1280, 720) Control / 12 / 1
+PASS Control text fits (1280, 720) Control / 12 / 2
+PASS Control text fits (1280, 720) Control / 12 / 2
+PASS Control text fits (1280, 720) Control / 12 / 2
+PASS Control text fits (1280, 720) Control / 12 / 2
+PASS No control label overflow (1280, 720) Control / 12 / 2
+PASS Control text fits (1280, 720) Control / 13 / 0
+PASS Control text fits (1280, 720) Control / 13 / 0
+PASS Control text fits (1280, 720) Control / 13 / 0
+PASS Control text fits (1280, 720) Control / 13 / 0
+PASS No control label overflow (1280, 720) Control / 13 / 0
+PASS Control text fits (1280, 720) Control / 13 / 1
+PASS Control text fits (1280, 720) Control / 13 / 1
+PASS Control text fits (1280, 720) Control / 13 / 1
+PASS Control text fits (1280, 720) Control / 13 / 1
+PASS No control label overflow (1280, 720) Control / 13 / 1
+PASS Control text fits (1280, 720) Control / 13 / 2
+PASS Control text fits (1280, 720) Control / 13 / 2
+PASS Control text fits (1280, 720) Control / 13 / 2
+PASS Control text fits (1280, 720) Control / 13 / 2
+PASS No control label overflow (1280, 720) Control / 13 / 2
+PASS Control text fits (1280, 720) Control / 14 / 0
+PASS Control text fits (1280, 720) Control / 14 / 0
+PASS Control text fits (1280, 720) Control / 14 / 0
+PASS Control text fits (1280, 720) Control / 14 / 0
+PASS No control label overflow (1280, 720) Control / 14 / 0
+PASS Control text fits (1280, 720) Control / 14 / 1
+PASS Control text fits (1280, 720) Control / 14 / 1
+PASS Control text fits (1280, 720) Control / 14 / 1
+PASS Control text fits (1280, 720) Control / 14 / 1
+PASS No control label overflow (1280, 720) Control / 14 / 1
+PASS Control text fits (1280, 720) Control / 14 / 2
+PASS Control text fits (1280, 720) Control / 14 / 2
+PASS Control text fits (1280, 720) Control / 14 / 2
+PASS Control text fits (1280, 720) Control / 14 / 2
+PASS No control label overflow (1280, 720) Control / 14 / 2
+PASS Control text fits (1280, 720) Control / 15 / 0
+PASS Control text fits (1280, 720) Control / 15 / 0
+PASS Control text fits (1280, 720) Control / 15 / 0
+PASS Control text fits (1280, 720) Control / 15 / 0
+PASS No control label overflow (1280, 720) Control / 15 / 0
+PASS Control text fits (1280, 720) Control / 15 / 1
+PASS Control text fits (1280, 720) Control / 15 / 1
+PASS Control text fits (1280, 720) Control / 15 / 1
+PASS Control text fits (1280, 720) Control / 15 / 1
+PASS No control label overflow (1280, 720) Control / 15 / 1
+PASS Control text fits (1280, 720) Control / 15 / 2
+PASS Control text fits (1280, 720) Control / 15 / 2
+PASS Control text fits (1280, 720) Control / 15 / 2
+PASS Control text fits (1280, 720) Control / 15 / 2
+PASS No control label overflow (1280, 720) Control / 15 / 2

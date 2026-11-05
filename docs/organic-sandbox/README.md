@@ -60,7 +60,7 @@ Both loops completed the required trial from an initial 198 km/h, with all six w
 | 198 km/h | Completed inversion and run-out goal | Completed inversion and run-out goal |
 | 234 km/h | Completed inversion, automated driver left the narrow run-out | Completed inversion and run-out goal |
 
-These are repeatable controller-driven trials, not a guarantee for every steering input or approach. The vehicle physics and its existing world-down aerodynamic force are preserved.
+These are repeatable controller-driven trials, not a guarantee for every steering input or approach. The existing world-down aerodynamic force is preserved. Current air control and landing damping are described in the [flight and landing guide](../flight-camera-landing/README.md).
 
 ![Overview](overview.png)
 

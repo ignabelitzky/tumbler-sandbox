@@ -1,0 +1,5 @@
+PASS 5m-0kph-p0-r0: rebound speed and height reduced; settles upright within 1.3 seconds
+PASS 5m-72kph-p0-r0: rebound speed and height reduced; settles upright within 1.3 seconds
+PASS 10m-0kph-p0-r0: rebound speed and height reduced; settles upright within 1.3 seconds
+PASS 10m-72kph-p0-r0: rebound speed and height reduced; settles upright within 1.3 seconds
+PASS 7.5m-54kph-p8-r6: rebound speed and height reduced; settles upright within 1.3 seconds

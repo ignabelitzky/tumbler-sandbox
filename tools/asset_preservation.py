@@ -4,6 +4,7 @@ from pathlib import Path
 import re
 
 from organic_layout_preservation import MANIFEST as ORGANIC_MANIFEST, before_organic
+from flight_preservation import MANIFEST as FLIGHT_MANIFEST, before_flight_menu
 
 ROOT = Path(__file__).resolve().parents[1]
 APPROVED_BLOBS = {
@@ -36,7 +37,7 @@ IMPACT_DOCUMENTS = {
 
 def expected_blob(path, original):
     """Require an exact approved revision, rather than excluding the path."""
-    return ORGANIC_MANIFEST["approved_blobs"].get(path, APPROVED_BLOBS.get(path, original))
+    return FLIGHT_MANIFEST["approved_blobs"].get(path, ORGANIC_MANIFEST["approved_blobs"].get(path, APPROVED_BLOBS.get(path, original)))
 
 
 def menu_before_input_update(text):
@@ -80,7 +81,7 @@ def scene_before_impact_ground(path):
     if path == 'Assets/_Project/Scenes/Sandbox.unity':
         text = before_organic(text)
     if path == 'Assets/_Project/Scenes/Main Menu.unity':
-        return menu_before_input_update(text)
+        return menu_before_input_update(before_flight_menu(text))
     if path != 'Assets/_Project/Scenes/Sandbox.unity':
         return text
     blocks = {m[1]: m[0] for m in re.finditer(

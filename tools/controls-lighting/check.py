@@ -45,7 +45,7 @@ catalog=json.loads((ROOT/"docs/controls-catalog.json").read_text())
 expected="| Action | Xbox controller | Keyboard / mouse |\n| --- | --- | --- |\n"+"\n".join("| "+r["action"]+" | "+r["xbox"]+" | "+r["keyboard"]+" |" for r in catalog["rows"])
 assert expected in (ROOT/"README.md").read_text(),"README control table is out of sync"
 actions=json.loads((ROOT/"Assets/_Project/Input/TumblerInput.inputactions").read_text())["maps"][0]
-assert {r["inputAction"] for r in catalog["rows"]}=={a["name"] for a in actions["actions"]}|{"CycleCamera","OrbitCamera","AirAttitude","LookBehind"},"Catalog misses a gameplay action"
+assert {r["inputAction"] for r in catalog["rows"]}=={a["name"] for a in actions["actions"]}|{"CycleCamera","OrbitCamera","LookBehind"},"Catalog misses a gameplay action"
 scene=(ROOT/"Assets/_Project/Scenes/Main Menu.unity").read_text()
 # UI text and visual fit are tested natively; static CI verifies all catalog labels
 # appear in the saved scene and original input code remains byte-identical.

@@ -16,13 +16,25 @@ public sealed class VehicleCameraCollision : CinemachineExtension
     protected override void PostPipelineStageCallback(CinemachineVirtualCameraBase vcam,
         CinemachineCore.Stage stage, ref CameraState state, float deltaTime)
     {
-        if (stage != CinemachineCore.Stage.Body || Vehicle == null) return;
-        Vector3 focus = Vehicle.position + Vector3.up;
+        if (Vehicle == null) return;
+        if (stage == CinemachineCore.Stage.Aim && (LookBack || viewChanged))
+        {
+            // Snap only the aim, after this frame's target and position are both current.
+            // Forcing it in Body mixed the previous target with the new camera position at speed.
+            var composer = vcam.GetComponent<CinemachineRotationComposer>();
+            if (composer != null) composer.MutateCameraState(ref state, -1f);
+            viewChanged = false;
+        }
+        if (stage != CinemachineCore.Stage.Body) return;
+        // Use the rendered pose, just like Cinemachine's target. Rigidbody.position is a physics tick ahead
+        // when interpolation is enabled, which otherwise makes the view pulse while accelerating.
+        Vector3 anchor = Vehicle.transform.position;
+        Vector3 focus = anchor + Vector3.up;
         if (LookBack)
         {
             Vector3 heading = Vector3.ProjectOnPlane(Vehicle.transform.forward, Vector3.up);
             if (heading.sqrMagnitude > .01f) lastPlanarForward = heading.normalized;
-            state.RawPosition = Vehicle.position + lastPlanarForward * 5.8f + Vector3.up * 2.9f;
+            state.RawPosition = anchor + lastPlanarForward * 5.8f + Vector3.up * 2.9f;
         }
         Vector3 offset = state.RawPosition - focus;
         float distance = offset.magnitude;
@@ -35,14 +47,5 @@ public sealed class VehicleCameraCollision : CinemachineExtension
             if (hits[i].collider != null && hits[i].collider.attachedRigidbody != Vehicle)
                 allowed = Mathf.Min(allowed, Mathf.Max(.35f, hits[i].distance - .12f));
         state.RawPosition = focus + direction * allowed;
-        if (LookBack || viewChanged)
-        {
-            // Reset only aim damping; resetting the full camera would recenter the user's saved orbit axes.
-            var composer = vcam.GetComponent<CinemachineRotationComposer>();
-            Vector3 aim = state.ReferenceLookAt - state.RawPosition;
-            if (composer != null && aim.sqrMagnitude > .001f)
-                composer.ForceCameraPosition(state.RawPosition, Quaternion.LookRotation(aim, Vector3.up));
-            viewChanged = false;
-        }
     }
 }

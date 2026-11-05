@@ -66,7 +66,6 @@ public class TumblerController : MonoBehaviour
 
     private TumblerBurnout burnout;
     private TumblerFlightDynamics flight;
-    private InputAction airAttitude;
     public bool IsAirborne => flight != null && flight.IsAirborne;
     public bool IsBurnoutActive => burnout != null && burnout.Active;
     public bool IsWheelBurning(WheelCollider wheel) => burnout != null && burnout.IsBurning(wheel, currentDriveMode);
@@ -88,23 +87,17 @@ public class TumblerController : MonoBehaviour
         var wheels = new WheelCollider[frontWheelsColliders.Length + rearWheelsColliders.Length];
         frontWheelsColliders.CopyTo(wheels, 0); rearWheelsColliders.CopyTo(wheels, frontWheelsColliders.Length);
         flight = new TumblerFlightDynamics(carRigidbody, wheels);
-        airAttitude = new InputAction("Air attitude", InputActionType.Value);
-        airAttitude.AddBinding("<Gamepad>/leftStick");
-        airAttitude.AddCompositeBinding("2DVector").With("Up", "<Keyboard>/w").With("Down", "<Keyboard>/s").With("Left", "<Keyboard>/a").With("Right", "<Keyboard>/d");
-        airAttitude.AddCompositeBinding("2DVector").With("Up", "<Keyboard>/upArrow").With("Down", "<Keyboard>/downArrow").With("Left", "<Keyboard>/leftArrow").With("Right", "<Keyboard>/rightArrow");
     }
 
     private void OnEnable()
     {
         tumblerInput.Enable();
-        airAttitude?.Enable();
         flight?.Enable();
     }
 
     private void OnDisable()
     {
         tumblerInput.Disable();
-        airAttitude?.Disable();
         flight?.Disable();
         burnout?.Cancel();
         burnout?.Apply(currentDriveMode, 0);
@@ -112,7 +105,6 @@ public class TumblerController : MonoBehaviour
     
     private void OnDestroy()
     {
-        airAttitude?.Dispose();
         tumblerInput?.Dispose();
     }
     private void OnCollisionEnter(Collision collision) => flight?.ReportBodyContact();
@@ -131,7 +123,7 @@ public class TumblerController : MonoBehaviour
         ApplyDrive();
         burnout.Apply(currentDriveMode, steerInput);
         HandleSteering();
-        flight?.Step(airAttitude != null && airAttitude.enabled ? airAttitude.ReadValue<Vector2>() : Vector2.zero, isHandbrakeActive, Time.fixedDeltaTime);
+        flight?.Step(Time.fixedDeltaTime);
         UpdateWheels();
         AddDownForce();
         LimitHorizontalSpeed();

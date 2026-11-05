@@ -89,10 +89,9 @@ The in-game Controls page and this table share [one control catalog](docs/contro
 | Camera: close > medium > far | D-pad Down | C |
 | Look around / orbit camera | Right Stick | Move mouse |
 | Pause / resume | Menu / Start | Escape |
-| Air attitude: pitch / roll | Left Stick | W / S / A / D or Arrow Keys |
 | Look behind (hold) | Hold LB | Hold B |
 
-The Controls page includes all fourteen gameplay rows, menu navigation, intro skip,
+The Controls page includes all fifteen gameplay rows, menu navigation, intro skip,
 and the tunnel camera rule. Navigate menus with the mouse or arrows + Enter;
 on Xbox use the stick/D-pad and A. Escape or B returns from Controls.
 Any key, mouse click or controller button skips the intro after its short guard.
@@ -291,6 +290,6 @@ The Sandbox also includes a southwest [Impact & Physics Test Ground](docs/impact
 
 Sandbox now uses a sculpted desert with flowing roads, separate tire surfaces, suspension terrain, tabletops, two deathloops and a caged banked oval. The original underground light lab remains, alongside a longer four-bend tunnel. See the [layout, controls and validation guide](docs/organic-sandbox/README.md).
 
-## Flight and rear view
+## Rear view and landing
 
-Use the left stick to pitch and roll in a jump, or hold X for yaw. Hold LB to look behind and release to restore your selected camera. Upright landings now use near-critical wheel damping and brief rebound absorption. Keyboard equivalents, measured drop trials and validation are in the [flight, camera and landing guide](docs/flight-camera-landing/README.md).
+Airborne attitude follows natural physics, without stick control or automatic angular braking. Hold LB to look behind and release to restore your selected camera. Upright landings now use near-critical wheel damping and brief rebound absorption. Keyboard equivalents, measured drop trials and validation are in the [camera and landing guide](docs/flight-camera-landing/README.md).

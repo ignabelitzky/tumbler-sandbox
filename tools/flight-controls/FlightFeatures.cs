@@ -41,7 +41,7 @@ public static class FlightFeatures
         if(waitingMenu && EditorApplication.isPlaying)
         {
             waitingMenu=false;
-            try { CaptureControls();File.WriteAllLines(Folder+"/feature-checks.txt",checks);File.WriteAllText(Folder+"/features-complete.txt","PASS flight, camera and controls UI verification.\n");EditorApplication.Exit(0); }
+            try { CaptureControls();File.WriteAllLines(Folder+"/feature-checks.txt",checks);File.WriteAllText(Folder+"/features-complete.txt","PASS natural airborne physics, camera and controls UI verification.\n");EditorApplication.Exit(0); }
             catch(Exception e){File.WriteAllLines(Folder+"/feature-failed.txt",checks.Concat(new[]{e.ToString()}));Debug.LogException(e);EditorApplication.Exit(1);}
             return;
         }
@@ -57,21 +57,22 @@ public static class FlightFeatures
             var floor=GameObject.CreatePrimitive(PrimitiveType.Cube);floor.transform.position=new Vector3(0,99,0);floor.transform.localScale=new Vector3(200,2,200);
             Check(wheels.Length==6,"Original six wheel colliders retained");
             foreach(var w in wheels){var s=w.suspensionSpring;float ratio=s.damper/(2*Mathf.Sqrt(s.spring*w.sprungMass));Check(ratio>=.94f,"Near-critical damping uses actual sprung mass: "+w.name);}
-            Reset();Press(Vector2.up);Step(60);Check(Rate().x>1.8f,"Stick forward pitches nose down while airborne");
-            Reset();Press(Vector2.down);Step(60);Check(Rate().x< -1.8f,"Stick back pitches nose up while airborne");
-            Reset();Press(Vector2.right);Step(60);Check(Rate().z< -2.5f,"Stick right rolls right in flight");
-            Reset(150,Quaternion.Euler(30,20,85));Press(Vector2.left);Step(60);Check(Rate().z>2.5f,"Left roll follows the rotated vehicle's local axes");
-            Press(Vector2.zero);Step(80);Check(body.angularVelocity.magnitude<.08f,"Releasing the stick stops rotation without forcing world upright");Check(body.transform.up.y<.9f,"Neutral input preserves the chosen tilted attitude");
-            Reset();Press(Vector2.right,true);Step(60);Check(Rate().y>1.7f&&Mathf.Abs(Rate().z)<.1f,"X plus horizontal left stick controls yaw");
-            Reset();InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.S));InputSystem.Update();car.SendMessage("RefreshDrivingInput");Step(60);Check(Rate().x< -1.8f,"Keyboard S provides pitch-up control in air");InputSystem.QueueStateEvent(keyboard,new KeyboardState());InputSystem.Update();
-            Reset(101.08f);Step(250);Check(wheels.Count(w=>w.isGrounded)>=4,"Vehicle settles on its actual wheels");Press(Vector2.up);Step(70);Check(!car.IsAirborne&&Mathf.Abs(body.angularVelocity.x)<.08f,"Grounded car does not receive aerial pitch torque");
-            Reset();Press(Vector2.one);typeof(GameNavigation).GetProperty("IsPaused").GetSetMethod(true).Invoke(null,new object[]{true});Step(30);Check(body.angularVelocity.magnitude<.01f,"Paused gameplay blocks aerial torque");typeof(GameNavigation).GetProperty("IsPaused").GetSetMethod(true).Invoke(null,new object[]{false});
-            Reset();Press(Vector2.one);Step(250);Check(body.angularVelocity.magnitude<4.2f,"Sustained diagonal input has bounded angular speed");
-            Reset(101.02f,Quaternion.Euler(0,0,180));Press(Vector2.one);Step(200);Check(!car.IsAirborne,"Roof contact is not mistaken for free flight");
-            body.Sleep();Step(60);Check(!car.IsAirborne,"Sleeping chassis contact cannot enable aerial control");
+            foreach (var stick in new[]{Vector2.up, Vector2.down, Vector2.left, Vector2.right, Vector2.one})
+            {
+                Reset(); Press(stick); Step(60);
+                Check(car.IsAirborne && body.angularVelocity.magnitude < .01f, "Left stick does not orient the airborne vehicle: " + stick);
+            }
+            Reset(); Press(Vector2.right, true); Step(60);
+            Check(body.angularVelocity.magnitude < .01f, "X plus stick has no aerial yaw control");
+            Reset(); InputSystem.QueueStateEvent(keyboard, new KeyboardState(Key.S)); InputSystem.Update(); car.SendMessage("RefreshDrivingInput"); Step(60);
+            Check(body.angularVelocity.magnitude < .01f, "Keyboard has no aerial pitch control"); InputSystem.QueueStateEvent(keyboard, new KeyboardState()); InputSystem.Update();
+            Reset(150, Quaternion.Euler(30, 20, 40)); body.angularVelocity = new Vector3(.4f, .6f, .7f); Step(40); Vector3 neutralRate = body.angularVelocity;
+            Reset(150, Quaternion.Euler(30, 20, 40)); body.angularVelocity = new Vector3(.4f, .6f, .7f); Press(Vector2.one, true); Step(40);
+            Check(neutralRate.magnitude > .8f && Vector3.Distance(body.angularVelocity, neutralRate) < .005f, "Natural aerial rotation persists equally with neutral or held input");
+            Reset(101.08f); Step(250); Check(wheels.Count(w=>w.isGrounded)>=4, "Vehicle retains stable wheel support and landing damping");
             floor.SetActive(false);Reset(1.1f);body.position=new Vector3(0,1.1f,40);body.transform.position=body.position;body.isKinematic=true;Physics.SyncTransforms();
             CameraChecks();
-            File.WriteAllLines(Folder+"/feature-checks.txt",checks);File.WriteAllText(Folder+"/features-complete.txt","PASS real Input System air controls, damping, rear view, restoration and collision checks.\n");
+            File.WriteAllLines(Folder+"/feature-checks.txt",checks);File.WriteAllText(Folder+"/features-complete.txt","PASS no aerial controls, damping, rear view, restoration and collision checks.\n");
             InputSystem.RemoveDevice(pad);InputSystem.RemoveDevice(keyboard);InputSystem.settings=oldInput!=null?oldInput:Object.Instantiate(testInput);Object.DestroyImmediate(testInput);Physics.simulationMode=SimulationMode.FixedUpdate;waitingMenu=true;UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
         }catch(Exception e){File.WriteAllLines(Folder+"/feature-failed.txt",checks.Concat(new[]{e.ToString()}));Debug.LogException(e);Physics.simulationMode=SimulationMode.FixedUpdate;EditorApplication.Exit(1);}
     }

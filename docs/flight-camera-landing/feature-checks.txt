@@ -5,20 +5,15 @@ PASS Near-critical damping uses actual sprung mass: RearRightWheelCollider_Outsi
 PASS Near-critical damping uses actual sprung mass: RearRightWheelCollider_Inside
 PASS Near-critical damping uses actual sprung mass: RearLeftWheelCollider_Outside
 PASS Near-critical damping uses actual sprung mass: RearLeftWheelCollider_Inside
-PASS Stick forward pitches nose down while airborne
-PASS Stick back pitches nose up while airborne
-PASS Stick right rolls right in flight
-PASS Left roll follows the rotated vehicle's local axes
-PASS Releasing the stick stops rotation without forcing world upright
-PASS Neutral input preserves the chosen tilted attitude
-PASS X plus horizontal left stick controls yaw
-PASS Keyboard S provides pitch-up control in air
-PASS Vehicle settles on its actual wheels
-PASS Grounded car does not receive aerial pitch torque
-PASS Paused gameplay blocks aerial torque
-PASS Sustained diagonal input has bounded angular speed
-PASS Roof contact is not mistaken for free flight
-PASS Sleeping chassis contact cannot enable aerial control
+PASS Left stick does not orient the airborne vehicle: (0.00, 1.00)
+PASS Left stick does not orient the airborne vehicle: (0.00, -1.00)
+PASS Left stick does not orient the airborne vehicle: (-1.00, 0.00)
+PASS Left stick does not orient the airborne vehicle: (1.00, 0.00)
+PASS Left stick does not orient the airborne vehicle: (1.00, 1.00)
+PASS X plus stick has no aerial yaw control
+PASS Keyboard has no aerial pitch control
+PASS Natural aerial rotation persists equally with neutral or held input
+PASS Vehicle retains stable wheel support and landing damping
 PASS LB temporarily selects close rear view and retains far preset
 PASS Rear camera is in front at the close-camera distance and height: (0.00, 2.90, 5.80)
 PASS Rear camera looks from the front towards the back
@@ -307,21 +302,6 @@ PASS Control text fits (1920, 1080) Control / 14 / 2
 PASS Control text fits (1920, 1080) Control / 14 / 2
 PASS Control text fits (1920, 1080) Control / 14 / 2
 PASS No control label overflow (1920, 1080) Control / 14 / 2
-PASS Control text fits (1920, 1080) Control / 15 / 0
-PASS Control text fits (1920, 1080) Control / 15 / 0
-PASS Control text fits (1920, 1080) Control / 15 / 0
-PASS Control text fits (1920, 1080) Control / 15 / 0
-PASS No control label overflow (1920, 1080) Control / 15 / 0
-PASS Control text fits (1920, 1080) Control / 15 / 1
-PASS Control text fits (1920, 1080) Control / 15 / 1
-PASS Control text fits (1920, 1080) Control / 15 / 1
-PASS Control text fits (1920, 1080) Control / 15 / 1
-PASS No control label overflow (1920, 1080) Control / 15 / 1
-PASS Control text fits (1920, 1080) Control / 15 / 2
-PASS Control text fits (1920, 1080) Control / 15 / 2
-PASS Control text fits (1920, 1080) Control / 15 / 2
-PASS Control text fits (1920, 1080) Control / 15 / 2
-PASS No control label overflow (1920, 1080) Control / 15 / 2
 PASS Control text fits (1280, 720) Controls / Eyebrow
 PASS Control text fits (1280, 720) Controls / Eyebrow
 PASS Control text fits (1280, 720) Controls / Eyebrow
@@ -597,18 +577,3 @@ PASS Control text fits (1280, 720) Control / 14 / 2
 PASS Control text fits (1280, 720) Control / 14 / 2
 PASS Control text fits (1280, 720) Control / 14 / 2
 PASS No control label overflow (1280, 720) Control / 14 / 2
-PASS Control text fits (1280, 720) Control / 15 / 0
-PASS Control text fits (1280, 720) Control / 15 / 0
-PASS Control text fits (1280, 720) Control / 15 / 0
-PASS Control text fits (1280, 720) Control / 15 / 0
-PASS No control label overflow (1280, 720) Control / 15 / 0
-PASS Control text fits (1280, 720) Control / 15 / 1
-PASS Control text fits (1280, 720) Control / 15 / 1
-PASS Control text fits (1280, 720) Control / 15 / 1
-PASS Control text fits (1280, 720) Control / 15 / 1
-PASS No control label overflow (1280, 720) Control / 15 / 1
-PASS Control text fits (1280, 720) Control / 15 / 2
-PASS Control text fits (1280, 720) Control / 15 / 2
-PASS Control text fits (1280, 720) Control / 15 / 2
-PASS Control text fits (1280, 720) Control / 15 / 2
-PASS No control label overflow (1280, 720) Control / 15 / 2

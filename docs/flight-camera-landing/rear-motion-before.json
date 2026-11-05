@@ -1,0 +1,39 @@
+{
+    "unity": "6000.6.7f1",
+    "mode": "before",
+    "samples": [
+        {
+            "fps": 30,
+            "frames": 91,
+            "initialKph": 0.0,
+            "maxKph": 92.0277328491211,
+            "maxFollowError": 0.4190730154514313,
+            "maxAimErrorDegrees": 7.702247142791748,
+            "minFrontDistance": 5.82489013671875,
+            "maxViewportOffset": 0.11711172014474869,
+            "maxPhysicsRenderSeparation": 0.4190730154514313
+        },
+        {
+            "fps": 60,
+            "frames": 181,
+            "initialKph": 198.0,
+            "maxKph": 214.95339965820313,
+            "maxFollowError": 1.1908154487609863,
+            "maxAimErrorDegrees": 17.715028762817383,
+            "minFrontDistance": 5.976688861846924,
+            "maxViewportOffset": 0.2766300141811371,
+            "maxPhysicsRenderSeparation": 1.1908154487609863
+        },
+        {
+            "fps": 120,
+            "frames": 361,
+            "initialKph": 259.91998291015625,
+            "maxKph": 249.9289093017578,
+            "maxFollowError": 1.384973168373108,
+            "maxAimErrorDegrees": 22.207508087158203,
+            "minFrontDistance": 5.9080963134765625,
+            "maxViewportOffset": 0.3535439968109131,
+            "maxPhysicsRenderSeparation": 1.384973168373108
+        }
+    ]
+}

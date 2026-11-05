@@ -35,6 +35,11 @@ public static class FlightControls
                 }
                 var line=layout.GetComponentsInChildren<Image>(true).FirstOrDefault(t=>t.name=="Separator / "+i);if(line==null)line=Object.Instantiate(separator,layout);line.name="Separator / "+i;line.rectTransform.anchoredPosition=new Vector2(0,-275-i*32);
             }
+            // Remove obsolete rows when a control is deleted from the catalog.
+            foreach (var text in layout.GetComponentsInChildren<TextMeshProUGUI>(true))
+                if (text.name.StartsWith("Control / ") && int.Parse(text.name.Split('/')[1].Trim()) >= catalog.rows.Length) Object.DestroyImmediate(text.gameObject);
+            foreach (var line in layout.GetComponentsInChildren<Image>(true))
+                if (line.name.StartsWith("Separator / ") && int.Parse(line.name.Split('/')[1].Trim()) >= catalog.rows.Length) Object.DestroyImmediate(line.gameObject);
             var notes=layout.GetComponentsInChildren<TextMeshProUGUI>(true).Single(t=>t.name=="Recovery note");notes.text=string.Join("\n",catalog.notes);notes.rectTransform.anchoredPosition=new Vector2(0,-790);notes.rectTransform.sizeDelta=new Vector2(1200,105);
             var back=overlay.GetComponentsInChildren<Button>(true).Single(t=>t.name=="Back to menu");back.GetComponent<RectTransform>().anchoredPosition=new Vector2(0,-930);
             EditorSceneManager.SaveScene(scene,"Assets/_FlightWork/MenuUI.unity");File.Copy("Assets/_FlightWork/MenuUI.unity","TestResults/Flight/MenuUI.unity",true);

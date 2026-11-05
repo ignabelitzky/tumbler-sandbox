@@ -1,6 +1,6 @@
 using UnityEngine;
 
-/// <summary>Local-axis flight control and energy absorption when an upright jump lands on its wheels.</summary>
+/// <summary>Energy absorption when an upright jump lands on its wheels.</summary>
 public sealed class TumblerFlightDynamics
 {
     private readonly Rigidbody body;
@@ -58,7 +58,7 @@ public sealed class TumblerFlightDynamics
         if (IsUprightSupport(contacts, normal)) AbsorbRebound(normal, surfaceVelocity);
     }
 
-    public void Step(Vector2 stick, bool yawModifier, float dt)
+    public void Step(float dt)
     {
         if (!enabled || body.isKinematic || dt <= 0) return;
         // Sleeping bodies do not receive OnCollisionStay; resting on the roof is still supported contact.
@@ -75,7 +75,6 @@ public sealed class TumblerFlightDynamics
             impactSpeed = Mathf.Max(impactSpeed, -body.linearVelocity.y);
             pendingLanding = 0;
             landingTime = 0;
-            if (airTime >= .10f) ControlAttitude(Vector2.ClampMagnitude(stick, 1), yawModifier);
             return;
         }
 
@@ -119,11 +118,4 @@ public sealed class TumblerFlightDynamics
         if (outward > .6f) body.linearVelocity -= normal * (outward - .6f);
     }
 
-    private void ControlAttitude(Vector2 stick, bool yawModifier)
-    {
-        Vector3 rate = body.transform.InverseTransformDirection(body.angularVelocity);
-        Vector3 target = new Vector3(stick.y * 2.4f, yawModifier ? stick.x * 2.2f : 0, yawModifier ? 0 : -stick.x * 3.2f);
-        Vector3 acceleration = Vector3.ClampMagnitude((target - rate) * 8, 14);
-        body.AddRelativeTorque(acceleration, ForceMode.Acceleration);
-    }
 }

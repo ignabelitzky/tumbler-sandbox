@@ -10247,7 +10247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!154 &560604268
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -16287,6 +16287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: circular_bump
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1f98a02e7e0a2d3448dd96985662fc46, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17470,6 +17474,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: speed_bump
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b85b18f64ef4e1844856ef96b59dfa8c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17590,6 +17598,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a5653c68fbc1417469842dacbf332716, type: 3}
       propertyPath: m_Name
       value: ramp_45
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5653c68fbc1417469842dacbf332716, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22526,6 +22538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: curved_ramp
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 705a447fccd3adf4fadec8c1bf1ffe08, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22754,6 +22770,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: triangular_bump
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 944a324f706356945a020efa072d527c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22820,6 +22840,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e25670d6ba2677944acf16898e5b60c0, type: 3}
       propertyPath: m_Name
       value: square_ramp
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e25670d6ba2677944acf16898e5b60c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -52689,6 +52713,10 @@ PrefabInstance:
       propertyPath: vehicleRoot
       value:
       objectReference: {fileID: 1665185318273656989}
+    - target: {fileID: 1762208912925454472, guid: b4d5b499af01f9613a8c82eba5ae03e6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -54403,6 +54431,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Underground Light Lab and Perimeter
       objectReference: {fileID: 0}
+    - target: {fileID: 1263477482799992024, guid: 0c743fa363611d9c89639996e3545755, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587926284032034989, guid: 0c743fa363611d9c89639996e3545755, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392912499120348956, guid: 0c743fa363611d9c89639996e3545755, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699414182402305193, guid: 0c743fa363611d9c89639996e3545755, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987273842226087006, guid: 0c743fa363611d9c89639996e3545755, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -54963,6 +55011,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -250
       objectReference: {fileID: 0}
+    - target: {fileID: 2104271404074946589, guid: 259e53ebca8b2430bb7df8f4a420b92b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -54988,6 +55040,27 @@ MonoBehaviour:
   positionIterations: 12
   velocityIterations: 4
   depenetrationLimit: 5
+--- !u!1001 &1911000001
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1100856664490725552, guid: a9698d1d0571a37708cc7b467a684248, type: 3}
+      propertyPath: m_Name
+      value: Organic proving grounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184539993537312057, guid: a9698d1d0571a37708cc7b467a684248, type: 3}
+      propertyPath: vehicleRoot
+      value:
+      objectReference: {fileID: 1665185318273656989}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a9698d1d0571a37708cc7b467a684248, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -55010,3 +55083,4 @@ SceneRoots:
   - {fileID: 1813036926}
   - {fileID: 1900000001}
   - {fileID: 875400000000000002}
+  - {fileID: 1911000001}

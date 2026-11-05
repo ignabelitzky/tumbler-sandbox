@@ -32,8 +32,13 @@ public sealed class WheelSurfaceGrip : MonoBehaviour
             DrivingSurface surface = null;
             if (wheels[i].GetGroundHit(out WheelHit hit) && hit.collider != null)
                 surface = hit.collider.GetComponentInParent<DrivingSurface>();
-            SetStiffness(i, surface == null ? 1f : Mathf.Clamp(surface.forwardGrip, 0.05f, 1.5f),
-                surface == null ? 1f : Mathf.Clamp(surface.sidewaysGrip, 0.05f, 1.5f));
+            Vector2 grip = surface == null ? Vector2.one : new Vector2(surface.forwardGrip, surface.sidewaysGrip);
+            if (surface == null && wheels[i].GetGroundHit(out WheelHit terrainHit) && terrainHit.collider != null)
+            {
+                var terrainSurface = terrainHit.collider.GetComponent<TerrainDrivingSurface>();
+                if (terrainSurface != null) grip = terrainSurface.GripAt(terrainHit.point);
+            }
+            SetStiffness(i, Mathf.Clamp(grip.x, 0.05f, 1.5f), Mathf.Clamp(grip.y, 0.05f, 1.5f));
         }
     }
 

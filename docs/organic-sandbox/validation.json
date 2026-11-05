@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "unity": "6000.6.7f1",
+  "renderer": "HDRP 17.6 / Vulkan / AMD RX 5700 XT",
+  "scene_under_test": "HEAD baseline plus only the authored map delta; unrelated local settings excluded",
+  "checks": {
+    "course_geometry": 1851,
+    "course_runtime_pass": 46,
+    "vehicle_edit": 82,
+    "vehicle_play": 119,
+    "navigation_play": 54
+  },
+  "drives": {
+    "Loop-18m-144kph": {
+      "telemetry": "passed=True entry_kph=144 progress=543/551 simulated_seconds=4.76 max_distance=5.04 min_grounded_wheels=4 inverted=True peak_height=35.24 end=(-31.30, 1.16, -257.00)",
+      "inverted_samples": 4,
+      "minimum_wheels_during_inverted_samples": 6
+    },
+    "Loop-18m-234kph": {
+      "telemetry": "passed=False entry_kph=234 progress=542/551 simulated_seconds=3.31 max_distance=16.04 min_grounded_wheels=2 inverted=True peak_height=35.35 end=(-17.79, 0.57, -257.22)",
+      "inverted_samples": 2,
+      "minimum_wheels_during_inverted_samples": 6
+    },
+    "Loop-18m": {
+      "telemetry": "passed=True entry_kph=198 progress=543/551 simulated_seconds=3.74 max_distance=12.75 min_grounded_wheels=3 inverted=True peak_height=35.35 end=(-21.15, 0.57, -256.93)",
+      "inverted_samples": 3,
+      "minimum_wheels_during_inverted_samples": 6
+    },
+    "Loop-26m-144kph": {
+      "telemetry": "passed=True entry_kph=144 progress=543/551 simulated_seconds=5.97 max_distance=1.43 min_grounded_wheels=6 inverted=True peak_height=51.25 end=(45.34, 1.11, -256.82)",
+      "inverted_samples": 5,
+      "minimum_wheels_during_inverted_samples": 6
+    },
+    "Loop-26m-234kph": {
+      "telemetry": "passed=True entry_kph=234 progress=543/551 simulated_seconds=4.12 max_distance=5.64 min_grounded_wheels=5 inverted=True peak_height=51.28 end=(50.03, 1.07, -256.40)",
+      "inverted_samples": 3,
+      "minimum_wheels_during_inverted_samples": 6
+    },
+    "Loop-26m": {
+      "telemetry": "passed=True entry_kph=198 progress=543/551 simulated_seconds=4.67 max_distance=3.69 min_grounded_wheels=6 inverted=True peak_height=51.27 end=(42.92, 1.08, -256.57)",
+      "inverted_samples": 4,
+      "minimum_wheels_during_inverted_samples": 6
+    },
+    "banked-oval": {
+      "telemetry": "passed=True entry_kph=72 progress=793/801 simulated_seconds=35.15 max_distance=1.57 min_grounded_wheels=5 inverted=False peak_height=5.52 end=(336.91, 5.27, 168.81)"
+    },
+    "new-tunnel": {
+      "telemetry": "passed=True entry_kph=16 progress=773/781 simulated_seconds=129.11 max_distance=0.87 min_grounded_wheels=5 inverted=False peak_height=1.05 end=(-210.04, 0.95, -385.25)"
+    },
+    "original-tunnel": {
+      "telemetry": "passed=True entry_kph=16 progress=248/256 simulated_seconds=103.79 max_distance=1.22 min_grounded_wheels=6 inverted=False peak_height=1.10 end=(242.00, 1.08, -27.45)"
+    },
+    "oval-access": {
+      "telemetry": "passed=True entry_kph=22 progress=163/171 simulated_seconds=13.15 max_distance=0.48 min_grounded_wheels=2 inverted=False peak_height=1.22 end=(218.48, 1.08, 245.00)"
+    }
+  },
+  "limits": [
+    "Editor validation; standalone player and physical controller driving were not run.",
+    "Initial velocity is assigned for reproducible loop trials; the actual controller, wheel contacts and collisions then drive the body.",
+    "The 234 km/h small-loop trial completes inversion but leaves the narrow run-out with the automated steering driver. This observation is retained rather than changing vehicle physics to guarantee success."
+  ]
+}

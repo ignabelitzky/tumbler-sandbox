@@ -6,7 +6,8 @@ ROOT=Path(__file__).resolve().parents[1]
 BASE='5713507'
 scene='Assets/_Project/Scenes/Sandbox.unity'
 old=subprocess.check_output(['git','show',BASE+':'+scene],cwd=ROOT).decode()
-new=(ROOT/scene).read_text()
+from organic_layout_preservation import before_organic
+new=before_organic((ROOT/scene).read_text())
 def blocks(s):
  return {re.search(r'&(-?\d+)',b)[1]:b for b in re.split(r'(?=--- !u!)',s) if b.startswith('--- !u!')}
 a,b=blocks(old),blocks(new)

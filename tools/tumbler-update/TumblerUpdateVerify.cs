@@ -312,7 +312,7 @@ public static class TumblerUpdateVerify
         try
         {
             Find();foreach(var script in body.GetComponentsInChildren<MonoBehaviour>())script.enabled=false;
-            GameObject.Find("Driving Test Ground").GetComponent<WheelSurfaceGrip>().enabled=false;
+            foreach(var grip in UnityEngine.Object.FindObjectsByType<WheelSurfaceGrip>(FindObjectsSortMode.None))grip.enabled=false;
             var floor=GameObject.CreatePrimitive(PrimitiveType.Cube);floor.name="Temporary performance floor";floor.transform.position=new Vector3(0,99,0);floor.transform.localScale=new Vector3(30000,2,30000);
             Physics.simulationMode=SimulationMode.Script;
             Instruments(); DriveModeTransitions(); AirborneRPM(); Controls();

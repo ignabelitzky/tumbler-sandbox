@@ -284,3 +284,7 @@ This is an unofficial personal project, with no affiliation with or endorsement 
 [Portfolio](https://ignaciobelitzky.dev) · [GitHub](https://github.com/ignabelitzky)
 
 The Sandbox also includes a southwest [Impact & Physics Test Ground](docs/impact-physics-test-ground.md) with six isolated test sectors and repeatable native impact measurements. See [vehicle impact calibration](docs/tumbler-impact-physics.md).
+
+## Organic proving grounds
+
+Sandbox now uses a sculpted desert with flowing roads, separate tire surfaces, suspension terrain, tabletops, two deathloops and a caged banked oval. The original underground light lab remains, alongside a longer four-bend tunnel. See the [layout, controls and validation guide](docs/organic-sandbox/README.md).

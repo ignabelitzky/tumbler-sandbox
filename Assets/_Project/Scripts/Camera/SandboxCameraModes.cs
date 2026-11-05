@@ -97,6 +97,7 @@ public sealed class SandboxCameraModes : MonoBehaviour
             if (Mathf.Abs(p.x) <= half.x && Mathf.Abs(p.y) <= half.y && Mathf.Abs(p.z) <= half.z)
             { IsInsideTunnel = true; break; }
         }
+        if (!IsInsideTunnel) IsInsideTunnel = SandboxTunnelZones.Contains(vehicle.position);
         ApplyMode(teleported);
         if (teleported) orbit.VirtualCamera.PreviousStateIsValid = false;
     }

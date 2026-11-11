@@ -2,7 +2,7 @@
 
 A personal Unity sandbox for learning and experimenting with vehicle gameplay. Drive a Tumbler inspired by the Batmobile from *Batman Begins*, explore a physics playground, and experiment with different drivetrain modes.
 
-This repository (`tumbler-sandbox`) is a learning project, not a finished commercial game. The project includes a six-zone driving test ground in Sandbox. Unity Editor checks cover the new colliders and per-surface wheel grip; manual driving and player-build validation remain separate checks.
+This repository (`tumbler-sandbox`) is a learning project, not a finished commercial game. Sandbox has a minimal open playground with three ramps, suspension terrain and the original tunnel. See the [current changes and validation limits](docs/minimal-playground.md); driving acceptance and player-build validation remain separate checks.
 
 `main` is the maintained branch and includes the approved lighting, stealth, turbo-reserve and equipment update, with all six brake assemblies mounted on the inner wheel faces. See the [equipment and night-systems guide](docs/tumbler-night-systems.md).
 
@@ -115,9 +115,9 @@ Side/roof landings now use native scrape grip while the upright underbody retain
 
 Both device types remain available together without exclusive control schemes. One scene PlayerInput dispatches recovery, reset, drivetrain and pause events; the legacy action is still internally named `QuitGame` to retain its ID and generated wrapper. Vehicle input consumers are blocked while paused. Other controllers may use the same Gamepad layout, but no physical compatibility claim is made for them.
 
-## Sandbox driving test ground
+## Historical driving test ground
 
-Open `Assets/_Project/Scenes/Sandbox.unity`. From the spawn, follow the amber arrows to the left-hand access road and then north to the **DRIVING TEST GROUND** sign. The existing playground remains available.
+The earlier six-zone test-ground assets remain in the repository for isolated diagnostics. They are inactive in the current Sandbox, which uses the [minimal playground](docs/minimal-playground.md).
 
 | Zone | Tests |
 | --- | --- |
@@ -132,8 +132,8 @@ The three comparison lanes change actual WheelCollider grip. The wet lane is a t
 
 ## Underground light lab, camera distances and containment
 
-From spawn, follow the new amber arrows **right/east**, then turn south to the
-**UNDERGROUND LIGHT LAB** portal near `(100, 0, -40)`. Both portals are on the
+From spawn, head **right/east**, then south to the original tunnel
+portal near `(100, 0, -40)`. Both portals are on the
 surface; the other is near `(242, 0, -40)`. The continuous road descends 12 m,
 passes through two broad 90° curves and climbs back out. Start slowly (the signs
 recommend 40 km/h). Dim warm fixtures and subdued wall markers leave room to test
@@ -286,9 +286,9 @@ This is an unofficial personal project, with no affiliation with or endorsement 
 
 The earlier [Impact & Physics Test Ground](docs/impact-physics-test-ground.md) and its source fixtures remain available for isolated verification. The active map focuses on the classic ramps, suspension trials and original tunnel. See [vehicle impact calibration](docs/tumbler-impact-physics.md).
 
-## Classic flowing proving grounds
+## Minimal playground
 
-Sandbox keeps the supplied Sky12 skybox and the original underground tunnel. The original ramps and rounded/triangular obstacles return among flowing access roads, progressive speed bumps, alternating wheel articulation, rolling gravel, dirt and sand. Two broad tabletop ramps have continuous approaches and landings. The additional tunnel, deathloops and caged oval are retired from the active scene. See the [layout and validation guide](docs/classic-sandbox/README.md).
+Sandbox keeps the supplied Sky12 skybox and the original underground tunnel. The open terrain contains the square four-face ramp, the curved ramp, one low tabletop, progressive speed bumps, alternating wheel articulation and rolling gravel. The handling circuit, redundant ramps/bumps, painted guidance and collidable rock decoration are removed from the active prefab. Four simple sandstone walls delimit the perimeter at X/Z ±475 m. See the [current layout and validation](docs/minimal-playground.md) and [historical layout guide](docs/classic-sandbox/README.md).
 
 The [project review fixes](docs/classic-sandbox/review-fixes.md) correct reverse-speed braking, upright recovery, drive-output cleanup, tire audio and reversible stealth, and make controls authoring preserve the current scene.
 

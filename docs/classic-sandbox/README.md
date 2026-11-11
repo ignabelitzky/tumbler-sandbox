@@ -1,5 +1,7 @@
 # Classic flowing proving grounds
 
+This guide records the earlier `41632d8` layout and its historical validation. The active prefab was subsequently simplified: see [current minimal playground and validation limits](../minimal-playground.md). Use `python3 tools/minimal-playground/check.py` for current asset-preservation checks. The traversal helper below now samples only retained routes.
+
 The current Sandbox restores the earlier style of vehicle playground under the unchanged Sky12 sunset. It has one tunnel: the original underground light lab, with its original roadway, roof, portals, lights and close-camera zones. The additional winding tunnel, deathloops and caged oval are absent from the active map.
 
 A broad open circuit connects the spawn, the tunnel approaches, gravel, dirt and sand. The terrain has mild relief and graded road edges. Original ramp and bump models sit at varied positions and angles with clear approaches and open landing space. Guidance uses flush painted marks; freestanding instruction boards remain hidden.

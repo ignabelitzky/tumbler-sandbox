@@ -38,8 +38,8 @@ public class MenuController : MonoBehaviour
         var label = RuntimeMenuUI.Text("Developer Credit", credit, creditFont,
             "<size=14>Developed by</size>\n<b>Ignacio Belitzky</b>", 18, new Color(.82f, .87f, .85f),
             new Vector2(180, 56), new Vector2(34, 0));
-        // Left alignment keeps both lines next to the icon, with a 12-unit gap.
-        label.alignment = TextAlignmentOptions.Left;
+        label.alignment = TextAlignmentOptions.Center;
+        label.lineSpacing = 6f;
         label.enableAutoSizing = false;
     }
 

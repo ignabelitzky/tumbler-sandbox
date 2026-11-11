@@ -167,6 +167,8 @@ public static class NavigationVerify
                 Check(EventSystem.current.currentSelectedGameObject == Button("Enter Sandbox").gameObject, "Controller-only initial selection");
                 var label = Object.FindObjectsByType<TextMeshProUGUI>(FindObjectsSortMode.None).Single(t => t.name == "Developer Credit");
                 Check(label.text == "<size=14>Developed by</size>\n<b>Ignacio Belitzky</b>" && !label.raycastTarget, "Correct two-line non-interactive developer credit");
+                Check(label.alignment == TextAlignmentOptions.Center && label.lineSpacing == 6f,
+                    "Developer credit is internally centered with a modest extra line gap");
                 var icon = Object.FindObjectsByType<RawImage>(FindObjectsSortMode.None).Single(i => i.name == "Phosphor Icon");
                 Check(AssetDatabase.GetAssetPath(icon.texture).EndsWith("Phosphor/phosphor-primary_2048.png") &&
                     icon.rectTransform.sizeDelta.x == icon.rectTransform.sizeDelta.y && !icon.raycastTarget, "Original square Phosphor icon");

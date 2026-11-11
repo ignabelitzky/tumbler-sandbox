@@ -6,6 +6,8 @@ public sealed class TumblerFlightDynamics
     private readonly Rigidbody body;
     private readonly WheelCollider[] wheels;
     private readonly JointSpring[] originalSprings;
+    private readonly float[] originalForcePoints;
+    private readonly bool originalExpansionLimited;
     private bool enabled, bodyContact;
     private float airTime, landingTime, pendingLanding, impactSpeed;
     private Vector3 previousPosition;
@@ -16,7 +18,13 @@ public sealed class TumblerFlightDynamics
         this.body = body;
         this.wheels = wheels;
         originalSprings = new JointSpring[wheels.Length];
-        for (int i = 0; i < wheels.Length; i++) originalSprings[i] = wheels[i].suspensionSpring;
+        originalForcePoints = new float[wheels.Length];
+        originalExpansionLimited = wheels.Length > 0 && wheels[0].suspensionExpansionLimited;
+        for (int i = 0; i < wheels.Length; i++)
+        {
+            originalSprings[i] = wheels[i].suspensionSpring;
+            originalForcePoints[i] = wheels[i].forceAppPointDistance;
+        }
     }
 
     public void Enable()
@@ -29,6 +37,19 @@ public sealed class TumblerFlightDynamics
             // Each wheel uses its own supported mass; keep spring stiffness, travel and ride height.
             spring.damper = Mathf.Max(spring.damper, 1.9f * Mathf.Sqrt(spring.spring * wheels[i].sprungMass));
             wheels[i].suspensionSpring = spring;
+            // Tire forces at the contact patch give the rear axle a long pitch lever
+            // while the front wheels are unsupported. Model a suspension roll center
+            // 0.30 m below the COM, accounting for radius AND the static travel.
+            // Dual rear tires keep their separate contacts and their own sprung mass.
+            var wheel = wheels[i];
+            Vector3 center = wheel.transform.TransformPoint(wheel.center);
+            Vector3 restBase = center - wheel.transform.up * wheel.transform.lossyScale.y *
+                (wheel.radius + wheel.suspensionDistance * (1f - spring.targetPosition));
+            wheel.forceAppPointDistance = Mathf.Max(0f,
+                Vector3.Dot(body.worldCenterOfMass - restBase, body.transform.up) - .30f);
+            // PhysX must release support when a wheel cannot extend to the surface
+            // within this step, rather than following a falling ramp edge instantly.
+            wheel.suspensionExpansionLimited = true;
         }
         Reset();
     }
@@ -37,7 +58,12 @@ public sealed class TumblerFlightDynamics
     {
         if (enabled)
             for (int i = 0; i < wheels.Length; i++)
-                if (wheels[i] != null) wheels[i].suspensionSpring = originalSprings[i];
+                if (wheels[i] != null)
+                {
+                    wheels[i].suspensionSpring = originalSprings[i];
+                    wheels[i].forceAppPointDistance = originalForcePoints[i];
+                    wheels[i].suspensionExpansionLimited = originalExpansionLimited;
+                }
         enabled = false;
         Reset();
     }
